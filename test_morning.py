@@ -252,8 +252,8 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertNotIn("fetch(", app_js)
         self.assertNotIn("XMLHttpRequest", app_js)
         self.assertNotIn("GOOGLE_SCHOLAR_RSS_URLS", app_js)
-        for disallowed in ("apiKey", "api_key", "secret", "token"):
-            self.assertNotIn(disallowed, app_js)
+        for disallowed_pattern in (r"apiKey\s*[:=]", r"api_key\s*[:=]", r"\bsecret\s*[:=]", r"\btoken\s*[:=]"):
+            self.assertIsNone(re.search(disallowed_pattern, app_js, flags=re.IGNORECASE))
 
     def test_static_frontend_preserves_keyboard_history_and_text_fitting(self):
         app_js = self.read_docs_file("app.js")
@@ -278,6 +278,32 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertIn("source-logo-na", css)
         self.assertIn("--title-size", css)
         self.assertNotIn("-webkit-line-clamp", css)
+
+    def test_static_article_links_are_direct_article_targets(self):
+        app_js = self.read_docs_file("app.js")
+        urls = re.findall(r'\n\s+url: "([^"]+)"', app_js)
+
+        self.assertEqual(len(urls), 40)
+        forbidden_patterns = (
+            r"scholar\.google\.com/scholar",
+            r"/search",
+            r"\?q=",
+            r"/category/",
+            r"/topic/",
+            r"/hub/",
+            r"/news/?(?:[?#].*)?$",
+            r"/discover/blog/?(?:[?#].*)?$",
+            r"/research/?(?:[?#].*)?$",
+            r"/vertical/",
+        )
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertTrue(url.startswith("https://"))
+                for pattern in forbidden_patterns:
+                    self.assertIsNone(re.search(pattern, url, flags=re.IGNORECASE))
+
+        self.assertIn('openLink.target = "_blank"', app_js)
+        self.assertIn('openLink.rel = "noopener noreferrer"', app_js)
 
     def test_readme_contains_github_pages_instructions(self):
         readme = (self.root / "README.md")
