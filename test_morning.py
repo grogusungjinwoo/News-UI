@@ -293,6 +293,7 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         text = workflow.read_text(encoding="utf-8")
 
         self.assertIn("actions/configure-pages", text)
+        self.assertIn("enablement: true", text)
         self.assertIn("actions/upload-pages-artifact", text)
         self.assertIn("actions/deploy-pages", text)
         self.assertIn("path: ./docs", text)
