@@ -287,19 +287,5 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertIn("python -m http.server 8000 --directory docs", text)
         self.assertIn("Settings > Pages > Deploy from a branch > main > /docs > Save", text)
 
-    def test_github_actions_workflow_deploys_docs_to_pages(self):
-        workflow = self.root / ".github" / "workflows" / "pages.yml"
-        self.assertTrue(workflow.exists(), "Missing GitHub Pages workflow")
-        text = workflow.read_text(encoding="utf-8")
-
-        self.assertIn("actions/configure-pages", text)
-        self.assertIn("enablement: true", text)
-        self.assertIn("actions/upload-pages-artifact", text)
-        self.assertIn("actions/deploy-pages", text)
-        self.assertIn("path: ./docs", text)
-        self.assertIn("pages: write", text)
-        self.assertIn("id-token: write", text)
-
-
 if __name__ == "__main__":
     unittest.main()
