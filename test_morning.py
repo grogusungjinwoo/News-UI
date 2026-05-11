@@ -1,3 +1,4 @@
+import re
 import unittest
 from datetime import datetime, timedelta, timezone
 from tempfile import TemporaryDirectory
@@ -210,6 +211,81 @@ class MorningNewsTests(unittest.TestCase):
             self.assertEqual(exit_code, 0)
             self.assertTrue(output.exists())
             self.assertIn("<!doctype html>", output.read_text(encoding="utf-8").lower())
+
+
+class GitHubPagesStaticSiteTests(unittest.TestCase):
+    def setUp(self):
+        self.root = Path(__file__).resolve().parent
+        self.docs = self.root / "docs"
+
+    def read_docs_file(self, name):
+        path = self.docs / name
+        self.assertTrue(path.exists(), f"Expected {path} to exist")
+        return path.read_text(encoding="utf-8")
+
+    def test_docs_site_files_exist_for_github_pages(self):
+        for name in ("index.html", "styles.css", "app.js", ".nojekyll"):
+            self.assertTrue((self.docs / name).exists(), f"Missing docs/{name}")
+
+    def test_index_uses_relative_assets_for_project_pages(self):
+        html = self.read_docs_file("index.html")
+
+        self.assertIn('href="./styles.css"', html)
+        self.assertIn('src="./app.js"', html)
+        self.assertNotIn('href="/styles.css"', html)
+        self.assertNotIn('src="/app.js"', html)
+        self.assertIn("Morning News", html)
+        self.assertIn('id="bucketNav"', html)
+        self.assertIn('id="sections"', html)
+
+    def test_static_frontend_preserves_buckets_navigation_and_no_server_fetch(self):
+        app_js = self.read_docs_file("app.js")
+
+        self.assertIn('"scholar"', app_js)
+        self.assertIn('"random"', app_js)
+        self.assertIn('"science"', app_js)
+        self.assertIn('"ai"', app_js)
+        self.assertEqual(len(re.findall(r'bucket: "scholar"', app_js)), 10)
+        self.assertEqual(len(re.findall(r'bucket: "random"', app_js)), 10)
+        self.assertEqual(len(re.findall(r'bucket: "science"', app_js)), 10)
+        self.assertEqual(len(re.findall(r'bucket: "ai"', app_js)), 10)
+        self.assertNotIn("fetch(", app_js)
+        self.assertNotIn("XMLHttpRequest", app_js)
+        self.assertNotIn("GOOGLE_SCHOLAR_RSS_URLS", app_js)
+        for disallowed in ("apiKey", "api_key", "secret", "token"):
+            self.assertNotIn(disallowed, app_js)
+
+    def test_static_frontend_preserves_keyboard_history_and_text_fitting(self):
+        app_js = self.read_docs_file("app.js")
+        css = self.read_docs_file("styles.css")
+
+        for expected in (
+            "Backspace",
+            "ArrowLeft",
+            "Enter",
+            "ArrowRight",
+            "Spacebar",
+            "history.back()",
+            "history.forward()",
+            "scrollIntoView",
+            "fitCardText",
+            "sourceLogoUrl",
+        ):
+            self.assertIn(expected, app_js)
+        self.assertIn("aspect-ratio: 1 / 1", css)
+        self.assertIn("grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));", css)
+        self.assertIn("--bg: #05070d", css)
+        self.assertIn("source-logo-na", css)
+        self.assertIn("--title-size", css)
+        self.assertNotIn("-webkit-line-clamp", css)
+
+    def test_readme_contains_github_pages_instructions(self):
+        readme = (self.root / "README.md")
+        self.assertTrue(readme.exists(), "Missing README.md")
+        text = readme.read_text(encoding="utf-8")
+
+        self.assertIn("python -m http.server 8000 --directory docs", text)
+        self.assertIn("Settings > Pages > Deploy from a branch > main > /docs > Save", text)
 
 
 if __name__ == "__main__":

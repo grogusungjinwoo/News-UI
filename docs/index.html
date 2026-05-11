@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning News</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Morning News</h1>
+      <p id="generatedLine">40 curated articles for the morning brief.</p>
+    </div>
+    <nav class="nav-controls" aria-label="History navigation">
+      <button class="icon-button" id="backButton" type="button" title="Back">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
+        <span>Back</span>
+      </button>
+      <button class="icon-button" id="forwardButton" type="button" title="Forward">
+        <span>Forward</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M9 6l6 6-6 6"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <nav class="bucket-nav" id="bucketNav" aria-label="Article buckets"></nav>
+    <div id="sections"></div>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
