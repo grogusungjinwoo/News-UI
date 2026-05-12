@@ -1,413 +1,21 @@
 const BUCKETS = Object.freeze(["scholar", "random", "science", "ai"]);
-
-const ARTICLES = Object.freeze([
-  {
-    bucket: "scholar",
-    title: "EmambaIR: Efficient Visual State Space Model for Event-guided Image Reconstruction",
-    url: "https://arxiv.org/abs/2605.08073v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 10.1,
-    charge: 0,
-    summary: "Recent event-based image reconstruction methods predominantly rely on Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) to process complementary event information. However, these architectures face...",
-  },
-  {
-    bucket: "scholar",
-    title: "VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection",
-    url: "https://arxiv.org/abs/2605.08070v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 10.3,
-    charge: 0,
-    summary: "A standard technique for scaling inference-time reasoning is Self-Consistency, whereby multiple candidate answers are sampled from an LLM and the most common answer is selected. More recently, it has been shown that weighted...",
-  },
-  {
-    bucket: "scholar",
-    title: "Flow-OPD: On-Policy Distillation for Flow Matching Models",
-    url: "https://arxiv.org/abs/2605.08063v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 10.5,
-    charge: 0,
-    summary: "Existing Flow Matching (FM) text-to-image models suffer from two critical bottlenecks under multi-task alignment: the reward sparsity induced by scalar-valued rewards, and the gradient interference arising from jointly...",
-  },
-  {
-    bucket: "scholar",
-    title: "Rubric-Grounded RL: Structured Judge Rewards for Generalizable Reasoning",
-    url: "https://arxiv.org/abs/2605.08061v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 10.6,
-    charge: 0,
-    summary: "We argue that decomposing reward into weighted, verifiable criteria and using an LLM judge to score them provides a partial-credit optimization signal: instead of a binary outcome or a single holistic score, each response is...",
-  },
-  {
-    bucket: "scholar",
-    title: "The Memory Curse: How Expanded Recall Erodes Cooperative Intent in LLM Agents",
-    url: "https://arxiv.org/abs/2605.08060v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 10.8,
-    charge: 0,
-    summary: "Context window expansion is often treated as a straightforward capability upgrade for LLMs, but we find it systematically fails in multi-agent social dilemmas. Across 7 LLMs and 4 games over 500 rounds, expanding accessible...",
-  },
-  {
-    bucket: "scholar",
-    title: "Normalizing Trajectory Models",
-    url: "https://arxiv.org/abs/2605.08078v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.0,
-    charge: 0,
-    summary: "Diffusion-based models decompose sampling into many small Gaussian denoising steps -- an assumption that breaks down when generation is compressed to a few coarse transitions. Existing few-step methods address this through...",
-  },
-  {
-    bucket: "scholar",
-    title: "Zero-Shot Imagined Speech Decoding via Imagined-to-Listened MEG Mapping",
-    url: "https://arxiv.org/abs/2605.08075v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.2,
-    charge: 0,
-    summary: "Decoding imagined speech from non-invasive brain recordings is challenging because imagined datasets are scarce and difficult to align temporally across subjects and sessions In this work, we propose a new approach to the...",
-  },
-  {
-    bucket: "scholar",
-    title: "GRAPHLCP: Structure-Aware Localized Conformal Prediction on Graphs",
-    url: "https://arxiv.org/abs/2605.08074v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.4,
-    charge: 0,
-    summary: "Conformal prediction (CP) provides a distribution-free approach to uncertainty quantification with finite-sample guarantees. However, applying CP to graph neural networks (GNNs) remains challenging as the combinatorial nature...",
-  },
-  {
-    bucket: "scholar",
-    title: "A Note on Non-Negative $L_1$-Approximating Polynomials",
-    url: "https://arxiv.org/abs/2605.08072v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.5,
-    charge: 0,
-    summary: "$L_1$-Approximating polynomials, i.e., polynomials that approximate indicator functions in $L_1$-norm under certain distributions, are widely used in computational learning theory. We study the existence of...",
-  },
-  {
-    bucket: "scholar",
-    title: "Reinforcement Learning for Exponential Utility: Algorithms and Convergence in Discounted MDPs",
-    url: "https://arxiv.org/abs/2605.08053v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.7,
-    charge: 0,
-    summary: "Reinforcement learning (RL) for exponential-utility optimization in discounted Markov decision processes (MDPs) lacks principled value-based algorithms. We address this gap in the fixed risk-aversion setting. Building on the...",
-  },
-  {
-    bucket: "random",
-    title: "These Singing Mice Squeak Back and Forth - and Don't Interrupt. Scientists Found the Brain Pathway Behind Their Impressive Songs",
-    url: "https://www.smithsonianmag.com/smart-news/these-singing-mice-squeak-back-and-forth-and-dont-interrupt-scientists-found-the-brain-pathway-behind-their-impressive-songs-180988720/",
-    sourceName: "Smithsonian Magazine",
-    sourceUrl: "https://www.smithsonianmag.com",
-    ageHours: 10.1,
-    charge: 0,
-    summary: "Alston's singing mice carry out complex vocalizations and even appear to converse politely with one another. The neural circuitry that makes this possible is simpler than researchers expected",
-  },
-  {
-    bucket: "random",
-    title: "Researchers Discovered the Remnants of a Secret, Illegal Whisky Distillery in a Stunning Scottish Park",
-    url: "https://www.smithsonianmag.com/smart-news/researchers-discovered-the-remnants-of-a-secret-illegal-distillery-in-a-stunning-scottish-park-180988718/",
-    sourceName: "Smithsonian Magazine",
-    sourceUrl: "https://www.smithsonianmag.com",
-    ageHours: 10.3,
-    charge: 0,
-    summary: "The copper still, likely used to make whisky, would have been hidden away from the oversight of tax collectors after Scotland outlawed unlicensed distilling centuries ago",
-  },
-  {
-    bucket: "random",
-    title: "It Took Millions of Years for Australia's Famous Twelve Apostles Landmark to Rise Out of the Sea",
-    url: "https://www.smithsonianmag.com/smart-news/australias-famous-twelve-apostles-landmark-rose-out-of-the-sea-across-missions-of-years-180988715/",
-    sourceName: "Smithsonian Magazine",
-    sourceUrl: "https://www.smithsonianmag.com",
-    ageHours: 10.5,
-    charge: 0,
-    summary: "The iconic tourist destination provides a beautiful view, but also represents a physical record of Earth's climate history",
-  },
-  {
-    bucket: "random",
-    title: "Govee's new portable smart lamp is on sale for the first time",
-    url: "https://www.theverge.com/gadgets/928249/govee-table-lamp-classic-deal-sale",
-    sourceName: "The Verge",
-    sourceUrl: "https://www.theverge.com",
-    ageHours: 10.6,
-    charge: 0,
-    summary: "If you've always liked the idea of the Philips Hue Go portable lamp but couldn't justify the $100+ price tag, Govee recently released a much cheaper alternative, the Govee Table Lamp Classic, and it's already receiving its...",
-  },
-  {
-    bucket: "random",
-    title: "Apple brings encrypted RCS chats to iPhone",
-    url: "https://www.theverge.com/tech/928141/apple-ios-26-5-rcs-messages-iphone-google-android",
-    sourceName: "The Verge",
-    sourceUrl: "https://www.theverge.com",
-    ageHours: 10.8,
-    charge: 1,
-    summary: "Apple now lets you have encrypted RCS conversations with Android users through the Messages app on iOS. As part of iOS 26.5, which was released on Monday, Apple added support for end-to-end encrypted RCS messaging in beta,...",
-  },
-  {
-    bucket: "random",
-    title: "New York's Buzziest New Restaurant Is a Pub",
-    url: "https://www.eater.com/pre-shift/961028/deans-pub-new-york-pre-shift",
-    sourceName: "Eater",
-    sourceUrl: "https://www.eater.com",
-    ageHours: 11.0,
-    charge: 0,
-    summary: "This excerpt was originally published in Pre Shift, our newsletter for the hospitality industry. Subscribe for more first-person accounts, advice, and interviews. Now Open is a yearlong series celebrating some of 2026's most...",
-  },
-  {
-    bucket: "random",
-    title: "Why the Nordstrom Cafe Was the Ultimate Mother-Daughter Experience",
-    url: "https://www.eater.com/food-culture/960443/nordstrom-cafe-mother-daughter-nostalgia-tomato-soup-grilled-cheese",
-    sourceName: "Eater",
-    sourceUrl: "https://www.eater.com",
-    ageHours: 11.2,
-    charge: 0,
-    summary: "A version of this post originally appeared on May 6 in our newsletter Eater Today. Sign up here to receive stories like this in your inbox. Eating lunch and shopping are two of my mother's favorite things - she reminded me as...",
-  },
-  {
-    bucket: "random",
-    title: "Quince Sells Caviar and Wine Now. Is It Any Good?",
-    url: "https://www.eater.com/shopping/960397/quince-caviar-wine-coffee-review",
-    sourceName: "Eater",
-    sourceUrl: "https://www.eater.com",
-    ageHours: 11.4,
-    charge: 0,
-    summary: "For years, Quince has been a website that I knew as \"that place to get affordable cashmere sweaters.\" But as its offerings have expanded further and further, from home goods and luggage to jewelry and perfume, it's also...",
-  },
-  {
-    bucket: "random",
-    title: "A new Erewhon competitor just opened in West Hollywood with no marketing or social media. It's counting on you to post about it",
-    url: "https://www.fastcompany.com/91540063/erewhon-vs-laurel-supply-west-hollywood-hypebeast-grocer-wars",
-    sourceName: "Fast Company",
-    sourceUrl: "https://www.fastcompany.com",
-    ageHours: 11.5,
-    charge: 0,
-    summary: "A $20 smoothie and a $19 single strawberry could only belong in one place: Erewhon, the luxury grocery chain and celebrity hotspot in Los Angeles. But as of last week, it's not the only so-called hypebeast grocer in West...",
-  },
-  {
-    bucket: "random",
-    title: "Campbell's Bluebird back on Coniston Water almost 60 years after fatal record attempt",
-    url: "https://www.bbc.com/news/articles/c4g5r0yydl2o?at_medium=RSS&at_campaign=rss",
-    sourceName: "BBC",
-    sourceUrl: "https://www.bbc.com",
-    ageHours: 11.7,
-    charge: 0,
-    summary: "The restored hydroplane returns to the lake where its record-breaking pilot was killed in 1967.",
-  },
-  {
-    bucket: "science",
-    title: "This 800-year-old Chinese exercise helps lower blood pressure naturally",
-    url: "https://www.sciencedaily.com/releases/2026/05/260510234724.htm",
-    sourceName: "ScienceDaily",
-    sourceUrl: "https://www.sciencedaily.com",
-    ageHours: 10.1,
-    charge: 0,
-    summary: "An ancient Chinese exercise routine may be just as powerful as a daily brisk walk for lowering blood pressure - without equipment, gyms, or intense workouts. In a major clinical trial, adults with stage 1 hypertension who...",
-  },
-  {
-    bucket: "science",
-    title: "NASA's Psyche probe is about to slingshot around Mars at 12,000 mph",
-    url: "https://www.sciencedaily.com/releases/2026/05/260510234707.htm",
-    sourceName: "ScienceDaily",
-    sourceUrl: "https://www.sciencedaily.com",
-    ageHours: 10.3,
-    charge: 0,
-    summary: "NASA's Psyche spacecraft is about to pull off a dramatic close flyby of Mars, skimming just 2,800 miles above the planet to get a powerful gravitational boost on its journey to the mysterious metal-rich asteroid Psyche. The...",
-  },
-  {
-    bucket: "science",
-    title: "NASA's Curiosity rover accidentally pulled a rock out of Mars",
-    url: "https://www.sciencedaily.com/releases/2026/05/260510234704.htm",
-    sourceName: "ScienceDaily",
-    sourceUrl: "https://www.sciencedaily.com",
-    ageHours: 10.5,
-    charge: 0,
-    summary: "NASA's Curiosity rover had an unexpectedly stubborn Mars souvenir after drilling into a rock nicknamed \"Atacama\" - the entire chunk ripped loose from the ground and stayed stuck to the rover's drill. Engineers watched as...",
-  },
-  {
-    bucket: "science",
-    title: "Scientists say Dante's Inferno described an asteroid impact 500 years before modern science",
-    url: "https://www.sciencedaily.com/releases/2026/05/260510234658.htm",
-    sourceName: "ScienceDaily",
-    sourceUrl: "https://www.sciencedaily.com",
-    ageHours: 10.6,
-    charge: 0,
-    summary: "Dante's Inferno may have been far more than a religious epic. New research argues that the 14th-century poet essentially imagined a catastrophic asteroid impact centuries before modern science understood meteors. In this...",
-  },
-  {
-    bucket: "science",
-    title: "\"Cannot be explained\" - New ultra stainless steel stuns researchers",
-    url: "https://www.sciencedaily.com/releases/2026/05/260510030950.htm",
-    sourceName: "ScienceDaily",
-    sourceUrl: "https://www.sciencedaily.com",
-    ageHours: 10.8,
-    charge: 0,
-    summary: "A team at the University of Hong Kong has developed a new \"super steel\" that can survive the harsh conditions needed to make green hydrogen from seawater. The material uses an unexpected double-protection mechanism that...",
-  },
-  {
-    bucket: "science",
-    title: "Nicholas Houghton: Engineering Crew Safety for NASA's Artemis Missions",
-    url: "https://www.nasa.gov/centers-and-facilities/johnson/nicholas-houghton-engineering-crew-safety-for-artemis-ii/",
-    sourceName: "NASA",
-    sourceUrl: "https://www.nasa.gov",
-    ageHours: 11.0,
-    charge: 0,
-    summary: "Nicholas Houghton always dreamed of working at NASA and one day becoming an astronaut. Today, he helps design systems that keep crews safe during missions aboard NASA's Orion spacecraft, including the successful Artemis II...",
-  },
-  {
-    bucket: "science",
-    title: "NASA Invites Media to Annual Lunabotics Robotics Competition",
-    url: "https://www.nasa.gov/news-release/nasa-invites-media-to-annual-lunabotics-robotics-competition/",
-    sourceName: "NASA",
-    sourceUrl: "https://www.nasa.gov",
-    ageHours: 11.2,
-    charge: 0,
-    summary: "NASA will hold its 2026 Lunabotics Challenge Tuesday, May 19, to Thursday, May 21, at the Astronauts Memorial Foundation's Center for Space Education at the Kennedy Space Center Visitor Complex in Florida. Links to view the...",
-  },
-  {
-    bucket: "science",
-    title: "Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines Documents Released",
-    url: "https://science.nasa.gov/science-research/earth-science/joint-earth-observation-mission-quality-assessment-framework-optical-guidelines-documents-released/",
-    sourceName: "NASA",
-    sourceUrl: "https://www.nasa.gov",
-    ageHours: 11.4,
-    charge: 0,
-    summary: "The Optical Guidelines document provides standardized, transparent, and repeatable process for assessing the quality of optical data from commercial Earth Observation missions.",
-  },
-  {
-    bucket: "science",
-    title: "Hubble Survey Sets Up Roman's Future Look Near Milky Way's Center",
-    url: "https://science.nasa.gov/missions/roman-space-telescope/hubble-survey-sets-up-romans-future-look-near-milky-ways-center/",
-    sourceName: "NASA",
-    sourceUrl: "https://www.nasa.gov",
-    ageHours: 11.5,
-    charge: 0,
-    summary: "The Milky Way's galactic bulge, the bulbous region that surrounds the galactic center, contains a dense collection of stars, planets, and other free-floating objects. This region has been studied for decades with numerous...",
-  },
-  {
-    bucket: "science",
-    title: "How Unknowable Math Can Help Hide Secrets",
-    url: "https://www.quantamagazine.org/how-unknowable-math-can-help-hide-secrets-20260511/",
-    sourceName: "Quanta Magazine",
-    sourceUrl: "https://www.quantamagazine.org",
-    ageHours: 11.7,
-    charge: 0,
-    summary: "A graduate student recently harnessed the complexity of mathematical proofs to create a powerful new tool in cryptography. The post How Unknowable Math Can Help Hide Secrets first appeared on Quanta Magazine",
-  },
-  {
-    bucket: "ai",
-    title: "Study: Firms often use automation to control certain workers' wages",
-    url: "https://news.mit.edu/2026/study-firms-often-use-automation-control-certain-workers-wages-0507",
-    sourceName: "MIT News",
-    sourceUrl: "https://news.mit.edu",
-    ageHours: 10.1,
-    interest: 16,
-    summary: "MIT economists found US companies tend to target employees earning a \"wage premium,\" which increases inequality but not necessarily productivity.",
-  },
-  {
-    bucket: "ai",
-    title: "Games people - and machines - play: Untangling strategic reasoning to advance AI",
-    url: "https://news.mit.edu/2026/untangling-strategic-reasoning-to-advance-ai-gabriele-farina-0505",
-    sourceName: "MIT News",
-    sourceUrl: "https://news.mit.edu",
-    ageHours: 10.3,
-    interest: 15,
-    summary: "Assistant Professor Gabriele Farina mines the foundations of decision-making in complex multi-agent scenarios.",
-  },
-  {
-    bucket: "ai",
-    title: "Beacon Biosignals is mapping the brain during sleep",
-    url: "https://news.mit.edu/2026/beacon-biosignals-maps-brain-during-sleep-0501",
-    sourceName: "MIT News",
-    sourceUrl: "https://news.mit.edu",
-    ageHours: 10.5,
-    interest: 14,
-    summary: "Founded by Jake Donoghue PhD '19 and former MIT researcher Jarrett Revels, the company is creating an AI-driven platform to help diagnose and treat disease.",
-  },
-  {
-    bucket: "ai",
-    title: "Improving understanding with language",
-    url: "https://news.mit.edu/2026/improving-understanding-language-olivia-honeycutt-0501",
-    sourceName: "MIT News",
-    sourceUrl: "https://news.mit.edu",
-    ageHours: 10.6,
-    interest: 13,
-    summary: "MIT senior Olivia Honeycutt investigates how the ways we communicate can shape our views of the world.",
-  },
-  {
-    bucket: "ai",
-    title: "How enterprises are scaling AI",
-    url: "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-    sourceName: "OpenAI",
-    sourceUrl: "https://openai.com",
-    ageHours: 10.8,
-    interest: 12,
-    summary: "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-  },
-  {
-    bucket: "ai",
-    title: "OpenAI Campus Network: Student club interest form",
-    url: "https://openai.com/index/openai-campus-network-student-club-interest-form",
-    sourceName: "OpenAI",
-    sourceUrl: "https://openai.com",
-    ageHours: 11.0,
-    interest: 12,
-    summary: "Join the OpenAI Campus Network - connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-  },
-  {
-    bucket: "ai",
-    title: "OpenAI launches DeployCo to help businesses build around intelligence",
-    url: "https://openai.com/index/openai-launches-the-deployment-company",
-    sourceName: "OpenAI",
-    sourceUrl: "https://openai.com",
-    ageHours: 11.2,
-    interest: 13,
-    summary: "OpenAI launches DeployCo, a new enterprise deployment company built to help organizations bring frontier AI into production and turn it into measurable business impact.",
-  },
-  {
-    bucket: "ai",
-    title: "Several states considering ban on legal personhood for AI",
-    url: "https://www.npr.org/2026/05/11/nx-s1-5798754/several-states-considering-ban-on-legal-personhood-for-ai",
-    sourceName: "NPR",
-    sourceUrl: "https://www.npr.org",
-    ageHours: 11.4,
-    interest: 14,
-    summary: "Is it time to consider prosecuting AI models for breaking the law? Some say it's time. Others say that would be an insult to humanity. Some states are considering laws blocking AI personhood.",
-  },
-  {
-    bucket: "ai",
-    title: "VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection",
-    url: "https://arxiv.org/abs/2605.08070v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.5,
-    interest: 11,
-    summary: "A standard technique for scaling inference-time reasoning is Self-Consistency, whereby multiple candidate answers are sampled from an LLM and the most common answer is selected. More recently, it has been shown that weighted...",
-  },
-  {
-    bucket: "ai",
-    title: "The Memory Curse: How Expanded Recall Erodes Cooperative Intent in LLM Agents",
-    url: "https://arxiv.org/abs/2605.08060v1",
-    sourceName: "arXiv",
-    sourceUrl: "https://arxiv.org",
-    ageHours: 11.7,
-    interest: 12,
-    summary: "Context window expansion is often treated as a straightforward capability upgrade for LLMs, but we find it systematically fails in multi-agent social dilemmas. Across 7 LLMs and 4 games over 500 rounds, expanding accessible...",
-  },
-]);
+const RANDOM_REFRESH_INTERVAL_MS = 24 * 60 * 60 * 1000;
+const RANDOM_STORAGE_KEY = "morning-news-random-selection";
+const DATA = window.MORNING_NEWS_DATA || {
+  generatedAt: "",
+  buckets: BUCKETS,
+  sections: {},
+  randomPool: [],
+};
 
 const generatedLine = document.getElementById("generatedLine");
 const bucketNav = document.getElementById("bucketNav");
 const sections = document.getElementById("sections");
+const refreshRandomButton = document.getElementById("refreshRandomButton");
 const routes = [];
 let currentIndex = 0;
+let activeArticles = [];
+let randomRefreshTimer = 0;
 
 function bucketLabel(bucket) {
   return bucket === "ai" ? "AI" : bucket.charAt(0).toUpperCase() + bucket.slice(1);
@@ -426,7 +34,7 @@ function hostnameFromUrl(url) {
 
 function isPdfPublication(article) {
   try {
-    const path = new URL(article.url, window.location.href).pathname.toLowerCase();
+    const path = new URL(article.articleUrl, window.location.href).pathname.toLowerCase();
     return path.endsWith(".pdf") || path.includes("/pdf/");
   } catch (error) {
     return false;
@@ -448,7 +56,7 @@ function sourceLogoUrl(article) {
   if (isPdfPublication(article) || sourceIsMissing(article.sourceName)) {
     return "";
   }
-  const host = hostnameFromUrl(article.sourceUrl) || hostnameFromUrl(article.url);
+  const host = hostnameFromUrl(article.sourceHomeUrl) || hostnameFromUrl(article.articleUrl);
   if (!host) {
     return "";
   }
@@ -506,8 +114,95 @@ function appendTextRow(parent, className, left, right) {
   return row;
 }
 
+function fixedSectionArticles(bucket) {
+  return Array.isArray(DATA.sections && DATA.sections[bucket]) ? DATA.sections[bucket] : [];
+}
+
+function randomPoolSignature() {
+  return (DATA.randomPool || []).map((article) => article.articleUrl).join("|");
+}
+
+function shuffleArticles(articles) {
+  const shuffled = [...articles];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function storedRandomSelection(nowMs) {
+  const stored = storedRandomState();
+  if (
+    stored.generatedAt === DATA.generatedAt &&
+    stored.poolSignature === randomPoolSignature() &&
+    Array.isArray(stored.articleUrls) &&
+    nowMs - Number(stored.refreshedAt) < RANDOM_REFRESH_INTERVAL_MS
+  ) {
+    const byUrl = new Map((DATA.randomPool || []).map((article) => [article.articleUrl, article]));
+    const selected = stored.articleUrls.map((url) => byUrl.get(url)).filter(Boolean);
+    if (selected.length === Math.min(10, (DATA.randomPool || []).length)) {
+      return selected;
+    }
+  }
+  return [];
+}
+
+function storedRandomState() {
+  try {
+    return JSON.parse(localStorage.getItem(RANDOM_STORAGE_KEY) || "{}");
+  } catch (error) {
+    localStorage.removeItem(RANDOM_STORAGE_KEY);
+    return {};
+  }
+}
+
+function randomRefreshDelay(nowMs = Date.now()) {
+  const refreshedAt = Number(storedRandomState().refreshedAt);
+  if (!Number.isFinite(refreshedAt)) {
+    return RANDOM_REFRESH_INTERVAL_MS;
+  }
+  return Math.max(0, Math.min(RANDOM_REFRESH_INTERVAL_MS, refreshedAt + RANDOM_REFRESH_INTERVAL_MS - nowMs));
+}
+
+function chooseRandomArticles(force = false) {
+  const pool = Array.isArray(DATA.randomPool) ? DATA.randomPool : [];
+  const nowMs = Date.now();
+  if (!force) {
+    const stored = storedRandomSelection(nowMs);
+    if (stored.length) {
+      return stored;
+    }
+  }
+
+  const selected = shuffleArticles(pool).slice(0, 10);
+  try {
+    localStorage.setItem(
+      RANDOM_STORAGE_KEY,
+      JSON.stringify({
+        generatedAt: DATA.generatedAt,
+        poolSignature: randomPoolSignature(),
+        refreshedAt: nowMs,
+        articleUrls: selected.map((article) => article.articleUrl),
+      }),
+    );
+  } catch (error) {
+    localStorage.removeItem(RANDOM_STORAGE_KEY);
+  }
+  return selected;
+}
+
+function buildActiveArticles(forceRandom = false) {
+  activeArticles = [
+    ...fixedSectionArticles("scholar").slice(0, 10),
+    ...chooseRandomArticles(forceRandom),
+    ...fixedSectionArticles("science").slice(0, 10),
+    ...fixedSectionArticles("ai").slice(0, 10),
+  ];
+}
+
 function countByBucket(bucket) {
-  return ARTICLES.filter((article) => article.bucket === bucket).length;
+  return activeArticles.filter((article) => article.bucket === bucket).length;
 }
 
 function createSourceLogo(article) {
@@ -522,6 +217,14 @@ function createSourceLogo(article) {
   image.loading = "lazy";
   image.referrerPolicy = "no-referrer";
   return image;
+}
+
+function createExternalLink(label, url, className) {
+  const link = createElement("a", className, label);
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  return link;
 }
 
 function createCard(article, route, index) {
@@ -549,13 +252,14 @@ function createCard(article, route, index) {
   card.append(createElement("p", "", excerpt));
 
   const label = article.bucket === "ai" ? `Interest ${article.interest}` : `Charge ${article.charge}`;
-  appendTextRow(card, "card-footer", label, hostnameFromUrl(article.url) || "Open");
+  appendTextRow(card, "card-footer", label, hostnameFromUrl(article.articleUrl) || "Open");
 
-  const openLink = createElement("a", "open-link", "Open article");
-  openLink.href = article.url;
-  openLink.target = "_blank";
-  openLink.rel = "noopener noreferrer";
-  card.append(openLink);
+  const actionRow = createElement("div", "card-actions");
+  actionRow.append(createExternalLink("Article", article.articleUrl, "open-link article-link"));
+  if (article.sourceHomeUrl) {
+    actionRow.append(createExternalLink("Source site", article.sourceHomeUrl, "open-link source-link"));
+  }
+  card.append(actionRow);
 
   card.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
@@ -596,8 +300,9 @@ function renderNav() {
 
 function renderSections() {
   const fragment = document.createDocumentFragment();
+  routes.length = 0;
   for (const bucket of BUCKETS) {
-    const bucketArticles = ARTICLES.filter((article) => article.bucket === bucket);
+    const bucketArticles = activeArticles.filter((article) => article.bucket === bucket);
     const section = createElement("section", "bucket-section");
     section.id = bucket;
     section.setAttribute("aria-labelledby", `${bucket}-heading`);
@@ -734,9 +439,43 @@ function goForward() {
   }, 80);
 }
 
+function renderApp(forceRandom = false) {
+  buildActiveArticles(forceRandom);
+  renderNav();
+  renderSections();
+  fitAllCards();
+  setRoute(routeFromHash(), false, Boolean(window.location.hash));
+  if (routes.length && !window.location.hash) {
+    history.replaceState({ route: routes[0] }, "", window.location.pathname + window.location.search);
+  }
+}
+
+function refreshRandomArticles(force = true) {
+  const previousHash = window.location.hash;
+  renderApp(force);
+  if (previousHash && routes.includes(previousHash.replace(/^#/, ""))) {
+    setRoute(previousHash.replace(/^#/, ""), false, true);
+  }
+}
+
+function scheduleRandomRefresh() {
+  window.clearTimeout(randomRefreshTimer);
+  randomRefreshTimer = window.setTimeout(() => {
+    refreshRandomArticles(true);
+    scheduleRandomRefresh();
+  }, randomRefreshDelay());
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && !storedRandomSelection(Date.now()).length) {
+      refreshRandomArticles(true);
+    }
+  });
+}
+
 function wireKeyboardNavigation() {
   document.getElementById("backButton").addEventListener("click", goBack);
   document.getElementById("forwardButton").addEventListener("click", goForward);
+  refreshRandomButton.addEventListener("click", () => refreshRandomArticles(true));
 
   window.addEventListener("popstate", () => setRoute(routeFromHash(), false, true));
   document.addEventListener("keydown", (event) => {
@@ -757,11 +496,12 @@ function wireKeyboardNavigation() {
 }
 
 function init() {
-  generatedLine.textContent = `${ARTICLES.length} static articles arranged for GitHub Pages`;
-  renderNav();
-  renderSections();
+  const generatedAt = DATA.generatedAt ? new Date(DATA.generatedAt) : null;
+  const generatedLabel = generatedAt && !Number.isNaN(generatedAt.valueOf()) ? generatedAt.toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "static build";
+  generatedLine.textContent = `40 verified articles generated ${generatedLabel}`;
+  renderApp(false);
   wireKeyboardNavigation();
-  fitAllCards();
+  scheduleRandomRefresh();
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(fitAllCards);
   }
@@ -770,11 +510,6 @@ function init() {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(fitAllCards, 120);
   });
-
-  setRoute(routeFromHash(), false, Boolean(window.location.hash));
-  if (routes.length && !window.location.hash) {
-    history.replaceState({ route: routes[0] }, "", window.location.pathname + window.location.search);
-  }
 }
 
 init();

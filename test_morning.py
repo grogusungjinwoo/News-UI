@@ -11,7 +11,7 @@ class MorningNewsTests(unittest.TestCase):
     def setUp(self):
         self.now = datetime(2026, 5, 10, 8, 0, tzinfo=timezone.utc)
 
-    def article(self, title, bucket="random", hours_old=11, source="Feed"):
+    def article(self, title, bucket="random", hours_old=11, source="Feed", source_url=""):
         return morning.Article(
             title=title,
             url=f"https://example.com/{title.replace(' ', '-').lower()}",
@@ -19,6 +19,7 @@ class MorningNewsTests(unittest.TestCase):
             published=self.now - timedelta(hours=hours_old),
             bucket=bucket,
             summary="A measured summary with concrete details.",
+            source_url=source_url,
         )
 
     def test_keeps_articles_between_ten_and_twelve_hours_old(self):
@@ -106,6 +107,18 @@ class MorningNewsTests(unittest.TestCase):
             self.assertEqual(len(feeds), 2)
             self.assertEqual(feeds[0][0], "Google Scholar alert 1")
             self.assertEqual(feeds[1][1], "https://scholar.google.com/alerts/feeds/def")
+
+    def test_random_news_feeds_include_direct_rss_sources_for_validated_refresh(self):
+        feeds = morning.random_news_feeds(seed=7)
+
+        self.assertTrue(any("news.google.com" not in url for _, url in feeds))
+        self.assertTrue(any("rss" in url or "feed" in url for _, url in feeds))
+
+    def test_ai_news_feeds_include_direct_rss_sources_for_validated_refresh(self):
+        feeds = morning.ai_news_feeds(seed=7)
+
+        self.assertTrue(any("news.google.com" not in url for _, url in feeds))
+        self.assertTrue(any("rss" in url for _, url in feeds))
 
     def test_ai_compelling_score_prefers_concrete_ai_breakthroughs(self):
         compelling = self.article(
@@ -202,6 +215,116 @@ class MorningNewsTests(unittest.TestCase):
         self.assertIn("source-logo", html)
         self.assertIn("Source logo for Nature", html)
 
+    def test_normalize_article_url_rejects_broad_or_non_https_targets(self):
+        self.assertEqual(
+            morning.normalize_article_url("https://example.com/news/deep-research-story"),
+            "https://example.com/news/deep-research-story",
+        )
+        self.assertEqual(morning.normalize_article_url("http://example.com/news/deep-research-story"), "")
+        self.assertEqual(morning.normalize_article_url("https://example.com/news"), "")
+        self.assertEqual(morning.normalize_article_url("https://example.com/search?q=robotics"), "")
+        self.assertEqual(morning.normalize_article_url("https://news.google.com/rss/search?q=robotics"), "")
+        self.assertEqual(
+            morning.normalize_article_url("https://news.google.com/rss/articles/CBMi-example"),
+            "https://news.google.com/rss/articles/CBMi-example",
+        )
+
+    def test_verified_articles_excludes_dead_links_and_unverified_source_links(self):
+        alive = morning.Article(
+            title="Researchers map useful signal",
+            url="https://example.com/news/researchers-map-useful-signal",
+            source="Example",
+            source_url="https://example.com",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+        dead = morning.Article(
+            title="Dead link",
+            url="https://example.com/news/dead-link",
+            source="Example",
+            source_url="https://example.com",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+        broad = morning.Article(
+            title="Broad news page",
+            url="https://example.com/news",
+            source="Example",
+            source_url="https://example.com",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+
+        def checker(url, timeout=10):
+            if url == "https://example.com/news/researchers-map-useful-signal":
+                return morning.LinkCheck(True, url, 200, "")
+            if url == "https://example.com":
+                return morning.LinkCheck(False, url, 503, "service unavailable")
+            return morning.LinkCheck(False, url, 404, "not found")
+
+        kept, warnings = morning.verified_articles([alive, dead, broad], checker=checker)
+
+        self.assertEqual([article.title for article in kept], ["Researchers map useful signal"])
+        self.assertEqual(kept[0].source_url, "")
+        self.assertTrue(any("Dead link" in warning for warning in warnings))
+        self.assertTrue(any("Broad news page" in warning for warning in warnings))
+
+    def test_articles_js_export_uses_article_and_source_home_fields(self):
+        articles = []
+        for bucket in ("scholar", "science", "ai"):
+            for index in range(10):
+                articles.append(
+                    self.article(
+                        f"{bucket} generated {index}",
+                        bucket=bucket,
+                        source="Example",
+                        source_url="https://example.com",
+                    )
+                )
+        for index in range(12):
+            articles.append(
+                self.article(
+                    f"random generated {index}",
+                    bucket="random",
+                    source="Example",
+                    source_url="https://example.com",
+                )
+            )
+
+        js = morning.format_articles_js(articles, self.now, random_pool_size=12)
+
+        self.assertIn("window.MORNING_NEWS_DATA", js)
+        self.assertIn('"generatedAt": "2026-05-10T08:00:00+00:00"', js)
+        self.assertIn('"randomPool"', js)
+        self.assertIn('"articleUrl"', js)
+        self.assertIn('"sourceHomeUrl"', js)
+        self.assertNotIn('"url"', js)
+        self.assertEqual(js.count('"bucket": "random"'), 12)
+
+    def test_articles_js_payload_can_fill_short_live_refresh_from_previous_static_data(self):
+        live = [
+            self.article("live science", bucket="science"),
+            self.article("live random", bucket="random"),
+        ]
+        fallback = [
+            self.article("fallback science", bucket="science"),
+            self.article("fallback random one", bucket="random"),
+            self.article("fallback random two", bucket="random"),
+        ]
+
+        filled = morning.fill_articles_from_fallback(
+            live,
+            fallback,
+            {"science": 2, "random": 3},
+        )
+
+        self.assertEqual(sum(1 for article in filled if article.bucket == "science"), 2)
+        self.assertEqual(sum(1 for article in filled if article.bucket == "random"), 3)
+        self.assertIn("fallback random two", [article.title for article in filled])
+
     def test_ui_mode_writes_static_html_file_without_opening_when_requested(self):
         with TemporaryDirectory() as tmpdir:
             output = Path(tmpdir) / "morning_news.html"
@@ -224,36 +347,44 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         return path.read_text(encoding="utf-8")
 
     def test_docs_site_files_exist_for_github_pages(self):
-        for name in ("index.html", "styles.css", "app.js", ".nojekyll"):
+        for name in ("index.html", "styles.css", "app.js", "articles.js", ".nojekyll"):
             self.assertTrue((self.docs / name).exists(), f"Missing docs/{name}")
 
     def test_index_uses_relative_assets_for_project_pages(self):
         html = self.read_docs_file("index.html")
 
         self.assertIn('href="./styles.css"', html)
+        self.assertIn('src="./articles.js"', html)
         self.assertIn('src="./app.js"', html)
         self.assertNotIn('href="/styles.css"', html)
+        self.assertNotIn('src="/articles.js"', html)
         self.assertNotIn('src="/app.js"', html)
         self.assertIn("Morning News", html)
+        self.assertIn('id="refreshRandomButton"', html)
         self.assertIn('id="bucketNav"', html)
         self.assertIn('id="sections"', html)
 
     def test_static_frontend_preserves_buckets_navigation_and_no_server_fetch(self):
         app_js = self.read_docs_file("app.js")
+        articles_js = self.read_docs_file("articles.js")
 
         self.assertIn('"scholar"', app_js)
         self.assertIn('"random"', app_js)
         self.assertIn('"science"', app_js)
         self.assertIn('"ai"', app_js)
-        self.assertEqual(len(re.findall(r'bucket: "scholar"', app_js)), 10)
-        self.assertEqual(len(re.findall(r'bucket: "random"', app_js)), 10)
-        self.assertEqual(len(re.findall(r'bucket: "science"', app_js)), 10)
-        self.assertEqual(len(re.findall(r'bucket: "ai"', app_js)), 10)
+        self.assertEqual(len(re.findall(r'"bucket": "scholar"', articles_js)), 10)
+        self.assertGreaterEqual(len(re.findall(r'"bucket": "random"', articles_js)), 20)
+        self.assertEqual(len(re.findall(r'"bucket": "science"', articles_js)), 10)
+        self.assertEqual(len(re.findall(r'"bucket": "ai"', articles_js)), 10)
         self.assertNotIn("fetch(", app_js)
+        self.assertNotIn("fetch(", articles_js)
         self.assertNotIn("XMLHttpRequest", app_js)
+        self.assertNotIn("XMLHttpRequest", articles_js)
         self.assertNotIn("GOOGLE_SCHOLAR_RSS_URLS", app_js)
+        self.assertNotIn("GOOGLE_SCHOLAR_RSS_URLS", articles_js)
         for disallowed_pattern in (r"apiKey\s*[:=]", r"api_key\s*[:=]", r"\bsecret\s*[:=]", r"\btoken\s*[:=]"):
             self.assertIsNone(re.search(disallowed_pattern, app_js, flags=re.IGNORECASE))
+            self.assertIsNone(re.search(disallowed_pattern, articles_js, flags=re.IGNORECASE))
 
     def test_static_frontend_preserves_keyboard_history_and_text_fitting(self):
         app_js = self.read_docs_file("app.js")
@@ -270,6 +401,11 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
             "scrollIntoView",
             "fitCardText",
             "sourceLogoUrl",
+            "refreshRandomArticles",
+            "RANDOM_REFRESH_INTERVAL_MS",
+            "randomRefreshDelay",
+            "localStorage",
+            "routes.length = 0",
         ):
             self.assertIn(expected, app_js)
         self.assertIn("aspect-ratio: 1 / 1", css)
@@ -281,9 +417,10 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
 
     def test_static_article_links_are_direct_article_targets(self):
         app_js = self.read_docs_file("app.js")
-        urls = re.findall(r'\n\s+url: "([^"]+)"', app_js)
+        articles_js = self.read_docs_file("articles.js")
+        urls = re.findall(r'"articleUrl": "([^"]+)"', articles_js)
 
-        self.assertEqual(len(urls), 40)
+        self.assertGreaterEqual(len(urls), 42)
         forbidden_patterns = (
             r"scholar\.google\.com/scholar",
             r"/search",
@@ -302,8 +439,24 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
                 for pattern in forbidden_patterns:
                     self.assertIsNone(re.search(pattern, url, flags=re.IGNORECASE))
 
-        self.assertIn('openLink.target = "_blank"', app_js)
-        self.assertIn('openLink.rel = "noopener noreferrer"', app_js)
+        self.assertIn("Article", app_js)
+        self.assertIn("Source site", app_js)
+        self.assertIn('target = "_blank"', app_js)
+        self.assertIn('rel = "noopener noreferrer"', app_js)
+
+    def test_refresh_workflow_runs_daily_and_commits_generated_articles(self):
+        workflow = (self.root / ".github" / "workflows" / "refresh.yml")
+        self.assertTrue(workflow.exists(), "Missing daily refresh workflow")
+        text = workflow.read_text(encoding="utf-8")
+
+        self.assertIn("schedule:", text)
+        self.assertIn("workflow_dispatch:", text)
+        self.assertIn("contents: write", text)
+        self.assertIn("python -B -m unittest test_morning.py", text)
+        self.assertIn("--format articles-js", text)
+        self.assertIn("--validate-links", text)
+        self.assertIn("--strict", text)
+        self.assertIn("docs/articles.js", text)
 
     def test_readme_contains_github_pages_instructions(self):
         readme = (self.root / "README.md")

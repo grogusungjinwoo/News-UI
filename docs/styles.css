@@ -67,8 +67,10 @@ a {
 
 .nav-controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .icon-button {
@@ -100,6 +102,10 @@ a {
   width: 17px;
   height: 17px;
   stroke-width: 2.4;
+}
+
+.refresh-button {
+  min-width: 176px;
 }
 
 .shell {
@@ -323,12 +329,19 @@ a {
   line-height: var(--body-line);
 }
 
+.card-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
 .open-link {
   position: relative;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   min-height: 38px;
   padding: 0 12px;
   border: 1px solid rgba(248, 250, 252, 0.14);
@@ -337,6 +350,11 @@ a {
   color: var(--ink);
   font-size: 13px;
   font-weight: 850;
+  text-align: center;
+}
+
+.source-link {
+  color: #cbd5e1;
 }
 
 .open-link:hover,
@@ -365,10 +383,12 @@ a {
 
   .nav-controls {
     width: 100%;
+    justify-content: stretch;
   }
 
   .icon-button {
     flex: 1;
+    min-width: 0;
   }
 
   .bucket-nav {
@@ -409,6 +429,10 @@ a {
   .article-card {
     --title-size: 21px;
     --body-size: 13px;
+  }
+
+  .card-actions {
+    grid-template-columns: 1fr;
   }
 
   .article-card.fit-long,
