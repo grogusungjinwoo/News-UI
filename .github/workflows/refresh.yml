@@ -1,0 +1,51 @@
+name: Refresh article data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 10 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run tests before refresh
+        run: python -B -m unittest test_morning.py
+
+      - name: Regenerate verified article data
+        run: >
+          python -B morning.py
+          --format articles-js
+          --output docs/articles.js
+          --limit-per-bucket 10
+          --random-pool-size 20
+          --fallback-max-age-hours 36
+          --validate-links
+          --timeout 15
+          --strict
+
+      - name: Run tests after refresh
+        run: python -B -m unittest test_morning.py
+
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- docs/articles.js; then
+            echo "No article data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/articles.js
+          git commit -m "Refresh article data"
+          git push

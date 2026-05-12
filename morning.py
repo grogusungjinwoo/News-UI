@@ -14,13 +14,14 @@ import os
 import random
 import re
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html import escape, unescape
 from pathlib import Path
 from typing import Iterable, List, Optional, Sequence, Tuple
 from urllib.parse import urlencode, urlparse
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 import webbrowser
 from xml.etree import ElementTree
@@ -28,6 +29,7 @@ from xml.etree import ElementTree
 
 BUCKETS = ("scholar", "random", "science", "ai")
 DEFAULT_LIMIT_PER_BUCKET = 10
+DEFAULT_RANDOM_POOL_SIZE = 20
 
 STOPWORDS = {
     "a",
@@ -166,6 +168,14 @@ class Article:
         data["published"] = self.published.isoformat()
         data["political_charge_score"] = political_charge_score(self)
         return data
+
+
+@dataclass(frozen=True)
+class LinkCheck:
+    ok: bool
+    url: str
+    status: Optional[int] = None
+    error: str = ""
 
 
 def utc_now() -> datetime:
@@ -367,6 +377,130 @@ def fetch_url(url: str, timeout: int = 15) -> bytes:
         return response.read()
 
 
+def _clean_https_url(raw_url: str) -> str:
+    value = (raw_url or "").strip()
+    if not value:
+        return ""
+
+    parsed = urlparse(value)
+    if parsed.scheme != "https" or not parsed.netloc:
+        return ""
+    return value
+
+
+def is_broad_article_url(url: str) -> bool:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.rstrip("/").lower()
+    query = parsed.query.lower()
+
+    if host == "scholar.google.com":
+        return True
+    if host == "news.google.com":
+        return not re.search(r"/(?:rss/)?articles(?:/|$)", path)
+    if path in {"", "/"}:
+        return True
+    if re.search(r"(^|&)q=", query):
+        return True
+    return any(
+        re.search(pattern, path)
+        for pattern in (
+            r"/search/?$",
+            r"/category(?:/|$)",
+            r"/topic(?:/|$)",
+            r"/hub(?:/|$)",
+            r"/news/?$",
+            r"/discover/blog/?$",
+            r"/research/?$",
+            r"/vertical(?:/|$)",
+        )
+    )
+
+
+def normalize_article_url(raw_url: str) -> str:
+    url = _clean_https_url(raw_url)
+    if not url or is_broad_article_url(url):
+        return ""
+    return url
+
+
+def is_redirect_article_url(url: str) -> bool:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.rstrip("/").lower()
+    return host == "news.google.com" and bool(re.search(r"/(?:rss/)?articles(?:/|$)", path))
+
+
+def normalize_source_home_url(raw_url: str) -> str:
+    return _clean_https_url(raw_url)
+
+
+def source_home_from_article_url(article_url: str) -> str:
+    parsed = urlparse(article_url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        return ""
+    return f"{parsed.scheme}://{parsed.netloc}"
+
+
+def check_url(url: str, timeout: int = 10) -> LinkCheck:
+    for method in ("HEAD", "GET"):
+        request = Request(
+            url,
+            method=method,
+            headers={
+                "User-Agent": "Mozilla/5.0 (compatible; MorningNewsLinkCheck/1.0)",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            },
+        )
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                status = getattr(response, "status", response.getcode())
+                final_url = response.geturl() or url
+                return LinkCheck(200 <= status < 400, final_url, status, "")
+        except HTTPError as exc:
+            if method == "HEAD" and exc.code in {403, 405, 429}:
+                continue
+            return LinkCheck(False, getattr(exc, "url", url) or url, exc.code, str(exc.reason))
+        except (TimeoutError, URLError, OSError) as exc:
+            if method == "HEAD":
+                continue
+            return LinkCheck(False, url, None, str(exc))
+    return LinkCheck(False, url, None, "unreachable")
+
+
+def verified_articles(
+    articles: Sequence[Article],
+    timeout: int = 10,
+    checker=check_url,
+) -> Tuple[List[Article], List[str]]:
+    kept: List[Article] = []
+    warnings: List[str] = []
+
+    for article in articles:
+        article_url = normalize_article_url(article.url)
+        if not article_url:
+            warnings.append(f"{article.title}: skipped broad or invalid article URL")
+            continue
+
+        article_check = checker(article_url, timeout=timeout)
+        final_article_url = normalize_article_url(article_check.url)
+        if is_redirect_article_url(final_article_url):
+            final_article_url = ""
+        if not article_check.ok or not final_article_url:
+            status = article_check.status if article_check.status is not None else article_check.error
+            warnings.append(f"{article.title}: skipped dead article URL ({status})")
+            continue
+
+        source_url = normalize_source_home_url(article.source_url) or source_home_from_article_url(final_article_url)
+        if source_url:
+            source_check = checker(source_url, timeout=timeout)
+            source_url = normalize_source_home_url(source_check.url) if source_check.ok else ""
+
+        kept.append(replace(article, url=final_article_url, source_url=source_url))
+
+    return kept, warnings
+
+
 def first_text(element: ElementTree.Element, paths: Sequence[str]) -> str:
     for path in paths:
         found = element.find(path)
@@ -510,6 +644,14 @@ def default_scholar_fallback_feeds() -> List[Tuple[str, str]]:
 
 
 def random_news_feeds(seed: Optional[int] = None) -> List[Tuple[str, str]]:
+    direct_feeds = [
+        ("Smithsonian Smart News", "https://www.smithsonianmag.com/rss/smart-news/"),
+        ("The Verge", "https://www.theverge.com/rss/index.xml"),
+        ("Eater", "https://www.eater.com/rss/index.xml"),
+        ("BBC News", "https://feeds.bbci.co.uk/news/rss.xml"),
+        ("NPR News", "https://feeds.npr.org/1001/rss.xml"),
+        ("Quanta Magazine", "https://www.quantamagazine.org/feed/"),
+    ]
     topics = [
         "technology when:12h",
         "business when:12h",
@@ -526,8 +668,10 @@ def random_news_feeds(seed: Optional[int] = None) -> List[Tuple[str, str]]:
         "transportation when:12h",
     ]
     rng = random.Random(seed)
+    rng.shuffle(direct_feeds)
     rng.shuffle(topics)
-    return [(f"Google News random: {topic}", google_news_search_url(topic)) for topic in topics]
+    google_feeds = [(f"Google News random: {topic}", google_news_search_url(topic)) for topic in topics]
+    return direct_feeds + google_feeds
 
 
 def science_news_feeds() -> List[Tuple[str, str]]:
@@ -542,6 +686,11 @@ def science_news_feeds() -> List[Tuple[str, str]]:
 
 
 def ai_news_feeds(seed: Optional[int] = None) -> List[Tuple[str, str]]:
+    direct_feeds = [
+        ("MIT AI News", "https://news.mit.edu/rss/topic/artificial-intelligence2"),
+        ("MIT Research News", "https://news.mit.edu/rss/research"),
+        ("OpenAI News", "https://openai.com/news/rss.xml"),
+    ]
     topics = [
         "artificial intelligence breakthrough research when:12h",
         "AI agents reasoning benchmark when:12h",
@@ -553,8 +702,10 @@ def ai_news_feeds(seed: Optional[int] = None) -> List[Tuple[str, str]]:
         "open source AI model when:12h",
     ]
     rng = random.Random(seed)
+    rng.shuffle(direct_feeds)
     rng.shuffle(topics)
-    return [(f"Google News AI: {topic}", google_news_search_url(topic)) for topic in topics]
+    google_feeds = [(f"Google News AI: {topic}", google_news_search_url(topic)) for topic in topics]
+    return direct_feeds + google_feeds
 
 
 def gather_live_articles(
@@ -676,6 +827,144 @@ def format_json(articles: Sequence[Article], now: datetime, warnings: Sequence[s
         },
         indent=2,
     ) + "\n"
+
+
+def article_static_record(article: Article, now: datetime) -> dict:
+    record = {
+        "bucket": article.bucket,
+        "title": article.title,
+        "articleUrl": article.url,
+        "sourceName": source_display_name(article),
+        "sourceHomeUrl": article.source_url,
+        "ageHours": round(article.age_hours(now), 1),
+        "summary": article.summary,
+    }
+    if article.bucket == "ai":
+        record["interest"] = ai_compelling_score(article)
+    else:
+        record["charge"] = political_charge_score(article)
+    return record
+
+
+def articles_static_payload(
+    articles: Sequence[Article],
+    now: datetime,
+    limit_per_bucket: int = DEFAULT_LIMIT_PER_BUCKET,
+    random_pool_size: int = DEFAULT_RANDOM_POOL_SIZE,
+) -> dict:
+    now = normalize_datetime(now)
+    sections = {
+        bucket: [
+            article_static_record(article, now)
+            for article in articles
+            if article.bucket == bucket
+        ][:limit_per_bucket]
+        for bucket in BUCKETS
+        if bucket != "random"
+    }
+    random_pool = [
+        article_static_record(article, now)
+        for article in articles
+        if article.bucket == "random"
+    ][:max(limit_per_bucket, random_pool_size)]
+
+    return {
+        "generatedAt": now.isoformat(),
+        "buckets": list(BUCKETS),
+        "sections": sections,
+        "randomPool": random_pool,
+    }
+
+
+def format_articles_js(
+    articles: Sequence[Article],
+    now: datetime,
+    limit_per_bucket: int = DEFAULT_LIMIT_PER_BUCKET,
+    random_pool_size: int = DEFAULT_RANDOM_POOL_SIZE,
+) -> str:
+    payload = articles_static_payload(
+        articles,
+        now,
+        limit_per_bucket=limit_per_bucket,
+        random_pool_size=random_pool_size,
+    )
+    data = json.dumps(payload, indent=2, ensure_ascii=True)
+    return f"window.MORNING_NEWS_DATA = Object.freeze({data});\n"
+
+
+def parse_articles_js_payload(text: str) -> dict:
+    match = re.search(r"Object\.freeze\((.*)\);\s*$", text, flags=re.S)
+    if not match:
+        return {}
+    try:
+        return json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return {}
+
+
+def articles_from_static_payload(payload: dict, now: datetime) -> List[Article]:
+    articles: List[Article] = []
+    now = normalize_datetime(now)
+    records = []
+    for bucket_records in (payload.get("sections") or {}).values():
+        if isinstance(bucket_records, list):
+            records.extend(bucket_records)
+    random_pool = payload.get("randomPool")
+    if isinstance(random_pool, list):
+        records.extend(random_pool)
+
+    for record in records:
+        article_url = normalize_article_url(record.get("articleUrl", ""))
+        if not article_url:
+            continue
+        age_hours = record.get("ageHours", 0)
+        try:
+            published = now - timedelta(hours=float(age_hours))
+        except (TypeError, ValueError):
+            published = now
+        articles.append(
+            Article(
+                title=record.get("title", ""),
+                url=article_url,
+                source=record.get("sourceName", ""),
+                source_url=normalize_source_home_url(record.get("sourceHomeUrl", "")),
+                published=published,
+                bucket=record.get("bucket", "random"),
+                summary=record.get("summary", ""),
+            )
+        )
+    return articles
+
+
+def fill_articles_from_fallback(
+    articles: Sequence[Article],
+    fallback_articles: Sequence[Article],
+    target_by_bucket: dict,
+) -> List[Article]:
+    filled = list(articles)
+    seen = {(article.bucket, unique_article_key(article)) for article in filled}
+
+    for bucket, target in target_by_bucket.items():
+        bucket_count = sum(1 for article in filled if article.bucket == bucket)
+        for article in fallback_articles:
+            if bucket_count >= target:
+                break
+            key = (article.bucket, unique_article_key(article))
+            if article.bucket != bucket or key in seen:
+                continue
+            filled.append(article)
+            seen.add(key)
+            bucket_count += 1
+    return filled
+
+
+def fallback_articles_from_output(output_path: Optional[str], now: datetime) -> List[Article]:
+    if not output_path:
+        return []
+    path = Path(output_path)
+    if not path.exists():
+        return []
+    return articles_from_static_payload(parse_articles_js_payload(path.read_text(encoding="utf-8")), now)
 
 
 def article_routes(articles: Sequence[Article]) -> List[Tuple[str, Article, int]]:
@@ -2127,7 +2416,7 @@ def build_parser() -> argparse.ArgumentParser:
             "prioritizing the 10-12 hour age window."
         )
     )
-    parser.add_argument("--format", choices=("ui", "html", "text", "markdown", "json"), default="ui")
+    parser.add_argument("--format", choices=("ui", "html", "text", "markdown", "json", "articles-js"), default="ui")
     parser.add_argument(
         "--output",
         help="Optional file path for the curated results. UI mode defaults to morning_news.html.",
@@ -2135,6 +2424,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--min-age-hours", type=float, default=10)
     parser.add_argument("--max-age-hours", type=float, default=12)
     parser.add_argument("--limit-per-bucket", type=int, default=DEFAULT_LIMIT_PER_BUCKET)
+    parser.add_argument("--random-pool-size", type=int, default=DEFAULT_RANDOM_POOL_SIZE)
     parser.add_argument("--max-political-score", type=int, default=4)
     parser.add_argument("--similarity-threshold", type=float, default=0.78)
     parser.add_argument("--seed", type=int, help="Seed for random news source ordering.")
@@ -2176,6 +2466,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Create the static UI file without opening it in a browser.",
     )
+    parser.add_argument(
+        "--validate-links",
+        action="store_true",
+        help="Validate article and source links before writing generated static data.",
+    )
     return parser
 
 
@@ -2195,10 +2490,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             env_file=args.env_file,
         )
 
+    selection_limit = args.limit_per_bucket
+    if args.format == "articles-js":
+        selection_limit = max(args.limit_per_bucket, args.random_pool_size)
+
     strict_curated = curate_articles(
         candidates,
         now=now,
-        limit_per_bucket=args.limit_per_bucket,
+        limit_per_bucket=selection_limit,
         min_age_hours=args.min_age_hours,
         max_age_hours=args.max_age_hours,
         max_political_score=args.max_political_score,
@@ -2211,7 +2510,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         curated = curate_articles(
             candidates,
             now=now,
-            limit_per_bucket=args.limit_per_bucket,
+            limit_per_bucket=selection_limit,
             min_age_hours=args.min_age_hours,
             max_age_hours=args.max_age_hours,
             max_political_score=args.max_political_score,
@@ -2221,7 +2520,28 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             fallback_max_age_hours=args.fallback_max_age_hours,
         )
 
-    target_count = args.limit_per_bucket * len(BUCKETS)
+    if args.format == "articles-js":
+        target_by_bucket = {
+            bucket: args.random_pool_size if bucket == "random" else args.limit_per_bucket
+            for bucket in BUCKETS
+        }
+    else:
+        target_by_bucket = {bucket: args.limit_per_bucket for bucket in BUCKETS}
+
+    if args.validate_links:
+        curated, link_warnings = verified_articles(curated, timeout=args.timeout)
+        warnings.extend(link_warnings)
+        if args.format == "articles-js":
+            curated = fill_articles_from_fallback(
+                curated,
+                fallback_articles_from_output(args.output, now),
+                target_by_bucket,
+            )
+
+    if args.format == "articles-js":
+        target_count = args.limit_per_bucket * (len(BUCKETS) - 1) + args.random_pool_size
+    else:
+        target_count = args.limit_per_bucket * len(BUCKETS)
     strict_counts = {bucket: sum(1 for article in strict_curated if article.bucket == bucket) for bucket in BUCKETS}
     counts = {bucket: sum(1 for article in curated if article.bucket == bucket) for bucket in BUCKETS}
     if not args.strict_age:
@@ -2252,6 +2572,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         write_or_print(content, args.output)
     elif args.format == "json":
         content = format_json(curated, now, warnings)
+        write_or_print(content, args.output)
+    elif args.format == "articles-js":
+        content = format_articles_js(
+            curated,
+            now,
+            limit_per_bucket=args.limit_per_bucket,
+            random_pool_size=args.random_pool_size,
+        )
         write_or_print(content, args.output)
     elif args.format == "markdown":
         content = format_markdown(curated, now)
