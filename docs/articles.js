@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-12T12:20:13.180910+00:00",
+  "generatedAt": "2026-05-13T12:25:42.237440+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,126 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "A passive self-correcting quantum memory in three dimensions",
-        "articleUrl": "https://arxiv.org/abs/2605.10943v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "We construct a 3D Pauli stabilizer Hamiltonian whose ground state space can encode a qubit for exponential time when coupled to a bath at non-zero temperature. Our construction recursively applies a sequence of transformations to a seed Hamiltonian that increases the memory lifetime of the encoded qubit while maintaining geometric locality in $\\mathbb{R}^3$.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "ELF: Embedded Language Flows",
-        "articleUrl": "https://arxiv.org/abs/2605.10938v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "Diffusion and flow-based models have become the de facto approaches for generating continuous data, e.g., in domains such as images and videos. Their success has attracted growing interest in applying them to language modeling. Unlike their image-domain counterparts, today's leading diffusion language models (DLMs) primarily operate over discrete tokens. In this paper, we show that continuous DLMs can be made effective with minimal adaptation to the discrete domain. We propose Embedded Language Flows (ELF), a class of diffusion models in continuous embedding space based on continuous-time Flow Matching. Unlike existing DLMs, ELF predominantly stays within the continuous embedding space until the final time step, where it maps to discrete tokens using a shared-weight network. This formulation makes it straightforward to adapt established techniques from image-domain diffusion models, e.g., classifier-free guidance (CFG). Experiments show that ELF substantially outperforms leading discrete and continuous DLMs, achieving better generation quality with fewer sampling steps. These results suggest that ELF offers a promising path toward effective continuous DLMs.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Variational Inference for L\u00e9vy Process-Driven SDEs via Neural Tilting",
-        "articleUrl": "https://arxiv.org/abs/2605.10934v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.4,
-        "summary": "Modelling extreme events and heavy-tailed phenomena is central to building reliable predictive systems in domains such as finance, climate science, and safety-critical AI. While L\u00e9vy processes provide a natural mathematical framework for capturing jumps and heavy tails, Bayesian inference for L\u00e9vy-driven stochastic differential equations (SDEs) remains intractable with existing methods: Monte Carlo approaches are rigorous but lack scalability, whereas neural variational inference methods are efficient but rely on Gaussian assumptions that fail to capture discontinuities. We address this tension by introducing a neural exponential tilting framework for variational inference in L\u00e9vy-driven SDEs. Our approach constructs a flexible variational family by exponentially reweighting the L\u00e9vy measure using neural networks. This parametrization preserves the jump structure of the underlying process while remaining computationally tractable. To enable efficient inference, we develop a quadratic neural parametrization that yields closed-form normalization of the tilted measure, a conditional Gaussian representation for stable processes that facilitates simulation, and symmetry-aware Monte Carlo estimators for scalable optimization. Empirically, we demonstrate that the method accurately captures jump dynamics and yields reliable posterior inference in regimes where Gaussian-based variational approaches fail, on both synthetic and real-world datasets.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Crystallographic Symmetry Generates Phononic Holonomic Gates with Biased-Erasure Channels",
-        "articleUrl": "https://arxiv.org/abs/2605.10932v1",
+        "title": "Scalable Measurement-Based Quantum Simulation Patterns for Benchmarking",
+        "articleUrl": "https://arxiv.org/abs/2605.12502v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.4,
-        "summary": "Solid-state processors require control layers whose errors are legible to quantum-error-correction decoders. We show that crystallographic symmetry can provide such a layer in strain-active Lambda manifolds. When the projected strain tensor and Lambda-transition operators share a multiplicity-one two-dimensional irreducible representation, symmetry fixes the linear strain interaction to a scalar dot product. Two phase-locked mechanical modes synthesize a circular strain field, enabling complex phononic Lambda-leg control without local microwave near fields. On this manifold we construct a superadiabatic echo-lune holonomic gate using Lambda-leg control and a resonant double-quantum counterdiabatic tone. Rotating-frame simulations of a nitrogen-vacancy center give 99.88% conditional average fidelity in 1.833 microseconds, or 99.40% when leakage is counted as error. A resonant gigahertz high-overtone bulk acoustic resonator analysis translates the Hamiltonian into Rabi-rate, linewidth, and envelope-tracking requirements. The bright-state structure organizes noise: A2-sector perturbations are parity-filtered into an optically distinguishable auxiliary state, whereas transverse E-sector faults are echo suppressed and retained as a decoder stress axis. The extracted channel has 0.47% erasure probability and 0.168% residual Z error. In XZZX code-capacity simulations, this biased-erasure model yields a nominal 64% fit-extrapolated data-qubit reduction relative to an unstructured Rabi baseline. Repeated-round detector-model diagnostics preserve the nominal distance-9 proxy and identify missed erasures, transverse floors, leakage/flag timing, and strong crosstalk as validation limits. Extensions to orbital Lambda systems and bright-projector phonon-bus diagnostics identify crystallographic symmetry as a principle for co-designing phononic actuation, leakage, noise bias, and quantum decoding.",
+        "summary": "Measurement-based quantum computing uses measurement patterns on predefined quantum resource states to execute quantum logic. Quantum simulation offers an important use case on near-term devices. However, pattern optimization depends on the multivariable interplay between hardware and software constraints and is therefore use-dependent and highly non-trivial. Optimization of large-scale patterns under realistic assumptions remains a barrier. We announce the release of the quantum measurement pattern library QPatLib, a dataset that, in v1.0, presents patterns for use in measurement-based quantum simulation. We present the workflow for generating patterns that execute Pauli-string unitaries needed for many quantum algorithms. We provide benchmark patterns for measurement-based quantum unitary evolution. The measurement patterns are defined with different conventions for commuting Pauli-string subsets to allow scaling of pattern size and complexity. The purpose of the library is to (i) serve as a standardized testbed for pattern-optimization protocols for measurement-based quantum simulation routines, (ii) offer a suite of patterns for direct use on hardware, (iii) provide data to empirically justify pattern design principles, and (iv) provide a flexible resource for future storage and use of measurement-based patterns beyond quantum simulation.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Mitigating residual foregrounds and systematic errors in SKA1-Low AA* EoR observations via Bayesian Gaussian Process Regression",
-        "articleUrl": "https://arxiv.org/abs/2605.10928v1",
+        "title": "Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation",
+        "articleUrl": "https://arxiv.org/abs/2605.12492v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.4,
-        "summary": "The redshifted 21\\,cm line is an emerging tool in observational cosmology that can serve as a direct probe of the intergalactic medium throughout the cosmic timeline. However, the observation of the cosmological 21\\,cm signal from early epochs is extremely challenging in practice, regardless of the scale of interest and redshift. The presence of bright astrophysical foregrounds and residual systematic errors along the line of sight poses challenges for its detection. Machine-learning-based Gaussian process regression\\,(ML-GPR) has proven to be the most effective strategy for signal separation in LOFAR and NenuFAR observations to measure the 21\\,cm signal power spectrum from the Cosmic Dawn\\,(CD) and Epoch of Reionization\\,(EoR). In this work, we extend this framework to synthetic CD/EoR SKA1-Low observations to assess its robustness in mitigating residual foregrounds against instrumental and environmental systematic effects. We use our developed end-to-end realistic simulation pipeline (\\textsc{21cmE2E}) for SKA-Low observations. Our 4-hour tracking simulation includes extragalactic point sources, the AA* telescope configuration, primary beam response, and error models. The modelled errors incorporate residual antenna-based gain calibration errors, residual ionospheric phase errors, partial de-mixing of the out-of-field sources, and instrumental noise for 1000\\,hours of deep integration time. We compare different Bayesian GPR frameworks to assess their ability to suppress residual foreground contamination while minimizing signal loss and providing reliable uncertainty estimates. Our analysis demonstrates that the 21\\,cm signal can robustly recover within the $2\u03c3$ credible interval for almost all k-modes over the range of $0.06 \\leq k \\leq 1.0$~h Mpc$^{-1}$.",
+        "summary": "We introduce Pion, a spectrum-preserving optimizer for large language model (LLM) training based on orthogonal equivalence transformation. Unlike additive optimizers such as Adam and Muon, Pion updates each weight matrix through left and right orthogonal transformations, preserving its singular values throughout training. This yields an optimization mechanism that modulates the geometry of weight matrices while keeping their spectral norm fixed. We derive the Pion update rule, systematically examine its design choices, and analyze its convergence behavior along with several key properties. Empirical results show that Pion offers a stable and competitive alternative to standard optimizers for both LLM pretraining and finetuning.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Multi-Qubit Stabilizer Readout on a Dual-Species Rydberg Array",
-        "articleUrl": "https://arxiv.org/abs/2605.10924v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "title": "Elastic Attention Cores for Scalable Vision Transformers",
+        "articleUrl": "https://arxiv.org/abs/2605.12491v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.4,
-        "summary": "The ability to locally control and measure subsets of ancilla qubits in an efficient and crosstalk-free manner is a key ingredient in quantum error correction (QEC). Dual-species neutral atom arrays offer an ideal implementation of these capabilities, enabling independent state preparation, manipulation, and detection on each species. In this work, we realize such a dual-species Rydberg array of Na and Cs atoms trapped in co-localized 2D optical tweezer arrays, using Na as an ancilla to measure stabilizers of surrounding Cs data qubits. We identify the finite interspecies Rydberg-Rydberg interaction strength as a practical obstacle to high-fidelity multi-body entanglement and show that, by tuning the Rabi frequency and the detuning of the Rydberg driving field, the resulting geometric phase error can be compensated. This yields a protocol for simultaneous, non-destructive, in situ stabilizer readout of multiple data qubits via global pulses alone. Using this protocol, we demonstrate non-destructive measurement of Pauli-Z stabilizers on four-qubit Cs plaquettes via a single global Rydberg pulse sequence. Our results demonstrate dual-species tweezer arrays as a promising route towards scalable QEC and open the door to new quantum control protocols leveraging both interspecies and intraspecies interactions.",
+        "summary": "Vision Transformers (ViTs) achieve strong data-driven scaling by leveraging all-to-all self-attention. However, this flexibility incurs a computational cost that scales quadratically with image resolution, limiting ViTs in high-resolution domains. Underlying this approach is the assumption that pairwise token interactions are necessary for learning rich visual-semantic representations. In this work, we challenge this assumption, demonstrating that effective visual representations can be learned without any direct patch-to-patch interaction. We propose VECA (Visual Elastic Core Attention), a vision transformer architecture that uses efficient linear-time core-periphery structured attention enabled by a small set of learned cores. In VECA, these cores act as a communication interface: patch tokens exchange information exclusively through the core tokens, which are initialized from scratch and propagated across layers. Because the $N$ image patches only directly interact with a resolution invariant set of $C$ learned \"core\" embeddings, this yields linear complexity $O(N)$ for predetermined $C$, which bypasses quadratic scaling. Compared to prior cross-attention architectures, VECA maintains and iteratively updates the full set of $N$ input tokens, avoiding a small $C$-way bottleneck. Combined with nested training along the core axis, our model can elastically trade off compute and accuracy during inference. Across classification and dense tasks, VECA achieves performance competitive with the latest vision foundation models while reducing computational cost. Our results establish elastic core-periphery attention as a scalable alternative building block for Vision Transformers.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "DataMaster: Towards Autonomous Data Engineering for Machine Learning",
-        "articleUrl": "https://arxiv.org/abs/2605.10906v1",
+        "title": "Anomalies in Neural Network Field Theory",
+        "articleUrl": "https://arxiv.org/abs/2605.12488v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "As model families, training recipes, and compute budgets become increasingly standardized, further gains in machine learning systems depend increasingly on data. Yet data engineering remains largely manual and ad hoc: practitioners repeatedly search for external datasets, adapt them to existing pipelines, validate candidate data through downstream training, and carry forward lessons from prior attempts. We study task-conditioned autonomous data engineering, where an autonomous agent improves a fixed learning algorithm by optimizing only the data side, including external data discovery, data selection and composition, cleaning and transformation. The goal is to obtain a stronger downstream solution while leaving the learning algorithm unchanged. To address the open-ended search space, branch-dependent refinement, and delayed validation inherent in autonomous data engineering, we propose DataMaster, a data-agent framework that integrates tree-structured search, shared candidate data, and cumulative memory. DataMaster consists of three key components: a DataTree that organizes alternative data-engineering branches, a shared Data Pool that stores discovered external data sources for reuse, and a Global Memory that records node outcomes, artifacts, and reusable findings. Together, these components allow the agent to discover candidate data, construct executable training inputs, evaluate them through downstream feedback, and carry useful evidence across branches. We evaluate DataMaster on two types of benchmarks, MLE-Bench Lite and PostTrainBench. On MLE-Bench Lite, it improves medal rate by 32.27% over the initial score; on PostTrainBench, it surpasses the instruct model on GPQA (31.02% vs 30.35%).",
+        "ageHours": 18.4,
+        "summary": "Neural network field theory (NN-FT) formulates field theory in terms of a network architecture and a density on its parameters. We derive Schwinger--Dyson equations and Ward identities in NN-FT and utilize them to study anomalies. The equations depend on a conserved parameter space current that characterizes symmetries and how they break. It is relevant even in non-local NN-FTs, but can recover local currents in the case of a local Lagrangian by an appropriate fiber-wise average. In machine learning, this formalism is applied to feedforward networks and the attention mechanism. In physics, we use this machinery to study $U(1)$ symmetry for a complex scalar, the scale anomaly in $4d$ massless $\u03c6^4$ theory, the Weyl anomaly for the bosonic string (including a new computation of the critical dimension), and examples involving discrete topological data, such as winding numbers and T-duality. Since the results are obtained in network parameter space rather than the standard field space, they represent a new way to understand symmetries in quantum field theories.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Parafermionizing the Monster",
-        "articleUrl": "https://arxiv.org/abs/2605.10902v1",
+        "title": "Task-Adaptive Embedding Refinement via Test-time LLM Guidance",
+        "articleUrl": "https://arxiv.org/abs/2605.12487v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.5,
+        "summary": "We explore the effectiveness of an LLM-guided query refinement paradigm for extending the usability of embedding models to challenging zero-shot search and classification tasks. Our approach refines the embedding representation of a user query using feedback from a generative LLM on a small set of documents, enabling embeddings to adapt in real time to the target task. We conduct extensive experiments with state-of-the-art text embedding models across a diverse set of challenging search and classification benchmarks. Empirical results indicate that LLM-guided query refinement yields consistent gains across all models and datasets, with relative improvements of up to +25% in literature search, intent detection, key-point matching, and nuanced query-instruction following. The refined queries improve ranking quality and induce clearer binary separation across the corpus, enabling the embedding space to better reflect the nuanced, task-specific constraints of each ad-hoc user query. Importantly, this expands the range of practical settings in which embedding models can be effectively deployed, making them a compelling alternative when costly LLM pipelines are not viable at corpus-scale. We release our experimental code for reproducibility, at https://github.com/IBM/task-aware-embedding-refinement.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Learning, Fast and Slow: Towards LLMs That Adapt Continually",
+        "articleUrl": "https://arxiv.org/abs/2605.12484v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.5,
+        "summary": "Large language models (LLMs) are trained for downstream tasks by updating their parameters (e.g., via RL). However, updating parameters forces them to absorb task-specific information, which can result in catastrophic forgetting and loss of plasticity. In contrast, in-context learning with fixed LLM parameters can cheaply and rapidly adapt to task-specific requirements (e.g., prompt optimization), but cannot by itself typically match the performance gains available through updating LLM parameters. There is no good reason for restricting learning to being in-context or in-weights. Moreover, humans also likely learn at different time scales (e.g., System 1 vs 2). To this end, we introduce a fast-slow learning framework for LLMs, with model parameters as \"slow\" weights and optimized context as \"fast\" weights. These fast \"weights\" can learn from textual feedback to absorb the task-specific information, while allowing slow weights to stay closer to the base model and persist general reasoning behaviors. Fast-Slow Training (FST) is up to 3x more sample-efficient than only slow learning (RL) across reasoning tasks, while consistently reaching a higher performance asymptote. Moreover, FST-trained models remain closer to the base LLM (up to 70% less KL divergence), resulting in less catastrophic forgetting than RL-training. This reduced drift also preserves plasticity: after training on one task, FST trained models adapt more effectively to a subsequent task than parameter-only trained models. In continual learning scenarios, where task domains change on the fly, FST continues to acquire each new task while parameter-only RL stalls.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Unveiling $f(R)$ Gravity with Void-Galaxy Cross-Correlation Multipoles",
+        "articleUrl": "https://arxiv.org/abs/2605.12482v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "We study the parafermionization of the Monster CFT with respect to its $\\mathbb{Z}_{pA}$ subgroups, with $p$ an odd prime. Under certain assumptions, we show that the parafermionization is equal to a non-invertible gauging of $\\mathcal{P}(p) \\times \\mathcal{P}(p)^\\vee$, where $\\mathcal{P}(p)$ is the theory of $\\mathbb{Z}_p$-parafermions and $\\mathcal{P}(p)^\\vee$ is an appropriate dual theory, with global symmetry characterized by the centralizer of $\\mathbb{Z}_{pA}$. By tracking the symmetries of $\\mathcal{P}(p) \\times \\mathcal{P}(p)^\\vee$ through the non-invertible gauging, we argue that the diagonal Monster CFT has $\\mathrm{Rep}(\\mathfrak{so}(3)_p) \\boxtimes \\mathrm{Rep}(\\mathfrak{so}(3)_p)^\\mathrm{op}$ symmetry, and hence that the holomorphic Monster theory has symmetry $\\mathrm{Rep}(\\mathfrak{so}(3)_p)$. We then compute the defect McKay-Thompson series associated to these symmetries, and prove that their invariance subgroups are $\u0393_1(p+2)$.",
+        "ageHours": 18.5,
+        "summary": "Cosmic voids provide a low-density environment where the scalar fifth force predicted by $\\fR$ modified gravity (MG) is least screened. We present a semi-analytical calculation of the monopole, dipole, and quadrupole of the void-galaxy cross-correlation function $\u03be^{s}(s,\u03bc)$ in redshift space for the Hu-Sawicki $\\fR$ model ($n=1$), combining the scale-dependent growth factor from the scalaron degree of freedom with nonlinear spherical shell dynamics. The framework applies to any metric $\\fR$ theory for which $\\Geff(k,a)/G$ can be specified in the quasi-static limit. Our key results are: (1)~the monopole deviation from $\\lcdm$ grows from $+2.8\\%$ for large voids ($r_v = 30\\;\\Mpc$) to $+29.7\\%$ for small voids ($r_v = 11.7\\;\\Mpc$) at $\\fRz = 10^{-5}$ -- a distinctive size-dependent signature of the Compton-scale scalaron response associated with chameleon screening, with $\u03bb_C \\approx 8\\;\\Mpc$; (2)~nonlinear evolution amplifies the modified-gravity signal by $\\mathcal{A}_0 \\approx 4$, bringing it within reach of ongoing and upcoming wide-field spectroscopic surveys, such as DESI, Subaru PFS, Euclid, and the Roman Space Telescope; (3) the gravitational potential contains a finite-range Yukawa component, producing a radially dependent dipole signature that is complementary to the density and velocity multipoles; (4) the signal weakens with redshift as the scalaron Compton wavelength shrinks, but remains potentially detectable at Stage-IV spectroscopic void samples. We show that the void-scale transition in the modified-gravity response, the joint sensitivity to density, velocity, and fifth-force contributions, and the nonlinear amplification around void shells make redshift-space void-galaxy multipoles a powerful semi-analytical probe of f(R) gravity and related inhomogeneous dark energy scenarios.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "V4FinBench: Benchmarking Tabular Foundation Models, LLMs, and Standard Methods on Corporate Bankruptcy Prediction",
-        "articleUrl": "https://arxiv.org/abs/2605.10896v1",
+        "title": "Automated multiphase identification and refinement in powder diffraction using mismatch-tolerant machine learning",
+        "articleUrl": "https://arxiv.org/abs/2605.12478v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.7,
-        "summary": "Corporate bankruptcy prediction is a high-stakes financial task characterized by severe class imbalance and multi-horizon forecasting demands. Public datasets supporting it remain scarce and small: widely used free benchmarks contain between 6,000 and 80,000 company-year observations, while larger resources are behind subscription paywalls. To address this gap, we introduce V4FinBench, a benchmark of over one million company-year records from the Visegr\u00e0d Group (V4) economies (2006-2021), with 131 financial and non-financial features, six prediction horizons, and a composite distress criterion jointly capturing solvency, profitability, and liquidity deterioration. V4FinBench is designed to support the evaluation of tabular and foundation-model methods under realistic class imbalance, with positive rates between 0.19% and 0.36%. We provide reference evaluations of standard tabular baselines, finetuned TabPFN, and QLoRA-finetuned Llama-3-8B. With imbalance-aware finetuning, TabPFN matches or exceeds gradient boosting at longer time horizons on both $F_1$-score and ROC-AUC. In contrast, Llama-3-8B trails gradient boosting on ROC-AUC at every horizon and is generally weaker on $F_1$-score, with the gap widening sharply beyond the immediate horizon. In an external evaluation on the American Bankruptcy Dataset, the V4FinBench-finetuned TabPFN checkpoint improves over vanilla TabPFN, suggesting that adaptation captures transferable financial-distress structure rather than only V4-specific patterns. V4FinBench is publicly released to support further evaluation and development of prediction methods on realistic financial data.",
+        "ageHours": 18.5,
+        "summary": "Powder diffraction is a primary structural characterization tool in materials science, yet automated phase identification remains a major bottleneck for autonomous discovery. Existing workflows rely heavily on search--match heuristics and manual Rietveld refinement, and broadly usable end-to-end automation is especially limited for neutron powder diffraction, where comparable tools are largely absent. Here we introduce RADAR-PD, a modality-aware machine learning framework for phase identification and quantification across both X-ray and neutron powder diffraction. RADAR-PD couples a mismatch-tolerant neural network operating on coarse momentum-transfer fingerprints with automated lattice nudging and physics-constrained Rietveld verification, enabling dominant-phase hypotheses to be generated from elemental constraints and secondary phases to be isolated recursively. On an experimental RRUFF PXRD benchmark, RADAR-PD outperforms DARA in recovering the reference phase. RADAR-PD further provides robust multiphase analysis on complex time-of-flight and constant-wavelength neutron datasets, addressing an important unmet need in automated neutron diffraction analysis. These results establish RADAR-PD as an auditable, instrument-agnostic framework for autonomous structural discovery.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "LoKA: Low-precision Kernel Applications for Recommendation Models At Scale",
-        "articleUrl": "https://arxiv.org/abs/2605.10886v1",
+        "title": "Routers Learn the Geometry of Their Experts: Geometric Coupling in Sparse Mixture-of-Experts",
+        "articleUrl": "https://arxiv.org/abs/2605.12476v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Recent GPU generations deliver significantly higher FLOPs using lower-precision arithmetic, such as FP8. While successfully applied to large language models (LLMs), its adoption in large recommendation models (LRMs) has been limited. This is because LRMs are numerically sensitive, dominated by small matrix multiplications (GEMMs) followed by normalization, and trained in communication-intensive environments. Applying FP8 directly to LRMs often degrades model quality and prolongs training time. These challenges are inherent to LRM workloads and cannot be resolved merely by introducing better FP8 kernels. Instead, a system-model co-design approach is needed to successfully integrate FP8. We present LoKA (Low-precision Kernel Applications), a framework that makes FP8 practical for LRMs through three principles: profile under realistic distributions to know where low precision is safe, co-design model components with hardware to expand where it is safe, and orchestrate across kernel libraries to maximize the gains. Concretely, LoKA Probe is a statistically grounded, online benchmarking method that learns activation and weight statistics, and quantifies per-layer errors. This process pinpoints safe and unsafe, fast and slow sites for FP8 adoption. LoKA Mods is a set of reusable model adaptations that improve both numerical stability and execution efficiency with FP8. LoKA Dispatch is a runtime that leverages the statistical insights from LoKA Probe to select the fastest FP8 kernel that satisfies the accuracy requirements.",
+        "ageHours": 18.5,
+        "summary": "Sparse Mixture-of-Experts (SMoE) models enable scaling language models efficiently, but training them remains challenging, as routing can collapse onto few experts and auxiliary load-balancing losses can reduce specialization. Motivated by these hurdles, we study how routing decisions in SMoEs are formed mechanistically. First, we reveal a geometric coupling between routers and their corresponding experts. For a given token, the router weights for the selected expert and the expert weights processing it receive gradients along the same input direction, differing only in scalar coefficients. Thus, matched router--expert directions accumulate the same routed token history. This theoretical coupling also appears empirically in routing dynamics. In a $1$B SMoE trained from scratch, higher router scores predict stronger expert neuron activations, showing that routing decisions are mirrored inside the selected expert. Next, we analyze the effects of auxiliary load balancing on the router--expert geometric coupling, showing that such losses break this structure by spreading input-directed gradients across router weights, making distinct router directions nearly three times more similar to each other. Last, we demonstrate the centrality of geometric coupling for effective routing with a parameter-free online K-Means router, in which each expert maintains a running average of the hidden states routed to it and tokens are assigned based on cosine similarity. Compared with auxiliary-loss and loss-free balancing, this router achieves the lowest load imbalance with only a modest perplexity increase, indicating that geometric coupling captures a substantial part of what the router learns. Overall, our results explain how routers form assignment geometry that supports an effective division of labor.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Optical detection of the electron spin resonances of G centers in silicon",
+        "articleUrl": "https://arxiv.org/abs/2605.12473v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.5,
+        "summary": "Color centers in silicon are emerging as promising platforms for quantum technologies. Among them, the G center has attracted considerable interest owing to its bright telecom O-band single-photon emission and its optically addressable metastable electron-spin triplet state. Here we investigate the spin properties of ensembles of G centers under above-band-gap excitation. We elucidate the spin photo-dynamics giving rise to the optical detected magnetic resonance (ODMR) response of G centers. The optimal pulsed sequence for measuring the ODMR spectrum of the G defects is identified, along with the temperature and optical-power regimes maximizing the spin readout contrast. Through magneto-optical measurements, we detect a level-anticrossing of the G center electron spin states. At last, we demonstrate coherent spin control of the defects, and characterize their spin-coherence properties. Unveiling the spin degree of freedom of the G center opens new avenues for the realization of quantum memories and quantum registers based on silicon color centers.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Scientists discover a weak spot shared by polio and common cold viruses",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260512202320.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.9,
+        "summary": "Scientists at the University of Maryland, Baltimore County, have uncovered a crucial trick used by enteroviruses\u2014the group behind diseases like polio, myocarditis, encephalitis, and even the common cold\u2014to reproduce inside human cells. The team captured, in unprecedented detail, how viral RNA recruits both viral and human proteins to assemble the machinery needed for replication, acting almost like a molecular \u201con-off switch\u201d that controls whether the virus copies itself or makes proteins.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "A rare cancer-fighting plant compound has been decoded",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260512213836.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.7,
+        "summary": "Scientists at UBC Okanagan have uncovered how plants produce mitraphylline, a rare natural compound with promising anti cancer potential. The team identified two enzymes that work together to build the molecule\u2019s unusual twisted structure, solving a mystery that had puzzled researchers for years. Because mitraphylline appears only in tiny amounts in tropical plants like kratom and cat\u2019s claw, the discovery could make it far easier to produce sustainably in the future.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Curiosity Blog, Sols 4886-4892: Ingenuity and Perseverance, Curiosity Style",
@@ -189,26 +209,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 11.0,
         "summary": "Nicholas Houghton always dreamed of working at NASA and one day becoming an astronaut. Today, he helps design systems that keep crews safe during missions aboard NASA's Orion spacecraft, including the successful Artemis II...",
         "charge": 1
-      },
-      {
-        "bucket": "science",
-        "title": "NASA Invites Media to Annual Lunabotics Robotics Competition",
-        "articleUrl": "https://www.nasa.gov/news-release/nasa-invites-media-to-annual-lunabotics-robotics-competition/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://www.nasa.gov",
-        "ageHours": 11.2,
-        "summary": "NASA will hold its 2026 Lunabotics Challenge Tuesday, May 19, to Thursday, May 21, at the Astronauts Memorial Foundation's Center for Space Education at the Kennedy Space Center Visitor Complex in Florida. Links to view the...",
-        "charge": 1
-      },
-      {
-        "bucket": "science",
-        "title": "Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines Documents Released",
-        "articleUrl": "https://science.nasa.gov/science-research/earth-science/joint-earth-observation-mission-quality-assessment-framework-optical-guidelines-documents-released/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://www.nasa.gov",
-        "ageHours": 11.4,
-        "summary": "The Optical Guidelines document provides standardized, transparent, and repeatable process for assessing the quality of optical data from commercial Earth Observation missions.",
-        "charge": 0
       }
     ],
     "ai": [
