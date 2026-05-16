@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-15T12:14:31.075238+00:00",
+  "generatedAt": "2026-05-16T11:19:19.810539+00:00",
   "buckets": [
     "scholar",
     "random",
