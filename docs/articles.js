@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-16T11:19:19.810539+00:00",
+  "generatedAt": "2026-05-17T11:34:10.616241+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Bulgarian banger 'Bangaranga' bags country its 1st Eurovision win",
+      "articleUrl": "https://www.npr.org/2026/05/16/nx-s1-5824393/eurovision-winner-dara-bangaranga-bulgaria-vienna-austria",
+      "sourceName": "NPR Topics: News",
+      "sourceHomeUrl": "https://www.npr.org",
+      "ageHours": 10.8,
+      "summary": "Bulgaria was not among the favorites to win. But performer Dara's catchy, banging anthem bested 24 other nations at the 70th edition of the international singing extravaganza.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "How Unknowable Math Can Help Hide Secrets",
       "articleUrl": "https://www.quantamagazine.org/how-unknowable-math-can-help-hide-secrets-20260511/",
       "sourceName": "Quanta Magazine",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.smithsonianmag.com",
       "ageHours": 3.1,
       "summary": "Visitors to 3 Savile Row will be able to see a re-creation of the basement recording studio where the Beatles worked on their final album \"Let It Be\" and stand on the roof where the band thrilled Londoners with a surprise concert",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Can Chinese AI solve inequality? + How dementia comes for your bank account",
-      "articleUrl": "https://www.npr.org/2026/05/11/g-s1-121351/can-chinese-ai-solve-inequality-how-dementia-comes-for-your-bank-account",
-      "sourceName": "NPR Topics: News",
-      "sourceHomeUrl": "https://www.npr.org",
-      "ageHours": 3.1,
-      "summary": "",
       "charge": 0
     }
   ]
