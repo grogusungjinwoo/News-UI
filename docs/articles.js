@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-17T11:34:10.616241+00:00",
+  "generatedAt": "2026-05-18T14:02:00.464437+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "Scientists opened a sealed envelope after 10 years and gravity still didn\u2019t make sense",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260517211443.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 12.8,
+        "summary": "For more than 200 years, scientists have struggled to pin down the exact strength of gravity \u2014 and one physicist spent a decade chasing the answer while keeping his own results hidden from himself. Stephan Schlamminger and his team at NIST painstakingly recreated a landmark French experiment designed to measure \u201cbig G,\u201d the universal gravitational constant that governs everything from falling apples to galaxies. When he finally opened a sealed envelope containing the secret number needed to decode the experiment, the results brought both relief and disappointment",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Scientists \u201cbottle the sun\u201d with a liquid battery that stores solar energy",
         "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260513221821.htm",
         "sourceName": "All Top News -- ScienceDaily",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://www.sciencedaily.com",
         "ageHours": 10.6,
         "summary": "Dante's Inferno may have been far more than a religious epic. New research argues that the 14th-century poet essentially imagined a catastrophic asteroid impact centuries before modern science understood meteors. In this...",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "\"Cannot be explained\" - New ultra stainless steel stuns researchers",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260510030950.htm",
-        "sourceName": "ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.8,
-        "summary": "A team at the University of Hong Kong has developed a new \"super steel\" that can survive the harsh conditions needed to make green hydrogen from seawater. The material uses an unexpected double-protection mechanism that...",
         "charge": 0
       }
     ],
@@ -315,6 +315,26 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Why Rai winning his first major in Rocky's backyard feels fitting",
+      "articleUrl": "https://www.bbc.com/sport/golf/articles/c5yxlznl9xwo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.9,
+      "summary": "England's Aaron Rai winning the US PGA Championship seals a fascinating journey to the summit of the golfing world.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Aaron Rai's journey from talented child golfer to history-making PGA champion",
+      "articleUrl": "https://www.bbc.com/sport/golf/articles/c5yxlznl9xwo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.9,
+      "summary": "England's Aaron Rai winning the US PGA Championship seals a fascinating journey to the summit of the golfing world.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Bulgarian banger 'Bangaranga' bags country its 1st Eurovision win",
@@ -493,26 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.theverge.com",
       "ageHours": 3.8,
       "summary": "Apple now lets you have encrypted RCS conversations with Android users through the Messages app on iOS. As part of iOS 26.5, which was released on Monday, Apple added support for end-to-end encrypted RCS messaging in beta, meaning that Apple and Google can't see your messages while they're sent. With iOS 26.5, you'll see a [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Palantir\u2019s true believers are wearing this jacket",
-      "articleUrl": "https://www.theverge.com/report/928026/palantir-chore-coat",
-      "sourceName": "The Verge",
-      "sourceHomeUrl": "https://www.theverge.com",
-      "ageHours": 3.3,
-      "summary": "In late April, Palantir - the software company that, in recent years, has perhaps become best known for its defense industry contracts and work with Immigration and Customs Enforcement - announced that it would be adding new products to its merch store. The latest offering was a cotton chore coat. At $239 and in bright [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "In 1969, the Beatles Played One Final Show. Their Makeshift Rooftop Stage in London Will Soon Become a Museum",
-      "articleUrl": "https://www.smithsonianmag.com/smart-news/in-1969-the-beatles-played-one-final-show-their-makeshift-rooftop-stage-in-london-will-soon-become-a-museum-180988714/",
-      "sourceName": "Smart News | smithsonianmag.com",
-      "sourceHomeUrl": "https://www.smithsonianmag.com",
-      "ageHours": 3.1,
-      "summary": "Visitors to 3 Savile Row will be able to see a re-creation of the basement recording studio where the Beatles worked on their final album \"Let It Be\" and stand on the roof where the band thrilled Londoners with a surprise concert",
       "charge": 0
     }
   ]
