@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-18T14:02:00.464437+00:00",
+  "generatedAt": "2026-05-19T13:32:51.858154+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,126 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Mixed-State Long-Range Entanglement from Dimensional Constraints",
-        "articleUrl": "https://arxiv.org/abs/2605.15201v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.2,
-        "summary": "We present a new mechanism for long-range entanglement (LRE) in strongly symmetric many-body mixed states that does not rely on symmetry anomalies or long-range correlations. Our primary example is the maximally mixed state in the translation-invariant subspace on a one-dimensional ring. This state is LRE because translationally symmetric short-range entangled states span a subspace whose dimension grows only polynomially with system size, whereas the full translation-invariant subspace grows exponentially. We further discuss certain unconventional properties of this state, including logarithmically growing conditional mutual information, strong-to-weak spontaneous symmetry-breaking, and R\u00e9nyi-index-dependent operator-space entanglement. We also construct a geometrically non-local Lindbladian to stabilize this state as the steady state. Our results identify dimensional mismatch as a novel route to LRE that is intrinsic to many-body mixed states.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Translation symmetry-enforced long-range entanglement in mixed states",
-        "articleUrl": "https://arxiv.org/abs/2605.15200v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.2,
-        "summary": "We show by a counting argument that even though translation symmetry admits symmetric short-range entangled (SRE) eigenstates, there are not enough such SRE eigenstates to span the zero momentum sector. This means that the fixed point strong-to-weak spontaneous symmetry breaking state of translation symmetry is long-range entangled: it cannot be written as a mixture of SRE states. This is a subtle form of long-range entanglement in mixed states that cannot be detected by long-range connected correlation functions.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "RefDecoder: Enhancing Visual Generation with Conditional Video Decoding",
-        "articleUrl": "https://arxiv.org/abs/2605.15196v1",
+        "title": "DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention",
+        "articleUrl": "https://arxiv.org/abs/2605.18753v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.2,
-        "summary": "Video generation powers a vast array of downstream applications. However, while the de facto standard, i.e., latent diffusion models, typically employ heavily conditioned denoising networks, their decoders often remain unconditional. We observe that this architectural asymmetry leads to significant loss of detail and inconsistency relative to the input image. To address this, we argue that the decoder requires equal conditioning to preserve structural integrity. We introduce RefDecoder, a reference-conditioned video VAE decoder by injecting high-fidelity reference image signal directly into the decoding process via reference attention. Specifically, a lightweight image encoder maps the reference frame into the detail-rich high-dimensional tokens, which are co-processed with the denoised video latent tokens at each decoder up-sampling stage. We demonstrate consistent improvements across several distinct decoder backbones (e.g., Wan 2.1 and VideoVAE+), achieving up to +2.1dB PSNR over the unconditional baselines on the Inter4K, WebVid, and Large Motion reconstruction benchmarks. Notably, RefDecoder can be directly swapped into existing video generation systems without additional fine-tuning, and we report across-the-board improvements in subject consistency, background consistency, and overall quality scores on the VBench I2V benchmark. Beyond I2V, RefDecoder generalizes well to a wide range of visual generation tasks such as style transfer and video editing refinement.",
+        "ageHours": 19.5,
+        "summary": "Current hierarchical attention methods, such as NSA and InfLLMv2, select the top-k relevant key-value (KV) blocks based on coarse attention scores and subsequently apply fine-grained softmax attention on the selected tokens. However, the top-k operation assumes the number of relevant tokens for any query is fixed and it precludes the gradient flow between the sparse and dense stages. In this work, we propose DashAttention (Differentiable and Adaptive Sparse Hierarchical Attention), which leverages the adaptively sparse $\u03b1$-entmax transformation to select a variable number of blocks according to the current query in the first stage. This in turn provides a prior for the second-stage softmax attention, keeping the entire hierarchy fully differentiable. Contrary to other hierarchical attention methods, we show that DashAttention is non-dispersive, translating to better long-context modeling ability. Experiments with large language models (LLMs) show that DashAttention achieves comparable accuracy as full attention with 75% sparsity and a better Pareto frontier than NSA and InfLLMv2, especially in high-sparsity regimes. We also provide an efficient, GPU-aware implementation of DashAttention in Triton, which achieves a speedup of up to over FlashAttention-3 at inference time. Overall, DashAttention offers a cost-effective strategy to model long contexts.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata",
-        "articleUrl": "https://arxiv.org/abs/2605.15194v1",
+        "title": "A Readiness-Driven Runtime for Pipeline-Parallel Training under Runtime Variability",
+        "articleUrl": "https://arxiv.org/abs/2605.18750v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.6,
+        "summary": "Pipeline parallelism is a key technique for scaling large-model training, but modern workloads exhibit runtime variability in computation and communication. Existing pipeline systems typically consume static, profiled, or adaptively generated schedules as pre-committed execution orders. When realized task readiness diverges from the pre-committed order, stages may wait for not-yet-ready work even though other executable work is available, creating stage misalignment, idle bubbles, and reduced utilization.\n  We present Runtime-Readiness-First Pipeline (RRFP), a readiness-driven runtime for pipeline-parallel training. RRFP changes how schedules are consumed at runtime: instead of treating a schedule as a sequence that stages must wait to follow, it treats the schedule as a non-binding hint order for ranking currently ready work. To support this model, RRFP combines message-driven asynchronous communication, lightweight tensor-parallel coordination for collective consistency, and ready-set arbitration for low-overhead dispatch.\n  We implement RRFP in a Megatron-based training framework and evaluate it on language-only and multimodal workloads at up to 128 GPUs. RRFP improves over fixed-order pipeline baselines across all settings. Using the BFW hint, RRFP achieves up to 1.77$\\times$ speedup on language-only workloads and up to 2.77$\\times$ on multimodal workloads. In cross-framework comparisons, RRFP with the default BF hint outperforms the faster available external system by up to 1.84$\\times$ while preserving training correctness.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+        "articleUrl": "https://arxiv.org/abs/2605.18746v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.6,
+        "summary": "Spatial intelligence unfolds through a perception-action loop: agents act to acquire observations, and reason about how observations vary as a function of action. Rather than passively processing what is seen, they actively uncover what is unseen - occluded structure, dynamics, containment, and functionality that cannot be resolved from passive sensing alone. We move beyond prior formulations of spatial intelligence that assume oracle observations by recasting the observer as an actor. We introduce ESI-BENCH, a comprehensive benchmark for embodied spatial intelligence spanning 10 task categories and 29 subcategories built on OmniGibson, grounded in Spelke's core knowledge systems. Agents must decide what abilities to deploy - perception, locomotion, and manipulation - and how to sequence them to actively accumulate task-relevant evidence. We conduct extensive experiments on state-of-the-art MLLMs and find that active exploration substantially outperforms passive counterparts, with agents spontaneously discovering emergent spatial strategies without explicit instructions, while random multi-view often adds noise rather than signal despite consuming far more images. Most failures stem not from weak perception but from action blindness: poor action choices lead to poor observations, which in turn drive cascading errors. While explicit 3D grounding stabilizes reasoning on depth-sensitive tasks, imperfect 3D representation proves more harmful than 2D baselines by distorting spatial relations. Human studies further reveal that unlike humans who seek falsifying viewpoints and revise beliefs under contradiction, models commit prematurely with high confidence regardless of evidence quality, exposing a metacognitive gap that neither better perception nor more embodied interaction alone can close.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "A universal framework to identify eccentric binary mergers: GW200105 case study",
+        "articleUrl": "https://arxiv.org/abs/2605.18742v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.2,
-        "summary": "We investigate realizations of (1+1)-dimensional fusion category symmetries on tensor-product Hilbert spaces, allowing for mixing with quantum cellular automata (QCAs). It was argued recently that any such realizable symmetry must be weakly integral. We develop a systematic analysis of QCA-refined realizations of fusion categories and prove two statements. First, we show that, under certain physical assumptions on defects, any QCA-refined realization has QCA and symmetry-operator indices determined by the categorical data, up to the freedom of redefining the symmetry operators. Second, we construct a lattice model that provides a QCA-refined realization for any weakly integral fusion category symmetry on a tensor product Hilbert space. We also compute indices of the QCAs in our lattice model and show agreement with the first result. As an application of the general construction, we give an explicit QCA-refined realization of general Tambara-Yamagami categorical symmetries.",
+        "ageHours": 19.6,
+        "summary": "Orbital eccentricity in gravitational-wave signals from merging compact object binaries is a powerful indicator of their formation channel. Several binary black hole mergers and a neutron star--black hole merger have been reported to exhibit signs of eccentricity, but which events are identified and the significance of the eccentricity differs between studies. Measurements of eccentricity can change depending on the choice of prior. The choice of prior is subtle: eccentricity is commonly measured at an arbitrary reference frequency, which varies from study to study. We use the candidate eccentric neutron star--black hole merger GW200105_162426 as a case study, employing a range of priors and reference frequencies, and find the results to be strongly prior-driven. We show that the varied results reported across different studies can be partially reconciled by accounting for the evolution of eccentricity with reference frequency. In order to make conclusive statements about eccentricity, we propose a detection statistic that does not depend on reference frequency, and which marginalises over astrophysically-motivated distributions in eccentricity. Using this detection statistic, we find reduced support for the eccentric hypothesis for GW200105_162426: we obtain a natural log Bayes factor ln B $\\leq$ 0.9 comparing the eccentric, aligned-spin hypothesis to the quasi-circular, precessing hypothesis. Our results cast doubt on the eccentric interpretation of GW200105_162426 and underscore the importance of modelling the astrophysical distributions of eccentricity in nature.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "FutureSim: Replaying World Events to Evaluate Adaptive Agents",
-        "articleUrl": "https://arxiv.org/abs/2605.15188v1",
+        "title": "PIXLRelight: Controllable Relighting via Intrinsic Conditioning",
+        "articleUrl": "https://arxiv.org/abs/2605.18735v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "AI agents are being increasingly deployed in dynamic, open-ended environments that require adapting to new information as it arrives. To efficiently measure this capability for realistic use-cases, we propose building grounded simulations that replay real-world events in the order they occurred. We build FutureSim, where agents forecast world events beyond their knowledge cutoff while interacting with a chronological replay of the world: real news articles arriving and questions resolving over the simulated period. We evaluate frontier agents in their native harness, testing their ability to predict world events over a three-month period from January to March 2026. FutureSim reveals a clear separation in their capabilities, with the best agent's accuracy being 25%, and many having worse Brier skill score than making no prediction at all. Through careful ablations, we show how FutureSim offers a realistic setting to study emerging research directions like long-horizon test-time adaptation, search, memory, and reasoning about uncertainty. Overall, we hope our benchmark design paves the way to measure AI progress on open-ended adaptation spanning long time-horizons in the real world.",
+        "ageHours": 19.6,
+        "summary": "We present PIXLRelight, a feed-forward approach for physically controllable single-image relighting. Existing methods either provide limited lighting control (e.g. through text or environment maps), accumulate errors when chaining inverse and forward rendering, or require costly per-image optimization. Our key idea is to bridge physically based rendering (PBR) and learned image synthesis through a shared intrinsic conditioning that can be obtained from either real photographs or PBR renders. At training time, paired multi-illumination photographs are decomposed into albedo, diffuse shading, and non-diffuse residuals, which condition the model. At inference time, the same conditioning is computed from a path-traced render of a coarse 3D reconstruction of the input under user-specified PBR lights. A transformer-based neural renderer then applies the target illumination to the source photograph, preserving fine image detail through a per-pixel affine modulation. PIXLRelight enables arbitrary PBR-style lighting control, achieves state-of-the-art relighting quality, and runs in under a tenth of a second per image. Code and models are available at https://mlfarinha.github.io/pixl-relight/.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "When Are Two Networks the Same? Tensor Similarity for Mechanistic Interpretability",
-        "articleUrl": "https://arxiv.org/abs/2605.15183v1",
+        "title": "Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency",
+        "articleUrl": "https://arxiv.org/abs/2605.18732v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "Mechanistic interpretability aims to break models into meaningful parts; verifying that two such parts implement the same computation is a prerequisite. Existing similarity measures evaluate either empirical behaviour, leaving them blind to out-of-distribution mechanisms, or basis-dependent parameters, meaning they disregard weight-space symmetries. To address these issues for the class of tensor-based models, we introduce a weight-based metric, tensor similarity, that is invariant to such symmetries. This metric captures global functional equivalence and accounts for cross-layer mechanisms using an efficient recursive algorithm. Empirically, tensor similarity tracks functional training dynamics, such as grokking and backdoor insertion, with higher fidelity than existing metrics. This reduces measuring similarity and verifying faithfulness into a solved algebraic problem rather than one of empirical approximation.",
+        "ageHours": 19.7,
+        "summary": "While scaling laws govern aggregate large language model performance, no scaling law has linked factual recall to both model size and training-data composition. We evaluated 38 models on over 8,900 scholarly references evaluated by an automated reference verification system. Recall quality follows a sigmoid in the log-linear combination of model parameter count and topic representation in training data. These two variables alone explain 60% of the variance across 16 dense models from four families, rising to 74-94% within individual families. The form matches a superposition-inspired account in which recall is gated by a signal-to-noise ratio: signal strength scales with concept frequency and the noise floor with model capacity.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Eradicating Negative Transfer in Multi-Physics Foundation Models via Sparse Mixture-of-Experts Routing",
-        "articleUrl": "https://arxiv.org/abs/2605.15179v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "Scaling Scientific Machine Learning (SciML) toward universal foundation models is bottlenecked by negative transfer: the simultaneous co-training of disparate partial differential equation (PDE) regimes can induce gradient conflict, unstable optimization, and plasticity loss in dense neural operators. In particular, broadband open-channel fluid dynamics and boundary-dominated porous media flows impose incompatible spectral and geometric demands on a single dense parameter path. We introduce Shodh-MoE, a sparse-activated latent transformer architecture for multi-physics transport. Shodh-MoE operates on compressed 16^3 physical latents produced by a physics-informed autoencoder with an intra-tokenizer Helmholtz-style velocity parameterization, restricting decoded states to divergence-free velocity manifolds. The model guarantees exact mass conservation, achieving a physically verifiable velocity divergence of ~2.8 x 10^-10 (evaluated post-hoc in FP64) on 128^3 grids. A Top-1 soft-semantic router dynamically assigns localized latent patches to expert subnetworks, enabling specialized parameter paths for distinct physical mechanisms while preserving shared experts for universal symmetries. In a 20,000-step distributed pretraining run over mixed three-dimensional physical tensors, routing telemetry shows autonomous domain bifurcation: held-out validation tokens from the open-channel domain route exclusively to Expert 0, while porous-media tokens route exclusively to Expert 1. The model converges simultaneously across both regimes, achieving latent validation MSEs of 2.46 x 10^-5 and 9.76 x 10^-6, and decoded physical MSEs of 2.48 x 10^-6 and 1.76 x 10^-6. These results support sparse expert routing as a practical architectural mechanism for mitigating multi-physics interference in universal neural operators.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Detecting the Axion-Photon Conversion Background",
-        "articleUrl": "https://arxiv.org/abs/2605.15175v1",
+        "title": "The spacetime Penrose inequality under a quasi final state hypothesis",
+        "articleUrl": "https://arxiv.org/abs/2605.18730v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "The potential to detect axion dark matter through astrophysical processes has shown high promise in recent years. We therefore expand on previous work studying the axion-to-photon conversion efficacy of neutron stars and the interstellar medium (ISM) in this endeavor, respectively. For neutron stars (NS), we examine the possibility of a background signal emanating from all NS magnetospheres in the galaxy. Using a heuristic Galactic model, we find a significant background signal emanating from such magnetospheres in the Milky Way. This signal, while weak in absolute power ($\\gtrsim 1$ mJy sr$^{-1}$ from the Galactic Center, at 2 GHz), can be detected through new statistical techniques with current instrumentation like the Atacama Large Millimeter Array (ALMA) at high radio frequencies (200 - 950 GHz). These techniques make use of higher order statistics like spectrally-limited ($\\sim 300$ km s$^{-1}$) increases in confusion noise levels and kurtoses of survey images, and also show promise for general population estimation techniques.\n  For the ISM, we consider Primakoff processes between free electrons and axions, and derive typical signal strengths of $10^{-15}$ Jy sr$^{-1}$ $\\cdot$ $m_a$/eV, with a local, cosmological upper bound of $10^{-8}$ Jy sr$^{-1}$ $\\cdot$ $m_a$/eV. Hence, we find that any diffuse axion signal from the ISM and other, large-scale, astrophysical plasmas to be too weak to be detected with modern technologies. We therefore find that the best avenue towards detecting a potential quantum chromodynamics (QCD) axion dark-matter particle is through the radio imaging of large swaths of the Galactic Center and other regions where we expect large numbers of pulsars and neutron stars.",
+        "ageHours": 19.7,
+        "summary": "Penrose's original heuristic for his eponymous spacetime inequality -- a conjectured lower bound on the ADM mass in terms of the area of a horizon cross-section -- relies on the black hole final state conjecture. In this paper we isolate a substantially weaker but precise late-time condition, which we call the quasi final state hypothesis and prove the spacetime Penrose inequality under this hypothesis. More precisely, for an asymptotically flat globally hyperbolic spacetime with a black-hole-type apparent horizon tube ${H}_{app}$ satisfying the dominant energy condition and the quasi final state hypothesis, we show that every asymptotically flat initial data set whose boundary is a MOTS cross-section of ${H}_{app}$ satisfies the spacetime Penrose inequality. The quasi final state hypothesis requires only a late-time decay condition on the normal component of the shift and the ratio of timelike to spacelike mean curvature, together with convergence of the cross-sectional areas of ${H}_{app}$ to a finite limit.\n  Our approach is new and formulated directly in spacetime. The main geometric object is what we call a \\emph{tangentially maximal} hypersurface, carrying a foliation by spacelike spheres whose timelike mean curvature vanishes. We show that these hypersurfaces are governed by a quasilinear inward-parabolic PDE, and we develop the corresponding a priori theory and prove global existence. On these hypersurfaces, the spacetime Hawking mass reduces to the Riemannian Hawking mass, and the dominant energy condition gives nonnegative scalar curvature. The Riemannian Penrose inequality, combined with the area laws for dynamical and isolated horizons, then yields the result.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Universal quantum resource distillation via composite generalised quantum Stein's lemma",
-        "articleUrl": "https://arxiv.org/abs/2605.15174v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "The performance of quantum resource manipulation protocols, including key examples such as distillation of quantum entanglement, is measured in terms of the rate at which desired target states can be produced from a given noisy state. However, to achieve optimal rates, known protocols require precise tailoring to the quantum state in question, demanding a perfect knowledge of the input and allowing no errors in its preparation. Here we show that distillation of quantum resources in the framework of resource non-generating operations can be performed universally: optimal rates of distillation can be achieved with no knowledge of the input state whatsoever, certifying the robustness of quantum resource distillation. The findings apply in particular to the purification of quantum entanglement under non-entangling maps, where the optimal rates are governed by the regularised relative entropy of entanglement. Our result relies on an extension of the generalised quantum Stein's lemma in quantum hypothesis testing to a composite setting where the null hypothesis is no longer a fixed quantum state, but is rather composed of i.i.d. copies of an unknown state. The solution of this asymptotic problem is made possible through new developments in one-shot quantum information and a refinement of the blurring technique from [Lami, arXiv:2408.06410].",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Evidential Reasoning Advances Interpretable Real-World Disease Screening",
-        "articleUrl": "https://arxiv.org/abs/2605.15171v1",
+        "title": "WaveDriver: a Laser Guide Star AO System for HWO",
+        "articleUrl": "https://arxiv.org/abs/2605.18723v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.3,
-        "summary": "Disease screening is critical for early detection and timely intervention in clinical practice. However, most current screening models for medical images suffer from limited interpretability and suboptimal performance. They often lack effective mechanisms to reference historical cases or provide transparent reasoning pathways. To address these challenges, we introduce EviScreen, an evidential reasoning framework for disease screening that leverages region-level evidence from historical cases. The proposed EviScreen offers retrospection interpretability through regional evidence retrieved from dual knowledge banks. Using this evidential mechanism, the subsequent evidence-aware reasoning module makes predictions using both the current case and evidence from historical cases, thereby enhancing disease screening performance. Furthermore, rather than relying on post-hoc saliency maps, EviScreen enhances localization interpretability by leveraging abnormality maps derived from contrastive retrieval. Our method achieves superior performance on our carefully established benchmarks for real-world disease screening, yielding notably higher specificity at clinical-level recall. Code is publicly available at https://github.com/DopamineLcy/EviScreen.",
+        "ageHours": 19.7,
+        "summary": "Habitable Worlds Observatory (HWO) presents a key challenge for technology development in the coming years, requiring a $>$ $100\\times$ more stable system than \\textit{JWST}. WaveDriver is a concept for a laser guide star spacecraft coupled to an adaptive optics (AO) system onboard HWO that would enable HWO to reach its picometer-level wavefront stability requirements while relaxing other HWO subsystem requirements. At LLNL and UCSC we are revisiting the concept initially proposed by Douglas et al.\\ (2019). We present key results key initial results from the first phase of our project, including (1) AO control developments, including with Linear Quadratic Gaussian control and machine learning, (2) AO wavefront sensor (WFS) trade study simulations, and (3) simulations of a photonic lantern natural guide star WFS. A key finding from our work is that WaveDriver could be needed to enable HWO's primary mirror segment stability and/or low order wavefront stability requirements.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Traveling Waves and Bumps in $p$-adic NNs]{Pseudo-Traveling Waves and Bumps in Quantum and Classical Hierarchical Cellular Neural Networks",
+        "articleUrl": "https://arxiv.org/abs/2605.18717v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.7,
+        "summary": "We study the existence of pseudo-traveling waves and bump solutions for two classes of hierarchical cellular neural networks (CNNs) defined over the ring of $p$-adic integers $\\mathbb{Z}_{p}$. The first type is a $p$-adic CNN described by a reaction-diffusion equation, while the second type is its quantum analog obtained via Wick rotation. The $p$-adic CNNs are hierarchical versions of the classical Chua-Yang CNNs; these networks have a tree-like hierarchical architecture with infinitely many cells and hidden layers. The states are governed by integro-differential equations on $% \\mathbb{Z}_{p}$. The $p$-adic traveling waves behave fundamentally differently from their Archimedean counterparts. A traveling wave restricted to a $p$-adic sphere yields a countably infinite collection of independent patterns. We introduce the notion of pseudo-traveling waves as finite truncations of this structure and prove their existence for both the classical and quantum networks. We further establish the existence of time-independent solutions (bumps) for both models. Our theoretical results are complemented by numerical simulations that approximate pseudo-traveling-wave solutions for quantum CNNs.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Detecting nonclassicality in randomly-displaced copies of a squeezed state",
+        "articleUrl": "https://arxiv.org/abs/2605.18708v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.8,
+        "summary": "We address a fundamental question: Can one determine whether a received signal is squeezed when each copy arrives with a different displacement/amplitude? We introduce an interaction Hamiltonian that converts quadrature squeezing into number squeezing. Using this conversion, we test whether the copies satisfy $g^{(2)}(0)<1$. The Hamiltonian itself does not create nonclassicality; it only transfers it from quadrature squeezing to number squeezing. This allows us to identify squeezing even when individual copies have random displacements.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Farming in Ancient Lake Agassiz",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/farming-in-ancient-lake-agassiz/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 9.5,
+        "summary": "The glacial lake left a layer of silt and clay in southeastern Manitoba, creating fertile farmland that was divided during 19th-century land surveys and is still farmed today.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "String theory suddenly emerged from simple physics rules",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260518041424.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 9.5,
+        "summary": "Physicists may have uncovered a surprising new clue that string theory\u2014the idea that the universe is built from unimaginably tiny vibrating strings\u2014could be more than just a mathematical fantasy. Instead of assuming strings existed from the start, researchers began with a few simple rules about how particles behave at extreme energies and discovered that the equations naturally produced the telltale fingerprints of string theory all on their own.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Scientists opened a sealed envelope after 10 years and gravity still didn\u2019t make sense",
@@ -189,26 +209,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.3,
         "summary": "NASA's Psyche spacecraft is about to pull off a dramatic close flyby of Mars, skimming just 2,800 miles above the planet to get a powerful gravitational boost on its journey to the mysterious metal-rich asteroid Psyche. The...",
         "charge": 1
-      },
-      {
-        "bucket": "science",
-        "title": "NASA's Curiosity rover accidentally pulled a rock out of Mars",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260510234704.htm",
-        "sourceName": "ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.5,
-        "summary": "NASA's Curiosity rover had an unexpectedly stubborn Mars souvenir after drilling into a rock nicknamed \"Atacama\" - the entire chunk ripped loose from the ground and stayed stuck to the rover's drill. Engineers watched as...",
-        "charge": 1
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists say Dante's Inferno described an asteroid impact 500 years before modern science",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260510234658.htm",
-        "sourceName": "ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.6,
-        "summary": "Dante's Inferno may have been far more than a religious epic. New research argues that the 14th-century poet essentially imagined a catastrophic asteroid impact centuries before modern science understood meteors. In this...",
-        "charge": 0
       }
     ],
     "ai": [
@@ -315,6 +315,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Is a bank holiday heatwave on the way?",
+      "articleUrl": "https://www.bbc.com/weather/articles/c4g5zgzre5ro?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.1,
+      "summary": "The warmest weather of the year is forecast for later this week after early rain.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Why Rai winning his first major in Rocky's backyard feels fitting",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 3.9,
       "summary": "Experts say the \u201cmodest reduction\u201d is \u201cnot cause for complacency\u201d, with calls to redouble efforts to slash deaths further.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Apple brings encrypted RCS chats to iPhone",
-      "articleUrl": "https://www.theverge.com/tech/928141/apple-ios-26-5-rcs-messages-iphone-google-android",
-      "sourceName": "The Verge",
-      "sourceHomeUrl": "https://www.theverge.com",
-      "ageHours": 3.8,
-      "summary": "Apple now lets you have encrypted RCS conversations with Android users through the Messages app on iOS. As part of iOS 26.5, which was released on Monday, Apple added support for end-to-end encrypted RCS messaging in beta, meaning that Apple and Google can't see your messages while they're sent. With iOS 26.5, you'll see a [\u2026]",
       "charge": 0
     }
   ]
