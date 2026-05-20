@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-19T13:32:51.858154+00:00",
+  "generatedAt": "2026-05-20T12:39:45.097272+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention",
-        "articleUrl": "https://arxiv.org/abs/2605.18753v1",
+        "title": "Atoms of Thought: Universal EEG Representation Learning with Microstates",
+        "articleUrl": "https://arxiv.org/abs/2605.20182v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.5,
-        "summary": "Current hierarchical attention methods, such as NSA and InfLLMv2, select the top-k relevant key-value (KV) blocks based on coarse attention scores and subsequently apply fine-grained softmax attention on the selected tokens. However, the top-k operation assumes the number of relevant tokens for any query is fixed and it precludes the gradient flow between the sparse and dense stages. In this work, we propose DashAttention (Differentiable and Adaptive Sparse Hierarchical Attention), which leverages the adaptively sparse $\u03b1$-entmax transformation to select a variable number of blocks according to the current query in the first stage. This in turn provides a prior for the second-stage softmax attention, keeping the entire hierarchy fully differentiable. Contrary to other hierarchical attention methods, we show that DashAttention is non-dispersive, translating to better long-context modeling ability. Experiments with large language models (LLMs) show that DashAttention achieves comparable accuracy as full attention with 75% sparsity and a better Pareto frontier than NSA and InfLLMv2, especially in high-sparsity regimes. We also provide an efficient, GPU-aware implementation of DashAttention in Triton, which achieves a speedup of up to over FlashAttention-3 at inference time. Overall, DashAttention offers a cost-effective strategy to model long contexts.",
+        "ageHours": 18.7,
+        "summary": "Learning universal representations from electroencephalogram (EEG) signals is a cutting-edge approach in the field of neuroinformatics and brain-computer interfaces (BCIs). Conventionally, EEG is treated as a multivariate temporal signal, where time- or frequency-domain features are extracted for representation learning. This paper investigates a simple yet effective EEG representation, i.e., microstates. Microstates represent the building blocks of brain activity patterns at a microscopic time scale. We build a universal microstate tokenizer from a large medical EEG dataset by clustering continuous EEG signals into sequences of discrete microstates. The microstate tokenizer is then adopted universally across a series of downstream tasks, including sleep staging, emotion recognition, and motor imagery classification. Experimental results show that EEG representation learning with microstates outperforms traditional time-domain and frequency-domain features under different models and across different tasks. Further analysis shows that microstates offer greater interpretability and scalability, thereby opening up applications in both cognitive neuroscience and clinical research.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "A Readiness-Driven Runtime for Pipeline-Parallel Training under Runtime Variability",
-        "articleUrl": "https://arxiv.org/abs/2605.18750v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "Pipeline parallelism is a key technique for scaling large-model training, but modern workloads exhibit runtime variability in computation and communication. Existing pipeline systems typically consume static, profiled, or adaptively generated schedules as pre-committed execution orders. When realized task readiness diverges from the pre-committed order, stages may wait for not-yet-ready work even though other executable work is available, creating stage misalignment, idle bubbles, and reduced utilization.\n  We present Runtime-Readiness-First Pipeline (RRFP), a readiness-driven runtime for pipeline-parallel training. RRFP changes how schedules are consumed at runtime: instead of treating a schedule as a sequence that stages must wait to follow, it treats the schedule as a non-binding hint order for ranking currently ready work. To support this model, RRFP combines message-driven asynchronous communication, lightweight tensor-parallel coordination for collective consistency, and ready-set arbitration for low-overhead dispatch.\n  We implement RRFP in a Megatron-based training framework and evaluate it on language-only and multimodal workloads at up to 128 GPUs. RRFP improves over fixed-order pipeline baselines across all settings. Using the BFW hint, RRFP achieves up to 1.77$\\times$ speedup on language-only workloads and up to 2.77$\\times$ on multimodal workloads. In cross-framework comparisons, RRFP with the default BF hint outperforms the faster available external system by up to 1.84$\\times$ while preserving training correctness.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
-        "articleUrl": "https://arxiv.org/abs/2605.18746v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "Spatial intelligence unfolds through a perception-action loop: agents act to acquire observations, and reason about how observations vary as a function of action. Rather than passively processing what is seen, they actively uncover what is unseen - occluded structure, dynamics, containment, and functionality that cannot be resolved from passive sensing alone. We move beyond prior formulations of spatial intelligence that assume oracle observations by recasting the observer as an actor. We introduce ESI-BENCH, a comprehensive benchmark for embodied spatial intelligence spanning 10 task categories and 29 subcategories built on OmniGibson, grounded in Spelke's core knowledge systems. Agents must decide what abilities to deploy - perception, locomotion, and manipulation - and how to sequence them to actively accumulate task-relevant evidence. We conduct extensive experiments on state-of-the-art MLLMs and find that active exploration substantially outperforms passive counterparts, with agents spontaneously discovering emergent spatial strategies without explicit instructions, while random multi-view often adds noise rather than signal despite consuming far more images. Most failures stem not from weak perception but from action blindness: poor action choices lead to poor observations, which in turn drive cascading errors. While explicit 3D grounding stabilizes reasoning on depth-sensitive tasks, imperfect 3D representation proves more harmful than 2D baselines by distorting spatial relations. Human studies further reveal that unlike humans who seek falsifying viewpoints and revise beliefs under contradiction, models commit prematurely with high confidence regardless of evidence quality, exposing a metacognitive gap that neither better perception nor more embodied interaction alone can close.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "A universal framework to identify eccentric binary mergers: GW200105 case study",
-        "articleUrl": "https://arxiv.org/abs/2605.18742v1",
+        "title": "Band Structure and topology of a periodically deformed Kitaev honeycomb model",
+        "articleUrl": "https://arxiv.org/abs/2605.20181v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "Orbital eccentricity in gravitational-wave signals from merging compact object binaries is a powerful indicator of their formation channel. Several binary black hole mergers and a neutron star--black hole merger have been reported to exhibit signs of eccentricity, but which events are identified and the significance of the eccentricity differs between studies. Measurements of eccentricity can change depending on the choice of prior. The choice of prior is subtle: eccentricity is commonly measured at an arbitrary reference frequency, which varies from study to study. We use the candidate eccentric neutron star--black hole merger GW200105_162426 as a case study, employing a range of priors and reference frequencies, and find the results to be strongly prior-driven. We show that the varied results reported across different studies can be partially reconciled by accounting for the evolution of eccentricity with reference frequency. In order to make conclusive statements about eccentricity, we propose a detection statistic that does not depend on reference frequency, and which marginalises over astrophysically-motivated distributions in eccentricity. Using this detection statistic, we find reduced support for the eccentric hypothesis for GW200105_162426: we obtain a natural log Bayes factor ln B $\\leq$ 0.9 comparing the eccentric, aligned-spin hypothesis to the quasi-circular, precessing hypothesis. Our results cast doubt on the eccentric interpretation of GW200105_162426 and underscore the importance of modelling the astrophysical distributions of eccentricity in nature.",
+        "ageHours": 18.7,
+        "summary": "Motivated by the growing interest in spin liquids and topological phases, as well as the rise of deformation engineering, we study the combined effects of deformation and magnetic fields on the honeycomb Kitaev model. The Kitaev model, as one of the prototypical and exactly solvable spin liquid-hosting models, serves as a simple platform that demonstrates the rich physics one can expect at the intersection of deformation physics and quantum spin liquids. Our work builds on a simplified solution to the undeformed base model that we present. This simplified solution allows for a straightforward extension of our analysis to the deformed case. After incorporating periodic deformations into the Kitaev model (chosen for its similarity to moir\u00e9 physics), we investigate the effects of a hexagonally symmetric deformation on the band structure. We find that deformation leads to a smaller Brillouin zone with new band gaps at the edges, indicating the potential for topological transitions. Finally, we introduce a magnetic field to break time-reversal symmetry and thereby allow for non-trivial topology. We find that, under specific parameter conditions, the magnetic field leads to multiple band-gap closings and openings. An investigation into topological properties reveals nontrivial Chern numbers and a plethora of topological transitions. Our results suggest possible thermal Hall or Nernst-type responses. We also suggest a potential bulk measurement approach for he Chern numbers and possible path to physical realization. Most importantly, our results serve as a demonstration of the rich phenomenology that can arise due to the interplay between deformation and spin-liquid physics.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "PIXLRelight: Controllable Relighting via Intrinsic Conditioning",
-        "articleUrl": "https://arxiv.org/abs/2605.18735v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "We present PIXLRelight, a feed-forward approach for physically controllable single-image relighting. Existing methods either provide limited lighting control (e.g. through text or environment maps), accumulate errors when chaining inverse and forward rendering, or require costly per-image optimization. Our key idea is to bridge physically based rendering (PBR) and learned image synthesis through a shared intrinsic conditioning that can be obtained from either real photographs or PBR renders. At training time, paired multi-illumination photographs are decomposed into albedo, diffuse shading, and non-diffuse residuals, which condition the model. At inference time, the same conditioning is computed from a path-traced render of a coarse 3D reconstruction of the input under user-specified PBR lights. A transformer-based neural renderer then applies the target illumination to the source photograph, preserving fine image detail through a per-pixel affine modulation. PIXLRelight enables arbitrary PBR-style lighting control, achieves state-of-the-art relighting quality, and runs in under a tenth of a second per image. Code and models are available at https://mlfarinha.github.io/pixl-relight/.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency",
-        "articleUrl": "https://arxiv.org/abs/2605.18732v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.7,
-        "summary": "While scaling laws govern aggregate large language model performance, no scaling law has linked factual recall to both model size and training-data composition. We evaluated 38 models on over 8,900 scholarly references evaluated by an automated reference verification system. Recall quality follows a sigmoid in the log-linear combination of model parameter count and topic representation in training data. These two variables alone explain 60% of the variance across 16 dense models from four families, rising to 74-94% within individual families. The form matches a superposition-inspired account in which recall is gated by a signal-to-noise ratio: signal strength scales with concept frequency and the noise floor with model capacity.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "The spacetime Penrose inequality under a quasi final state hypothesis",
-        "articleUrl": "https://arxiv.org/abs/2605.18730v1",
+        "title": "Beyond the Purcell Effect: Controlling Pure Quantum Dephasing with Spin Noise Metasurfaces",
+        "articleUrl": "https://arxiv.org/abs/2605.20180v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.7,
-        "summary": "Penrose's original heuristic for his eponymous spacetime inequality -- a conjectured lower bound on the ADM mass in terms of the area of a horizon cross-section -- relies on the black hole final state conjecture. In this paper we isolate a substantially weaker but precise late-time condition, which we call the quasi final state hypothesis and prove the spacetime Penrose inequality under this hypothesis. More precisely, for an asymptotically flat globally hyperbolic spacetime with a black-hole-type apparent horizon tube ${H}_{app}$ satisfying the dominant energy condition and the quasi final state hypothesis, we show that every asymptotically flat initial data set whose boundary is a MOTS cross-section of ${H}_{app}$ satisfies the spacetime Penrose inequality. The quasi final state hypothesis requires only a late-time decay condition on the normal component of the shift and the ratio of timelike to spacelike mean curvature, together with convergence of the cross-sectional areas of ${H}_{app}$ to a finite limit.\n  Our approach is new and formulated directly in spacetime. The main geometric object is what we call a \\emph{tangentially maximal} hypersurface, carrying a foliation by spacelike spheres whose timelike mean curvature vanishes. We show that these hypersurfaces are governed by a quasilinear inward-parabolic PDE, and we develop the corresponding a priori theory and prove global existence. On these hypersurfaces, the spacetime Hawking mass reduces to the Riemannian Hawking mass, and the dominant energy condition gives nonnegative scalar curvature. The Riemannian Penrose inequality, combined with the area laws for dynamical and isolated horizons, then yields the result.",
+        "ageHours": 18.7,
+        "summary": "One central theme in quantum photonics is tailoring the interactions between atoms/spins and their electromagnetic (EM) environments. Considerable effort has focused on engineering spontaneous emission by shaping EM environments, known as the Purcell effect. However, photonic environment control of pure dephasing, which is a complementary paradigm of non-unitary atom/spin couplings with EM environments, remains largely unexplored. Here, we introduce a nanophotonic approach to modify qubit pure dephasing dynamics. Unlike Purcell engineering that tailors photonic environments at qubit resonance frequencies (typically optical/near-infrared), we develop ultra-subwavelength spin noise metasurfaces for efficient broadband control of low-frequency (e.g., $\\sim$MHz) photonic environments far off-resonant with atoms/spins for dephasing engineering. We experimentally demonstrate our approach using lithographically defined CoFeB metasurfaces and shallow nitrogen-vacancy (NV) centers in diamond. Instead of modified spontaneous emission, we observe modified NV pure dephasing dynamics near different spin noise metasurfaces. We further isolate metasurface-controlled dephasing from other dephasing mechanisms (e.g., spin bath) by measuring the NV ensemble dephasing noise spectrum with dynamical decoupling spectral decomposition techniques. Our results establish a new frontier in engineering quantum light-matter interactions with nanophotonic structures.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "WaveDriver: a Laser Guide Star AO System for HWO",
-        "articleUrl": "https://arxiv.org/abs/2605.18723v1",
+        "title": "Multi-axis Analysis of Image Manipulation Localization",
+        "articleUrl": "https://arxiv.org/abs/2605.20174v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.7,
-        "summary": "Habitable Worlds Observatory (HWO) presents a key challenge for technology development in the coming years, requiring a $>$ $100\\times$ more stable system than \\textit{JWST}. WaveDriver is a concept for a laser guide star spacecraft coupled to an adaptive optics (AO) system onboard HWO that would enable HWO to reach its picometer-level wavefront stability requirements while relaxing other HWO subsystem requirements. At LLNL and UCSC we are revisiting the concept initially proposed by Douglas et al.\\ (2019). We present key results key initial results from the first phase of our project, including (1) AO control developments, including with Linear Quadratic Gaussian control and machine learning, (2) AO wavefront sensor (WFS) trade study simulations, and (3) simulations of a photonic lantern natural guide star WFS. A key finding from our work is that WaveDriver could be needed to enable HWO's primary mirror segment stability and/or low order wavefront stability requirements.",
+        "ageHours": 18.8,
+        "summary": "Advanced image editing software enables easy creation of highly convincing image manipulations, which has been made even more accessible in recent years due to advances in generative AI. Manipulated images, while often harmless, could spread misinformation, create false narratives, and influence people's opinions on important issues. Despite this growing threat, there is limited research on detecting advanced manipulations across different visual domains. Thus, we introduce Analysis Under Domain-shifts, qualIty, Type, and Size (AUDITS), a comprehensive benchmark designed for studying axes of analysis in image manipulation detection. AUDITS comprises over 530K images from two distinct sources (user and news photos). We curate our dataset to support analysis across multiple axes using recent diffusion-based inpaintings, spanning a diverse range of manipulation types and sizes. We conduct experiments under different types of domain shift to evaluate robustness of existing image manipulation detection methods. Our goal is to drive further research in this area by offering new insights that would help develop more reliable and generalizable image manipulation detection methods.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Traveling Waves and Bumps in $p$-adic NNs]{Pseudo-Traveling Waves and Bumps in Quantum and Classical Hierarchical Cellular Neural Networks",
-        "articleUrl": "https://arxiv.org/abs/2605.18717v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "title": "HaorFloodAlert: Deseasonalized ML Ensemble for 72-Hour Flood Prediction in Bangladesh Haor Wetlands",
+        "articleUrl": "https://arxiv.org/abs/2605.20167v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.7,
-        "summary": "We study the existence of pseudo-traveling waves and bump solutions for two classes of hierarchical cellular neural networks (CNNs) defined over the ring of $p$-adic integers $\\mathbb{Z}_{p}$. The first type is a $p$-adic CNN described by a reaction-diffusion equation, while the second type is its quantum analog obtained via Wick rotation. The $p$-adic CNNs are hierarchical versions of the classical Chua-Yang CNNs; these networks have a tree-like hierarchical architecture with infinitely many cells and hidden layers. The states are governed by integro-differential equations on $% \\mathbb{Z}_{p}$. The $p$-adic traveling waves behave fundamentally differently from their Archimedean counterparts. A traveling wave restricted to a $p$-adic sphere yields a countably infinite collection of independent patterns. We introduce the notion of pseudo-traveling waves as finite truncations of this structure and prove their existence for both the classical and quantum networks. We further establish the existence of time-independent solutions (bumps) for both models. Our theoretical results are complemented by numerical simulations that approximate pseudo-traveling-wave solutions for quantum CNNs.",
+        "ageHours": 18.8,
+        "summary": "Flash floods in Bangladesh's haor wetlands show up with almost no warning. They wreck the annual boro rice harvest. Current setups, built for riverine floods, miss backwater dynamics entirely. These basins are flat. Water does not behave like it does on the Brahmaputra.\n  We built HaorFloodAlert, a deseasonalized machine learning ensemble that forecasts 72-hour flood probability for the Sunamganj Haor (approximately 8,000 km2). Temperature was acting as a seasonal cheat code - it inflated accuracy by 6.9 pp just because floods happen in warm months. We caught that. We also built an upstream Barak River Sentinel-1 SAR proxy from Silchar, Assam, giving about 36 hours of lead time. Otsu-thresholded SAR change detection validates at 84-91 percent spatial match.\n  The operational ensemble (RF 0.5625 + XGBoost 0.4375) hits 89.6 percent LOOCV accuracy, 87.5 percent recall, and 0.943 AUC-ROC on 77 real Sentinel-1 events. A three-tier alert pipeline and a BRRI-calibrated boro rice damage estimator are included.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Detecting nonclassicality in randomly-displaced copies of a squeezed state",
-        "articleUrl": "https://arxiv.org/abs/2605.18708v1",
+        "title": "Stochastic trajectories and excursions in a double quantum dot system",
+        "articleUrl": "https://arxiv.org/abs/2605.20166v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "We address a fundamental question: Can one determine whether a received signal is squeezed when each copy arrives with a different displacement/amplitude? We introduce an interaction Hamiltonian that converts quadrature squeezing into number squeezing. Using this conversion, we test whether the copies satisfy $g^{(2)}(0)<1$. The Hamiltonian itself does not create nonclassicality; it only transfers it from quadrature squeezing to number squeezing. This allows us to identify squeezing even when individual copies have random displacements.",
+        "ageHours": 18.8,
+        "summary": "We investigate the trajectory-level dynamics of a double quantum dot system using the newly developed formalism of stochastic excursions. This approach extends full counting statistics by enabling a filtering of complex trajectories into sub-trajectories, which provide access to the intricate correlations between thermodynamic currents and excursion times. Counting observables are the main object of study in the stochastic excursion framework. Those are defined as a linear combination of transition counts multiplied by their assigned weights within one excursion. For three main counting observables -- charge current, dynamical activity, and entropy production -- we compute averages and noise contributions and show how they provide insights into the operation of the double quantum dot system. At the trajectory level, we analyze outcome distributions for transport and connect the results with trade-offs between successful and unsuccessful events that shape overall performance. We further introduce state observables, which depend on the state visited rather than the transition itself, and discuss the population of the two dots, as well as their correlations. Finally, we discuss thermodynamics of precision through thermo-kinetic uncertainty relations, showing how current precision in different regimes is fundamentally constrained either by entropy production or by dynamical activity. Altogether, our work is a case study that highlights the utility of the excursion framework as a toolkit to analyze many quantities of interest and to uncover the structure of nonequilibrium fluctuations. Moreover, it also suggests new avenues for refining uncertainty relations and understanding transport in mesoscopic systems.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs",
+        "articleUrl": "https://arxiv.org/abs/2605.20163v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.8,
+        "summary": "Pauli Correlation Encoding (PCE) compresses $m$ binary variables onto $n=O(m^{1/k})$ qubits by mapping them to commuting Pauli correlators, but its continuous expectation values must be decoded into feasible binary solutions, a challenge for dense-constraint problems. We apply PCE to mRNA secondary-structure prediction, formulated as a densely constrained QUBO, and train with a QUBO-space sigmoid loss thatpreserves the QUBO penalty structure. For decoding, we introduce the Problem-Aware Guided Decoder (PAGD), which scores candidate variable commitments by combining marginal QUBO energy reduction with a trained expectation-value prior and constraint-aware feasibility pruning. On six benchmark mRNA sequences (30-60 nt, 50-240 variables, 7-14 qubits), PAGD with 100 restarts achieves 75-100 percent near-optimal recovery, defined as $P(\\mathrm{gap}<1\\%)$, for sequences up to 152 variables, compared with 0-30 percent for a sign-rounding plus local-search baseline. On the 240-variable instance, trained PAGD reaches 50 percent $P(\\mathrm{gap}<1\\%)$ at 200 restarts, outperforming untrained-circuit and random-expectation-value controls. Hardware-scale tests extend the pipeline to three 102-105 nt instances (694-745 variables, 172,000-193,000 pair constraints, 23 qubits) on IBM Heron processors. The circuits transpile SWAP-free into 480 native two-qubit gates at depth 256, and PAGD decoded gaps on QPU runs match or beat simulator means for all three instances, including exact CPLEX-optimum recovery for one sequence. These results show that PCE-trained priors can survive deployment to noisy superconducting hardware at biologically relevant scale.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Interpretable Computer Vision for Defect Detection in X-ray Tomography of Aerospace SiC/SiC Composites",
+        "articleUrl": "https://arxiv.org/abs/2605.20159v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.9,
+        "summary": "Non-destructive testing of aerospace SiC/SiC composites via X-ray computed tomography (XCT) relies on expert visual assessment, with current workflows offering limited traceability for accept/reject decisions. Deep convolutional networks can automate defect detection, yet their black-box nature conflicts with the transparency that industrial inspection practice demands. To close this gap, we introduce p-ResNet-50, a convolutional framework extended with a prototype layer that couples high detection accuracy with case-based explanations. Six learned prototypes are explicitly aligned with expert-defined semantic categories-healthy matrix, matrix--air interfaces, pores, line-like defects, and mixed morphologies-so that every classification is traceable to a physically meaningful reference. Two novel regularisation terms, anchor-based and medoid-based, tether prototypes to expert-selected patches and prevent prototype collapse, addressing a known limitation of prototype networks. Latent-space analysis via UMAP delineates semantically coherent sub-domains and maps zones of uncertainty where misclassifications concentrate, giving inspectors an explicit picture of where the model is-and is not-reliable. The framework is validated on an XCT patch dataset of approximately 12,000 patches extracted from four defect-rich SiC/SiC laboratory specimens. Taking a black-box ResNet-50 as a baseline (ROC-AUC = 0.991), the prototype extension achieves comparable performance (accuracy 0.957 vs. 0.959; ROC-AUC 0.994 vs. 0.993) while trading a slight reduction in sensitivity for higher precision and specificity. Each decision is backed by representative evidence patches, and the model explicitly flags its uncertainty regions. Beyond defect mapping, the framework establishes a reusable methodology for embedding domain-expert knowledge into prototype networks, applicable to other XCT inspection scenarios requiring traceable, auditable decisions.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Probing tunable Kerr nonlinearity in graphene Josephson junctions",
+        "articleUrl": "https://arxiv.org/abs/2605.20155v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.9,
+        "summary": "Josephson junction (JJ) is a key nonlinear element in superconducting devices such as qubits, amplifiers, and bolometers. Recently, gate-tunable JJs based on graphene and semiconductors have gained interest due to their rich Andreev physics and wide applications in circuit quantum electrodynamics devices. In addition to gate tunability, it offers many advantages over conventional JJs, such as exceptional thermal properties for bolometric sensors, magnetic-field compatibility, and operability at elevated temperatures above 1 K. Like conventional Al-AlOx-Al JJs, graphene JJs also act as nonlinear inductors, and at their heart lies the Kerr nonlinearity. Additionally, in graphene JJs, the nonlinearity is tunable via external knobs in a single device. However, a detailed exploration of the tunable Kerr nonlinearity in graphene JJs has never been performed. In this work, we study the dependence of the Kerr nonlinearity on gate voltage, temperature, and DC bias - an interesting knob that has been less explored. Using these parameters, we show that the magnitude of the Kerr coefficient can be tuned over a wide range, from 300 kHz to 1.2 MHz. Our work will be a valuable resource for further understanding of the nonlinearity in graphene JJs and for the design of next-generation amplifiers and sensors, with enhanced performance.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "When Does Model Collapse Occur in Structured Interactive Learning?",
+        "articleUrl": "https://arxiv.org/abs/2605.20151v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.0,
+        "summary": "The proliferation of generative artificial intelligence has given rise to an interactive learning environment, where model parameters are continuously updated using not only data generated by natural processes, but also synthetic outputs produced by other models. This paradigm introduces two major challenges: (1) training data are no longer drawn exclusively from the target population, undermining a core assumption of classical statistical learning, and (2) model training processes become inherently correlated, as models interact with one another through repeated exposure to each other's synthetic outputs in a potentially complex manner. Establishing reliable statistical inference in such structured interactive learning environments therefore remains an important open problem. In particular, there is growing concern about model collapse, a phenomenon in which the performance of generative models progressively degrades as they are trained on synthetic data produced by earlier model generations.\n  Prior work on model collapse primarily focuses on a single model trained on its own output, failing to capture model performance in multi-model interactive settings. In this work, we fill this gap by investigating the performance of generative models in an interactive learning environment with general interaction patterns. In particular, we formalize model interactions using directed graphs and show that the occurrence of model collapse depends critically on the topology of the interaction graph. We further derive an explicit necessary and sufficient condition characterizing when model collapse occurs, and establish finite-sample results for linear regression and asymptotic guarantees for general M-estimators. We support our theoretical findings through extensive numerical experiments.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Humpback whale breaks migration record with 15,000 kilometer ocean journey",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260519224303.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 9.4,
+        "summary": "Scientists have uncovered an astonishing new chapter in humpback whale migration: two whales were found to have traveled between breeding grounds in Australia and Brazil, crossing more than 14,000 kilometers of open ocean. One whale shattered records by covering at least 15,100 kilometers between sightings, marking the longest confirmed journey ever documented for an individual humpback whale.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Farming in Ancient Lake Agassiz",
@@ -199,16 +209,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.1,
         "summary": "An ancient Chinese exercise routine may be just as powerful as a daily brisk walk for lowering blood pressure - without equipment, gyms, or intense workouts. In a major clinical trial, adults with stage 1 hypertension who...",
         "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "NASA's Psyche probe is about to slingshot around Mars at 12,000 mph",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260510234707.htm",
-        "sourceName": "ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.3,
-        "summary": "NASA's Psyche spacecraft is about to pull off a dramatic close flyby of Mars, skimming just 2,800 miles above the planet to get a powerful gravitational boost on its journey to the mysterious metal-rich asteroid Psyche. The...",
-        "charge": 1
       }
     ],
     "ai": [
