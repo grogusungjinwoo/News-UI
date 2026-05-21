@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-20T12:39:45.097272+00:00",
+  "generatedAt": "2026-05-21T13:33:49.243674+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,26 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "New quantum sensor could count individual photons and hunt dark matter",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260520093654.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.9,
+        "summary": "Researchers have built an ultra-sensitive sensor capable of detecting unimaginably small amounts of energy \u2014 below one zeptojoule. The breakthrough relies on fragile superconducting materials that react to even the slightest temperature change. This level of precision could improve quantum computers, enable photon counting, and even help scientists detect elusive dark matter particles from space.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "Scientists solve 320-million-year mystery of reptile bone armor",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260520093709.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.8,
+        "summary": "Reptiles have been growing armor in their skin on and off for hundreds of millions of years, but scientists never fully understood how it evolved. A massive new evolutionary study shows these skin bones appeared independently in multiple lizard groups rather than coming from a single armored ancestor. Even more astonishing, Australian goannas lost this armor long ago \u2014 then evolved it back again millions of years later.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Humpback whale breaks migration record with 15,000 kilometer ocean journey",
         "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260519224303.htm",
         "sourceName": "All Top News -- ScienceDaily",
@@ -188,26 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 10.7,
         "summary": "Written by Michelle Minitti, MAHLI Deputy Principal Investigator Earth planning date: Friday, May 8, 2026 While we know the monikers Ingenuity and Perseverance are attached to our sister helicopter and rover on the Mars 2020 mission, those characteristics were in full force with Curiosity over the past week. The science we achieved this week was [\u2026]",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Hubble Survey Sets Up Roman\u2019s Future Look Near Milky Way\u2019s Center",
-        "articleUrl": "https://science.nasa.gov/missions/roman-space-telescope/hubble-survey-sets-up-romans-future-look-near-milky-ways-center/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 11.2,
-        "summary": "The Milky Way\u2019s galactic bulge, the bulbous region that surrounds the galactic center, contains a dense collection of stars, planets, and other free-floating objects. This region has been studied for decades with numerous ground-based and space-based telescopes, including NASA\u2019s Hubble and James Webb space telescopes. Soon, NASA\u2019s Nancy Grace Roman Space Telescope will be the [\u2026]",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "This 800-year-old Chinese exercise helps lower blood pressure naturally",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260510234724.htm",
-        "sourceName": "ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.1,
-        "summary": "An ancient Chinese exercise routine may be just as powerful as a daily brisk walk for lowering blood pressure - without equipment, gyms, or intense workouts. In a major clinical trial, adults with stage 1 hypertension who...",
         "charge": 0
       }
     ],
