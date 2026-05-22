@@ -229,6 +229,82 @@ class MorningNewsTests(unittest.TestCase):
             "https://news.google.com/rss/articles/CBMi-example",
         )
 
+    def test_normalize_source_home_url_rejects_google_and_broad_targets(self):
+        self.assertEqual(morning.normalize_source_home_url("https://www.nature.com"), "https://www.nature.com")
+        self.assertEqual(morning.normalize_source_home_url("https://news.google.com/publications/example"), "")
+        self.assertEqual(morning.normalize_source_home_url("https://news.google.com/rss/search?q=science"), "")
+        self.assertEqual(morning.normalize_source_home_url("https://example.com/search?q=science"), "")
+        self.assertEqual(morning.normalize_source_home_url("https://example.com/news/deep-research-story"), "")
+
+    def test_verified_articles_rejects_google_news_articles_that_do_not_resolve_to_publishers(self):
+        google_article = morning.Article(
+            title="Google hosted article link",
+            url="https://news.google.com/rss/articles/CBMi-example",
+            source="Example",
+            source_url="https://example.com",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+
+        def checker(url, timeout=10):
+            return morning.LinkCheck(True, url, 200, "")
+
+        kept, warnings = morning.verified_articles([google_article], checker=checker)
+
+        self.assertEqual(kept, [])
+        self.assertTrue(any("Google hosted article link" in warning for warning in warnings))
+
+    def test_verified_articles_derives_source_home_from_resolved_publisher_article(self):
+        article = morning.Article(
+            title="Resolved publisher article",
+            url="https://news.google.com/rss/articles/CBMi-example",
+            source="Google News",
+            source_url="https://news.google.com/publications/example",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+
+        def checker(url, timeout=10):
+            if url == "https://news.google.com/rss/articles/CBMi-example":
+                return morning.LinkCheck(
+                    True,
+                    "https://publisher.example.com/science/resolved-article",
+                    200,
+                    "",
+                )
+            if url == "https://publisher.example.com":
+                return morning.LinkCheck(True, url, 200, "")
+            return morning.LinkCheck(True, url, 200, "")
+
+        kept, warnings = morning.verified_articles([article], checker=checker)
+
+        self.assertEqual(warnings, [])
+        self.assertEqual(len(kept), 1)
+        self.assertEqual(kept[0].url, "https://publisher.example.com/science/resolved-article")
+        self.assertEqual(kept[0].source_url, "https://publisher.example.com")
+
+    def test_verified_articles_uses_feed_source_home_only_when_it_is_a_homepage(self):
+        article = morning.Article(
+            title="Publisher source homepage",
+            url="https://publisher.example.com/science/resolved-article",
+            source="Publisher",
+            source_url="https://publisher.example.com",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+
+        def checker(url, timeout=10):
+            return morning.LinkCheck(True, url, 200, "")
+
+        kept, warnings = morning.verified_articles([article], checker=checker)
+
+        self.assertEqual(warnings, [])
+        self.assertEqual(len(kept), 1)
+        self.assertEqual(kept[0].source_url, "https://publisher.example.com")
+
     def test_verified_articles_excludes_dead_links_and_unverified_source_links(self):
         alive = morning.Article(
             title="Researchers map useful signal",
@@ -267,8 +343,8 @@ class MorningNewsTests(unittest.TestCase):
 
         kept, warnings = morning.verified_articles([alive, dead, broad], checker=checker)
 
-        self.assertEqual([article.title for article in kept], ["Researchers map useful signal"])
-        self.assertEqual(kept[0].source_url, "")
+        self.assertEqual(kept, [])
+        self.assertTrue(any("Researchers map useful signal" in warning for warning in warnings))
         self.assertTrue(any("Dead link" in warning for warning in warnings))
         self.assertTrue(any("Broad news page" in warning for warning in warnings))
 
@@ -419,9 +495,12 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         app_js = self.read_docs_file("app.js")
         articles_js = self.read_docs_file("articles.js")
         urls = re.findall(r'"articleUrl": "([^"]+)"', articles_js)
+        source_urls = re.findall(r'"sourceHomeUrl": "([^"]*)"', articles_js)
 
         self.assertGreaterEqual(len(urls), 42)
+        self.assertEqual(len(urls), len(source_urls))
         forbidden_patterns = (
+            r"news\.google\.com/(?:rss/)?articles",
             r"scholar\.google\.com/scholar",
             r"/search",
             r"\?q=",
@@ -436,6 +515,13 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(url.startswith("https://"))
+                for pattern in forbidden_patterns:
+                    self.assertIsNone(re.search(pattern, url, flags=re.IGNORECASE))
+        for url in source_urls:
+            with self.subTest(source_url=url):
+                self.assertTrue(url.startswith("https://"))
+                parsed_path = re.sub(r"^https://[^/]+", "", url).rstrip("/")
+                self.assertEqual(parsed_path, "")
                 for pattern in forbidden_patterns:
                     self.assertIsNone(re.search(pattern, url, flags=re.IGNORECASE))
 

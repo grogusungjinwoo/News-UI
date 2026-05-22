@@ -432,7 +432,18 @@ def is_redirect_article_url(url: str) -> bool:
 
 
 def normalize_source_home_url(raw_url: str) -> str:
-    return _clean_https_url(raw_url)
+    url = _clean_https_url(raw_url)
+    if not url:
+        return ""
+
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.rstrip("/")
+    if host in {"news.google.com", "scholar.google.com"}:
+        return ""
+    if path not in {"", "/"} or parsed.query or parsed.fragment:
+        return ""
+    return f"{parsed.scheme}://{parsed.netloc}"
 
 
 def source_home_from_article_url(article_url: str) -> str:
@@ -440,6 +451,29 @@ def source_home_from_article_url(article_url: str) -> str:
     if parsed.scheme != "https" or not parsed.netloc:
         return ""
     return f"{parsed.scheme}://{parsed.netloc}"
+
+
+def verified_source_home_url(
+    preferred_source_url: str,
+    article_url: str,
+    timeout: int = 10,
+    checker=None,
+) -> str:
+    checker = checker or check_url
+    candidates: List[str] = []
+    for candidate in (
+        normalize_source_home_url(preferred_source_url),
+        source_home_from_article_url(article_url),
+    ):
+        if candidate and candidate not in candidates:
+            candidates.append(candidate)
+
+    for candidate in candidates:
+        source_check = checker(candidate, timeout=timeout)
+        source_url = normalize_source_home_url(source_check.url)
+        if source_check.ok and source_url:
+            return source_url
+    return ""
 
 
 def check_url(url: str, timeout: int = 10) -> LinkCheck:
@@ -491,10 +525,15 @@ def verified_articles(
             warnings.append(f"{article.title}: skipped dead article URL ({status})")
             continue
 
-        source_url = normalize_source_home_url(article.source_url) or source_home_from_article_url(final_article_url)
-        if source_url:
-            source_check = checker(source_url, timeout=timeout)
-            source_url = normalize_source_home_url(source_check.url) if source_check.ok else ""
+        source_url = verified_source_home_url(
+            article.source_url,
+            final_article_url,
+            timeout=timeout,
+            checker=checker,
+        )
+        if not source_url:
+            warnings.append(f"{article.title}: skipped missing or dead source homepage")
+            continue
 
         kept.append(replace(article, url=final_article_url, source_url=source_url))
 
