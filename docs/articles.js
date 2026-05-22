@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-21T13:33:49.243674+00:00",
+  "generatedAt": "2026-05-22T12:35:47.411675+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Atoms of Thought: Universal EEG Representation Learning with Microstates",
-        "articleUrl": "https://arxiv.org/abs/2605.20182v1",
+        "title": "Tokenisation via Convex Relaxations",
+        "articleUrl": "https://arxiv.org/abs/2605.22821v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.7,
-        "summary": "Learning universal representations from electroencephalogram (EEG) signals is a cutting-edge approach in the field of neuroinformatics and brain-computer interfaces (BCIs). Conventionally, EEG is treated as a multivariate temporal signal, where time- or frequency-domain features are extracted for representation learning. This paper investigates a simple yet effective EEG representation, i.e., microstates. Microstates represent the building blocks of brain activity patterns at a microscopic time scale. We build a universal microstate tokenizer from a large medical EEG dataset by clustering continuous EEG signals into sequences of discrete microstates. The microstate tokenizer is then adopted universally across a series of downstream tasks, including sleep staging, emotion recognition, and motor imagery classification. Experimental results show that EEG representation learning with microstates outperforms traditional time-domain and frequency-domain features under different models and across different tasks. Further analysis shows that microstates offer greater interpretability and scalability, thereby opening up applications in both cognitive neuroscience and clinical research.",
+        "ageHours": 18.6,
+        "summary": "Tokenisation is an integral part of the current NLP pipeline. Current tokenisation algorithms such as BPE and Unigram are greedy algorithms -- they make locally optimal decisions without considering the resulting vocabulary as a whole. We instead formulate tokeniser construction as a linear program and solve it using convex optimisation tools, yielding a new algorithm we call ConvexTok. We find ConvexTok consistently improves intrinsic tokenisation metrics and the bits-per-byte (BpB) achieved by language models; it also improves downstream task performance, but less consistently. Furthermore, ConvexTok allows the user to certify how far their tokeniser is from optimal, with respect to a certain objective, via a lower bound, and we empirically find it to be within 1\\% of optimal at common vocabulary sizes.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Band Structure and topology of a periodically deformed Kitaev honeycomb model",
-        "articleUrl": "https://arxiv.org/abs/2605.20181v1",
+        "title": "Bottom-up open EFT for non-Abelian gauge theory with dynamical color environment",
+        "articleUrl": "https://arxiv.org/abs/2605.22822v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "We develop a bottom-up open effective field theory (EFT) for non-Abelian gauge theories within the Schwinger--Keldysh formalism. Instead of integrating out the environment completely and starting from a nonlocal influence functional, we retain the slow environmental response variables explicitly and construct a local system-environment EFT. The environmental sector is described by a dynamical color-frame variable, St\u00fcckelberg-like field, and an associated color-current sector, which gives the nontrivial interactions and dissipation between the system and the environment. The resulting construction provides a gauge-covariant Markov embedding of nonlocal and non-Markovian color response. After integrating out the retained environmental variables with retarded boundary conditions, the reduced system theory acquires nonlocal dissipative kernels and stochastic sources. We show that the hard thermal loop response arises naturally as a particular realization of the retained environmental response. Our framework provides a local open-EFT description of color transport, memory effects, and fluctuation-dissipation structure in non-Abelian plasmas, and offers a systematic starting point for dissipative Yang--Mills EFTs with dynamical environments.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Integrable Elasticity via Neural Demand Potentials",
+        "articleUrl": "https://arxiv.org/abs/2605.22820v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "We propose the Integrable Context-Dependent Demand Network (ICDN), a demand-first neural model for multiproduct retail demand. The model learns log-demand as a smooth, context-conditioned function of log-prices, allowing elasticities to be derived exactly from the learned demand surface. On the Dominick's beer dataset, ICDN improves out-of-sample generalization over a directed log-log benchmark and yields more stable, economically plausible elasticity estimates, especially for weakly identified cross-price effects.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Signatures of the Quantum Geometric Dipole of Interlayer Excitons in Counterflow Conductivity",
+        "articleUrl": "https://arxiv.org/abs/2605.22810v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "Collective excitations of many-body electron systems can carry internal structure, supporting novel quantum geometric and topological properties. Among these are a quantum geometric dipole (QGD), which for excitons have direct significance as an internal polarization. For interlayer excitons of a bilayer system, this represents an in-plane dipole moment, which can be used to drive them with in-plane electric fields. In this work, we consider counterflow electric currents associated with driven excitons in such a bilayer system as a probe of their QGD structure. As a simple but non-trivial example, we analyze a structure with a one-dimensional periodic potential in a strong perpendicular magnetic field. The resulting magnetoexciton bands host QGD structure that distinguishes it from the exciton QGD of a uniform system. To model exciton transport we adopt a Boltzmann approach that includes inter-band tunneling, allowing us to consider non-equilibrium momentum distributions that result from strong layer-antisymmetric driving fields. We show how linear response to a layer-symmetric component of the driving fields provide information about the QGD, and that the broad QGD structure of the exciton bands can be probed by the varying the layer-antisymmetric field. Our results demonstrate that counterflow conductivity serves as a tunable probe of the internal quantum geometric structure carried by the interlayer excitons, connecting transport to the quantum geometry of many-body excitations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "How many systems can be dephased before the quantum switch becomes causally definite?",
+        "articleUrl": "https://arxiv.org/abs/2605.22807v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.7,
-        "summary": "Motivated by the growing interest in spin liquids and topological phases, as well as the rise of deformation engineering, we study the combined effects of deformation and magnetic fields on the honeycomb Kitaev model. The Kitaev model, as one of the prototypical and exactly solvable spin liquid-hosting models, serves as a simple platform that demonstrates the rich physics one can expect at the intersection of deformation physics and quantum spin liquids. Our work builds on a simplified solution to the undeformed base model that we present. This simplified solution allows for a straightforward extension of our analysis to the deformed case. After incorporating periodic deformations into the Kitaev model (chosen for its similarity to moir\u00e9 physics), we investigate the effects of a hexagonally symmetric deformation on the band structure. We find that deformation leads to a smaller Brillouin zone with new band gaps at the edges, indicating the potential for topological transitions. Finally, we introduce a magnetic field to break time-reversal symmetry and thereby allow for non-trivial topology. We find that, under specific parameter conditions, the magnetic field leads to multiple band-gap closings and openings. An investigation into topological properties reveals nontrivial Chern numbers and a plethora of topological transitions. Our results suggest possible thermal Hall or Nernst-type responses. We also suggest a potential bulk measurement approach for he Chern numbers and possible path to physical realization. Most importantly, our results serve as a demonstration of the rich phenomenology that can arise due to the interplay between deformation and spin-liquid physics.",
+        "summary": "Quantum processes with indefinite causal order -- so-called causally nonseparable processes -- can exhibit various advantages over quantum circuits with a fixed or a well-defined causal structure. A natural question is how much nonclassicality is required for a process to display causal nonseparability. Here we address this by investigating how many systems can be dephased (or decohered) before this property vanishes. First, for bipartite processes with open past and future we show that if all systems are dephased, or if only the future system is kept undephased, then the process becomes causally separable. However, if any single system other than the future system remains undephased, then there exist processes that retain causal nonseparability. Next, we demonstrate a similar behaviour in the multipartite case, when restricted to the physically motivated class of quantum circuits with quantum control (QC-QCs). Namely, dephasing all systems or keeping only the future system undephased renders any QC-QC causally separable; while causal nonseparability can persist if any non-future system is left undephased.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Beyond the Purcell Effect: Controlling Pure Quantum Dephasing with Spin Noise Metasurfaces",
-        "articleUrl": "https://arxiv.org/abs/2605.20180v1",
+        "title": "The Matching Principle: A Geometric Theory of Loss Functions for Nuisance-Robust Representation Learning",
+        "articleUrl": "https://arxiv.org/abs/2605.22800v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.7,
+        "summary": "Robustness, domain adaptation, photometric and occlusion invariance, compositional generalisation, temporal robustness, alignment safety, and classical anisotropic regularisation are usually treated as separate problems with separate method families. This paper argues that much of their shared structure is one statistical problem: estimate the covariance of label-preserving deployment nuisance, then regularise the encoder Jacobian along a matrix whose range covers that covariance (the matching principle). CORAL, adversarial training, IRM, augmentation, metric learning, Jacobian penalties, and alignment-style constraints are different estimators of that object, not independent robustness tricks.\n  In the linear-Gaussian model we prove closed-form optimality (Theorem A), including cube-root water-filling within the matched range; necessity of range coverage for quadratic Jacobian penalties (Theorem G); the same range dichotomy at deep global minima; and two falsification controls (Lemma C; Corollaries E), with seven conditional consistency lemmas (D1-D7) for estimation under standard identifiability assumptions.\n  We introduce the Trajectory Deviation Index (TDI), a label-free probe of embedding sensitivity when task accuracy or Jacobian Frobenius norm is insufficient.\n  Thirteen pre-registered blocks from classical ML through Qwen2.5-7B test the predicted matched, then isotropic, then wrong-W ordering on geometry and deployment drift; twelve pass, and the sole exception (Office-31) is an eigengap failure named before the run. At 7B scale, matched style-PMH improves selective honesty and preserves Style TDI where standard DPO degrades it.\n  The contribution is naming the deployment nuisance covariance, stating what the regulariser must do, and supplying a closed-form falsifiable theory once that object is identified, not universality on every leaderboard.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Charged multi-sheet wormhole solutions",
+        "articleUrl": "https://arxiv.org/abs/2605.22799v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.7,
-        "summary": "One central theme in quantum photonics is tailoring the interactions between atoms/spins and their electromagnetic (EM) environments. Considerable effort has focused on engineering spontaneous emission by shaping EM environments, known as the Purcell effect. However, photonic environment control of pure dephasing, which is a complementary paradigm of non-unitary atom/spin couplings with EM environments, remains largely unexplored. Here, we introduce a nanophotonic approach to modify qubit pure dephasing dynamics. Unlike Purcell engineering that tailors photonic environments at qubit resonance frequencies (typically optical/near-infrared), we develop ultra-subwavelength spin noise metasurfaces for efficient broadband control of low-frequency (e.g., $\\sim$MHz) photonic environments far off-resonant with atoms/spins for dephasing engineering. We experimentally demonstrate our approach using lithographically defined CoFeB metasurfaces and shallow nitrogen-vacancy (NV) centers in diamond. Instead of modified spontaneous emission, we observe modified NV pure dephasing dynamics near different spin noise metasurfaces. We further isolate metasurface-controlled dephasing from other dephasing mechanisms (e.g., spin bath) by measuring the NV ensemble dephasing noise spectrum with dynamical decoupling spectral decomposition techniques. Our results establish a new frontier in engineering quantum light-matter interactions with nanophotonic structures.",
+        "summary": "We construct charged wormhole solutions with an even number of asymptotically flat regions in the four-dimensional Einstein-Maxwell-massless phantom scalar system via the Harrison transformation. The solutions are characterized by five parameters: the mass $M$, the electric charge $Q_\\mathrm{e}$, the magnetic charge $Q_\\mathrm{m}$, the scalar charge $P$ and the number of sheets $2n$. The regularity condition then determines the throat radius. Although the Harrison transformation directly generates the solutions only in the parameter region $Q_{\\mathrm{e}}^2 + Q_{\\mathrm{m}}^2 < M^2$, we show that regular solutions exist in a wider parameter region beyond this bound. In addition, we introduce a spheroidal coordinate system that covers one complete asymptotically flat region and its adjacent ones, and allows the solution to be expressed in a simple form.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Multi-axis Analysis of Image Manipulation Localization",
-        "articleUrl": "https://arxiv.org/abs/2605.20174v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Advanced image editing software enables easy creation of highly convincing image manipulations, which has been made even more accessible in recent years due to advances in generative AI. Manipulated images, while often harmless, could spread misinformation, create false narratives, and influence people's opinions on important issues. Despite this growing threat, there is limited research on detecting advanced manipulations across different visual domains. Thus, we introduce Analysis Under Domain-shifts, qualIty, Type, and Size (AUDITS), a comprehensive benchmark designed for studying axes of analysis in image manipulation detection. AUDITS comprises over 530K images from two distinct sources (user and news photos). We curate our dataset to support analysis across multiple axes using recent diffusion-based inpaintings, spanning a diverse range of manipulation types and sizes. We conduct experiments under different types of domain shift to evaluate robustness of existing image manipulation detection methods. Our goal is to drive further research in this area by offering new insights that would help develop more reliable and generalizable image manipulation detection methods.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "HaorFloodAlert: Deseasonalized ML Ensemble for 72-Hour Flood Prediction in Bangladesh Haor Wetlands",
-        "articleUrl": "https://arxiv.org/abs/2605.20167v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Flash floods in Bangladesh's haor wetlands show up with almost no warning. They wreck the annual boro rice harvest. Current setups, built for riverine floods, miss backwater dynamics entirely. These basins are flat. Water does not behave like it does on the Brahmaputra.\n  We built HaorFloodAlert, a deseasonalized machine learning ensemble that forecasts 72-hour flood probability for the Sunamganj Haor (approximately 8,000 km2). Temperature was acting as a seasonal cheat code - it inflated accuracy by 6.9 pp just because floods happen in warm months. We caught that. We also built an upstream Barak River Sentinel-1 SAR proxy from Silchar, Assam, giving about 36 hours of lead time. Otsu-thresholded SAR change detection validates at 84-91 percent spatial match.\n  The operational ensemble (RF 0.5625 + XGBoost 0.4375) hits 89.6 percent LOOCV accuracy, 87.5 percent recall, and 0.943 AUC-ROC on 77 real Sentinel-1 events. A three-tier alert pipeline and a BRRI-calibrated boro rice damage estimator are included.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Stochastic trajectories and excursions in a double quantum dot system",
-        "articleUrl": "https://arxiv.org/abs/2605.20166v1",
+        "title": "One-photon communication in atomic media",
+        "articleUrl": "https://arxiv.org/abs/2605.22797v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.8,
-        "summary": "We investigate the trajectory-level dynamics of a double quantum dot system using the newly developed formalism of stochastic excursions. This approach extends full counting statistics by enabling a filtering of complex trajectories into sub-trajectories, which provide access to the intricate correlations between thermodynamic currents and excursion times. Counting observables are the main object of study in the stochastic excursion framework. Those are defined as a linear combination of transition counts multiplied by their assigned weights within one excursion. For three main counting observables -- charge current, dynamical activity, and entropy production -- we compute averages and noise contributions and show how they provide insights into the operation of the double quantum dot system. At the trajectory level, we analyze outcome distributions for transport and connect the results with trade-offs between successful and unsuccessful events that shape overall performance. We further introduce state observables, which depend on the state visited rather than the transition itself, and discuss the population of the two dots, as well as their correlations. Finally, we discuss thermodynamics of precision through thermo-kinetic uncertainty relations, showing how current precision in different regimes is fundamentally constrained either by entropy production or by dynamical activity. Altogether, our work is a case study that highlights the utility of the excursion framework as a toolkit to analyze many quantities of interest and to uncover the structure of nonequilibrium fluctuations. Moreover, it also suggests new avenues for refining uncertainty relations and understanding transport in mesoscopic systems.",
+        "summary": "We consider the problem of single-photon transmission through an atomic medium, using quantum channel fidelity to describe the resulting information loss. We find that the normalized fidelity decreases monotonically with coupling strength, establishing a performance bound for quantum communication through such media. Our results hold for several channel types and for deterministic and random media.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs",
-        "articleUrl": "https://arxiv.org/abs/2605.20163v1",
+        "title": "Geometric Origin of the Non-Adiabaticity Parameter and Self-Limiting Instability in Driven Nonlinear Systems",
+        "articleUrl": "https://arxiv.org/abs/2605.22796v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.8,
-        "summary": "Pauli Correlation Encoding (PCE) compresses $m$ binary variables onto $n=O(m^{1/k})$ qubits by mapping them to commuting Pauli correlators, but its continuous expectation values must be decoded into feasible binary solutions, a challenge for dense-constraint problems. We apply PCE to mRNA secondary-structure prediction, formulated as a densely constrained QUBO, and train with a QUBO-space sigmoid loss thatpreserves the QUBO penalty structure. For decoding, we introduce the Problem-Aware Guided Decoder (PAGD), which scores candidate variable commitments by combining marginal QUBO energy reduction with a trained expectation-value prior and constraint-aware feasibility pruning. On six benchmark mRNA sequences (30-60 nt, 50-240 variables, 7-14 qubits), PAGD with 100 restarts achieves 75-100 percent near-optimal recovery, defined as $P(\\mathrm{gap}<1\\%)$, for sequences up to 152 variables, compared with 0-30 percent for a sign-rounding plus local-search baseline. On the 240-variable instance, trained PAGD reaches 50 percent $P(\\mathrm{gap}<1\\%)$ at 200 restarts, outperforming untrained-circuit and random-expectation-value controls. Hardware-scale tests extend the pipeline to three 102-105 nt instances (694-745 variables, 172,000-193,000 pair constraints, 23 qubits) on IBM Heron processors. The circuits transpile SWAP-free into 480 native two-qubit gates at depth 256, and PAGD decoded gaps on QPU runs match or beat simulator means for all three instances, including exact CPLEX-optimum recovery for one sequence. These results show that PCE-trained priors can survive deployment to noisy superconducting hardware at biologically relevant scale.",
+        "summary": "We establish that the non-adiabaticity parameter has a direct geometric interpretation as the instantaneous evolution speed of a driven quantum state in projective Hilbert space under the Fubini Study metric. In contrast to conventional asymptotic approaches, the proposed framework provides a strictly local geometric criterion that allows non-adiabatic instability and its nonlinear suppression to be evaluated continuously at each stage of the driven evolution. We further show that an occupation-dependent nonlinear regulator Usuppresses the effective geometric evolution speed, leading to bounded low-occupancy dynamics. The resulting crossover parameter provides a compact criterion for self-limited non-adiabatic instability in driven nonlinear bosonic systems.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Interpretable Computer Vision for Defect Detection in X-ray Tomography of Aerospace SiC/SiC Composites",
-        "articleUrl": "https://arxiv.org/abs/2605.20159v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "title": "Primordial black holes in excursion set theory: Formation probabilities, mass functions, and window functions",
+        "articleUrl": "https://arxiv.org/abs/2605.22789v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.9,
-        "summary": "Non-destructive testing of aerospace SiC/SiC composites via X-ray computed tomography (XCT) relies on expert visual assessment, with current workflows offering limited traceability for accept/reject decisions. Deep convolutional networks can automate defect detection, yet their black-box nature conflicts with the transparency that industrial inspection practice demands. To close this gap, we introduce p-ResNet-50, a convolutional framework extended with a prototype layer that couples high detection accuracy with case-based explanations. Six learned prototypes are explicitly aligned with expert-defined semantic categories-healthy matrix, matrix--air interfaces, pores, line-like defects, and mixed morphologies-so that every classification is traceable to a physically meaningful reference. Two novel regularisation terms, anchor-based and medoid-based, tether prototypes to expert-selected patches and prevent prototype collapse, addressing a known limitation of prototype networks. Latent-space analysis via UMAP delineates semantically coherent sub-domains and maps zones of uncertainty where misclassifications concentrate, giving inspectors an explicit picture of where the model is-and is not-reliable. The framework is validated on an XCT patch dataset of approximately 12,000 patches extracted from four defect-rich SiC/SiC laboratory specimens. Taking a black-box ResNet-50 as a baseline (ROC-AUC = 0.991), the prototype extension achieves comparable performance (accuracy 0.957 vs. 0.959; ROC-AUC 0.994 vs. 0.993) while trading a slight reduction in sensitivity for higher precision and specificity. Each decision is backed by representative evidence patches, and the model explicitly flags its uncertainty regions. Beyond defect mapping, the framework establishes a reusable methodology for embedding domain-expert knowledge into prototype networks, applicable to other XCT inspection scenarios requiring traceable, auditable decisions.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Probing tunable Kerr nonlinearity in graphene Josephson junctions",
-        "articleUrl": "https://arxiv.org/abs/2605.20155v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.9,
-        "summary": "Josephson junction (JJ) is a key nonlinear element in superconducting devices such as qubits, amplifiers, and bolometers. Recently, gate-tunable JJs based on graphene and semiconductors have gained interest due to their rich Andreev physics and wide applications in circuit quantum electrodynamics devices. In addition to gate tunability, it offers many advantages over conventional JJs, such as exceptional thermal properties for bolometric sensors, magnetic-field compatibility, and operability at elevated temperatures above 1 K. Like conventional Al-AlOx-Al JJs, graphene JJs also act as nonlinear inductors, and at their heart lies the Kerr nonlinearity. Additionally, in graphene JJs, the nonlinearity is tunable via external knobs in a single device. However, a detailed exploration of the tunable Kerr nonlinearity in graphene JJs has never been performed. In this work, we study the dependence of the Kerr nonlinearity on gate voltage, temperature, and DC bias - an interesting knob that has been less explored. Using these parameters, we show that the magnitude of the Kerr coefficient can be tuned over a wide range, from 300 kHz to 1.2 MHz. Our work will be a valuable resource for further understanding of the nonlinearity in graphene JJs and for the design of next-generation amplifiers and sensors, with enhanced performance.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "When Does Model Collapse Occur in Structured Interactive Learning?",
-        "articleUrl": "https://arxiv.org/abs/2605.20151v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.0,
-        "summary": "The proliferation of generative artificial intelligence has given rise to an interactive learning environment, where model parameters are continuously updated using not only data generated by natural processes, but also synthetic outputs produced by other models. This paradigm introduces two major challenges: (1) training data are no longer drawn exclusively from the target population, undermining a core assumption of classical statistical learning, and (2) model training processes become inherently correlated, as models interact with one another through repeated exposure to each other's synthetic outputs in a potentially complex manner. Establishing reliable statistical inference in such structured interactive learning environments therefore remains an important open problem. In particular, there is growing concern about model collapse, a phenomenon in which the performance of generative models progressively degrades as they are trained on synthetic data produced by earlier model generations.\n  Prior work on model collapse primarily focuses on a single model trained on its own output, failing to capture model performance in multi-model interactive settings. In this work, we fill this gap by investigating the performance of generative models in an interactive learning environment with general interaction patterns. In particular, we formalize model interactions using directed graphs and show that the occurrence of model collapse depends critically on the topology of the interaction graph. We further derive an explicit necessary and sufficient condition characterizing when model collapse occurs, and establish finite-sample results for linear regression and asymptotic guarantees for general M-estimators. We support our theoretical findings through extensive numerical experiments.",
+        "summary": "We study the mass function of primordial black holes (PBHs) within the excursion-set theory, in which the response of the stochastic density contrast to the variation of the coarse-graining scale is described by colored noises. For several window functions often used in the literature, we investigate how this choice affects the formation probability as well as the resultant mass function of PBHs. It is found that the low-mass tail of the mass function differs from the one predicted from Carr's formula. The difference comes from the prevalence of correlated noises, by which degeneracy of the formation probabilities ceases to exist. Nevertheless, Carr's formula still provides a practical estimation in the vicinity of the characteristic mass scale, as long as a smooth window function in Fourier space is used.",
         "charge": 0
       }
     ],
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "'We are resilient': As San Diego's Muslim community reels from mosque shooting, it refuses to be intimidated",
+      "articleUrl": "https://www.bbc.com/news/articles/clypx2pr52qo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.8,
+      "summary": "Thousands attend funeral prayers for the three victims of Monday's deadly shooting at the Islamic Centre of San Diego.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Is a bank holiday heatwave on the way?",
       "articleUrl": "https://www.bbc.com/weather/articles/c4g5zgzre5ro?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 4.5,
       "summary": "Sir Keir Starmer pledged to rebuild the UK's relationship with Europe in a defiant speech on Monday.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "UK alcohol deaths fall for first time since Covid pandemic",
-      "articleUrl": "https://www.bbc.com/news/articles/c3v2dxg79w2o?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 3.9,
-      "summary": "Experts say the \u201cmodest reduction\u201d is \u201cnot cause for complacency\u201d, with calls to redouble efforts to slash deaths further.",
       "charge": 0
     }
   ]
