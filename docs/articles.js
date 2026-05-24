@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-23T11:36:52.686064+00:00",
+  "generatedAt": "2026-05-24T11:43:53.723736+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Spurred on by the painful death of her dad, Natalie Cassidy trains as a carer",
+      "articleUrl": "https://www.bbc.com/news/articles/c70v1yy9nn1o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.8,
+      "summary": "The actress's experience caring for her father inspired her to return to education in a new BBC show.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "'We are resilient': As San Diego's Muslim community reels from mosque shooting, it refuses to be intimidated",
       "articleUrl": "https://www.bbc.com/news/articles/clypx2pr52qo?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.theverge.com",
       "ageHours": 4.7,
       "summary": "Texas Attorney General Ken Paxton has filed a lawsuit against Netflix, accusing the company of turning its back on its promise to remain ad-free and safe for kids. The lawsuit, filed on Monday, claims Netflix has \"opened Texans' data for inspection by the same Big Ad Tech community it once criticized for exploiting users in [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "'Britain at the heart of Europe': How Starmer's plans are going down in the EU",
-      "articleUrl": "https://www.bbc.com/news/articles/cwy2k7re9jdo?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 4.5,
-      "summary": "Sir Keir Starmer pledged to rebuild the UK's relationship with Europe in a defiant speech on Monday.",
       "charge": 0
     }
   ]
