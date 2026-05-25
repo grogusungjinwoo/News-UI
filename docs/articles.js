@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-24T11:43:53.723736+00:00",
+  "generatedAt": "2026-05-25T13:43:33.905623+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Surf photographer attacked in water by 'shark or sea lion'",
+      "articleUrl": "https://www.bbc.com/sport/surfing/articles/cx213zv3dv3o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.3,
+      "summary": "The finals day of the World Surf League's New Zealand Pro event was paused after a photographer was attacked.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Spurred on by the painful death of her dad, Natalie Cassidy trains as a carer",
       "articleUrl": "https://www.bbc.com/news/articles/c70v1yy9nn1o?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 5.5,
       "summary": "More than 11,000 people have signed a petition calling for a review of the exam saying it was \"totally unrecognisable\" from what they had prepared for.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Texas sues Netflix for advertising \u2018bait and switch\u2019 and spying",
-      "articleUrl": "https://www.theverge.com/streaming/928071/texas-netflix-lawsuit-privacy",
-      "sourceName": "The Verge",
-      "sourceHomeUrl": "https://www.theverge.com",
-      "ageHours": 4.7,
-      "summary": "Texas Attorney General Ken Paxton has filed a lawsuit against Netflix, accusing the company of turning its back on its promise to remain ad-free and safe for kids. The lawsuit, filed on Monday, claims Netflix has \"opened Texans' data for inspection by the same Big Ad Tech community it once criticized for exploiting users in [\u2026]",
       "charge": 0
     }
   ]
