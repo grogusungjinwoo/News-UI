@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-25T13:43:33.905623+00:00",
+  "generatedAt": "2026-05-26T12:49:43.645606+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Rescuers race to free seven people trapped in flooded Laos cave",
+      "articleUrl": "https://www.bbc.com/news/articles/cglpp1g388zo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.0,
+      "summary": "A team of experts who helped free a teen football team from a Thai cave in 2018 are among the rescuers.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Surf photographer attacked in water by 'shark or sea lion'",
       "articleUrl": "https://www.bbc.com/sport/surfing/articles/cx213zv3dv3o?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.theverge.com",
       "ageHours": 5.6,
       "summary": "For the first time, Google says it has spotted and stopped a zero-day exploit developed with AI. According to a report from Google Threat Intelligence Group (GTIG), \"prominent cyber crime threat actors\" were planning to use the vulnerability for a \"mass exploitation event\" that would have allowed them to bypass two-factor authentication on an unnamed [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Pupils hopeless and crying after 'poorly worded' Higher Maths exam",
-      "articleUrl": "https://www.bbc.com/news/articles/cx21j20l9wlo?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 5.5,
-      "summary": "More than 11,000 people have signed a petition calling for a review of the exam saying it was \"totally unrecognisable\" from what they had prepared for.",
       "charge": 0
     }
   ]
