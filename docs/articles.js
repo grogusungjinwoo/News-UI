@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-27T13:50:38.568909+00:00",
+  "generatedAt": "2026-05-28T14:07:23.495118+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Generalized multilevel amplitude damping channels and their thermodynamic performances",
-        "articleUrl": "https://arxiv.org/abs/2605.27369v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "We introduce a new class of quantum channels, the Generalized Multilevel Amplitude Damping (GMAD) channels, to model noise and decoherence effects in a qudit coupled to a thermal environment. The degradation of energetic resources under GMADs is investigated by evaluating work functionals and ergotropic capacitances, with particular attention to the coherent and incoherent contributions to ergotropy, for which we introduce new quantifiers. Our analysis sheds light on how to optimally prepare a qudit in a thermal environment in order to preserve its value from the perspective of work extraction, and reveals several counterintuitive phenomena: the ergotropic capacitance of a GMAD channel is not monotonic in the temperature of the environment; moreover, iterating the map can lead to crossings between ergotropic functionals at different temperatures, indicating the presence of a Markovian Mpemba effect.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "LocateAnything: Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding",
-        "articleUrl": "https://arxiv.org/abs/2605.27365v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Vision-language models (VLMs) commonly formulate visual grounding and detection as a coordinate-token generation problem, serializing each 2D box into multiple 1D tokens that are learned and decoded largely independently. This token-by-token decoding mismatches the coupled structure of box geometry and creates a practical inference bottleneck due to strictly sequential generation. We introduce LocateAnything, a unified generative grounding and detection framework based on Parallel Box Decoding (PBD). By decoding geometric elements such as bounding boxes and points as atomic units in a single step, LocateAnything preserves intra-box geometric coherence and unlocks substantial parallelism. We show that PBD improves both decoding throughput and localization accuracy. We further develop a scalable data engine and curate LocateAnything-Data, a large-scale dataset with more than 138 million training samples, substantially increasing data diversity for high-precision localization. Extensive evaluations show that LocateAnything advances the speed-accuracy frontier, achieving significantly higher decoding throughput while improving high-IoU localization quality across diverse benchmarks. The results highlight the complementary benefits of Parallel Box Decoding and large-scale training data in enabling efficient and precise unified visual grounding and detection.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "MobileMoE: Scaling On-Device Mixture of Experts",
-        "articleUrl": "https://arxiv.org/abs/2605.27358v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Mixture-of-Experts (MoE) has become the de facto architecture for hundred-billion-parameter language models, yet its advantages at sub-billion scales for on-device deployment remain largely unexplored. To close this gap, we present MobileMoE, a family of on-device MoE language models with sub-billion active parameters (0.3-0.9B active and 1.3-5.3B total) that establish a new Pareto frontier for on-device LLMs. We first formulate an on-device MoE scaling law that jointly optimizes MoE architecture under mobile memory and compute constraints, identifying an on-device sweet spot - moderate sparsity with fine-grained and shared experts - that is simultaneously memory and compute-optimal. Building on the derived architectures, we train MobileMoE with a four-stage recipe covering pre-training, mid-training, instruction fine-tuning, and quantization-aware training, all on open-source datasets. Across 14 benchmarks, MobileMoE matches or exceeds leading on-device dense LLMs with 2-4$\\times$ fewer inference FLOPs, and matches or surpasses the state-of-the-art MoE OLMoE-1B-7B with up to 60% fewer parameters. To bridge the last mile to mobile deployment, we provide the first efficient MoE inference on commodity smartphones with comprehensive on-device profiling. At comparable INT4 weight memory, MobileMoE-S delivers $1.8$-$3.8\\times$ faster prefill and $2.2$-$3.4\\times$ faster decode than the dense baseline MobileLLM-Pro.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Gaussian Process Reconstruction of Cosmological Parameters with Gravitational Wave Sirens using Machine Learning",
-        "articleUrl": "https://arxiv.org/abs/2605.27357v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Future gravitational wave (GW) standard siren catalogues will probe the late-time expansion history of the Universe across redshift ranges largely inaccessible to traditional electromagnetic observations. To determine how effectively this background distance information can distinguish between viable cosmological models, we introduce a model-independent reconstruction framework utilizing Gaussian Process Regression (GPR). Analyzing mock LISA and Einstein Telescope (ET) catalogues across six fiducial cosmological backgrounds-$\u039b$CDM, CPL, CPL+$\u039b$, interacting dark matter, interacting dark energy and axion inspired early dark energy. We reconstruct the comoving distance and its derivatives. Crucially, we propagated the full GP covariance, including derivative cross-covariances, to robustly evaluate the Hubble parameter $H(z)$ and other diagnostics such as $q(z)$, $\\mathcal{O}_{m}(z)$ $w_{\\rm total}(z)$ and $\u03ba(z)$. While our analysis demonstrates that GW bright standard sirens faithfully recover fiducial expansion histories, applying pointwise marginal Hellinger distance reveals that background measurements alone do not provide decisive statistical separation among models. Instead, derivative sensitive diagnostics pinpoint specific redshift windows (e.g., $z\\simeq1.6-1.8$ for ET and $z\\simeq2.6-2.9$ for LISA) where future catalogues will maximize their discriminatory power. As machine learning methodologies become increasingly integral to astrophysics and cosmology, this Bayesian GPR pipeline offers a principled, nonparametric approach to precisely identifying where the most valuable cosmological information lies.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases",
-        "articleUrl": "https://arxiv.org/abs/2605.27355v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Reinforcement Learning from Human Feedback (RLHF) is the standard method to align Large Language Models (LLMs) with human preferences. In this work, we introduce alignment tampering, a potential vulnerability where the LLM undergoing alignment influences the preference dataset, causing RLHF to amplify undesired behaviors. This arises from core limitations of RLHF: (1) preference datasets are constructed from the LLM's own outputs, allowing it to influence them, and (2) pairwise comparisons only indicate which response is better, not why. These limitations can be exploited to cause alignment tampering. For example, if an LLM generates biased responses with higher quality, annotators will prefer them based on quality. However, preference labels do not distinguish quality from bias, and the reward model inherits this limitation. Optimizing such rewards through reinforcement learning or best-of-N sampling can amplify misaligned biases. Our experiments demonstrate amplification across diverse biases: from keyword bias to propaganda (e.g., sexism), brand promotion, and instrumental goal-seeking. Mitigation remains challenging, as existing techniques for robust RLHF fail to fully resolve alignment tampering without sacrificing response quality. These findings reveal structural vulnerabilities of current RLHF and emphasize the need to prevent this vulnerability. Project page: https://alignment-tampering.github.io/",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders",
-        "articleUrl": "https://arxiv.org/abs/2605.27354v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Model internals encode rich information about how a large language model (LLM) processes its training data; however, post-training data engineering largely relies on external signals and ignores rich intrinsic signals lying in model internals. We propose SAERL, a data engineering framework for LLM reinforcement learning (RL). It models three intrinsic data properties: diversity, difficulty, and quality, using model internals extracted with Sparse Autoencoder (SAE), an advanced mechanistic interpretability tool. Each property grounds a concrete data engineering operation: SAE-space clustering with moderate batch mixing for batch diversity control, a difficulty proxy for easy-to-hard curriculum ordering, and a quality probe for data filtering. SAERL improves average accuracy by 3.00% over vanilla GRPO and reaches target accuracy with 20% fewer training steps on Qwen2.5-Math-1.5B, with consistent gains across model scales and RL algorithms. Experiments show that SAE transfers effectively across model families and scales, serving as a lightweight and reusable data engineering tool. These results demonstrate that model internals are a powerful and practical source of signals for post-training data engineering.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Impact of Clouds on the Atmosphere-Mantle Interface of Sub-Neptunes",
-        "articleUrl": "https://arxiv.org/abs/2605.27353v1",
-        "sourceName": "arXiv Query: search_query=all:\"climate model\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "Sub-Neptunes are among the most common type of close-in planets found in our galaxy, yet their bulk composition remains largely uncertain; H-rich envelopes overlaying rocky cores, volatile-rich planets, and carbon-rich interiors all remain viable configurations for members of this population. Atmospheric characterization has been proposed as a means of distinguishing between these scenarios, but growing evidence suggests that sub-Neptunes may host molten atmosphere-mantle interfaces which could alter the composition of their atmosphere. We use the PICASO 1D climate model, coupled to interior-structure and magma-atmosphere chemistry frameworks to quantify how clouds alter the atmospheric and interior structure of sub-Neptunes. For temperate sub-Neptunes like TOI-270 d, we find that clouds can lead to $\\ge{1000}$ K heating at depth (${\\sim}10^{4}$ bar) and $\\sim{600}$ K cooling at shallow pressures ($\\sim$1 bar). This heating is very sensitive to the cloud sedimentation efficiency and, to a lesser extent, to metallicity. Most sub-Neptunes in our sample should have a molten atmosphere-mantle interface, except TOI-1231 b and GJ 1214 b. For these two planets, cloudy models have a molten interface whereas clear models can allow a solid boundary. Clouds can heat the atmosphere-mantle interfaces by a temperature difference between $\\sim{1400}-2600$ K for most sub-Neptunes in our sample. Such cloud-driven heating can substantially change the composition of the interface with abundances of O$_2$, SiH$_4$, and SiO showing a $\\ge{36}$\\% increase between cloudy and clear models of TOI-270 d. We discuss the implications of our results for the thermal evolution and measurements of intrinsic heat flux for this population.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "From Scores to Gibbs Correctors: Accelerating Uniform-Rate Discrete Diffusion Models",
-        "articleUrl": "https://arxiv.org/abs/2605.27352v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "Discrete diffusion models have achieved strong empirical performance in text and other symbolic domains, but, especially for uniform-rate models, they often require many steps to generate a single sample. Existing acceleration methods either rely on training additional quantities or suffer from slow mixing. In this work, we propose a novel Gibbs-based corrector for discrete diffusion models, termed Gibbs-Accelerated Discrete Diffusion (GADD). GADD leverages the structure of the concrete score function to construct Gibbs posterior likelihoods directly, without requiring any additional training beyond standard score estimation. We show that GADD achieves an overall sampling complexity of $\\mathcal{O}(\\mathrm{polylog} (\\varepsilon^{-1}))$, yielding the first such rate for diffusion-based samplers for uniform-rate discrete diffusion models. We also conduct numerical experiments demonstrating the practical advantages of GADD across synthetic data, zero-shot text sampling, and zero-shot conditional music generation. These results corroborate the theory and show that GADD consistently improves sample quality and wall-clock efficiency over standard baselines, including vanilla Euler methods and CTMC correctors. Beyond this, our theoretical analysis introduces a novel framework for analyzing predictor-corrector methods in discrete diffusion models, which may be of independent interest. Unlike existing approaches that rely on the Girsanov change-of-measure technique, our method is based on an induction argument that tracks error propagation across predictor iterations while accounting for inaccuracies in the corrector updates.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Postselection-free ballistic-diffusive transition in monitored spin chains",
-        "articleUrl": "https://arxiv.org/abs/2605.27350v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "We study spin and entanglement dynamics in spin-1/2 XXZ chains under periodic monitoring and show that this system exhibits two measurement-induced phase transitions: a steady-state entanglement phase transition similar to those in monitored quantum circuits and a ballistic-to-diffusive transition in transient dynamics. Specifically, we discover that at low monitoring rate, an initial configuration containing a domain wall $|\\uparrow\\uparrow\\uparrow\\ldots \\downarrow\\downarrow\\downarrow\\ldots\\rangle$ spreads ballistically while, at large monitoring rates, the domain melting is diffusive. Extensive numerical simulations, supported by theoretical arguments, indicate that the ballistic-diffusive transition is intimately interlinked with the entanglement phase transition. In contrast to the entanglement phase transitions, which require exponentially complex postselection, the ballistic-diffusive transition can be observed without postselection and constitutes an experimentally accessible manifestation of the many-body Zeno effect.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Real-time nuclear-electronic orbital time-dependent density functional theory with a constrained traveling proton basis",
-        "articleUrl": "https://arxiv.org/abs/2605.27344v1",
+        "title": "A cryogenic apparatus for coupling two-dimensional materials to a confocal multimode optical cavity",
+        "articleUrl": "https://arxiv.org/abs/2605.28815v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.1,
-        "summary": "Nuclear quantum effects and non-Born--Oppenheimer effects play a vital role in many chemical and biological processes, motivating the incorporation of such effects into dynamical simulations. In real-time nuclear--electronic orbital time-dependent density functional theory (RT-NEO-TDDFT), the electronic and nuclear densities are propagated numerically in time according to the time-dependent Schr\u00f6dinger equation. In this framework, specified protons are treated quantum mechanically on the same level as the electrons. The classical nuclei can be propagated on the instantaneous NEO vibronic surface using Ehrenfest dynamics. A traveling proton basis (TPB) can be used to describe the dynamics of moving protons in conjunction with Gaussian-type protonic and electronic basis sets for each quantum proton. Herein, we present a constrained TPB (c-TPB) approach that ensures each protonic basis function center coincides with the corresponding proton position expectation value during the dynamics. This approach produces accurate nuclear--electronic quantum dynamics and rigorously conserves energy. We demonstrate the accuracy and stability of this approach for computing molecular vibrational frequencies as well as simulating excited-state intramolecular proton transfer and double proton transfer in the o-hydroxybenzaldehyde and [2,2$'$-bipyridyl]-3,3$'$-diol molecules. These applications show that the c-TPB method provides accurate dynamics, conserves energy, and is computationally efficient.",
+        "summary": "Two-dimensional van der Waals materials exhibit a variety of correlated electron phases, and optical driving offers a promising route toward manipulating them. For example, cavity-enhanced, continuous-wave (CW) Raman excitation has been suggested as a way to coherently and superradiantly populate phonons or charge density waves via material excitons. A steady-state phonon population may be sustained with sufficiently strong electron-phonon coupling to drive novel collective response. We describe an apparatus built to meet the requirements of such an experimental program: Namely, an ultrahigh-vacuum system housing a length-tunable confocal Fabry-P\u00e9rot cavity with an intracavity sample, both cryogenically cooled and stabilized against vibrations. A four-axis nanopositioner aligns the sample and supports electrical leads for sample carrier density modulation and transport measurements. Transmission through the multimode cavity enables in situ sample imaging for alignment; the sample is a transition metal dichalcogenide in this work. Operating near the confocal geometry concentrates the optical field into a localized supermode that substantially enhances light-matter coupling. This enhancement is preserved despite the millimeter-scale cavity length, which provides room for sample alignment and exchange.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Quantum effects in the quadrupole rotor picture of ultra-relativistic ion-ion collisions",
+        "articleUrl": "https://arxiv.org/abs/2605.28813v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.1,
+        "summary": "The azimuthal hadronic flow observed in ultra-relativistic ion-ion collisions provides a sensitive probe of many-body ground-state correlations in the colliding nuclei. In particular, collective correlations associated with nuclear \"intrinsic deformation\" are expected to leave pronounced fingerprints on specific final-state observables. However, such effects are commonly interpreted within a classical rigid-rotor picture, despite the intrinsically quantum nature of nuclei. In this Letter, the validity of this interpretation is assessed systematically across the nuclear chart by comparing the quantum quadrupole rotor with its classical rigid-rotor limit. Quantum contributions associated with the fermionic nature of the nucleons are shown to be largely independent of shell effects, and hence of the intrinsic deformation. While they account for nearly all of the quantum rotor effective quadrupole deformation in light and/or spherical nuclei, they drop below 10% in intrinsically well deformed heavy nuclei. The present letter demonstrates that a quantitative interpretation of nuclear-structure effects in final-state observables requires going beyond the classical rigid-rotor paradigm. Beyond the quantum contributions quantified presently, correlations associated with collective vibrations and with the non-collective nucleonic motion must be further included and characterized.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Device-Agnostic Microwave Noise Metrology for Nonlinear Cryogenic Quantum Devices",
+        "articleUrl": "https://arxiv.org/abs/2605.28808v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "Microwave devices capable of near-quantum-limited signal processing are essential components in the toolbox of solid-state quantum technologies. The manipulation and readout of single-photon microwave signals through amplifiers, mixers, isolators, etc. must fulfill strict requirements in terms of signal integrity to ensure reliable operation.\n  These active microwave quantum devices operate in complex cryo-electronic setups. This poses challenges to their characterization, since all relevant figures of merit must be expressed at the reference planes of their ports. Even though cryogenic S-parameter calibration is non-trivial, metrological approaches are converging toward rigorous methods. Furthermore, preserving signal integrity must be quantified via absolute noise levels at the ports of the Device Under Test (DUT), requiring an absolute power reference.\n  In this work, we present an in situ noise metrology protocol based on substituting a controllable noise source for the DUT. We motivate this choice by showing that placing the noise source at the DUT input impacts the separability of the calibration from the DUT characteristics.\n  Our proposed architecture combines Planck spectroscopy using a Variable Temperature Stage with Short-Open-Load-Reciprocal scattering-parameter calibration, so that noise and scattering quantities are referred to the same cryogenic reference planes. In this configuration, the readout-chain calibration is separated from the internal dynamics of the DUT. As a demanding use case, we apply the protocol to a Josephson Traveling Wave Parametric Amplifier and extract its gain and input-referred added noise under pump conditions activating multimode nonlinear behavior. This illustrates how our device-agnostic protocol supports portable noise characterization of nonlinear cryogenic microwave devices.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration",
+        "articleUrl": "https://arxiv.org/abs/2605.28805v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "Visual outcomes are increasingly central to multimodal large language models, making reliable and fine-grained verification essential for scaling generalist foundation models. In this work, we investigate multimodal meta-verification, which leverages verifier-generated rationales rather than decision-only signals, and explore how to effectively incorporate meta-verification feedback into multimodal verifier training. We identify two key findings. First, symbolic verifier outputs (e.g., bounding boxes) outperform textual explanations as meta-verification rationales, enabling efficient rule-based reinforcement learning rewards while avoiding reliance on model-based rewards from auxiliary judge models. Second, decoupling reinforcement learning objectives for binary judgment and meta-verification substantially outperforms joint reward optimization, due to intrinsic differences in output structure and learning dynamics. Based on these insights, we train OmniVerifier-M1, a generalist visual verifier leveraging symbolic meta-verification and decoupled reinforcement learning. OmniVerifier-M1 provides robust verification and fine-grained error localization, and further enables M1-TTS, a verifier-driven agentic generation system achieving dynamic region-level self-correction. This approach paves the way for more reliable, interpretable, and fine-grained multimodal verification, supporting safer and more controllable foundation model deployment.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "How reproducible are first-principles simulations of liquid water?",
+        "articleUrl": "https://arxiv.org/abs/2605.28798v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "Liquid water is fundamentally important, and its accurate computer simulation has been the driving force for myriad methodological developments. Ab initio molecular dynamics with forces obtained from density functional theory (DFT) is now a standard tool widely used by researchers. However, we reveal that previous studies of liquid water using the same widely-used density functional (revPBE-D3) exhibit significant discrepancies with one another, varying by over 20% in the diffusion coefficient and 10% in the density, raising fundamental questions about reproducibility. By combining modern long-range machine-learning interatomic potentials that enable robust statistical sampling with carefully converged DFT training data, we resolve these discrepancies, achieving consensus across six diverse community codes. Our predictions differ markedly from previous literature: we show that most previous results overestimate the density and underestimate the diffusion coefficient of revPBE-D3 water due to basis set incompleteness and pseudopotential inconsistencies, coupled with limitations in statistical sampling (in some cases). These benchmark values provide a reliable reference for validating current and future implementations of DFT-based ab initio molecular dynamics. Reaching agreement establishes confidence and credibility and serves as a prerequisite for the systematic assessment of new density functionals and numerical approximations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Dynamic Entanglement Packet Scheduling for Quantum Networks",
+        "articleUrl": "https://arxiv.org/abs/2605.28795v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.3,
+        "summary": "Sharing entanglement among multiple users remains a central challenge for scalable quantum networks. Recent work proposed an on-demand entanglement packet architecture in which a controller uses a Time Division Multiple Access (TDMA) approach to allocate network resources. Quantum nodes are assigned a periodic schedule that probabilistically fulfills application requests for end-to-end entanglements. The schedule is recomputed periodically using well-known algorithms, such as Earliest Deadline First (EDF). However, a static schedule offers limited flexibility when outcomes are stochastic and arrivals are asynchronous. To overcome this limitation, we propose an online scheduler that dynamically schedules, defers, retries, or drops entanglement distribution reservations. In our simulations, the dynamic scheduler achieves lower completion time, higher completion ratio, and higher throughput than the static baseline. Furthermore, when the network is overloaded, the dynamic scheduler continues to construct deadline-feasible schedules and degrades gracefully.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Non-invertible symmetry enriched string net topological orders",
+        "articleUrl": "https://arxiv.org/abs/2605.28794v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.3,
+        "summary": "We propose a definition of a non-invertible symmetry enriched topological order (NI-SETO), and we implement our definition for string net models. We do so in two ways, using full inclusions of unitary fusion categories (UFCs), as well as anyon condensation. In both cases, the NI-SETO is a relative center of UFCs. All NI-SETOs can be realized in either model, where we can use enriched UFCs to get chiral examples on the boundary of a 3D Walker-Wang model representing the anomaly. We describe several examples of NI-SETOs and compute the qualitative symmetry action on anyons and symmetry defects using tube algebra techniques.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "CaMBRAIN: Real-time, Continuous EEG Inference with Causal State Space Models",
+        "articleUrl": "https://arxiv.org/abs/2605.28792v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.3,
+        "summary": "Electroencephalography (EEG) is a critical, non-invasive method to monitor electrical brain activity. EEGs can span anywhere from a couple seconds to multiple hours, posing a major hurdle for existing deep learning methods due to two major factors: (1) existing EEG models are predominantly built upon the attention mechanism, incurring quadratic scaling as the sequence length increases, and (2) raw EEG signals must be processed in a sliding-window fashion due to fixed-length input requirements, preventing global understanding of the entire signal. To this extent, we propose CaMBRAIN - the first Causal, Mamba-based state space model (SSM) capable of real-time inference of EEG signals, arguing that bidirectional approaches are needlessly expensive given the causal, unidirectional nature of EEG. However, training such a model is non-trivial, as crucial EEG events can be extremely brief - within fractions of a second - yet separated by long intervals spanning minutes. Current EEG methods use self-supervised objectives that optimize for signal reconstruction, but these are not well suited for streaming SSMs; they fail to explicitly train the hidden state to retain the salient long-range context needed for streaming inference. We therefore introduce a multi-stage self-supervised training pipeline specifically tailored to encourage long-range memory retention and strong performance on EEG signals, while preserving the linear-time complexity of state space models. CaMBRAIN achieves state-of-the-art (SOTA) results across 3 different EEG datasets with >10x higher throughput than existing models, enabling the first model capable of long-range, continuous inference of variable-length EEG signals.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "A quantum harmonic analysis approach to nonlinear time-frequency concentration",
+        "articleUrl": "https://arxiv.org/abs/2605.28786v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.3,
+        "summary": "We study nonlinear concentration problems for time-frequency distributions in the Cohen class. Using recent techniques from quantum harmonic analysis (QHA) we provide both positive and negative results, such as sufficient conditions for the existence of optimizers in terms of the ``window operator'' and explicit examples where the supremum is never attained. We also study the structural properties of window operators, in particular operators that yield weakly continuous concentration functionals and operators for which the nonlinear concentration problem admits an optimizer. We then consider generalizations to the study of concentration problems for phase space representations of operators. We consider generalized Husimi distributions via quantum convolution, and their optimization problem when optimizing over Hilbert--Schmidt and density operators. Lastly, we consider representations of operators on double phase space, in the spirit of quantum time-frequency analysis, and give a full solution in terms of the Weyl symbols.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Complex abelian varieties and quantum error correction: a mathematical framework for GKP codes",
+        "articleUrl": "https://arxiv.org/abs/2605.28784v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.4,
+        "summary": "We study a class of quantum error-correcting codes through the geometry of complex abelian varieties. These codes, introduced by Gottesman--Kitaev--Preskill, are built from symplectically integral lattices and therefore naturally define polarized complex abelian varieties. We give a precise mathematical formulation of this relationship and extend it to a dictionary between the main structures of GKP code theory and classical objects in the theory of abelian varieties. For instance, under this dictionary, the finite-dimensional code space becomes the space of theta functions $H^0(X, L)$, logical Pauli gates arise from the theta group, passive logical Clifford gates correspond to automorphisms of the polarized abelian variety, and concatenation with stabilizer codes corresponds to isogeny. We also prove several key results that give precise mathematical formulations of statements about these codes that often appear in heuristic form in the physics literature. In particular, we prove that the encoding is asymptotically isometric, that every logical Clifford gate is realized by a Gaussian unitary, and that, for noise of small variance, the failure probability is governed to first order by the shortest nontrivial displacement in the kernel of the polarization isogeny, a systolic invariant of the underlying polarization. This leads naturally to optimization problems on the moduli space of polarized abelian varieties.",
         "charge": 0
       }
     ],
