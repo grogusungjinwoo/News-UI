@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-28T14:07:23.495118+00:00",
+  "generatedAt": "2026-05-29T13:35:08.580173+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "Human organoids reveal how to reverse \u201cirreversible\u201d nerve damage",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260528082459.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.7,
+        "summary": "Cambridge researchers created miniature brain-and-spinal-cord systems in the lab that can send signals and even trigger tiny muscle contractions. They discovered that human neurons gradually lose their ability to regrow after damage during development \u2014 but that ability can potentially be switched back on. The team identified a gene network controlling this process and found that an existing hormone drug dramatically boosted nerve fiber regrowth.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "New quantum sensor could count individual photons and hunt dark matter",
         "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260520093654.htm",
         "sourceName": "All Top News -- ScienceDaily",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://www.sciencedaily.com",
         "ageHours": 10.7,
         "summary": "Scientists at UBC Okanagan have uncovered how plants produce mitraphylline, a rare natural compound with promising anti cancer potential. The team identified two enzymes that work together to build the molecule\u2019s unusual twisted structure, solving a mystery that had puzzled researchers for years. Because mitraphylline appears only in tiny amounts in tropical plants like kratom and cat\u2019s claw, the discovery could make it far easier to produce sustainably in the future.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Curiosity Blog, Sols 4886-4892: Ingenuity and Perseverance, Curiosity Style",
-        "articleUrl": "https://science.nasa.gov/blog/curiosity-blog-sols-4886-4892-ingenuity-and-perseverance-curiosity-style/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 10.7,
-        "summary": "Written by Michelle Minitti, MAHLI Deputy Principal Investigator Earth planning date: Friday, May 8, 2026 While we know the monikers Ingenuity and Perseverance are attached to our sister helicopter and rover on the Mars 2020 mission, those characteristics were in full force with Curiosity over the past week. The science we achieved this week was [\u2026]",
         "charge": 0
       }
     ],
@@ -315,6 +315,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "North America\u2019s 50 Best Restaurants in 2026: The Full List",
+      "articleUrl": "https://www.eater.com/restaurant-news/965010/north-america-50-best-restaurants-2026-winners-how-to-watch",
+      "sourceName": "Eater",
+      "sourceHomeUrl": "https://www.eater.com",
+      "ageHours": 10.6,
+      "summary": "The 2026 edition of the North America\u2019s 50 Best Restaurants list was announced live tonight at an awards ceremony in New Orleans, where the best chefs from across the U.S., Canada, and the Caribbean gathered to compete and celebrate. This year, Smyth in Chicago was named the No. 1 restaurant in the region, while new [\u2026]",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Rescuers race to free seven people trapped in flooded Laos cave",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.theverge.com",
       "ageHours": 5.8,
       "summary": "A baby's eyes peer directly into the camera lens. A kid with a striped shirt looks up, then away. A boy in a policeman's costume, a gold star on his chest. A messy bedroom that reminds me of my own daughters, with an unmade bunk bed, a little girl's hat and headband, and Hello Kitty [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Google stopped a zero-day hack that it says was developed with AI",
-      "articleUrl": "https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped",
-      "sourceName": "The Verge",
-      "sourceHomeUrl": "https://www.theverge.com",
-      "ageHours": 5.6,
-      "summary": "For the first time, Google says it has spotted and stopped a zero-day exploit developed with AI. According to a report from Google Threat Intelligence Group (GTIG), \"prominent cyber crime threat actors\" were planning to use the vulnerability for a \"mass exploitation event\" that would have allowed them to bypass two-factor authentication on an unnamed [\u2026]",
       "charge": 0
     }
   ]
