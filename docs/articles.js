@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-05-29T13:35:08.580173+00:00",
+  "generatedAt": "2026-05-30T11:46:00.604667+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "How one borough is bucking the UK's youth unemployment trend",
+      "articleUrl": "https://www.bbc.com/news/articles/cd6p9yyg64vo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.9,
+      "summary": "Could personalised early intervention help prevent under-16s falling into the Neet trap?",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "North America\u2019s 50 Best Restaurants in 2026: The Full List",
       "articleUrl": "https://www.eater.com/restaurant-news/965010/north-america-50-best-restaurants-2026-winners-how-to-watch",
       "sourceName": "Eater",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 5.8,
       "summary": "Marcus Rashford has an uncertain future despite the on-loan Manchester United forward scoring a brilliant free-kick for Barcelona in El Clasico.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "A million baby monitors and security cameras were easily viewable by hackers",
-      "articleUrl": "https://www.theverge.com/tech/926487/meari-technology-hack-baby-monitor-security-camera",
-      "sourceName": "The Verge",
-      "sourceHomeUrl": "https://www.theverge.com",
-      "ageHours": 5.8,
-      "summary": "A baby's eyes peer directly into the camera lens. A kid with a striped shirt looks up, then away. A boy in a policeman's costume, a gold star on his chest. A messy bedroom that reminds me of my own daughters, with an unmade bunk bed, a little girl's hat and headband, and Hello Kitty [\u2026]",
       "charge": 0
     }
   ]
