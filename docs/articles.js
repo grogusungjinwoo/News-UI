@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-01T16:19:07.821088+00:00",
+  "generatedAt": "2026-06-02T14:33:09.540027+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "A cryogenic apparatus for coupling two-dimensional materials to a confocal multimode optical cavity",
-        "articleUrl": "https://arxiv.org/abs/2605.28815v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.1,
-        "summary": "Two-dimensional van der Waals materials exhibit a variety of correlated electron phases, and optical driving offers a promising route toward manipulating them. For example, cavity-enhanced, continuous-wave (CW) Raman excitation has been suggested as a way to coherently and superradiantly populate phonons or charge density waves via material excitons. A steady-state phonon population may be sustained with sufficiently strong electron-phonon coupling to drive novel collective response. We describe an apparatus built to meet the requirements of such an experimental program: Namely, an ultrahigh-vacuum system housing a length-tunable confocal Fabry-P\u00e9rot cavity with an intracavity sample, both cryogenically cooled and stabilized against vibrations. A four-axis nanopositioner aligns the sample and supports electrical leads for sample carrier density modulation and transport measurements. Transmission through the multimode cavity enables in situ sample imaging for alignment; the sample is a transition metal dichalcogenide in this work. Operating near the confocal geometry concentrates the optical field into a localized supermode that substantially enhances light-matter coupling. This enhancement is preserved despite the millimeter-scale cavity length, which provides room for sample alignment and exchange.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Quantum effects in the quadrupole rotor picture of ultra-relativistic ion-ion collisions",
-        "articleUrl": "https://arxiv.org/abs/2605.28813v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.1,
-        "summary": "The azimuthal hadronic flow observed in ultra-relativistic ion-ion collisions provides a sensitive probe of many-body ground-state correlations in the colliding nuclei. In particular, collective correlations associated with nuclear \"intrinsic deformation\" are expected to leave pronounced fingerprints on specific final-state observables. However, such effects are commonly interpreted within a classical rigid-rotor picture, despite the intrinsically quantum nature of nuclei. In this Letter, the validity of this interpretation is assessed systematically across the nuclear chart by comparing the quantum quadrupole rotor with its classical rigid-rotor limit. Quantum contributions associated with the fermionic nature of the nucleons are shown to be largely independent of shell effects, and hence of the intrinsic deformation. While they account for nearly all of the quantum rotor effective quadrupole deformation in light and/or spherical nuclei, they drop below 10% in intrinsically well deformed heavy nuclei. The present letter demonstrates that a quantitative interpretation of nuclear-structure effects in final-state observables requires going beyond the classical rigid-rotor paradigm. Beyond the quantum contributions quantified presently, correlations associated with collective vibrations and with the non-collective nucleonic motion must be further included and characterized.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Device-Agnostic Microwave Noise Metrology for Nonlinear Cryogenic Quantum Devices",
-        "articleUrl": "https://arxiv.org/abs/2605.28808v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Microwave devices capable of near-quantum-limited signal processing are essential components in the toolbox of solid-state quantum technologies. The manipulation and readout of single-photon microwave signals through amplifiers, mixers, isolators, etc. must fulfill strict requirements in terms of signal integrity to ensure reliable operation.\n  These active microwave quantum devices operate in complex cryo-electronic setups. This poses challenges to their characterization, since all relevant figures of merit must be expressed at the reference planes of their ports. Even though cryogenic S-parameter calibration is non-trivial, metrological approaches are converging toward rigorous methods. Furthermore, preserving signal integrity must be quantified via absolute noise levels at the ports of the Device Under Test (DUT), requiring an absolute power reference.\n  In this work, we present an in situ noise metrology protocol based on substituting a controllable noise source for the DUT. We motivate this choice by showing that placing the noise source at the DUT input impacts the separability of the calibration from the DUT characteristics.\n  Our proposed architecture combines Planck spectroscopy using a Variable Temperature Stage with Short-Open-Load-Reciprocal scattering-parameter calibration, so that noise and scattering quantities are referred to the same cryogenic reference planes. In this configuration, the readout-chain calibration is separated from the internal dynamics of the DUT. As a demanding use case, we apply the protocol to a Josephson Traveling Wave Parametric Amplifier and extract its gain and input-referred added noise under pump conditions activating multimode nonlinear behavior. This illustrates how our device-agnostic protocol supports portable noise characterization of nonlinear cryogenic microwave devices.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration",
-        "articleUrl": "https://arxiv.org/abs/2605.28805v1",
+        "title": "ProtoAda: Prototype-Guided Adaptive Adapter Expansion and Geometric Consolidation for Multimodal Continual Instruction Tuning",
+        "articleUrl": "https://arxiv.org/abs/2606.02576v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Visual outcomes are increasingly central to multimodal large language models, making reliable and fine-grained verification essential for scaling generalist foundation models. In this work, we investigate multimodal meta-verification, which leverages verifier-generated rationales rather than decision-only signals, and explore how to effectively incorporate meta-verification feedback into multimodal verifier training. We identify two key findings. First, symbolic verifier outputs (e.g., bounding boxes) outperform textual explanations as meta-verification rationales, enabling efficient rule-based reinforcement learning rewards while avoiding reliance on model-based rewards from auxiliary judge models. Second, decoupling reinforcement learning objectives for binary judgment and meta-verification substantially outperforms joint reward optimization, due to intrinsic differences in output structure and learning dynamics. Based on these insights, we train OmniVerifier-M1, a generalist visual verifier leveraging symbolic meta-verification and decoupled reinforcement learning. OmniVerifier-M1 provides robust verification and fine-grained error localization, and further enables M1-TTS, a verifier-driven agentic generation system achieving dynamic region-level self-correction. This approach paves the way for more reliable, interpretable, and fine-grained multimodal verification, supporting safer and more controllable foundation model deployment.",
+        "ageHours": 20.6,
+        "summary": "Multimodal Large Language Models (MLLMs) achieve strong performance through instruction tuning, but real-world deployment requires them to continually acquire new vision-language capabilities, making Multimodal Continual Instruction Tuning (MCIT) essential. To reduce inter-task interference and promote collaboration, recent methods often employ sparse architectures like Mixture of LoRA Experts with image-text similarity routing. However, tasks with distinct response structures could share highly similar visual-linguistic semantics and thus be wrongly routed to the same expert; image-text similarity alone is insufficient for reliable task assignment. For example, an expert in a grounding task requiring coordinate prediction may be biased toward producing short textual answers after learning semantically similar VQA tasks. This format-blind task assignment integrates heterogeneous response types into shared parameters, inducing gradient interference and ineffective expert collaboration. To address this problem, we propose ProtoAda, a prototype-guided adaptive tuning framework. ProtoAda introduces format-aware task prototypes to align task assignment and routing with both task semantics and output structure, and further consolidates format-compatible updates in a geometry-aware manner to effectively reuse and progressively refine existing parameters. Extensive experiments on multiple benchmarks demonstrate that ProtoAda achieves superior performance, especially on tasks whose answer structures are easily corrupted by sequential tuning.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "How reproducible are first-principles simulations of liquid water?",
-        "articleUrl": "https://arxiv.org/abs/2605.28798v1",
+        "title": "Quantum Simulation of Nucleon-Antinucleon Interaction in Large-$N$ QCD$_2$ on an IBM Quantum Nighthawk Processor",
+        "articleUrl": "https://arxiv.org/abs/2606.02574v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.6,
+        "summary": "We report a quantum simulation of the nucleon--antinucleon interaction in large-$N$ two-dimensional quantum chromodynamics (QCD$_2$) on the IBM Quantum Nighthawk processor. In the large-$N$ limit, QCD$_2$ admits a bosonized description in which baryons emerge as topological solitons (kinks) of an effective mesonic field theory, providing a controlled, nonperturbative framework for baryon--antibaryon dynamics.\n  We formulate the problem by mapping the continuum bosonized Hamiltonian to a spin-chain representation equivalent to an XXZ model with anisotropy set by the QCD parameters. In this mapping, nucleon and antinucleon states correspond to kink and antikink excitations, respectively, while their interaction is encoded in the spin correlations of the chain. Using Jordan--Wigner encoding, we implement the resulting XXZ Hamiltonian on a finite set of qubits and realize it via a variational ground state ansatz and postselected nonunitary disorder operator insertions optimized for the Nighthawk architecture. We then show the kink--antikink interaction potential built from the conditional energies of these nonunitary string operators can be robustly extracted from the quantum hardware due to structured error cancelation. The resulting potential exhibits the expected attractive behavior. The quantum simulation results are benchmarked against exact diagonalization, ideal statevector evaluation showing good agreement. To connect the device result to the continuum field theory, we extract the potential in the continuum limit using large-$L$ matrix product state calculations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Pure UCP Maps on Finite Toeplitz Systems and Quantum Gromov--Hausdorff Convergence",
+        "articleUrl": "https://arxiv.org/abs/2606.02561v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.7,
+        "summary": "We study pure unital completely positive maps on the finite Toeplitz operator system $ T_{d}$ of $d \\times d$ Toeplitz matrices. Our first main result gives an explicit characterization of pure UCP maps from $T_{d}$ to $M_n$ in terms of positive $n\\times n$ matrix-valued trigonometric polynomials of degree at most $d-1$. This characterization provides a checkable criterion for deciding when a given UCP map is pure. As a first application, we show that every pure UCP map from $ T_{d}$ to $M_n$ admits a unique UCP extension to the generated $C^*$-algebra. As a second application, we prove that, for each fixed $n$, the space of pure UCP maps from $T_{d}$ to $M_n$, equipped with the matricial Connes distance, converges in the Gromov--Hausdorff sense to the space of normalized positive $n\\times n$ matrix-valued Borel measures on the unit circle, equipped with the matricial Monge--Kantorovich distance.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "A Mid-Infrared Platform Based on Strontium Tweezer Arrays",
+        "articleUrl": "https://arxiv.org/abs/2606.02560v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.7,
+        "summary": "Subwavelength atomic tweezer arrays, in which atoms can be positioned at distances smaller than their emission wavelength, have been proposed as a versatile platform to study collective emission phenomena, such as superradiance and subradiance. Experimentally, the realization of such arrays has been a challenge as typical emission wavelengths in the visible or near-infrared are short compared to typical tweezer spacings in the micrometer range. Here, we use $^{88}$Sr atoms in optical tweezer arrays to access a mid-infrared transition at 2,923 nm ($5s5p\\:^{3}P_{2} \\rightarrow\\, 5s4d\\:^{3}D_{3}$). We identify a magic trapping wavelength at 597.14(3) nm and demonstrate single-atom preparation and imaging with high fidelity. In addition, using 2,923 nm light, we demonstrate resolved-sideband cooling of tweezer-trapped strontium. Beyond enabling studies of collective emission phenomena in flexible arrangements of atoms, our platform opens novel opportunities for dipolar many-body physics and enhanced control over Rydberg dynamics and the strontium fine-structure qubit.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Strong-to-Weak Spontaneous Symmetry Breaking",
+        "articleUrl": "https://arxiv.org/abs/2606.02555v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.7,
+        "summary": "Strong-to-weak spontaneous symmetry breaking (SW-SSB) has recently emerged as a useful framework for studying phases of matter in open systems, quantum or classical. Beginning with the simple idea of extending symmetry breaking to general mixed states, and the familiar equivalence between canonical and grand-canonical ensembles in statistical mechanics, the concept has grown into a unifying perspective connecting many different ideas in physics, including topological orders, emergent hydrodynamics, and information-theoretic characterization of phases of matter. This review provides a bird's-eye view of some of these recent developments.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Probabilistic storyline attribution using machine learning",
+        "articleUrl": "https://arxiv.org/abs/2606.02550v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Liquid water is fundamentally important, and its accurate computer simulation has been the driving force for myriad methodological developments. Ab initio molecular dynamics with forces obtained from density functional theory (DFT) is now a standard tool widely used by researchers. However, we reveal that previous studies of liquid water using the same widely-used density functional (revPBE-D3) exhibit significant discrepancies with one another, varying by over 20% in the diffusion coefficient and 10% in the density, raising fundamental questions about reproducibility. By combining modern long-range machine-learning interatomic potentials that enable robust statistical sampling with carefully converged DFT training data, we resolve these discrepancies, achieving consensus across six diverse community codes. Our predictions differ markedly from previous literature: we show that most previous results overestimate the density and underestimate the diffusion coefficient of revPBE-D3 water due to basis set incompleteness and pseudopotential inconsistencies, coupled with limitations in statistical sampling (in some cases). These benchmark values provide a reliable reference for validating current and future implementations of DFT-based ab initio molecular dynamics. Reaching agreement establishes confidence and credibility and serves as a prerequisite for the systematic assessment of new density functionals and numerical approximations.",
+        "ageHours": 20.7,
+        "summary": "A fundamental goal in climate attribution is to estimate how forced climate change contributes to observed extreme weather events. The storyline attribution method compares an observed weather event, conditional on its atmospheric dynamic state (i.e., atmospheric circulation), in the current, 'factual' climate to an event with very similar circulation conditions in a hypothetical, 'counterfactual' climate. However, physical climate models cannot directly transfer these storyline counterfactuals across different climate forcing states. Statistical and machine learning techniques may overcome this limitation; yet, emulating circulation-conditional extreme events under different climate states is challenging. Here, we demonstrate distributional autoencoders (DAEs) as a versatile method for generating climate counterfactuals. They model the full distribution of spatially resolved European temperature fields conditional on the atmospheric circulation state and the mean global warming level. These distributions allow for deriving meaningful conditional probability ratios, which is a particular advantage of the DAE-based storyline approach. We train DAEs on fully coupled climate model simulations and we evaluate the modelled distributions across different factual and storyline-based counterfactual climate model simulations. In an illustrative case study, we revisit the 2003 European heatwave and we generate counterfactuals for a hypothetical `2003-like European heatwave' using ERA5 circulation, which we hypothesize to occur a quarter century (2028) and a half century (2053) after 2003. The conditional intensity would increase from 29.3 \u00b0C in 2003, to 30.3 \u00b0C and 32.1 \u00b0C in 2028 and 2053, respectively and conditional probability ratios would be 2.1 and 3.2 when compared to 2003.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Dynamic Entanglement Packet Scheduling for Quantum Networks",
-        "articleUrl": "https://arxiv.org/abs/2605.28795v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.3,
-        "summary": "Sharing entanglement among multiple users remains a central challenge for scalable quantum networks. Recent work proposed an on-demand entanglement packet architecture in which a controller uses a Time Division Multiple Access (TDMA) approach to allocate network resources. Quantum nodes are assigned a periodic schedule that probabilistically fulfills application requests for end-to-end entanglements. The schedule is recomputed periodically using well-known algorithms, such as Earliest Deadline First (EDF). However, a static schedule offers limited flexibility when outcomes are stochastic and arrivals are asynchronous. To overcome this limitation, we propose an online scheduler that dynamically schedules, defers, retries, or drops entanglement distribution reservations. In our simulations, the dynamic scheduler achieves lower completion time, higher completion ratio, and higher throughput than the static baseline. Furthermore, when the network is overloaded, the dynamic scheduler continues to construct deadline-feasible schedules and degrades gracefully.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Non-invertible symmetry enriched string net topological orders",
-        "articleUrl": "https://arxiv.org/abs/2605.28794v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.3,
-        "summary": "We propose a definition of a non-invertible symmetry enriched topological order (NI-SETO), and we implement our definition for string net models. We do so in two ways, using full inclusions of unitary fusion categories (UFCs), as well as anyon condensation. In both cases, the NI-SETO is a relative center of UFCs. All NI-SETOs can be realized in either model, where we can use enriched UFCs to get chiral examples on the boundary of a 3D Walker-Wang model representing the anomaly. We describe several examples of NI-SETOs and compute the qualitative symmetry action on anyons and symmetry defects using tube algebra techniques.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "CaMBRAIN: Real-time, Continuous EEG Inference with Causal State Space Models",
-        "articleUrl": "https://arxiv.org/abs/2605.28792v1",
+        "title": "Transferable Self-Harm Surveillance from Emergency Department Triage Notes Using an Evidence-Augmented Machine Learning Approach",
+        "articleUrl": "https://arxiv.org/abs/2606.02545v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.3,
-        "summary": "Electroencephalography (EEG) is a critical, non-invasive method to monitor electrical brain activity. EEGs can span anywhere from a couple seconds to multiple hours, posing a major hurdle for existing deep learning methods due to two major factors: (1) existing EEG models are predominantly built upon the attention mechanism, incurring quadratic scaling as the sequence length increases, and (2) raw EEG signals must be processed in a sliding-window fashion due to fixed-length input requirements, preventing global understanding of the entire signal. To this extent, we propose CaMBRAIN - the first Causal, Mamba-based state space model (SSM) capable of real-time inference of EEG signals, arguing that bidirectional approaches are needlessly expensive given the causal, unidirectional nature of EEG. However, training such a model is non-trivial, as crucial EEG events can be extremely brief - within fractions of a second - yet separated by long intervals spanning minutes. Current EEG methods use self-supervised objectives that optimize for signal reconstruction, but these are not well suited for streaming SSMs; they fail to explicitly train the hidden state to retain the salient long-range context needed for streaming inference. We therefore introduce a multi-stage self-supervised training pipeline specifically tailored to encourage long-range memory retention and strong performance on EEG signals, while preserving the linear-time complexity of state space models. CaMBRAIN achieves state-of-the-art (SOTA) results across 3 different EEG datasets with >10x higher throughput than existing models, enabling the first model capable of long-range, continuous inference of variable-length EEG signals.",
+        "ageHours": 20.7,
+        "summary": "Self-harm is a major public health concern, but current surveillance relying on hospital presentations is inadequate due to the low sensitivity of diagnostic codes. Emergency Department (ED) triage notes, recorded at the initial point of contact, provide a succinct summary of presentations and an opportunity to identify self-harm. We developed a three-stage approach, augmenting traditional machine learning with large language model-based screening and evidence extraction to detect self-harm in ED triage notes. We assessed model transferability across three Australian hospitals. Our approach showed AUPRCs of 0.887 +/- 0.016 and 0.884 +/- 0.012 during internal and external validation. Prospectively, it achieved AUPRC of 0.881 +/- 0.008 at the development site, and 0.879 +/- 0.012 and 0.816 +/- 0.015 at two external sites without site-specific retraining. A key advantage of the approach is that it enables identification of the primary self-harm method with an accuracy of 95%, supporting more granular surveillance beyond binary classification.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "A quantum harmonic analysis approach to nonlinear time-frequency concentration",
-        "articleUrl": "https://arxiv.org/abs/2605.28786v1",
+        "title": "Chutes and Ladders: Dynamical Automorphisms via the ZX-Calculus",
+        "articleUrl": "https://arxiv.org/abs/2606.02542v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.3,
-        "summary": "We study nonlinear concentration problems for time-frequency distributions in the Cohen class. Using recent techniques from quantum harmonic analysis (QHA) we provide both positive and negative results, such as sufficient conditions for the existence of optimizers in terms of the ``window operator'' and explicit examples where the supremum is never attained. We also study the structural properties of window operators, in particular operators that yield weakly continuous concentration functionals and operators for which the nonlinear concentration problem admits an optimizer. We then consider generalizations to the study of concentration problems for phase space representations of operators. We consider generalized Husimi distributions via quantum convolution, and their optimization problem when optimizing over Hilbert--Schmidt and density operators. Lastly, we consider representations of operators on double phase space, in the spirit of quantum time-frequency analysis, and give a full solution in terms of the Weyl symbols.",
+        "ageHours": 20.8,
+        "summary": "The ZX-calculus is a powerful graphical language for manipulating quantum circuits, which has recently found many applications in quantum error correction. We extend this language to handle Floquet and other dynamical stabilizer codes via the connection between measurement-based code switching and gauge fixing (arXiv:1810.10037). We combine gauge-fixing steps to implement a closed loop in the space of stabilizer codes, returning to the original codespace up to a logical Clifford gate. These measurement-based paths in the space of stabilizer codes can be viewed as shortcuts, or \"chutes and ladders\", relative to single-qubit Clifford operations and qubit permutations. This yields a machine-interpretable method for constructing dynamical automorphisms and facilitates the search for implementations of desired logical gates. As an example, we implement a logical phase gate via distance-preserving code switching for the seven-qubit code bare code (arXiv:1702.01155), which has no non-trivial logical Clifford gates based on single-qubit Clifford operations and qubit permutations (arXiv:2409.18175).",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Complex abelian varieties and quantum error correction: a mathematical framework for GKP codes",
-        "articleUrl": "https://arxiv.org/abs/2605.28784v1",
+        "title": "Reduce dimensional quantum criticality for Non-Fermi liquids",
+        "articleUrl": "https://arxiv.org/abs/2606.02534v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.4,
-        "summary": "We study a class of quantum error-correcting codes through the geometry of complex abelian varieties. These codes, introduced by Gottesman--Kitaev--Preskill, are built from symplectically integral lattices and therefore naturally define polarized complex abelian varieties. We give a precise mathematical formulation of this relationship and extend it to a dictionary between the main structures of GKP code theory and classical objects in the theory of abelian varieties. For instance, under this dictionary, the finite-dimensional code space becomes the space of theta functions $H^0(X, L)$, logical Pauli gates arise from the theta group, passive logical Clifford gates correspond to automorphisms of the polarized abelian variety, and concatenation with stabilizer codes corresponds to isogeny. We also prove several key results that give precise mathematical formulations of statements about these codes that often appear in heuristic form in the physics literature. In particular, we prove that the encoding is asymptotically isometric, that every logical Clifford gate is realized by a Gaussian unitary, and that, for noise of small variance, the failure probability is governed to first order by the shortest nontrivial displacement in the kernel of the polarization isogeny, a systolic invariant of the underlying polarization. This leads naturally to optimization problems on the moduli space of polarized abelian varieties.",
+        "ageHours": 20.9,
+        "summary": "We present a reduced dimension theoretical framework for studying quantum field theories at finite density, providing a tractable model for investigating non-Fermi liquid (NFL) behavior near quantum phase transitions. Our approach departs from the standard paradigm by placing bosons and fermions in different spatial dimensions: bosonic fields reside in a $(d+1)$-dimensional bulk, while fermionic fields are confined on a $d$-dimensional boundary. This dimensional separation significantly simplifies the renormalization group (RG) analysis of gapless boson-fermion coupling. We demonstrate that the tree-level boson exchange contributions, which typically exhibit logarithmic divergences, become finite in our reduced-dimension scheme. Furthermore, the $\\log^2$ and $\\log^3$ divergences that characterize 1-loop four-fermion interactions in conventional treatments are reduced to logarithmic divergences within this framework, substantially improving the convergence properties of the perturbative expansion and allowing controlled theoretical analysis of NFL physics.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Hybrid Clifford Codes via Operator Algebra Quantum Error Correction and Projective Representation Theory",
+        "articleUrl": "https://arxiv.org/abs/2606.02531v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.9,
+        "summary": "Clifford codes are a natural generalization of quantum stabilizer codes based primarily on representation theory. This class of codes has previously been extended to the setting of quantum subsystem codes. We formulate a two-fold generalization of Clifford codes, for both the hybrid classical and quantum information and projective representation theory settings. This leads to new classes of hybrid subspace and subsystem Clifford codes. We extend the fundamental representation theoretic quantum error correction theorem to include these codes, based on the operator algebra quantum error correction framework. We also discuss several examples throughout the presentation, of both stabilizer and non-stabilizer type.",
         "charge": 0
       }
     ],
@@ -214,6 +214,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "ai": [
       {
         "bucket": "ai",
+        "title": "A plan to preserve wetlands without stopping development",
+        "articleUrl": "https://news.mit.edu/2026/preserving-wetlands-without-stopping-development-0602",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 10.6,
+        "summary": "Study shows the tradeoff between conservation and growth is less stark with a locally adjusted policy featuring both tradeable offsets and taxes.",
+        "interest": 2
+      },
+      {
+        "bucket": "ai",
         "title": "Study: Firms often use automation to control certain workers' wages",
         "articleUrl": "https://news.mit.edu/2026/study-firms-often-use-automation-control-certain-workers-wages-0507",
         "sourceName": "MIT News",
@@ -301,16 +311,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.5,
         "summary": "Existing Flow Matching (FM) text-to-image models suffer from two critical bottlenecks under multi-task alignment: the reward sparsity induced by scalar-valued rewards, and the gradient interference arising from jointly...",
         "interest": 6
-      },
-      {
-        "bucket": "ai",
-        "title": "EmambaIR: Efficient Visual State Space Model for Event-guided Image Reconstruction",
-        "articleUrl": "https://arxiv.org/abs/2605.08073v1",
-        "sourceName": "arXiv",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 10.1,
-        "summary": "Recent event-based image reconstruction methods predominantly rely on Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) to process complementary event information. However, these architectures face...",
-        "interest": 3
       }
     ]
   },
