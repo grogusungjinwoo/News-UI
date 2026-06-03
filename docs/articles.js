@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-02T14:33:09.540027+00:00",
+  "generatedAt": "2026-06-03T15:06:06.933128+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,36 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "Typhoon Jangmi",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/typhoon-jangmi/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 11.1,
+        "summary": "The sprawling storm promised to deliver torrential rain across a wide swath of southern Japan.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "Brain scans reveal two distinct types of autism",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260602021634.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 10.3,
+        "summary": "Scientists have uncovered evidence that autism may include at least two biologically distinct subtypes, each marked by a different pattern of brain communication. By combining brain scans from nearly 1,000 people with autism with insights from 20 genetically engineered mouse models, researchers identified a \u201chyperconnectivity\u201d subtype, where brain regions communicate more than usual, and a \u201chypoconnectivity\u201d subtype, where communication is reduced.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "Scientists confirm a deep earthquake that shouldn't exist",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260602021636.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 9.6,
+        "summary": "Scientists have confirmed that a mysterious Utah earthquake first detected in 1979 really did occur nearly 90 kilometers underground\u2014far deeper than anyone thought earthquakes could happen beneath a continent. By reanalyzing decades of seismic data, researchers identified a rare class of \"continental mantle earthquakes\" occurring deep in Earth\u2019s upper mantle, where rock is expected to slowly flow rather than suddenly break.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Gravity Waves From Super Typhoon Sinlaku",
         "articleUrl": "https://science.nasa.gov/earth/earth-observatory/gravity-waves-from-super-typhoon-sinlaku/",
         "sourceName": "NASA",
@@ -179,39 +209,19 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 9.5,
         "summary": "Physicists may have uncovered a surprising new clue that string theory\u2014the idea that the universe is built from unimaginably tiny vibrating strings\u2014could be more than just a mathematical fantasy. Instead of assuming strings existed from the start, researchers began with a few simple rules about how particles behave at extreme energies and discovered that the equations naturally produced the telltale fingerprints of string theory all on their own.",
         "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists opened a sealed envelope after 10 years and gravity still didn\u2019t make sense",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260517211443.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 12.8,
-        "summary": "For more than 200 years, scientists have struggled to pin down the exact strength of gravity \u2014 and one physicist spent a decade chasing the answer while keeping his own results hidden from himself. Stephan Schlamminger and his team at NIST painstakingly recreated a landmark French experiment designed to measure \u201cbig G,\u201d the universal gravitational constant that governs everything from falling apples to galaxies. When he finally opened a sealed envelope containing the secret number needed to decode the experiment, the results brought both relief and disappointment",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists \u201cbottle the sun\u201d with a liquid battery that stores solar energy",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260513221821.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.8,
-        "summary": "Scientists at UC Santa Barbara have created a remarkable new material that works like a \u201crechargeable solar battery,\u201d storing sunlight inside tiny molecules and releasing it later as heat \u2014 even long after the sun goes down. Inspired by reversible changes found in DNA and photochromic sunglasses, the system captures solar energy without relying on bulky batteries or the electrical grid. The molecule can hold energy for years and packs more energy per kilogram than lithium-ion batteries.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists discover a weak spot shared by polio and common cold viruses",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260512202320.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.9,
-        "summary": "Scientists at the University of Maryland, Baltimore County, have uncovered a crucial trick used by enteroviruses\u2014the group behind diseases like polio, myocarditis, encephalitis, and even the common cold\u2014to reproduce inside human cells. The team captured, in unprecedented detail, how viral RNA recruits both viral and human proteins to assemble the machinery needed for replication, acting almost like a molecular \u201con-off switch\u201d that controls whether the virus copies itself or makes proteins.",
-        "charge": 0
       }
     ],
     "ai": [
+      {
+        "bucket": "ai",
+        "title": "MIT researchers teach AI models to interpret charts",
+        "articleUrl": "https://news.mit.edu/2026/mit-researchers-teach-ai-models-to-interpret-charts-0603",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 11.1,
+        "summary": "The new ChartNet training dataset could improve the accuracy of vision-language models that help analyze business trends or interpret scientific figures.",
+        "interest": 6
+      },
       {
         "bucket": "ai",
         "title": "A plan to preserve wetlands without stopping development",
@@ -301,20 +311,20 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.6,
         "summary": "We argue that decomposing reward into weighted, verifiable criteria and using an LLM judge to score them provides a partial-credit optimization signal: instead of a binary outcome or a single holistic score, each response is...",
         "interest": 9
-      },
-      {
-        "bucket": "ai",
-        "title": "Flow-OPD: On-Policy Distillation for Flow Matching Models",
-        "articleUrl": "https://arxiv.org/abs/2605.08063v1",
-        "sourceName": "arXiv",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 10.5,
-        "summary": "Existing Flow Matching (FM) text-to-image models suffer from two critical bottlenecks under multi-task alignment: the reward sparsity induced by scalar-valued rewards, and the gradient interference arising from jointly...",
-        "interest": 6
       }
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Why one of the cities most dependent on the Colorado River now has water for sale",
+      "articleUrl": "https://www.npr.org/2026/06/03/nx-s1-5810173/why-one-of-the-cities-most-dependent-on-the-colorado-river-now-has-water-for-sale",
+      "sourceName": "NPR Topics: News",
+      "sourceHomeUrl": "https://www.npr.org",
+      "ageHours": 11.1,
+      "summary": "Once one of the most dependent on the Colorado River, San Diego now may have water to sell to states that are seeing their supplies from the shrinking river cut.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Emma Barnett: We can't ignore this disease that leaves one in 10 women like me in agony",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 6.6,
       "summary": "The online word game from the New York Times will hit the small screen in the UK and US from next year.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "'Atlanta Journal-Constitution' chief steps down as bold goals yield to tough realities",
-      "articleUrl": "https://www.npr.org/2026/05/11/nx-s1-5818208/ajc-andrew-morse-leaving",
-      "sourceName": "NPR Topics: News",
-      "sourceHomeUrl": "https://www.npr.org",
-      "ageHours": 6.5,
-      "summary": "The owners of the Atlanta  Journal-Constitution  invested $150 million to reinvent the paper. The changes have been significant. Three years in, the payoff has been modest.",
       "charge": 0
     }
   ]
