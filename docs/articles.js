@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-03T15:06:06.933128+00:00",
+  "generatedAt": "2026-06-04T13:32:16.333890+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "A Moonlit Earth as Seen From Artemis II",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/a-moonlit-earth-as-seen-from-artemis-ii/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 9.5,
+        "summary": "An astronaut\u2019s photo, taken en route to the Moon, reveals our planet and its place in space in a novel way.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Typhoon Jangmi",
         "articleUrl": "https://science.nasa.gov/earth/earth-observatory/typhoon-jangmi/",
         "sourceName": "NASA",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 9.5,
         "summary": "The glacial lake left a layer of silt and clay in southeastern Manitoba, creating fertile farmland that was divided during 19th-century land surveys and is still farmed today.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "String theory suddenly emerged from simple physics rules",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260518041424.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 9.5,
-        "summary": "Physicists may have uncovered a surprising new clue that string theory\u2014the idea that the universe is built from unimaginably tiny vibrating strings\u2014could be more than just a mathematical fantasy. Instead of assuming strings existed from the start, researchers began with a few simple rules about how particles behave at extreme energies and discovered that the equations naturally produced the telltale fingerprints of string theory all on their own.",
         "charge": 0
       }
     ],
