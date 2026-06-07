@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-06T11:46:16.373891+00:00",
+  "generatedAt": "2026-06-07T12:02:33.544678+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "SoFi Stadium workers vote to authorize strike ahead of World Cup",
+      "articleUrl": "https://www.npr.org/2026/06/06/nx-s1-5848682/sofi-stadium-strike-world-cup",
+      "sourceName": "NPR Topics: News",
+      "sourceHomeUrl": "https://www.npr.org",
+      "ageHours": 11.4,
+      "summary": "Negotiations between the union representing the workers, the hospitality group at the Los Angeles stadium and FIFA are set to continue Monday.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Why one of the cities most dependent on the Colorado River now has water for sale",
       "articleUrl": "https://www.npr.org/2026/06/03/nx-s1-5810173/why-one-of-the-cities-most-dependent-on-the-colorado-river-now-has-water-for-sale",
       "sourceName": "NPR Topics: News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.smithsonianmag.com",
       "ageHours": 7.1,
       "summary": "From a lunging frog to the majestic movements of penguins, the honored photographs capture the wonder of wildlife and beauty of natural landscapes",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Wordle to become TV quiz show with Savannah Guthrie as host",
-      "articleUrl": "https://www.bbc.com/news/articles/czd2vpdr9g6o?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 6.6,
-      "summary": "The online word game from the New York Times will hit the small screen in the UK and US from next year.",
       "charge": 0
     }
   ]
