@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-07T12:02:33.544678+00:00",
+  "generatedAt": "2026-06-08T14:31:28.960877+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "Digging Back in Time in the UAE",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/digging-back-in-time-in-the-uae/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 10.5,
+        "summary": "Once below a shallow sea, Jabal al F\u0101yah now stands above the desert in the United Arab Emirates as a reminder of a watery past and early human survival.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "A Moonlit Earth as Seen From Artemis II",
         "articleUrl": "https://science.nasa.gov/earth/earth-observatory/a-moonlit-earth-as-seen-from-artemis-ii/",
         "sourceName": "NASA",
@@ -199,19 +209,19 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 9.4,
         "summary": "Scientists have uncovered an astonishing new chapter in humpback whale migration: two whales were found to have traveled between breeding grounds in Australia and Brazil, crossing more than 14,000 kilometers of open ocean. One whale shattered records by covering at least 15,100 kilometers between sightings, marking the longest confirmed journey ever documented for an individual humpback whale.",
         "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Farming in Ancient Lake Agassiz",
-        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/farming-in-ancient-lake-agassiz/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 9.5,
-        "summary": "The glacial lake left a layer of silt and clay in southeastern Manitoba, creating fertile farmland that was divided during 19th-century land surveys and is still farmed today.",
-        "charge": 0
       }
     ],
     "ai": [
+      {
+        "bucket": "ai",
+        "title": "Improving the performance of high-power electronics",
+        "articleUrl": "https://news.mit.edu/2026/improving-high-power-electronics-performance-0608",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 10.5,
+        "summary": "By using a thin layer of diamond to manage excessive heat, researchers can boost the speed and energy-efficiency of next-generation wireless devices.",
+        "interest": 3
+      },
       {
         "bucket": "ai",
         "title": "MIT researchers teach AI models to interpret charts",
@@ -301,20 +311,20 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 11.7,
         "summary": "Context window expansion is often treated as a straightforward capability upgrade for LLMs, but we find it systematically fails in multi-agent social dilemmas. Across 7 LLMs and 4 games over 500 rounds, expanding accessible...",
         "interest": 17
-      },
-      {
-        "bucket": "ai",
-        "title": "Rubric-Grounded RL: Structured Judge Rewards for Generalizable Reasoning",
-        "articleUrl": "https://arxiv.org/abs/2605.08061v1",
-        "sourceName": "arXiv",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 10.6,
-        "summary": "We argue that decomposing reward into weighted, verifiable criteria and using an LLM judge to score them provides a partial-credit optimization signal: instead of a binary outcome or a single holistic score, each response is...",
-        "interest": 9
       }
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Israel and Iran exchange missile fire threatening Middle East truce",
+      "articleUrl": "https://www.npr.org/2026/06/08/g-s1-126844/iran-war-updates",
+      "sourceName": "NPR Topics: News",
+      "sourceHomeUrl": "https://www.npr.org",
+      "ageHours": 10.1,
+      "summary": "The exchange marked a major escalation in the already tense region. It came on the 100th day of a war that began on Feb. 28, further complicating efforts to end Middle East fighting.",
+      "charge": 1
+    },
     {
       "bucket": "random",
       "title": "SoFi Stadium workers vote to authorize strike ahead of World Cup",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 9.1,
       "summary": "A specialist team helped supply critical medical support to Tristan da Cunha in the South Atlantic.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "See 15 Stunning Images That Won the German Society for Nature Photography's Annual Contest",
-      "articleUrl": "https://www.smithsonianmag.com/smart-news/see-15-stunning-images-that-won-the-german-society-for-nature-photographys-annual-contest-180988711/",
-      "sourceName": "Smart News | smithsonianmag.com",
-      "sourceHomeUrl": "https://www.smithsonianmag.com",
-      "ageHours": 7.1,
-      "summary": "From a lunging frog to the majestic movements of penguins, the honored photographs capture the wonder of wildlife and beauty of natural landscapes",
       "charge": 0
     }
   ]
