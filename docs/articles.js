@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-08T14:31:28.960877+00:00",
+  "generatedAt": "2026-06-09T13:18:23.921175+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "ProtoAda: Prototype-Guided Adaptive Adapter Expansion and Geometric Consolidation for Multimodal Continual Instruction Tuning",
-        "articleUrl": "https://arxiv.org/abs/2606.02576v1",
+        "title": "Weighted universal approximation of differentiable maps on infinite-dimensional manifolds",
+        "articleUrl": "https://arxiv.org/abs/2606.09820v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.6,
-        "summary": "Multimodal Large Language Models (MLLMs) achieve strong performance through instruction tuning, but real-world deployment requires them to continually acquire new vision-language capabilities, making Multimodal Continual Instruction Tuning (MCIT) essential. To reduce inter-task interference and promote collaboration, recent methods often employ sparse architectures like Mixture of LoRA Experts with image-text similarity routing. However, tasks with distinct response structures could share highly similar visual-linguistic semantics and thus be wrongly routed to the same expert; image-text similarity alone is insufficient for reliable task assignment. For example, an expert in a grounding task requiring coordinate prediction may be biased toward producing short textual answers after learning semantically similar VQA tasks. This format-blind task assignment integrates heterogeneous response types into shared parameters, inducing gradient interference and ineffective expert collaboration. To address this problem, we propose ProtoAda, a prototype-guided adaptive tuning framework. ProtoAda introduces format-aware task prototypes to align task assignment and routing with both task semantics and output structure, and further consolidates format-compatible updates in a geometry-aware manner to effectively reuse and progressively refine existing parameters. Extensive experiments on multiple benchmarks demonstrate that ProtoAda achieves superior performance, especially on tasks whose answer structures are easily corrupted by sequential tuning.",
+        "ageHours": 19.3,
+        "summary": "We generalize the universal approximation theorem for functional input neural networks (FNN) to differentiable maps by including the approximation of the derivatives. A FNN maps the input from a possibly infinite-dimensional weighted manifold to the real-valued hidden layer, on which a non-linear scalar activation function is applied, and then returns the output into a Banach space via some linear readouts. By proving a weighted Nachbin theorem, we establish a universal approximation theorem (UAT) for differentiable maps, which goes beyond the usual formulation on compact sets and also includes the approximation of the derivatives. This leads us to approximation results for non-anticipative functionals including the horizontal and vertical derivatives. As a further application, we show that linear functions of the signature are able to approximate path space functionals including their directional derivatives.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Quantum Simulation of Nucleon-Antinucleon Interaction in Large-$N$ QCD$_2$ on an IBM Quantum Nighthawk Processor",
-        "articleUrl": "https://arxiv.org/abs/2606.02574v1",
+        "title": "Linear Ricci-Trace Deformations and Operational Equivalence in Rastall-Type Gravity",
+        "articleUrl": "https://arxiv.org/abs/2606.09819v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.6,
-        "summary": "We report a quantum simulation of the nucleon--antinucleon interaction in large-$N$ two-dimensional quantum chromodynamics (QCD$_2$) on the IBM Quantum Nighthawk processor. In the large-$N$ limit, QCD$_2$ admits a bosonized description in which baryons emerge as topological solitons (kinks) of an effective mesonic field theory, providing a controlled, nonperturbative framework for baryon--antibaryon dynamics.\n  We formulate the problem by mapping the continuum bosonized Hamiltonian to a spin-chain representation equivalent to an XXZ model with anisotropy set by the QCD parameters. In this mapping, nucleon and antinucleon states correspond to kink and antikink excitations, respectively, while their interaction is encoded in the spin correlations of the chain. Using Jordan--Wigner encoding, we implement the resulting XXZ Hamiltonian on a finite set of qubits and realize it via a variational ground state ansatz and postselected nonunitary disorder operator insertions optimized for the Nighthawk architecture. We then show the kink--antikink interaction potential built from the conditional energies of these nonunitary string operators can be robustly extracted from the quantum hardware due to structured error cancelation. The resulting potential exhibits the expected attractive behavior. The quantum simulation results are benchmarked against exact diagonalization, ideal statevector evaluation showing good agreement. To connect the device result to the continuum field theory, we extract the potential in the continuum limit using large-$L$ matrix product state calculations.",
+        "ageHours": 19.4,
+        "summary": "We analyze a class of linear Ricci--trace deformations of Einstein's field equations in which the relative weight between the Ricci tensor and the scalar-curvature trace sector is modified while the metric remains the only gravitational field. The purpose of the analysis is structural rather than phenomenological: we classify the corresponding field-equation class, fix the parameter dictionaries commonly used in the Rastall-gravity literature, and identify which equivalence statements survive after Newtonian calibration. We show that two frequently used parametrizations, \\[ (1-\u03b5)R_{\u03bc\u03bd}-\\frac12 g_{\u03bc\u03bd}R=\u03ba_\u03b5T_{\u03bc\u03bd}, \\qquad R_{\u03bc\u03bd}-\\frac{1-\u03bb}{2}g_{\u03bc\u03bd}R=\u03ba_\u03bbT_{\u03bc\u03bd}, \\] are algebraically isomorphic only if both the deformation parameter and the bare gravitational coupling are transformed simultaneously. This algebraic equivalence, however, is not automatically an operational equivalence. Once the same laboratory stress tensor and the same measured Newton constant are fixed, the parameter map is a passive reparametrization only at the Einstein point. We further identify the \\(\u03bb\\)-representative with the standard Rastall equation, clarify the role of the conserved effective source, derive the corresponding FLRW perfect-fluid sector, and discuss degenerate cases including vacuum, trace-free matter, radiation, dust, and the singular traceless point. Finally, we distinguish the Ricci--trace class from Unimodular Gravity (UG): although both involve the trace sector, UG follows from a restricted variational principle and produces the cosmological constant as an integration constant, rather than from an algebraic Ricci--trace deformation. The result is a compact operational classification of Rastall-type Ricci--trace models.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Pure UCP Maps on Finite Toeplitz Systems and Quantum Gromov--Hausdorff Convergence",
-        "articleUrl": "https://arxiv.org/abs/2606.02561v1",
+        "title": "Inflationary interpretation of the gravitational-wave signal in the European Pulsar Timing Array DR2 with constraints",
+        "articleUrl": "https://arxiv.org/abs/2606.09810v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.7,
-        "summary": "We study pure unital completely positive maps on the finite Toeplitz operator system $ T_{d}$ of $d \\times d$ Toeplitz matrices. Our first main result gives an explicit characterization of pure UCP maps from $T_{d}$ to $M_n$ in terms of positive $n\\times n$ matrix-valued trigonometric polynomials of degree at most $d-1$. This characterization provides a checkable criterion for deciding when a given UCP map is pure. As a first application, we show that every pure UCP map from $ T_{d}$ to $M_n$ admits a unique UCP extension to the generated $C^*$-algebra. As a second application, we prove that, for each fixed $n$, the space of pure UCP maps from $T_{d}$ to $M_n$, equipped with the matricial Connes distance, converges in the Gromov--Hausdorff sense to the space of normalized positive $n\\times n$ matrix-valued Borel measures on the unit circle, equipped with the matricial Monge--Kantorovich distance.",
+        "ageHours": 19.4,
+        "summary": "The second data release of the European Pulsar Timing Array (EPTA) collaboration provides evidence for the presence of a gravitational-wave (GW) background. In this work, we explore a potential cosmological interpretation of this signal in terms of inflationary scenarios. We parametrize the tensor power spectrum in terms of the tensor-to-scalar ratio $r$, the tensor spectral index $n_t$, the reheating temperature $T_{\\text{rh}}$, and the cut-off frequency $f_{\\text{end}}$. We incorporate all relevant observational constraints, including those from the Cosmic Microwave Background, Big Bang Nucleosynthesis, and LIGO-Virgo-KAGRA observations. We demonstrate that imposing these constraints consistently reduces the region of parameter space that provides a viable interpretation of the EPTA signal, to $-11.66 \\lesssim \\log_{10}r \\lesssim -1.45$, $1.32 \\lesssim n_t \\lesssim 2.47$, $1.78\\text{ MeV} \\lesssim T_{\\text{rh}} \\lesssim 28.2\\text{ GeV}$, and $75.86\\text{ nHz} \\lesssim f_{\\text{end}} \\lesssim 14.45\\text{ Hz}$ at the 95% confidence level. This favours the scenario in which the GW spectrum in the EPTA frequency band originates from tensor modes that re-entered the Hubble radius during the radiation-dominated era, allowing for a higher $r$ and a flatter spectrum. However, $T_{\\text{rh}}$ must take very low values, which are challenging to explain theoretically.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "A Mid-Infrared Platform Based on Strontium Tweezer Arrays",
-        "articleUrl": "https://arxiv.org/abs/2606.02560v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.7,
-        "summary": "Subwavelength atomic tweezer arrays, in which atoms can be positioned at distances smaller than their emission wavelength, have been proposed as a versatile platform to study collective emission phenomena, such as superradiance and subradiance. Experimentally, the realization of such arrays has been a challenge as typical emission wavelengths in the visible or near-infrared are short compared to typical tweezer spacings in the micrometer range. Here, we use $^{88}$Sr atoms in optical tweezer arrays to access a mid-infrared transition at 2,923 nm ($5s5p\\:^{3}P_{2} \\rightarrow\\, 5s4d\\:^{3}D_{3}$). We identify a magic trapping wavelength at 597.14(3) nm and demonstrate single-atom preparation and imaging with high fidelity. In addition, using 2,923 nm light, we demonstrate resolved-sideband cooling of tweezer-trapped strontium. Beyond enabling studies of collective emission phenomena in flexible arrangements of atoms, our platform opens novel opportunities for dipolar many-body physics and enhanced control over Rydberg dynamics and the strontium fine-structure qubit.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Strong-to-Weak Spontaneous Symmetry Breaking",
-        "articleUrl": "https://arxiv.org/abs/2606.02555v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.7,
-        "summary": "Strong-to-weak spontaneous symmetry breaking (SW-SSB) has recently emerged as a useful framework for studying phases of matter in open systems, quantum or classical. Beginning with the simple idea of extending symmetry breaking to general mixed states, and the familiar equivalence between canonical and grand-canonical ensembles in statistical mechanics, the concept has grown into a unifying perspective connecting many different ideas in physics, including topological orders, emergent hydrodynamics, and information-theoretic characterization of phases of matter. This review provides a bird's-eye view of some of these recent developments.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Probabilistic storyline attribution using machine learning",
-        "articleUrl": "https://arxiv.org/abs/2606.02550v1",
+        "title": "Topological Neural Operators",
+        "articleUrl": "https://arxiv.org/abs/2606.09806v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.7,
-        "summary": "A fundamental goal in climate attribution is to estimate how forced climate change contributes to observed extreme weather events. The storyline attribution method compares an observed weather event, conditional on its atmospheric dynamic state (i.e., atmospheric circulation), in the current, 'factual' climate to an event with very similar circulation conditions in a hypothetical, 'counterfactual' climate. However, physical climate models cannot directly transfer these storyline counterfactuals across different climate forcing states. Statistical and machine learning techniques may overcome this limitation; yet, emulating circulation-conditional extreme events under different climate states is challenging. Here, we demonstrate distributional autoencoders (DAEs) as a versatile method for generating climate counterfactuals. They model the full distribution of spatially resolved European temperature fields conditional on the atmospheric circulation state and the mean global warming level. These distributions allow for deriving meaningful conditional probability ratios, which is a particular advantage of the DAE-based storyline approach. We train DAEs on fully coupled climate model simulations and we evaluate the modelled distributions across different factual and storyline-based counterfactual climate model simulations. In an illustrative case study, we revisit the 2003 European heatwave and we generate counterfactuals for a hypothetical `2003-like European heatwave' using ERA5 circulation, which we hypothesize to occur a quarter century (2028) and a half century (2053) after 2003. The conditional intensity would increase from 29.3 \u00b0C in 2003, to 30.3 \u00b0C and 32.1 \u00b0C in 2028 and 2053, respectively and conditional probability ratios would be 2.1 and 3.2 when compared to 2003.",
+        "ageHours": 19.4,
+        "summary": "We introduce Topological Neural Operators (TNOs), a principled framework for operator learning on cell complexes that lifts neural operators (NOs) from functions on points and/or edges to topological domains. TNOs represent data as features defined on cells of varying dimension and model their interactions through Discrete Exterior Calculus, enabling explicit cross-dimensional coupling via gradient-, curl-, and divergence-type operators. The key design principle is to decouple where information flows, as governed by fixed topological operators, from how it is transformed (which is learned), yielding models that respect the geometric support of physical quantities and expose conservation and compatibility structure. We further propose Hierarchical TNOs (HTNOs), which incorporate learned coarse complexes to propagate long-range and topology-dependent information. Our framework subsumes existing NOs as a special case, providing a unified perspective on operator learning across discretizations. Across a range of PDE benchmarks, including irregular-geometry flow problems, TNOs and HTNOs improve accuracy; controlled studies further isolate the benefits of native higher-rank and topological structure. Project page: https://circle-group.github.io/research/TNO",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Transferable Self-Harm Surveillance from Emergency Department Triage Notes Using an Evidence-Augmented Machine Learning Approach",
-        "articleUrl": "https://arxiv.org/abs/2606.02545v1",
+        "title": "On the viability of Transatlantic Quantum Entanglement Distribution using Combined Satellite and Stratospheric Relay Nodes",
+        "articleUrl": "https://arxiv.org/abs/2606.09805v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.4,
+        "summary": "To explore the pathways toward establishing a global quantum network, we investigate several link architectures for transatlantic quantum entanglement distribution over a 6,500 km ground distance. We define free-space link configurations involving satellites and stratospheric high altitude platforms (HAPs), using today's technology and without relying on quantum memories and repeaters. Considering link budgets, space radiation, orbital characteristics, and system complexity we find that a hybrid architecture consisting of an entangled photon source located on a low Earth orbit (LEO) satellite supported by two passive optical relays located on HAPs provides the overall highest entanglement distribution rate. In addition, the satellite HAP architecture offers practical advantages in payload design and launch requirements, and the ability to lower the weather-related link interruptions assuming some maneuverability of HAPs. Overall, this hybrid configuration yields on the order of 5X10^6 secure key bits per year using 30 cm aperture ground receivers, nearly two orders of magnitude higher than achievable with a single MEO satellite and 1 m aperture ground receivers. Our results highlight the major benefits of hybrid satellite HAP architectures by reducing system complexity while enabling scalable and more accessible long-range quantum communication networks.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Universal Suppression of Gravitational Waves from Black Hole Evaporation Dynamics",
+        "articleUrl": "https://arxiv.org/abs/2606.09804v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.4,
+        "summary": "Evaporating black holes can leave distinct imprints on gravitational wave (GW) backgrounds. We show that black hole populations with finite width mass distributions exhibit a universal late time evolution governed by the evaporation dynamics rather than the details of the initial mass distribution, leading to a characteristic power law suppression of the induced GWs. We demonstrate this for a broad class of mass functions in primordial black hole (PBH) scenarios featuring an early Universe matter-dominated era, and identify the suppression of PBH-induced GWs found for critical collapse distributions as a manifestation of this general phenomenon. Our results establish a direct connection between the asymptotic GW spectrum and the underlying law of black hole evaporation.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Echo-Memory: A Controlled Study of Memory in Action World Models",
+        "articleUrl": "https://arxiv.org/abs/2606.09803v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.7,
-        "summary": "Self-harm is a major public health concern, but current surveillance relying on hospital presentations is inadequate due to the low sensitivity of diagnostic codes. Emergency Department (ED) triage notes, recorded at the initial point of contact, provide a succinct summary of presentations and an opportunity to identify self-harm. We developed a three-stage approach, augmenting traditional machine learning with large language model-based screening and evidence extraction to detect self-harm in ED triage notes. We assessed model transferability across three Australian hospitals. Our approach showed AUPRCs of 0.887 +/- 0.016 and 0.884 +/- 0.012 during internal and external validation. Prospectively, it achieved AUPRC of 0.881 +/- 0.008 at the development site, and 0.879 +/- 0.012 and 0.816 +/- 0.015 at two external sites without site-specific retraining. A key advantage of the approach is that it enables identification of the primary self-harm method with an accuracy of 95%, supporting more granular surveillance beyond binary classification.",
+        "ageHours": 19.4,
+        "summary": "We present \\textbf{Echo-Memory}, a controlled study of memory mechanisms in action-conditioned world models. These models generate multi-segment videos from a first frame, text prompt, and camera-action sequence, but their central failure is often memory rather than local image synthesis: after the camera leaves and returns, the scene or salient object may silently change. Existing memory designs are hard to compare because gains are entangled with backbone, training, retrieval, and evaluation differences. Echo-Memory fixes the action-to-video interface and varies only how history is stored and read by the generator. Under a shared video diffusion backbone, optimizer, camera-action representation, sampler, and evaluation pipeline, we compare raw context, compression-based memory, spatial summaries with different read-out paths, and state-space recurrence. This matched matrix separates four otherwise conflated axes: \\emph{capacity}, \\emph{compression}, \\emph{read-out}, and \\emph{recurrence}. We also evaluate memory through a three-branch protocol: replay quality, in-domain loop revisit, and open-domain return probes. The branches routinely disagree, showing that replay fidelity is not a sufficient proxy for remembering a world. Three findings follow. Raw context is a strong capacity baseline and improves open-domain return far more than it improves replay metrics. Compactness is not a free substitute for capacity: aggressive spatial and hybrid-compression memories lose the salient evidence needed for return. Finally, block-wise state-space recurrence is the strongest open-domain return mechanism in our matrix, showing that the structure of implicit memory matters as much as the decision to use it. These results provide a compact protocol for studying memory in action world models beyond isolated replay metrics.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Chutes and Ladders: Dynamical Automorphisms via the ZX-Calculus",
-        "articleUrl": "https://arxiv.org/abs/2606.02542v1",
+        "title": "Operation Mpemba effect: Breakdown of resource-Markovianity of free dynamics",
+        "articleUrl": "https://arxiv.org/abs/2606.09790v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.8,
-        "summary": "The ZX-calculus is a powerful graphical language for manipulating quantum circuits, which has recently found many applications in quantum error correction. We extend this language to handle Floquet and other dynamical stabilizer codes via the connection between measurement-based code switching and gauge fixing (arXiv:1810.10037). We combine gauge-fixing steps to implement a closed loop in the space of stabilizer codes, returning to the original codespace up to a logical Clifford gate. These measurement-based paths in the space of stabilizer codes can be viewed as shortcuts, or \"chutes and ladders\", relative to single-qubit Clifford operations and qubit permutations. This yields a machine-interpretable method for constructing dynamical automorphisms and facilitates the search for implementations of desired logical gates. As an example, we implement a logical phase gate via distance-preserving code switching for the seven-qubit code bare code (arXiv:1702.01155), which has no non-trivial logical Clifford gates based on single-qubit Clifford operations and qubit permutations (arXiv:2409.18175).",
+        "ageHours": 19.6,
+        "summary": "The Mpemba effect refers to faster relaxation of states that are initially farther from equilibrium, yet its characterization is often tied to a chosen distance or resource measure. We introduce resource-Markovianity, an extended concept of quantum Markovianity to quantum resource theories, and formulate the resource Mpemba effect operationally as the breaking of resource-Markovianity by a relaxation operation. This yields a measure-independent operational characterization of resource Mpemba effects in general resource theories, together with quantitative characterizations based on resource-non-Markovianity measures. We illustrate the framework with the Mpemba effect for distinguishability of states, due to its relation to quantum Markovianity, and with the thermomajorization Mpemba effect from an operational perspective. These results reveal a deep interplay between quantum resources, non-Markovianity, and the Mpemba effect.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Reduce dimensional quantum criticality for Non-Fermi liquids",
-        "articleUrl": "https://arxiv.org/abs/2606.02534v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "title": "Zero Touch Predictive Orchestration: Automating Time-Series Models for the Cloud-Edge Continuum",
+        "articleUrl": "https://arxiv.org/abs/2606.09787v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.9,
-        "summary": "We present a reduced dimension theoretical framework for studying quantum field theories at finite density, providing a tractable model for investigating non-Fermi liquid (NFL) behavior near quantum phase transitions. Our approach departs from the standard paradigm by placing bosons and fermions in different spatial dimensions: bosonic fields reside in a $(d+1)$-dimensional bulk, while fermionic fields are confined on a $d$-dimensional boundary. This dimensional separation significantly simplifies the renormalization group (RG) analysis of gapless boson-fermion coupling. We demonstrate that the tree-level boson exchange contributions, which typically exhibit logarithmic divergences, become finite in our reduced-dimension scheme. Furthermore, the $\\log^2$ and $\\log^3$ divergences that characterize 1-loop four-fermion interactions in conventional treatments are reduced to logarithmic divergences within this framework, substantially improving the convergence properties of the perturbative expansion and allowing controlled theoretical analysis of NFL physics.",
+        "ageHours": 19.6,
+        "summary": "The Cloud-Edge Continuum (CEC) enables latency-critical applications by distributing resources to the far edge, but its extreme volatility makes proactive Zero Touch Management via time-series forecasting essential. However, orchestrators face a severe \"cold start\" problem: newly discovered nodes lack the historical data required to train localized predictive models, while generalized models fail to capture unique hardware and microservice behaviors. To solve this, we propose a fully automated time-series prediction architecture driven by a novel data-mixing methodology. At the infrastructure level, we introduce a lightweight, technology-agnostic Resource Exposer (RE) that dynamically discovers nodes and continuously collects customizable telemetry (e.g., compute, network, energy). To overcome the sparsity of these initial local samples, our framework automatically merges them with TimeTrack, our publicly available, high-resolution dataset collected at 45-second intervals. This synergizes TimeTrack's foundational, high-frequency temporal patterns with the precise calibration of the local node data. Processed through a Neural Architecture Search (NAS) engine, the system automatically generates highly accurate baseline models. Experimental results demonstrate that merging the target data with TimeTrack effectively mitigates the cold start challenge. This integration significantly improves forecasting accuracy measured in Mean Squared Error (MSE), Mean Absolute Error (MAE), and Mean Absolute Percentage Error (MAPE) and accelerates convergence compared to training on the sparse local samples alone, training solely on generic datasets, or mixing the target data with standard alternative datasets, establishing a robust foundation for continuous MLOps deployment.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Hybrid Clifford Codes via Operator Algebra Quantum Error Correction and Projective Representation Theory",
-        "articleUrl": "https://arxiv.org/abs/2606.02531v1",
+        "title": "Neutron stars in Poincar\u00e9 gauge gravity with quadratic torsion",
+        "articleUrl": "https://arxiv.org/abs/2606.09786v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.9,
-        "summary": "Clifford codes are a natural generalization of quantum stabilizer codes based primarily on representation theory. This class of codes has previously been extended to the setting of quantum subsystem codes. We formulate a two-fold generalization of Clifford codes, for both the hybrid classical and quantum information and projective representation theory settings. This leads to new classes of hybrid subspace and subsystem Clifford codes. We extend the fundamental representation theoretic quantum error correction theorem to include these codes, based on the operator algebra quantum error correction framework. We also discuss several examples throughout the presentation, of both stabilizer and non-stabilizer type.",
+        "ageHours": 19.6,
+        "summary": "We study static neutron stars in an algebraic sector of Poincar\u00e9 gauge gravity with parity-even and parity-odd quadratic torsion invariants. Since torsion is non-propagating, the contorsion equation is algebraic and can be solved in terms of the spin current. For a Weyssenhoff fluid satisfying the Frenkel condition, the metric field equations reduce to ordinary Riemannian Einstein equations sourced by an effective fluid containing spin-squared corrections. We derive the effective energy density, radial pressure, and tangential pressure, allowing both isotropic and anisotropic spin correlations. In contrast with Einstein--Cartan theory, the coefficient of the effective spin-spin interaction is not fixed, but depends on the dimensionless quadratic-torsion couplings. In the Einstein--Cartan limit, using the metric definition of the stress-energy tensor, the unpolarized spin contribution gives $w_{\\mathrm{spin}}=-1/3$. We then derive the corresponding modified Tolman--Oppenheimer--Volkoff equations and solve them numerically using the DD2 equation of state. For the positive effective spin-spin coupling branch considered here, the torsion correction makes the stellar configurations more compact, lowers the maximum mass, and reduces the binding energy relative to the general-relativistic sequence. For the smooth weak-polarization profiles considered, spin-correlation anisotropy has only a negligible effect on the mass--radius relation.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "San Francisco\u2019s Metropolitan Mosaic",
+        "articleUrl": "https://science.nasa.gov/missions/station/san-franciscos-metropolitan-mosaic/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 9.3,
+        "summary": "Urban development, green spaces, and maritime activity converge in this Northern California city.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Digging Back in Time in the UAE",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://www.sciencedaily.com",
         "ageHours": 10.8,
         "summary": "Reptiles have been growing armor in their skin on and off for hundreds of millions of years, but scientists never fully understood how it evolved. A massive new evolutionary study shows these skin bones appeared independently in multiple lizard groups rather than coming from a single armored ancestor. Even more astonishing, Australian goannas lost this armor long ago \u2014 then evolved it back again millions of years later.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Humpback whale breaks migration record with 15,000 kilometer ocean journey",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260519224303.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 9.4,
-        "summary": "Scientists have uncovered an astonishing new chapter in humpback whale migration: two whales were found to have traveled between breeding grounds in Australia and Brazil, crossing more than 14,000 kilometers of open ocean. One whale shattered records by covering at least 15,100 kilometers between sightings, marking the longest confirmed journey ever documented for an individual humpback whale.",
         "charge": 0
       }
     ],
