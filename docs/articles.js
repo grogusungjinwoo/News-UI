@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-09T13:18:23.921175+00:00",
+  "generatedAt": "2026-06-10T13:49:48.578989+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Weighted universal approximation of differentiable maps on infinite-dimensional manifolds",
-        "articleUrl": "https://arxiv.org/abs/2606.09820v1",
+        "title": "A Unifying Lens on Supervised Fine-Tuning Through Target Distribution Design",
+        "articleUrl": "https://arxiv.org/abs/2606.11189v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.3,
-        "summary": "We generalize the universal approximation theorem for functional input neural networks (FNN) to differentiable maps by including the approximation of the derivatives. A FNN maps the input from a possibly infinite-dimensional weighted manifold to the real-valued hidden layer, on which a non-linear scalar activation function is applied, and then returns the output into a Banach space via some linear readouts. By proving a weighted Nachbin theorem, we establish a universal approximation theorem (UAT) for differentiable maps, which goes beyond the usual formulation on compact sets and also includes the approximation of the derivatives. This leads us to approximation results for non-anticipative functionals including the horizontal and vertical derivatives. As a further application, we show that linear functions of the signature are able to approximate path space functionals including their directional derivatives.",
+        "ageHours": 19.8,
+        "summary": "Supervised fine-tuning (SFT) typically maximizes the likelihood of every token in a demonstrated trajectory. However, an observed token can be non-unique, noisy, or misaligned with the model prior. Strictly fitting toward this one-hot target may be suboptimal, especially when the pretrained model encodes a rich knowledge prior. In this work, we reinterpret SFT as target distribution design: instead of studying only the loss objective, we analyze the token-level target that the loss drives the model to match. We introduce the Q-target framework, which decomposes SFT supervision into two explicit choices: (1) how strongly to rely on the observed token, and (2) how to allocate the remaining probability mass over alternatives. This perspective unifies many existing SFT variants as implicit choices of the target distribution Q. Building on this view, we propose Target-SFT which constructs the training objective directly from the desired target distribution. This method consistently outperforms across the ten reasoning dataset-model settings evaluated, showing the effectiveness of this target-based approach. Overall, our formulation reveals a more fundamental design principle for SFT training and opens a broader search space for SFT objectives.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Linear Ricci-Trace Deformations and Operational Equivalence in Rastall-Type Gravity",
-        "articleUrl": "https://arxiv.org/abs/2606.09819v1",
+        "title": "Full-State and Reduced-Moment Encodings: A Representation-Level View of Equilibrium Quantum Many-Body Theory",
+        "articleUrl": "https://arxiv.org/abs/2606.11177v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "We analyze a class of linear Ricci--trace deformations of Einstein's field equations in which the relative weight between the Ricci tensor and the scalar-curvature trace sector is modified while the metric remains the only gravitational field. The purpose of the analysis is structural rather than phenomenological: we classify the corresponding field-equation class, fix the parameter dictionaries commonly used in the Rastall-gravity literature, and identify which equivalence statements survive after Newtonian calibration. We show that two frequently used parametrizations, \\[ (1-\u03b5)R_{\u03bc\u03bd}-\\frac12 g_{\u03bc\u03bd}R=\u03ba_\u03b5T_{\u03bc\u03bd}, \\qquad R_{\u03bc\u03bd}-\\frac{1-\u03bb}{2}g_{\u03bc\u03bd}R=\u03ba_\u03bbT_{\u03bc\u03bd}, \\] are algebraically isomorphic only if both the deformation parameter and the bare gravitational coupling are transformed simultaneously. This algebraic equivalence, however, is not automatically an operational equivalence. Once the same laboratory stress tensor and the same measured Newton constant are fixed, the parameter map is a passive reparametrization only at the Einstein point. We further identify the \\(\u03bb\\)-representative with the standard Rastall equation, clarify the role of the conserved effective source, derive the corresponding FLRW perfect-fluid sector, and discuss degenerate cases including vacuum, trace-free matter, radiation, dust, and the singular traceless point. Finally, we distinguish the Ricci--trace class from Unimodular Gravity (UG): although both involve the trace sector, UG follows from a restricted variational principle and produces the cosmological constant as an integration constant, rather than from an algebraic Ricci--trace deformation. The result is a compact operational classification of Rastall-type Ricci--trace models.",
+        "ageHours": 19.9,
+        "summary": "Equilibrium quantum many-body methods differ not only in approximation, but in which information they represent explicitly. We formulate this distinction by fixing an equilibrium specification and viewing every representation as an encoder from admissible states to represented variables. The identity encoder gives a full-state representation, whereas a non-injective encoder gives a reduced representation whose value labels a fiber of compatible states. For a specified task, an exact decoder exists on a state class if and only if the task is constant on the encoder fibers within that class. Variational principles, reconstruction correspondences, functionals, kernels, and closures are different realizations of additional structure used to select, restrict, or approximate the task-relevant content of a fiber when the retained variable alone is insufficient. Static moments and imaginary-time correlation functions are unified as restrictions of a complete equilibrium readout functional to different probe families. Within the same principle, quantum embedding can be viewed as consistency or replacement between global and local descriptions through reduced interface encoders and their conjugate fields.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Inflationary interpretation of the gravitational-wave signal in the European Pulsar Timing Array DR2 with constraints",
-        "articleUrl": "https://arxiv.org/abs/2606.09810v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "The second data release of the European Pulsar Timing Array (EPTA) collaboration provides evidence for the presence of a gravitational-wave (GW) background. In this work, we explore a potential cosmological interpretation of this signal in terms of inflationary scenarios. We parametrize the tensor power spectrum in terms of the tensor-to-scalar ratio $r$, the tensor spectral index $n_t$, the reheating temperature $T_{\\text{rh}}$, and the cut-off frequency $f_{\\text{end}}$. We incorporate all relevant observational constraints, including those from the Cosmic Microwave Background, Big Bang Nucleosynthesis, and LIGO-Virgo-KAGRA observations. We demonstrate that imposing these constraints consistently reduces the region of parameter space that provides a viable interpretation of the EPTA signal, to $-11.66 \\lesssim \\log_{10}r \\lesssim -1.45$, $1.32 \\lesssim n_t \\lesssim 2.47$, $1.78\\text{ MeV} \\lesssim T_{\\text{rh}} \\lesssim 28.2\\text{ GeV}$, and $75.86\\text{ nHz} \\lesssim f_{\\text{end}} \\lesssim 14.45\\text{ Hz}$ at the 95% confidence level. This favours the scenario in which the GW spectrum in the EPTA frequency band originates from tensor modes that re-entered the Hubble radius during the radiation-dominated era, allowing for a higher $r$ and a flatter spectrum. However, $T_{\\text{rh}}$ must take very low values, which are challenging to explain theoretically.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Topological Neural Operators",
-        "articleUrl": "https://arxiv.org/abs/2606.09806v1",
+        "title": "The Role of Feedback Alignment in Self-Distillation",
+        "articleUrl": "https://arxiv.org/abs/2606.11173v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "We introduce Topological Neural Operators (TNOs), a principled framework for operator learning on cell complexes that lifts neural operators (NOs) from functions on points and/or edges to topological domains. TNOs represent data as features defined on cells of varying dimension and model their interactions through Discrete Exterior Calculus, enabling explicit cross-dimensional coupling via gradient-, curl-, and divergence-type operators. The key design principle is to decouple where information flows, as governed by fixed topological operators, from how it is transformed (which is learned), yielding models that respect the geometric support of physical quantities and expose conservation and compatibility structure. We further propose Hierarchical TNOs (HTNOs), which incorporate learned coarse complexes to propagate long-range and topology-dependent information. Our framework subsumes existing NOs as a special case, providing a unified perspective on operator learning across discretizations. Across a range of PDE benchmarks, including irregular-geometry flow problems, TNOs and HTNOs improve accuracy; controlled studies further isolate the benefits of native higher-rank and topological structure. Project page: https://circle-group.github.io/research/TNO",
+        "ageHours": 20.0,
+        "summary": "Conditioning a language model on additional context, such as feedback on a previous attempt, typically improves its response. Self-distillation trains the model to retain this improvement when the context is not present. The method works by matching the model's output distribution under two settings: a student that sees only the question, and a self-teacher that also sees the context. What the model learns therefore depends on what context the self-teacher receives, yet the design of this context remains largely unexplored.\n  We study context design for self-distillation by training a solver on feedback from a frozen critic. We compare three conditions: (i) a binary reward (GRPO), (ii) the reference solution, and (iii) a step-by-step critique aligned to the solver's reasoning trace.\n  Step-aligned critique yields the largest gains, outperforming GRPO by 16.11 points and reference-solution-conditioned self-distillation by 5.27 points (Avg@12). Per-token advantage analysis reveals why: step-aligned feedback targets only the tokens where reasoning fails, leaving correct behavior intact. Conditioning on the reference solution, by contrast, pressures the model to change its behavior at every token (even correct steps) because an alternative derivation inevitably differs in phrasing and approach. This suggests that structural alignment between feedback and the solver's reasoning is a key driver of self-distillation effectiveness.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "On the viability of Transatlantic Quantum Entanglement Distribution using Combined Satellite and Stratospheric Relay Nodes",
-        "articleUrl": "https://arxiv.org/abs/2606.09805v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "To explore the pathways toward establishing a global quantum network, we investigate several link architectures for transatlantic quantum entanglement distribution over a 6,500 km ground distance. We define free-space link configurations involving satellites and stratospheric high altitude platforms (HAPs), using today's technology and without relying on quantum memories and repeaters. Considering link budgets, space radiation, orbital characteristics, and system complexity we find that a hybrid architecture consisting of an entangled photon source located on a low Earth orbit (LEO) satellite supported by two passive optical relays located on HAPs provides the overall highest entanglement distribution rate. In addition, the satellite HAP architecture offers practical advantages in payload design and launch requirements, and the ability to lower the weather-related link interruptions assuming some maneuverability of HAPs. Overall, this hybrid configuration yields on the order of 5X10^6 secure key bits per year using 30 cm aperture ground receivers, nearly two orders of magnitude higher than achievable with a single MEO satellite and 1 m aperture ground receivers. Our results highlight the major benefits of hybrid satellite HAP architectures by reducing system complexity while enabling scalable and more accessible long-range quantum communication networks.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Universal Suppression of Gravitational Waves from Black Hole Evaporation Dynamics",
-        "articleUrl": "https://arxiv.org/abs/2606.09804v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "Evaporating black holes can leave distinct imprints on gravitational wave (GW) backgrounds. We show that black hole populations with finite width mass distributions exhibit a universal late time evolution governed by the evaporation dynamics rather than the details of the initial mass distribution, leading to a characteristic power law suppression of the induced GWs. We demonstrate this for a broad class of mass functions in primordial black hole (PBH) scenarios featuring an early Universe matter-dominated era, and identify the suppression of PBH-induced GWs found for critical collapse distributions as a manifestation of this general phenomenon. Our results establish a direct connection between the asymptotic GW spectrum and the underlying law of black hole evaporation.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Echo-Memory: A Controlled Study of Memory in Action World Models",
-        "articleUrl": "https://arxiv.org/abs/2606.09803v1",
+        "title": "Predicting Future Behaviors in Reasoning Models Enables Better Steering",
+        "articleUrl": "https://arxiv.org/abs/2606.11172v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.4,
-        "summary": "We present \\textbf{Echo-Memory}, a controlled study of memory mechanisms in action-conditioned world models. These models generate multi-segment videos from a first frame, text prompt, and camera-action sequence, but their central failure is often memory rather than local image synthesis: after the camera leaves and returns, the scene or salient object may silently change. Existing memory designs are hard to compare because gains are entangled with backbone, training, retrieval, and evaluation differences. Echo-Memory fixes the action-to-video interface and varies only how history is stored and read by the generator. Under a shared video diffusion backbone, optimizer, camera-action representation, sampler, and evaluation pipeline, we compare raw context, compression-based memory, spatial summaries with different read-out paths, and state-space recurrence. This matched matrix separates four otherwise conflated axes: \\emph{capacity}, \\emph{compression}, \\emph{read-out}, and \\emph{recurrence}. We also evaluate memory through a three-branch protocol: replay quality, in-domain loop revisit, and open-domain return probes. The branches routinely disagree, showing that replay fidelity is not a sufficient proxy for remembering a world. Three findings follow. Raw context is a strong capacity baseline and improves open-domain return far more than it improves replay metrics. Compactness is not a free substitute for capacity: aggressive spatial and hybrid-compression memories lose the salient evidence needed for return. Finally, block-wise state-space recurrence is the strongest open-domain return mechanism in our matrix, showing that the structure of implicit memory matters as much as the decision to use it. These results provide a compact protocol for studying memory in action world models beyond isolated replay metrics.",
+        "ageHours": 20.0,
+        "summary": "Deployed large reasoning models (LRMs) often behave unexpectedly. Test-time steering controls LRM outputs by intervening on their hidden representations, but it can degrade output quality. We argue that prior steering work implicitly relies on internal features that detect behavior in already generated text. We show that these detection features are poor predictors of future behavioral outcomes, and thus not the natural intervention target. Instead, we train activation probes to predict future behavior likelihoods from intermediate reasoning steps. These probes predict the most likely behavior with 64%-91% accuracy, revealing a separate type of internal prediction features. Building on these prediction features, we introduce a text-level steering method, Future Probe Controlled Generation. FPCG samples multiple candidate sentences and chooses the best one according to a probe predicting the future behavior likelihood. This enables steering with almost no output quality degradation. FPCG also enables steering in several evaluations where activation steering fails. These results show that distinguishing detection and prediction features enables a more nuanced approach to controlling LRM behaviors.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Operation Mpemba effect: Breakdown of resource-Markovianity of free dynamics",
-        "articleUrl": "https://arxiv.org/abs/2606.09790v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "The Mpemba effect refers to faster relaxation of states that are initially farther from equilibrium, yet its characterization is often tied to a chosen distance or resource measure. We introduce resource-Markovianity, an extended concept of quantum Markovianity to quantum resource theories, and formulate the resource Mpemba effect operationally as the breaking of resource-Markovianity by a relaxation operation. This yields a measure-independent operational characterization of resource Mpemba effects in general resource theories, together with quantitative characterizations based on resource-non-Markovianity measures. We illustrate the framework with the Mpemba effect for distinguishability of states, due to its relation to quantum Markovianity, and with the thermomajorization Mpemba effect from an operational perspective. These results reveal a deep interplay between quantum resources, non-Markovianity, and the Mpemba effect.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Zero Touch Predictive Orchestration: Automating Time-Series Models for the Cloud-Edge Continuum",
-        "articleUrl": "https://arxiv.org/abs/2606.09787v1",
+        "title": "Algorithmic and Minimax Complexities in Kernel Bandits",
+        "articleUrl": "https://arxiv.org/abs/2606.11171v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "The Cloud-Edge Continuum (CEC) enables latency-critical applications by distributing resources to the far edge, but its extreme volatility makes proactive Zero Touch Management via time-series forecasting essential. However, orchestrators face a severe \"cold start\" problem: newly discovered nodes lack the historical data required to train localized predictive models, while generalized models fail to capture unique hardware and microservice behaviors. To solve this, we propose a fully automated time-series prediction architecture driven by a novel data-mixing methodology. At the infrastructure level, we introduce a lightweight, technology-agnostic Resource Exposer (RE) that dynamically discovers nodes and continuously collects customizable telemetry (e.g., compute, network, energy). To overcome the sparsity of these initial local samples, our framework automatically merges them with TimeTrack, our publicly available, high-resolution dataset collected at 45-second intervals. This synergizes TimeTrack's foundational, high-frequency temporal patterns with the precise calibration of the local node data. Processed through a Neural Architecture Search (NAS) engine, the system automatically generates highly accurate baseline models. Experimental results demonstrate that merging the target data with TimeTrack effectively mitigates the cold start challenge. This integration significantly improves forecasting accuracy measured in Mean Squared Error (MSE), Mean Absolute Error (MAE), and Mean Absolute Percentage Error (MAPE) and accelerates convergence compared to training on the sparse local samples alone, training solely on generic datasets, or mixing the target data with standard alternative datasets, establishing a robust foundation for continuous MLOps deployment.",
+        "ageHours": 20.0,
+        "summary": "Gaussian-process upper confidence bound (GP-UCB) and decision-estimation-coefficient (DEC) methods may appear, at first sight, to belong to different theories. This paper places the two viewpoints in a common algorithmic-information language for frequentist RKHS bandits. GP-UCB fixes an algorithmic, rather than true, Gaussian-process prior and exploits realized-trajectory complexity together with computational tractability, whereas MAMS optimizes a robust class-wide MAIR/DEC envelope. Through the unified MAIR framework and heterogeneous positive-semidefinite algorithmic priors, we generalize both the GP-UCB analysis and the MAMS algorithm, propose a safeguarded master that combines their advantages, and provide a kernel-bandit construction showing that algorithmic complexity can be more informative than class-wide minimax or DEC certificates in overparameterized models. The resulting message is that algorithmic information and class-wide minimax coefficients answer different questions and can lead to different gaps; kernel bandits provide a clean setting in which this distinction becomes mathematically visible.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Neutron stars in Poincar\u00e9 gauge gravity with quadratic torsion",
-        "articleUrl": "https://arxiv.org/abs/2606.09786v1",
+        "title": "Defeat the Heap: Zero-Copy Data Movement in AXI4MLIR",
+        "articleUrl": "https://arxiv.org/abs/2606.11158v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "As custom hardware accelerators become increasingly central to machine learning workloads, efficient data transfer is critical for maximizing accelerator performance on linear algebra kernels. AXI4MLIR, an extension of the Multi-Level Intermediate Representation (MLIR) compiler framework for automated generation of host-accelerator driver code, incurs significant runtime overhead due to non-zero-copy CPU-accelerator data movement. During transfers from the host to the accelerator, data is copied from heap-allocated memory buffers into contiguous Direct Memory Access (DMA)-mapped buffers. This work identifies this copy as a redundant staging operation and eliminates it through zero-copy data movement. The optimization extends accel, an MLIR dialect introduced by AXI4MLIR, and implements lowering support that allocates buffers directly within DMA-mapped memory, thereby omitting the staging copy. We evaluate the proposed scheme using a configurable matrix-matrix multiplication accelerator and show that the zero-copy optimization reduces main memory data movement by up to 2x, increasing overall accelerator utilization.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "It\u00f4 maps for any-step SDEs",
+        "articleUrl": "https://arxiv.org/abs/2606.11156v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "Recent one-step generative models accelerate sampling by learning deterministic flow maps of the underlying dynamics. These methods rely on learning from ordinary differential equations, leaving open how to define an exact distillation procedure for stochastic dynamics. We introduce the It\u00f4 map, an any-step stochastic flow map that takes an intermediate state and Brownian path and predicts future states in a single pass. The It\u00f4 map formulation yields novel estimators for inference-time control by providing cheap, differentiable access to posterior samples. Empirically, It\u00f4 maps produce diverse, conditionally valid endpoint samples from fixed intermediate states and support strong steering performance on synthetic and image-generation benchmarks. These results establish any-step SDE integration as a useful primitive for posterior sampling and stochastic control.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Quantum Monte Carlo calculations of Zemach moments in $A\\leq 9$ nuclei",
+        "articleUrl": "https://arxiv.org/abs/2606.11153v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.6,
-        "summary": "We study static neutron stars in an algebraic sector of Poincar\u00e9 gauge gravity with parity-even and parity-odd quadratic torsion invariants. Since torsion is non-propagating, the contorsion equation is algebraic and can be solved in terms of the spin current. For a Weyssenhoff fluid satisfying the Frenkel condition, the metric field equations reduce to ordinary Riemannian Einstein equations sourced by an effective fluid containing spin-squared corrections. We derive the effective energy density, radial pressure, and tangential pressure, allowing both isotropic and anisotropic spin correlations. In contrast with Einstein--Cartan theory, the coefficient of the effective spin-spin interaction is not fixed, but depends on the dimensionless quadratic-torsion couplings. In the Einstein--Cartan limit, using the metric definition of the stress-energy tensor, the unpolarized spin contribution gives $w_{\\mathrm{spin}}=-1/3$. We then derive the corresponding modified Tolman--Oppenheimer--Volkoff equations and solve them numerically using the DD2 equation of state. For the positive effective spin-spin coupling branch considered here, the torsion correction makes the stellar configurations more compact, lowers the maximum mass, and reduces the binding energy relative to the general-relativistic sequence. For the smooth weak-polarization profiles considered, spin-correlation anisotropy has only a negligible effect on the mass--radius relation.",
+        "ageHours": 20.2,
+        "summary": "Modern atomic spectroscopy has reached a level of precision at which nuclear-structure effects can no longer be neglected and must be quantified reliably. In particular, hyperfine splittings depend on the Zemach radius, which encodes the convolution of the nuclear charge and magnetization distributions. The third electric Zemach moment provides a related finite-size measure and enters the elastic two-photon-exchange contribution to the Lamb shift in muonic atoms. Here, we compute Zemach radii and other electromagnetic moments for light nuclei using quantum Monte Carlo techniques within modern \\textit{ab initio} nuclear theory. Using Norfolk two- and three-body interactions derived within chiral effective field theory, we assess the model dependence and study the role of two-body currents. For $^6$Li, we obtain a Zemach radius larger than that extracted from atomic measurements, consistent with recent calculations, confirming that the discrepancy is not an artifact of the nuclear model. For $^9$Be, our results agree with experiment; the discrepancy of previous phenomenological evaluations is traced to a model-dependent input for the magnetic radius.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Efficiently Learning Drifting Halfspaces with Massart Noise",
+        "articleUrl": "https://arxiv.org/abs/2606.11149v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "We study the problem of learning a drifting concept in the presence of Massart noise. In this framework, an online learner has access to a history of independent samples whose labels are noisy versions of a target concept that may change from round to round. The goal is to output, in each round, a hypothesis with small prediction error. We study the complexity of this learning problem for the fundamental class of margin-separable linear classifiers (halfspaces). On the positive side, we give a computationally efficient learner achieving error $\u03b7+ \\tilde O(\u0394^{1/3}/\u03b3)$, where $\u03b7$ upper bounds the Massart noise rate, $\u0394$ is the drift rate, and $\u03b3$ is the margin. Interestingly, in the realizable setting, an adaptation of our techniques yields an efficient learner with an improved error rate over prior work. On the lower-bound side, we provide formal evidence of an information-computation tradeoff, strongly suggesting that our algorithm's performance is essentially optimal. Specifically, while the information-theoretically optimal error scales with $\u0394^{1/2}$, we prove that $\u0394^{1/3}$-scaling is unavoidable for low-degree polynomial tests, even in the special case of random classification noise.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Quantum statistics in an extended collider coupled to a qubit",
+        "articleUrl": "https://arxiv.org/abs/2606.11147v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.3,
+        "summary": "Mesoscopic colliders provide an effective platform for probing the mutual statistics of quantum particles. Recent experiments have successfully extracted the mutual statistics of fermions, and more exotic anyons using quantum point contacts (QPCs). Coupling a point-like collider, such as a quantum point contact, to a two-level impurity or qubit can induce statistical transmutation of fermions, causing them to display boson-like bunching tendencies. Here, we extend the analysis to an extended collider. We investigate the scattering of two incoming fermionic and bosonic wave packets in the presence of post-selection on the impurity state, and systematically analyze the possible benchmarks used to characterize bunching and infer the underlying mutual statistics. We show that only a specific benchmark faithfully captures the mutual statistics of the colliding particles, while alternative choices can produce spurious statistical signatures. Hence, the correct benchmark for probing the quantum statistics depends on the intricate details of the mesoscopic collider.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Tyndall\u2019s Trail of Bergs",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/tyndalls-trail-of-bergs/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 9.8,
+        "summary": "Ice splintered off the southern Patagonia glacier and drifted across a growing glacial lake.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "San Francisco\u2019s Metropolitan Mosaic",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://www.sciencedaily.com",
         "ageHours": 10.9,
         "summary": "Researchers have built an ultra-sensitive sensor capable of detecting unimaginably small amounts of energy \u2014 below one zeptojoule. The breakthrough relies on fragile superconducting materials that react to even the slightest temperature change. This level of precision could improve quantum computers, enable photon counting, and even help scientists detect elusive dark matter particles from space.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists solve 320-million-year mystery of reptile bone armor",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260520093709.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.8,
-        "summary": "Reptiles have been growing armor in their skin on and off for hundreds of millions of years, but scientists never fully understood how it evolved. A massive new evolutionary study shows these skin bones appeared independently in multiple lizard groups rather than coming from a single armored ancestor. Even more astonishing, Australian goannas lost this armor long ago \u2014 then evolved it back again millions of years later.",
         "charge": 0
       }
     ],
@@ -315,6 +315,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "500 Years Ago, Leonardo da Vinci\u2019s Notebook Was Cut Up and Separated. Now, the Inventor's Manuscripts and Drawings Are Reconstructed in an Online Archive",
+      "articleUrl": "https://www.smithsonianmag.com/smart-news/500-years-ago-da-vincis-notebook-was-cut-up-and-separated-now-the-inventors-manuscripts-and-drawings-are-reconstructed-in-an-online-archive-180988922/",
+      "sourceName": "Smart News | smithsonianmag.com",
+      "sourceHomeUrl": "https://www.smithsonianmag.com",
+      "ageHours": 11.2,
+      "summary": "A new tool developed by Museo Galileo researchers has restored 50 pages from fragments excised centuries ago",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Israel and Iran exchange missile fire threatening Middle East truce",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.npr.org",
       "ageHours": 12.7,
       "summary": "An investigation of hospital data and charity care programs shows most Minnesota hospitals provide little financial aid to patients and often make assistance difficult to get.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Watch: Soldier on parachuting to remote island to bring Hantavirus aid",
-      "articleUrl": "https://www.bbc.com/news/videos/cgqp3xq7959o?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 9.1,
-      "summary": "A specialist team helped supply critical medical support to Tristan da Cunha in the South Atlantic.",
       "charge": 0
     }
   ]
