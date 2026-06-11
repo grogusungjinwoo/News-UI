@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-10T13:49:48.578989+00:00",
+  "generatedAt": "2026-06-11T14:12:25.581754+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "A Unifying Lens on Supervised Fine-Tuning Through Target Distribution Design",
-        "articleUrl": "https://arxiv.org/abs/2606.11189v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "Supervised fine-tuning (SFT) typically maximizes the likelihood of every token in a demonstrated trajectory. However, an observed token can be non-unique, noisy, or misaligned with the model prior. Strictly fitting toward this one-hot target may be suboptimal, especially when the pretrained model encodes a rich knowledge prior. In this work, we reinterpret SFT as target distribution design: instead of studying only the loss objective, we analyze the token-level target that the loss drives the model to match. We introduce the Q-target framework, which decomposes SFT supervision into two explicit choices: (1) how strongly to rely on the observed token, and (2) how to allocate the remaining probability mass over alternatives. This perspective unifies many existing SFT variants as implicit choices of the target distribution Q. Building on this view, we propose Target-SFT which constructs the training objective directly from the desired target distribution. This method consistently outperforms across the ten reasoning dataset-model settings evaluated, showing the effectiveness of this target-based approach. Overall, our formulation reveals a more fundamental design principle for SFT training and opens a broader search space for SFT objectives.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Full-State and Reduced-Moment Encodings: A Representation-Level View of Equilibrium Quantum Many-Body Theory",
-        "articleUrl": "https://arxiv.org/abs/2606.11177v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Equilibrium quantum many-body methods differ not only in approximation, but in which information they represent explicitly. We formulate this distinction by fixing an equilibrium specification and viewing every representation as an encoder from admissible states to represented variables. The identity encoder gives a full-state representation, whereas a non-injective encoder gives a reduced representation whose value labels a fiber of compatible states. For a specified task, an exact decoder exists on a state class if and only if the task is constant on the encoder fibers within that class. Variational principles, reconstruction correspondences, functionals, kernels, and closures are different realizations of additional structure used to select, restrict, or approximate the task-relevant content of a fiber when the retained variable alone is insufficient. Static moments and imaginary-time correlation functions are unified as restrictions of a complete equilibrium readout functional to different probe families. Within the same principle, quantum embedding can be viewed as consistency or replacement between global and local descriptions through reduced interface encoders and their conjugate fields.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "The Role of Feedback Alignment in Self-Distillation",
-        "articleUrl": "https://arxiv.org/abs/2606.11173v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "Conditioning a language model on additional context, such as feedback on a previous attempt, typically improves its response. Self-distillation trains the model to retain this improvement when the context is not present. The method works by matching the model's output distribution under two settings: a student that sees only the question, and a self-teacher that also sees the context. What the model learns therefore depends on what context the self-teacher receives, yet the design of this context remains largely unexplored.\n  We study context design for self-distillation by training a solver on feedback from a frozen critic. We compare three conditions: (i) a binary reward (GRPO), (ii) the reference solution, and (iii) a step-by-step critique aligned to the solver's reasoning trace.\n  Step-aligned critique yields the largest gains, outperforming GRPO by 16.11 points and reference-solution-conditioned self-distillation by 5.27 points (Avg@12). Per-token advantage analysis reveals why: step-aligned feedback targets only the tokens where reasoning fails, leaving correct behavior intact. Conditioning on the reference solution, by contrast, pressures the model to change its behavior at every token (even correct steps) because an alternative derivation inevitably differs in phrasing and approach. This suggests that structural alignment between feedback and the solver's reasoning is a key driver of self-distillation effectiveness.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Predicting Future Behaviors in Reasoning Models Enables Better Steering",
-        "articleUrl": "https://arxiv.org/abs/2606.11172v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "Deployed large reasoning models (LRMs) often behave unexpectedly. Test-time steering controls LRM outputs by intervening on their hidden representations, but it can degrade output quality. We argue that prior steering work implicitly relies on internal features that detect behavior in already generated text. We show that these detection features are poor predictors of future behavioral outcomes, and thus not the natural intervention target. Instead, we train activation probes to predict future behavior likelihoods from intermediate reasoning steps. These probes predict the most likely behavior with 64%-91% accuracy, revealing a separate type of internal prediction features. Building on these prediction features, we introduce a text-level steering method, Future Probe Controlled Generation. FPCG samples multiple candidate sentences and chooses the best one according to a probe predicting the future behavior likelihood. This enables steering with almost no output quality degradation. FPCG also enables steering in several evaluations where activation steering fails. These results show that distinguishing detection and prediction features enables a more nuanced approach to controlling LRM behaviors.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Algorithmic and Minimax Complexities in Kernel Bandits",
-        "articleUrl": "https://arxiv.org/abs/2606.11171v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.0,
-        "summary": "Gaussian-process upper confidence bound (GP-UCB) and decision-estimation-coefficient (DEC) methods may appear, at first sight, to belong to different theories. This paper places the two viewpoints in a common algorithmic-information language for frequentist RKHS bandits. GP-UCB fixes an algorithmic, rather than true, Gaussian-process prior and exploits realized-trajectory complexity together with computational tractability, whereas MAMS optimizes a robust class-wide MAIR/DEC envelope. Through the unified MAIR framework and heterogeneous positive-semidefinite algorithmic priors, we generalize both the GP-UCB analysis and the MAMS algorithm, propose a safeguarded master that combines their advantages, and provide a kernel-bandit construction showing that algorithmic complexity can be more informative than class-wide minimax or DEC certificates in overparameterized models. The resulting message is that algorithmic information and class-wide minimax coefficients answer different questions and can lead to different gaps; kernel bandits provide a clean setting in which this distinction becomes mathematically visible.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Defeat the Heap: Zero-Copy Data Movement in AXI4MLIR",
-        "articleUrl": "https://arxiv.org/abs/2606.11158v1",
+        "title": "Context-Driven Incremental Compression for Multi-Turn Dialogue Generation",
+        "articleUrl": "https://arxiv.org/abs/2606.12411v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.2,
-        "summary": "As custom hardware accelerators become increasingly central to machine learning workloads, efficient data transfer is critical for maximizing accelerator performance on linear algebra kernels. AXI4MLIR, an extension of the Multi-Level Intermediate Representation (MLIR) compiler framework for automated generation of host-accelerator driver code, incurs significant runtime overhead due to non-zero-copy CPU-accelerator data movement. During transfers from the host to the accelerator, data is copied from heap-allocated memory buffers into contiguous Direct Memory Access (DMA)-mapped buffers. This work identifies this copy as a redundant staging operation and eliminates it through zero-copy data movement. The optimization extends accel, an MLIR dialect introduced by AXI4MLIR, and implements lowering support that allocates buffers directly within DMA-mapped memory, thereby omitting the staging copy. We evaluate the proposed scheme using a configurable matrix-matrix multiplication accelerator and show that the zero-copy optimization reduces main memory data movement by up to 2x, increasing overall accelerator utilization.",
+        "summary": "Modern conversational agents condition on an ever-growing dialogue history at each turn, incurring redundant attention and encoding costs that grow with conversation length. Naive truncation or summarization degrades fidelity, while existing context compressors lack cross-turn memory sharing or revision, causing information loss and compounding errors in long dialogues. We revisit the context compression under conversational dynamics and empirically present its fragility. To improve both efficiency and robustness, we introduce Context-Driven Incremental Compression (C-DIC), which treats a conversation as interleaved contextual threads and stores revisable per-thread compression states in a single, compact dialogue memory. At each turn, a lightweight retrieve, revise, and write-back loop shares information across turns and updates stale memories, stabilizing long-horizon behavior. In addition, we adapt truncated backpropagation-through-time (TBPTT) to our multi-turn setting, learning cross-turn dependencies without full-history backpropagation. Extensive experiments on long-form dialogue benchmarks demonstrate superior performance and efficiency of C-DIC; notably, C-DIC shows stable inference latency and perplexity over hundreds of dialogue turns, supporting a scalable path to high-quality dialogue modeling.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "It\u00f4 maps for any-step SDEs",
-        "articleUrl": "https://arxiv.org/abs/2606.11156v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Recent one-step generative models accelerate sampling by learning deterministic flow maps of the underlying dynamics. These methods rely on learning from ordinary differential equations, leaving open how to define an exact distillation procedure for stochastic dynamics. We introduce the It\u00f4 map, an any-step stochastic flow map that takes an intermediate state and Brownian path and predicts future states in a single pass. The It\u00f4 map formulation yields novel estimators for inference-time control by providing cheap, differentiable access to posterior samples. Empirically, It\u00f4 maps produce diverse, conditionally valid endpoint samples from fixed intermediate states and support strong steering performance on synthetic and image-generation benchmarks. These results establish any-step SDE integration as a useful primitive for posterior sampling and stochastic control.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Quantum Monte Carlo calculations of Zemach moments in $A\\leq 9$ nuclei",
-        "articleUrl": "https://arxiv.org/abs/2606.11153v1",
+        "title": "A Pfaffian quantum Hall state of ultracold bosons",
+        "articleUrl": "https://arxiv.org/abs/2606.12409v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.2,
-        "summary": "Modern atomic spectroscopy has reached a level of precision at which nuclear-structure effects can no longer be neglected and must be quantified reliably. In particular, hyperfine splittings depend on the Zemach radius, which encodes the convolution of the nuclear charge and magnetization distributions. The third electric Zemach moment provides a related finite-size measure and enters the elastic two-photon-exchange contribution to the Lamb shift in muonic atoms. Here, we compute Zemach radii and other electromagnetic moments for light nuclei using quantum Monte Carlo techniques within modern \\textit{ab initio} nuclear theory. Using Norfolk two- and three-body interactions derived within chiral effective field theory, we assess the model dependence and study the role of two-body currents. For $^6$Li, we obtain a Zemach radius larger than that extracted from atomic measurements, consistent with recent calculations, confirming that the discrepancy is not an artifact of the nuclear model. For $^9$Be, our results agree with experiment; the discrepancy of previous phenomenological evaluations is traced to a model-dependent input for the magnetic radius.",
+        "summary": "Fractional quantum Hall states are a cornerstone of topological physics, hosting fractionally charged quasiparticles with exotic statistics that promise to enable topologically protected quantum information processing. Among these, the Pfaffian state introduced by Moore and Read implements a p-wave pairing structure that supports excitations with non-Abelian exchange statistics. Despite extensive study in electronic systems, direct access to its pairing structure has remained limited. Here we realize a three-particle bosonic Pfaffian state of ultracold $^{87}\\mathrm{Rb}$ atoms in an optical lattice subject to a Floquet-engineered synthetic magnetic field. Using a Bayesian-optimized adiabatic protocol, we prepare a state exhibiting Pfaffian pairing correlations. Site-resolved measurements of multi-point density correlations reveal a pronounced suppression of short-range three-body coincidences, reflecting the underlying pairing structure. We further probe the state's transport response through Hall drift measurements. Our results establish a bottom-up approach to engineering non-Abelian topological order and lay the groundwork for future explorations of anyonic braiding in synthetic matter.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Efficiently Learning Drifting Halfspaces with Massart Noise",
-        "articleUrl": "https://arxiv.org/abs/2606.11149v1",
+        "title": "Collective neutrino oscillations: Many-body non-forward effects and non-classicality",
+        "articleUrl": "https://arxiv.org/abs/2606.12404v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "Neutrino evolution in dense astrophysical environments is typically described either within a quantum kinetic framework, which neglects the build-up of multi-body correlations, or through simplified many-body calculations that allow significant entanglement to develop. In this work, we compare these two approaches in a simple neutrino-gas configuration, with particular emphasis on the role of non-forward scattering processes. These effects are incorporated either through a collision term in the kinetic description, or by considering the full neutrino-neutrino many-body Hamiltonian. We highlight differences between the two descriptions in both their characteristic timescales and asymptotic behavior. Motivated by the natural suitability of quantum computing for many-body calculations, we further investigate the non-classicality of neutrino evolution, discussing Trotter error scaling, along with the associated costs of constructing quantum circuits in terms of entangling gates and non-Clifford gates. We find that the resources needed for neutrino many-body evolution are on the low end of typical high-energy physics problems and on the mid to high end with respect to quantum chemistry problems. For the full Hamiltonian, resource requirements increase relative to the truncated version. We emphasize the importance of efficient fermion-to-qubit encodings, which are essential for reducing the substantial computational resources required for such simulations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Quantifying the Distribution of Biexciton Emission Efficiencies in Colloidal Quantum Shells",
+        "articleUrl": "https://arxiv.org/abs/2606.12398v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.2,
+        "summary": "The efficiency of multi-photon emission is an important characteristic of quantum light sources. Bright multi-photon emission is desirable for high-power lighting and lasers, while its complete suppression is required for high-purity single-photon generation. In colloidal quantum emitters, multi-photon emission can vary significantly between individual particles. Resolving this heterogeneity remains challenging with conventional particle-by-particle approaches. Here, we introduce a crosstalk-suppressed SPAD-array photon-correlation approach for high-throughput quantification of multi-photon emission from more than 1000 colloidal quantum shells. By projecting two images of the same sample onto distant regions of the detector array, we avoid short-range crosstalk between detector pixels. Time gating suppresses dark-count coincidences and distinguishes individual emitters from clusters. Applying this method to quantum shells reveals a near-Gaussian distribution of biexciton emission efficiencies, with a mean of 0.55 and an estimated intrinsic standard deviation of 0.12. Intra-batch correlations between the biexciton efficiency and the particle brightness are consistent with the volume scaling of Auger quenching. These results establish SPAD-array photon correlation as a scalable route to resolve multi-photon heterogeneities in nanoparticle ensembles.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Redesign Mixture-of-Experts Routers with Manifold Power Iteration",
+        "articleUrl": "https://arxiv.org/abs/2606.12397v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.2,
-        "summary": "We study the problem of learning a drifting concept in the presence of Massart noise. In this framework, an online learner has access to a history of independent samples whose labels are noisy versions of a target concept that may change from round to round. The goal is to output, in each round, a hypothesis with small prediction error. We study the complexity of this learning problem for the fundamental class of margin-separable linear classifiers (halfspaces). On the positive side, we give a computationally efficient learner achieving error $\u03b7+ \\tilde O(\u0394^{1/3}/\u03b3)$, where $\u03b7$ upper bounds the Massart noise rate, $\u0394$ is the drift rate, and $\u03b3$ is the margin. Interestingly, in the realizable setting, an adaptation of our techniques yields an efficient learner with an improved error rate over prior work. On the lower-bound side, we provide formal evidence of an information-computation tradeoff, strongly suggesting that our algorithm's performance is essentially optimal. Specifically, while the information-theoretically optimal error scales with $\u0394^{1/2}$, we prove that $\u0394^{1/3}$-scaling is unavoidable for low-degree polynomial tests, even in the special case of random classification noise.",
+        "summary": "Router is the cornerstone component to the Mixture-of-Experts models. Serving as expert proxies, the rows of the router matrix compute their similarity to the MoE inputs to determine which subset of experts is activated. Ideally, each router row is designed to encode the expert matrix into this representative vector, such that its dot-product with token can better reflect token-expert affinity. However, there exists no design principles to enforce this condensation. In this paper, we propose to align each router row with the principal singular direction of the associated expert, as this direction provides the most expressive mathematical description of a matrix. Based on this principle, we propose a router redesign with Manifold Power Iteration (MPI). Specifically, it introduces a \"Power-then-Retract\" paradigm, where a power iteration step is performed on the router weights, followed by a retraction to impose a norm constraint to ensure both efficiency and stability. Theoretically, we show that MPI drives router rows to converge toward the principal singular directions of associated experts. Empirically, we pretrain MoE model across scales from 1B to 11B parameters to confirm that this alignment facilitates more effective MoE models.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Quantum statistics in an extended collider coupled to a qubit",
-        "articleUrl": "https://arxiv.org/abs/2606.11147v1",
+        "title": "The Fundaments of Unity: ${\\mathcal O}(1)$ Couplings in Quantum Field Theories",
+        "articleUrl": "https://arxiv.org/abs/2606.12393v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.3,
-        "summary": "Mesoscopic colliders provide an effective platform for probing the mutual statistics of quantum particles. Recent experiments have successfully extracted the mutual statistics of fermions, and more exotic anyons using quantum point contacts (QPCs). Coupling a point-like collider, such as a quantum point contact, to a two-level impurity or qubit can induce statistical transmutation of fermions, causing them to display boson-like bunching tendencies. Here, we extend the analysis to an extended collider. We investigate the scattering of two incoming fermionic and bosonic wave packets in the presence of post-selection on the impurity state, and systematically analyze the possible benchmarks used to characterize bunching and infer the underlying mutual statistics. We show that only a specific benchmark faithfully captures the mutual statistics of the colliding particles, while alternative choices can produce spurious statistical signatures. Hence, the correct benchmark for probing the quantum statistics depends on the intricate details of the mesoscopic collider.",
+        "summary": "We critically examine the expectation that in a fundamental quantum field theory, dimensionless couplings in the Lagrangian density should all be of order unity. We propose a measure to quantify the adherence of a theory to this: the spread (the ratio of the largest to the smallest of the magnitudes) of such dimensionless couplings, obtaining various closed-form results. If we take independent identically distributed (IID) couplings to parameterise our uncertainty on the values of the order unity couplings, ratios of couplings can be much larger than one might naively expect. For a theory with 20 IID unit normal couplings, the probability that the magnitude of the ratio of two of them is greater than 100 is 0.29, for example. Even when the IID couplings have exponentially suppressed tails, the distribution of ratios of order one couplings has fat power-law tails which grow with the number of independent couplings.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "The Simplified Stabilizer ZX-Calculus is Minimal",
+        "articleUrl": "https://arxiv.org/abs/2606.12383v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.5,
+        "summary": "The stabilizer fragment of the ZX calculus is amongst the most important fragments of the theory. The closely related Clifford+T fragment is approximately universal (arXiv:1705.11151). Additionally, the stabilizer calculus can be described by a small collection of rewrites, most of which have been shown to be necessary (arXiv:1709.08903). However, two rules, describing the red/green compact-structure coincidence and the important bialgebra law, had not been shown to be necessary. We present a countermodel-style argument showing that both of these rules are individually necessary relative to the connectivity meta-rule of Backens--Perdrix--Wang (arXiv:1709.08903), and hence establish that the rule set presented in arXiv:1709.08903 has no redundant rewrite rule.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Breaking Entropy Bounds: Accelerating RL Training via MTP with Rejection Sampling",
+        "articleUrl": "https://arxiv.org/abs/2606.12370v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.6,
+        "summary": "Reinforcement learning (RL) has become a key component in modern large language models, yet the rollout stage remains the key bottleneck in RL training pipelines. Although Multi-Token Prediction (MTP) offers a natural solution to accelerate rollouts through speculative decoding, many studies have observed that MTP acceptance rates degrade significantly during RL training, leading to limited speedup performance. To address this bottleneck, we present Bebop, a systematic study of MTP in LLM post-training, and offer practical recipes to integrate MTP into large-scale RL pipelines. First, we reveal that the MTP acceptance rate is fundamentally bounded by the fluctuation of model entropy, which demonstrates a clear negative linear relationship with the rise of entropy in the RL stage. Second, we show that probabilistic rejection sampling largely alleviates the disturbance introduced by entropy in RL compared to greedy draft sampling. We further identify that the conventional MTP training objectives (cross-entropy or KL) are suboptimal in such settings, and therefore we propose a novel end-to-end TV loss that directly optimizes multi-step rejection sampling acceptance rate, yielding ~10% acceptance rate improvements, achieving up to 95% acceptance rates and up to 25% extra inference throughput gains across mathematical reasoning, code generation, and agentic tasks. Third, we test various online MTP training strategies during RL and show that pre-RL MTP training with e2e TV loss and rejection sampling achieves a consistent acceptance rate and speedup throughout the entire RL, eliminating the need for costly online MTP updating. We provide extensive experiments and analysis that validate our findings. Experimental results show our method achieves up to 1.8x end-to-end acceleration in async RL training of Qwen3.5, Qwen3.6, and Qwen3.7 models.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Nonadditivity in Quantum Field Theory: Replica Energies, Scaling Filters, and the Renormalization Group",
+        "articleUrl": "https://arxiv.org/abs/2606.12367v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.6,
+        "summary": "Extensive systems have a simple thermodynamic signature: the logarithm of the partition function scales homogeneously with the size of the system. We show that the failure of this scaling, measured by the replica energy ${\\cal E}$, provides a useful bridge between statistical mechanics and quantum field theory. The associated differential operator $(1-\\frac1d L\\partial_L)$ removes the leading bulk contribution to $W=\\log Z$ and isolates the part that is sensitive to boundaries, topology, defects, long-range forces, or other sources of nonadditivity. In quantum field theory this thermodynamic idea has two closely related uses. For ordinary finite-volume or spherical partition functions, suitable higher-order versions of the same filter remove local counterterms and extract universal fixed-point data such as the central charge, the sphere free energy $F$, and the Euler anomaly coefficient $a$. For replica geometries with entangling defects, the same filtering principle gives the renormalized defect free energy. In $2+1$ dimensions, its $n\\to1$ limit is precisely the entropic $F$-function. We use this perspective to distinguish ordinary finite-size corrections, topology-dependent constants in gapped phases, subextensive fracton degeneracies, and genuinely nonextensive systems with long-range interactions such as self-gravitating thermal matter. Replica energy therefore offers a common thermodynamic language for additivity, defect free energies, and renormalization-group irreversibility.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "On Subquadratic Architectures: From Applications to Principles",
+        "articleUrl": "https://arxiv.org/abs/2606.12364v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.6,
+        "summary": "Transformers dominate modern sequence modeling, but their quadratic attention incurs substantial computational cost. Subquadratic architectures offer a scalable alternative. However, it remains unclear which designs yield the most effective sequence models. We compare three leading approaches: xLSTM, Mamba-2, and Gated DeltaNet. We evaluate these models on tasks with complex dependencies: (1) code-model pre-training, (2) distillation of code models from large language models, and (3) pre-training of time-series foundation models. Across these settings, xLSTM delivers the strongest overall performance. To explain xLSTM's advantage, we present a unified formulation and analyze the underlying architectural mechanisms, focusing on state tracking and memory dynamics. Our results show that xLSTM enables more flexible and stable memory correction via its gating scheme. We corroborate these findings on controlled synthetic length-generalization tasks. Overall, our findings indicate that xLSTM's gains on complex tasks stem from robust state tracking and accumulation.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Air Pollution\u2019s Daily Pulse Over the Northeast",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/air-pollutions-daily-pulse-over-the-northeast/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 10.2,
+        "summary": "The TEMPO mission helped scientists track morning nitrogen dioxide that contributed to afternoon ozone along the New York\u2013Washington corridor in May 2026.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Tyndall\u2019s Trail of Bergs",
@@ -199,19 +209,29 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.7,
         "summary": "Cambridge researchers created miniature brain-and-spinal-cord systems in the lab that can send signals and even trigger tiny muscle contractions. They discovered that human neurons gradually lose their ability to regrow after damage during development \u2014 but that ability can potentially be switched back on. The team identified a gene network controlling this process and found that an existing hormone drug dramatically boosted nerve fiber regrowth.",
         "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "New quantum sensor could count individual photons and hunt dark matter",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/05/260520093654.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.9,
-        "summary": "Researchers have built an ultra-sensitive sensor capable of detecting unimaginably small amounts of energy \u2014 below one zeptojoule. The breakthrough relies on fragile superconducting materials that react to even the slightest temperature change. This level of precision could improve quantum computers, enable photon counting, and even help scientists detect elusive dark matter particles from space.",
-        "charge": 0
       }
     ],
     "ai": [
+      {
+        "bucket": "ai",
+        "title": "Would you return a favor? Scientists say it depends on the relationship",
+        "articleUrl": "https://news.mit.edu/2026/would-you-return-favor-scientists-say-it-depends-0611",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 10.2,
+        "summary": "A new study shows people expect reciprocal generosity only in interactions with friends or others of equal social status.",
+        "interest": 3
+      },
+      {
+        "bucket": "ai",
+        "title": "New imaging system sees through murky waters",
+        "articleUrl": "https://news.mit.edu/2026/new-imaging-system-sees-through-murky-waters-0611",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 10.2,
+        "summary": "The \u201cSonar-MASt3R\u201d combines sonar and visual data to create real-time 3D maps, even in cloudy water.",
+        "interest": 2
+      },
       {
         "bucket": "ai",
         "title": "Improving the performance of high-power electronics",
@@ -291,26 +311,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 11.4,
         "summary": "Is it time to consider prosecuting AI models for breaking the law? Some say it's time. Others say that would be an insult to humanity. Some states are considering laws blocking AI personhood.",
         "interest": 1
-      },
-      {
-        "bucket": "ai",
-        "title": "VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection",
-        "articleUrl": "https://arxiv.org/abs/2605.08070v1",
-        "sourceName": "arXiv",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 11.5,
-        "summary": "A standard technique for scaling inference-time reasoning is Self-Consistency, whereby multiple candidate answers are sampled from an LLM and the most common answer is selected. More recently, it has been shown that weighted...",
-        "interest": 15
-      },
-      {
-        "bucket": "ai",
-        "title": "The Memory Curse: How Expanded Recall Erodes Cooperative Intent in LLM Agents",
-        "articleUrl": "https://arxiv.org/abs/2605.08060v1",
-        "sourceName": "arXiv",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 11.7,
-        "summary": "Context window expansion is often treated as a straightforward capability upgrade for LLMs, but we find it systematically fails in multi-agent social dilemmas. Across 7 LLMs and 4 games over 500 rounds, expanding accessible...",
-        "interest": 17
       }
     ]
   },
