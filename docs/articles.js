@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-11T14:12:25.581754+00:00",
+  "generatedAt": "2026-06-12T13:44:09.922289+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Context-Driven Incremental Compression for Multi-Turn Dialogue Generation",
-        "articleUrl": "https://arxiv.org/abs/2606.12411v1",
+        "title": "Mana: Dexterous Manipulation of Articulated Tools",
+        "articleUrl": "https://arxiv.org/abs/2606.13677v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Modern conversational agents condition on an ever-growing dialogue history at each turn, incurring redundant attention and encoding costs that grow with conversation length. Naive truncation or summarization degrades fidelity, while existing context compressors lack cross-turn memory sharing or revision, causing information loss and compounding errors in long dialogues. We revisit the context compression under conversational dynamics and empirically present its fragility. To improve both efficiency and robustness, we introduce Context-Driven Incremental Compression (C-DIC), which treats a conversation as interleaved contextual threads and stores revisable per-thread compression states in a single, compact dialogue memory. At each turn, a lightweight retrieve, revise, and write-back loop shares information across turns and updates stale memories, stabilizing long-horizon behavior. In addition, we adapt truncated backpropagation-through-time (TBPTT) to our multi-turn setting, learning cross-turn dependencies without full-history backpropagation. Extensive experiments on long-form dialogue benchmarks demonstrate superior performance and efficiency of C-DIC; notably, C-DIC shows stable inference latency and perplexity over hundreds of dialogue turns, supporting a scalable path to high-quality dialogue modeling.",
+        "ageHours": 19.7,
+        "summary": "Articulated tool manipulation remains a major challenge in dexterous robotics due to the need to coordinate internal degrees of freedom and contact-rich interactions. While prior work has largely focused on rigid objects, articulated tool use remains underexplored because of its physical complexity and the difficulty of learning functional grasping and manipulation policies. We present Mana (Manipulation Animator), a general sim-to-real framework that reinterprets dexterous manipulation as an animation problem. Inspired by computer animation, Mana employs a coarse-to-fine pipeline that transforms procedurally-generated grasp keyframes into manipulation trajectories through motion planning and reinforcement learning. The data generation process is largely automatic, requiring only a few mouse clicks to specify functional affordances (<1 minute per tool). Across four articulated tools spanning different scales and joint types, Mana achieves zero-shot sim-to-real transfer for both grasping and in-hand manipulation, demonstrating a scalable approach to dexterous articulated tool use.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "A Pfaffian quantum Hall state of ultracold bosons",
-        "articleUrl": "https://arxiv.org/abs/2606.12409v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Fractional quantum Hall states are a cornerstone of topological physics, hosting fractionally charged quasiparticles with exotic statistics that promise to enable topologically protected quantum information processing. Among these, the Pfaffian state introduced by Moore and Read implements a p-wave pairing structure that supports excitations with non-Abelian exchange statistics. Despite extensive study in electronic systems, direct access to its pairing structure has remained limited. Here we realize a three-particle bosonic Pfaffian state of ultracold $^{87}\\mathrm{Rb}$ atoms in an optical lattice subject to a Floquet-engineered synthetic magnetic field. Using a Bayesian-optimized adiabatic protocol, we prepare a state exhibiting Pfaffian pairing correlations. Site-resolved measurements of multi-point density correlations reveal a pronounced suppression of short-range three-body coincidences, reflecting the underlying pairing structure. We further probe the state's transport response through Hall drift measurements. Our results establish a bottom-up approach to engineering non-Abelian topological order and lay the groundwork for future explorations of anyonic braiding in synthetic matter.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Collective neutrino oscillations: Many-body non-forward effects and non-classicality",
-        "articleUrl": "https://arxiv.org/abs/2606.12404v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Neutrino evolution in dense astrophysical environments is typically described either within a quantum kinetic framework, which neglects the build-up of multi-body correlations, or through simplified many-body calculations that allow significant entanglement to develop. In this work, we compare these two approaches in a simple neutrino-gas configuration, with particular emphasis on the role of non-forward scattering processes. These effects are incorporated either through a collision term in the kinetic description, or by considering the full neutrino-neutrino many-body Hamiltonian. We highlight differences between the two descriptions in both their characteristic timescales and asymptotic behavior. Motivated by the natural suitability of quantum computing for many-body calculations, we further investigate the non-classicality of neutrino evolution, discussing Trotter error scaling, along with the associated costs of constructing quantum circuits in terms of entangling gates and non-Clifford gates. We find that the resources needed for neutrino many-body evolution are on the low end of typical high-energy physics problems and on the mid to high end with respect to quantum chemistry problems. For the full Hamiltonian, resource requirements increase relative to the truncated version. We emphasize the importance of efficient fermion-to-qubit encodings, which are essential for reducing the substantial computational resources required for such simulations.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Quantifying the Distribution of Biexciton Emission Efficiencies in Colloidal Quantum Shells",
-        "articleUrl": "https://arxiv.org/abs/2606.12398v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "The efficiency of multi-photon emission is an important characteristic of quantum light sources. Bright multi-photon emission is desirable for high-power lighting and lasers, while its complete suppression is required for high-purity single-photon generation. In colloidal quantum emitters, multi-photon emission can vary significantly between individual particles. Resolving this heterogeneity remains challenging with conventional particle-by-particle approaches. Here, we introduce a crosstalk-suppressed SPAD-array photon-correlation approach for high-throughput quantification of multi-photon emission from more than 1000 colloidal quantum shells. By projecting two images of the same sample onto distant regions of the detector array, we avoid short-range crosstalk between detector pixels. Time gating suppresses dark-count coincidences and distinguishes individual emitters from clusters. Applying this method to quantum shells reveals a near-Gaussian distribution of biexciton emission efficiencies, with a mean of 0.55 and an estimated intrinsic standard deviation of 0.12. Intra-batch correlations between the biexciton efficiency and the particle brightness are consistent with the volume scaling of Auger quenching. These results establish SPAD-array photon correlation as a scalable route to resolve multi-photon heterogeneities in nanoparticle ensembles.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Redesign Mixture-of-Experts Routers with Manifold Power Iteration",
-        "articleUrl": "https://arxiv.org/abs/2606.12397v1",
+        "title": "Understanding Truncated Positional Encodings for Graph Neural Networks",
+        "articleUrl": "https://arxiv.org/abs/2606.13671v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "Router is the cornerstone component to the Mixture-of-Experts models. Serving as expert proxies, the rows of the router matrix compute their similarity to the MoE inputs to determine which subset of experts is activated. Ideally, each router row is designed to encode the expert matrix into this representative vector, such that its dot-product with token can better reflect token-expert affinity. However, there exists no design principles to enforce this condensation. In this paper, we propose to align each router row with the principal singular direction of the associated expert, as this direction provides the most expressive mathematical description of a matrix. Based on this principle, we propose a router redesign with Manifold Power Iteration (MPI). Specifically, it introduces a \"Power-then-Retract\" paradigm, where a power iteration step is performed on the router weights, followed by a retraction to impose a norm constraint to ensure both efficiency and stability. Theoretically, we show that MPI drives router rows to converge toward the principal singular directions of associated experts. Empirically, we pretrain MoE model across scales from 1B to 11B parameters to confirm that this alignment facilitates more effective MoE models.",
+        "ageHours": 19.8,
+        "summary": "Positional encodings (PEs) enhance the power of graph neural networks (GNNs), both theoretically and empirically. Two of the most popular families of PEs - spectral (e.g., Laplacian eigenspaces, effective resistance) and walk-based (polynomials of the adjacency matrix) - are theoretically equivalent in expressive power, with expressivity between the 1-WL and 3-WL tests. However, this equivalence assumes the GNN uses the \"complete\" version of these PEs, which requires $O(n^3)$ time and space complexity. Instead, practitioners commonly use truncated variants of these encodings, such as the first $k$ eigenspaces or powers of the adjacency matrix. However, the theoretical properties of these truncated PEs are unknown. In this work, we initiate the study of these truncated PEs. Theoretically, we show that, under truncation, several families of PEs are fundamentally different in expressive power. As a corollary, we show that truncated spectral PEs are no longer stronger than the 1-WL test. We also study a family of spectral PEs, the $k$-harmonic distances, to highlight the differences in expressive power of even closely related truncated PEs. Finally, we experimentally show that a mix of truncated PEs is preferable to any single family on real-world datasets.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "The Fundaments of Unity: ${\\mathcal O}(1)$ Couplings in Quantum Field Theories",
-        "articleUrl": "https://arxiv.org/abs/2606.12393v1",
+        "title": "Semi-Device-Independent Certification for Nonlocality without Entanglement",
+        "articleUrl": "https://arxiv.org/abs/2606.13667v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.3,
-        "summary": "We critically examine the expectation that in a fundamental quantum field theory, dimensionless couplings in the Lagrangian density should all be of order unity. We propose a measure to quantify the adherence of a theory to this: the spread (the ratio of the largest to the smallest of the magnitudes) of such dimensionless couplings, obtaining various closed-form results. If we take independent identically distributed (IID) couplings to parameterise our uncertainty on the values of the order unity couplings, ratios of couplings can be much larger than one might naively expect. For a theory with 20 IID unit normal couplings, the probability that the magnitude of the ratio of two of them is greater than 100 is 0.29, for example. Even when the IID couplings have exponentially suppressed tails, the distribution of ratios of order one couplings has fat power-law tails which grow with the number of independent couplings.",
+        "ageHours": 19.8,
+        "summary": "In this work, we investigate maximum-confidence discrimination, which encompasses minimum-error and unambiguous discrimination, for ensembles of separable states by considering global and separable measurements. We demonstrate that global measurements outperform separable ones, thereby establishing nonlocality without entanglement (NLWE) in terms of confidence in a detection event, a fine-grained state-identification strategy that maximizes the probability of a correct guess given a measurement outcome. Conversely, verifying achievable confidence in measurement outcomes can certify global measurements, namely, semi-device-independent certification of NLWE. Our results make it feasible to experimentally demonstrate NLWE using present-day quantum measurement devices, even with non-unit detection efficiencies, since maximum-confidence measurements rely only on detected measurement outcomes.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "The Simplified Stabilizer ZX-Calculus is Minimal",
-        "articleUrl": "https://arxiv.org/abs/2606.12383v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.5,
-        "summary": "The stabilizer fragment of the ZX calculus is amongst the most important fragments of the theory. The closely related Clifford+T fragment is approximately universal (arXiv:1705.11151). Additionally, the stabilizer calculus can be described by a small collection of rewrites, most of which have been shown to be necessary (arXiv:1709.08903). However, two rules, describing the red/green compact-structure coincidence and the important bialgebra law, had not been shown to be necessary. We present a countermodel-style argument showing that both of these rules are individually necessary relative to the connectivity meta-rule of Backens--Perdrix--Wang (arXiv:1709.08903), and hence establish that the rule set presented in arXiv:1709.08903 has no redundant rewrite rule.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Breaking Entropy Bounds: Accelerating RL Training via MTP with Rejection Sampling",
-        "articleUrl": "https://arxiv.org/abs/2606.12370v1",
+        "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
+        "articleUrl": "https://arxiv.org/abs/2606.13662v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.6,
-        "summary": "Reinforcement learning (RL) has become a key component in modern large language models, yet the rollout stage remains the key bottleneck in RL training pipelines. Although Multi-Token Prediction (MTP) offers a natural solution to accelerate rollouts through speculative decoding, many studies have observed that MTP acceptance rates degrade significantly during RL training, leading to limited speedup performance. To address this bottleneck, we present Bebop, a systematic study of MTP in LLM post-training, and offer practical recipes to integrate MTP into large-scale RL pipelines. First, we reveal that the MTP acceptance rate is fundamentally bounded by the fluctuation of model entropy, which demonstrates a clear negative linear relationship with the rise of entropy in the RL stage. Second, we show that probabilistic rejection sampling largely alleviates the disturbance introduced by entropy in RL compared to greedy draft sampling. We further identify that the conventional MTP training objectives (cross-entropy or KL) are suboptimal in such settings, and therefore we propose a novel end-to-end TV loss that directly optimizes multi-step rejection sampling acceptance rate, yielding ~10% acceptance rate improvements, achieving up to 95% acceptance rates and up to 25% extra inference throughput gains across mathematical reasoning, code generation, and agentic tasks. Third, we test various online MTP training strategies during RL and show that pre-RL MTP training with e2e TV loss and rejection sampling achieves a consistent acceptance rate and speedup throughout the entire RL, eliminating the need for costly online MTP updating. We provide extensive experiments and analysis that validate our findings. Experimental results show our method achieves up to 1.8x end-to-end acceleration in async RL training of Qwen3.5, Qwen3.6, and Qwen3.7 models.",
+        "ageHours": 19.8,
+        "summary": "LLM-based agents have shown increasing potential in automating scientific discovery. Given an optimizable metric and an execution environment, they can propose, validate, and iterate scientific solutions, and have produced results that outperform human-designed approaches. As model capabilities continue to improve, we argue that the bottleneck for autonomous scientific discovery is shifting from prescribing agent workflows to designing agent environments: the resources, constraints, and interfaces that shape agent behavior. We frame this as environment engineering: building environments that amplify productive behaviors, such as open-ended exploration, systematic artifact management, and inter-agent collaboration, while suppressing harmful behaviors, such as reward hacking and high-friction human oversight. We present EurekAgent, an environment-engineered agent system for metric-driven autonomous scientific discovery. EurekAgent engineers the environment along four dimensions: permissions engineering for bounded agent execution and isolated evaluation; artifact engineering for filesystem and Git-based collaboration; budget engineering for budget-aware exploration; and human-in-the-loop engineering for easy human supervision and intervention. EurekAgent sets new state-of-the-art results on multiple mathematics, kernel engineering, and machine learning tasks, including new state-of-the-art 26-circle packing results discovered with less than $11 in total API cost. We open-source our code and results, and call for environment engineering as a core research direction for developing reliable autonomous research agents.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Nonadditivity in Quantum Field Theory: Replica Energies, Scaling Filters, and the Renormalization Group",
-        "articleUrl": "https://arxiv.org/abs/2606.12367v1",
+        "title": "Engineering electrically-switchable quantum anomalous Hall states by spin-orbit coupling",
+        "articleUrl": "https://arxiv.org/abs/2606.13651v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.6,
-        "summary": "Extensive systems have a simple thermodynamic signature: the logarithm of the partition function scales homogeneously with the size of the system. We show that the failure of this scaling, measured by the replica energy ${\\cal E}$, provides a useful bridge between statistical mechanics and quantum field theory. The associated differential operator $(1-\\frac1d L\\partial_L)$ removes the leading bulk contribution to $W=\\log Z$ and isolates the part that is sensitive to boundaries, topology, defects, long-range forces, or other sources of nonadditivity. In quantum field theory this thermodynamic idea has two closely related uses. For ordinary finite-volume or spherical partition functions, suitable higher-order versions of the same filter remove local counterterms and extract universal fixed-point data such as the central charge, the sphere free energy $F$, and the Euler anomaly coefficient $a$. For replica geometries with entangling defects, the same filtering principle gives the renormalized defect free energy. In $2+1$ dimensions, its $n\\to1$ limit is precisely the entropic $F$-function. We use this perspective to distinguish ordinary finite-size corrections, topology-dependent constants in gapped phases, subextensive fracton degeneracies, and genuinely nonextensive systems with long-range interactions such as self-gravitating thermal matter. Replica energy therefore offers a common thermodynamic language for additivity, defect free energies, and renormalization-group irreversibility.",
+        "ageHours": 19.9,
+        "summary": "Nonvolatile gate-driven switching of quantum anomalous Hall (QAH) states in graphene moir\u00e9 systems provides a promising route toward topological electronics based on chiral edge states. However, deliberate use of this switching mechanism requires control over both the magnetic properties and metastability of QAH states. While previous demonstrations mostly relied on the intrinsic magnetic energy landscape of moir\u00e9 devices, here we show that this landscape can be engineered through proximity coupling to WSe2. We find that proximitizing twisted monolayer-bilayer graphene by WSe2 reshapes the magnetization reversals responsible for nonvolatile electrical switching of QAH states. We attribute this effect to the proximity-induced spin-orbit coupling (SOC), which can lock spin and valley and modify the magnetization of the competing states involved in switching compared with non-proximitized graphene systems. Our findings establish proximity-induced SOC as a new way to engineer magnetic properties and switchable magnetic states in graphene-based systems. We further demonstrate that strong magnetic metastability in tMBG allows the magnetic states to be gate-tuned between QAH and metallic regimes, and between QAH states with Chern numbers |C| = 2 and 1 without resetting the magnetic state. This functionality points toward new device architectures based on QAH chiral edge states.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "On Subquadratic Architectures: From Applications to Principles",
-        "articleUrl": "https://arxiv.org/abs/2606.12364v1",
+        "title": "To Cool, or Not to Cool? Displacement Sensing with Hot Quantum States",
+        "articleUrl": "https://arxiv.org/abs/2606.13650v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.9,
+        "summary": "Quantum-enhanced displacement sensing with bosonic systems is typically formulated assuming that the oscillator is cooled close to its ground state before nonclassical probe preparation. We investigate whether such near-ground-state initialization is necessary, or whether sensitive probes can instead be generated directly from thermal states. We analyze hot quantum probes produced by squeezing, number-raising, and Schr\u00f6dinger-cat-state generation applied to thermal inputs. We identify two distinct mechanisms by which thermal mixedness can remain compatible with enhanced displacement sensitivity. First, projecting a mixed probe onto a definite parity sector removes the usual thermal suppression of the displacement quantum Fisher information, which can then increase with initial thermal occupation. Second, coherent superpositions of opposite displacements can retain sensitivity through coherence between their displaced components, even when the underlying state is mixed. We use these two mechanisms to classify hot-state protocols according to whether their sensitivity comes from parity selection, coherence between displaced components, or both. Finally, we formulate an experimentally relevant optimization problem comparing initial cooling with direct hot-state preparation under realistic decoherence and show that complete cooling is not universally optimal. Our results establish hot-state engineering as a route to quantum-enhanced bosonic displacement sensing without mandatory ground-state initialization.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Operadic consistency: a label-free signal for compositional reasoning failures in LLMs",
+        "articleUrl": "https://arxiv.org/abs/2606.13649v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.6,
-        "summary": "Transformers dominate modern sequence modeling, but their quadratic attention incurs substantial computational cost. Subquadratic architectures offer a scalable alternative. However, it remains unclear which designs yield the most effective sequence models. We compare three leading approaches: xLSTM, Mamba-2, and Gated DeltaNet. We evaluate these models on tasks with complex dependencies: (1) code-model pre-training, (2) distillation of code models from large language models, and (3) pre-training of time-series foundation models. Across these settings, xLSTM delivers the strongest overall performance. To explain xLSTM's advantage, we present a unified formulation and analyze the underlying architectural mechanisms, focusing on state tracking and memory dynamics. Our results show that xLSTM enables more flexible and stable memory correction via its gating scheme. We corroborate these findings on controlled synthetic length-generalization tasks. Overall, our findings indicate that xLSTM's gains on complex tasks stem from robust state tracking and accumulation.",
+        "ageHours": 19.9,
+        "summary": "Detecting LLM reasoning failures at inference time without ground-truth labels has motivated a wide range of confidence baselines, including self-consistency, semantic entropy, and P(True), built on within-question sampling and self-evaluation. Operad theory, the formalism for systems built by iterated substitution, suggests a complementary diagnostic: a model's direct answer to a compositional query should agree with the answer it produces by composing a stated decomposition of the same query. We instantiate this idea as operadic consistency (OC), a per-question signal. Across twelve instruction-tuned LLMs (4B to 671B parameters, open-weights and closed-source) on four multi-hop QA datasets, OC is strongly correlated with accuracy on every dataset (Pearson $r \\in [0.86, 0.94]$, all $p \\leq 0.0004$), and is the only signal we evaluate with $r \\geq 0.85$ uniformly across all four datasets. Chain-of-thought self-consistency (CoT-SC; Wang et al., 2023) matches OC on HotpotQA and DROP ($r = 0.93, 0.87$) but drops to $r \\approx 0.45$ on MuSiQue and StrategyQA. At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines ($p \\leq 10^{-13}$). The same signal yields selective-prediction improvements (accuracy at fixed coverage) over a tuned CoT-SC baseline at the equal-cost $K = 3$ budget (AUARC lifts of +0.086 to +0.096 and AUROC lifts of +0.092 to +0.164; 95% CIs exclude zero on every cell). On five frontier thinking models, where the decomposition is extracted from the model's own chain of thought, the same equal-cost comparison gives positive selective-prediction point-estimate lift on all 16 (dataset, budget, metric) cells tested, with 95% CIs excluding zero on 12 of the 16.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation",
+        "articleUrl": "https://arxiv.org/abs/2606.13647v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.9,
+        "summary": "We introduce SkMTEB, the first comprehensive MTEB-style text embedding benchmark for Slovak, a low-resource West Slavic language, comprising 31 datasets across 7 task types -- nearly 4$\\times$ the depth of existing multilingual benchmark coverage for Slovak. Our evaluation of 31 embedding models reveals that large instruction-tuned multilingual models achieve the strongest performance, while existing Slovak-specific models trained for NLU tasks transfer poorly to embedding tasks. To address the need for efficient, locally-deployable Slovak embeddings, we develop \\texttt{e5-sk-small} (45M parameters) and \\texttt{e5-sk-large} (365M) by applying vocabulary trimming and fine-tuning to Multilingual E5 models. Despite size reductions of up to 62\\%, our open-source models achieve competitive performance with proprietary APIs while remaining locally deployable for semantic search and retrieval-augmented generation (RAG). We release the benchmark, models, datasets, and code openly, hoping our approach offers a replicable path for other under-resourced languages.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Driven dynamics of an attractive Bose polaron",
+        "articleUrl": "https://arxiv.org/abs/2606.13645v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.9,
+        "summary": "We study the out-of-equilibrium dynamics of an impurity driven by a constant external force through a system of homogeneous weakly-interacting bosons in one spatial dimension. The impurity-boson interaction is assumed to be attractive. We show that the impurity exhibits drifted Bloch oscillations in a wide range of forces in the absence of a lattice. We characterize the dynamical response of the host bosons and explain the mechanism underlying the Bloch oscillations. We analyse the behavior of the drift velocity, the Bloch amplitude and the time period of oscillations in a wide range of forces and other system parameters. In contrast to the case of repulsive impurity-boson interaction, the drift velocity exhibits a sub-linear dependence on a weak applied force, $V_d\\sim {F}^\u03b1$ with a positive exponent $\u03b1$ smaller than unity. The drift velocity monotonically increases with force, though the scaling behavior varies considerably across different regimes of $F$. Moreover, the amplitude of the velocity oscillations displays rich behavior: it first undergoes a decay with force, reaches a minimum, and then presents a revival, increasing with force.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Search for High-Frequency Gravitational Waves via Geomagnetic Conversion with Radio Telescopes",
+        "articleUrl": "https://arxiv.org/abs/2606.13642v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.9,
+        "summary": "The detection of high-frequency gravitational waves (HFGWs) above 10 kHz provides a crucial probe of exotic astrophysical phenomena and new physics. We report the first search for HFGWs via their conversion to electromagnetic radiation through the inverse Gertsenshtein effect in Earth's magnetic field, utilizing radio telescopes including the Very Large Array (VLA) and the Atacama Large Millimeter/submillimeter Array (ALMA). Since no statistically significant signal is observed, we obtain new upper limits on the characteristic strain across the 1 GHz -- 1 THz band, with the most stringent constraint reaching $h_c \\lesssim 10^{-18}$, improving upon existing bounds by up to three orders of magnitude. These results significantly advance the exploration of uncharted parameter space for exotic gravitational-wave sources, paving the way for future discoveries with next-generation facilities such as the Square Kilometre Array (SKA).",
         "charge": 0
       }
     ],
