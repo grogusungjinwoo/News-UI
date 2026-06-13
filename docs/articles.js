@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-12T13:44:09.922289+00:00",
+  "generatedAt": "2026-06-13T12:03:24.718301+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Gene Shalit, longtime 'Today' show movie critic, dies at 100",
+      "articleUrl": "https://www.npr.org/2026/06/12/g-s1-128022/gene-shalit-movie-critic-dies",
+      "sourceName": "NPR Topics: News",
+      "sourceHomeUrl": "https://www.npr.org",
+      "ageHours": 11.0,
+      "summary": "Known for his puffy hair, oversized handlebar mustache and a love for puns, Gene Shalit joined  Today  in 1970 and became arts editor in 1973. He was a middle-of-the-road critic, known for his wit and intelligence.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "500 Years Ago, Leonardo da Vinci\u2019s Notebook Was Cut Up and Separated. Now, the Inventor's Manuscripts and Drawings Are Reconstructed in an Online Archive",
       "articleUrl": "https://www.smithsonianmag.com/smart-news/500-years-ago-da-vincis-notebook-was-cut-up-and-separated-now-the-inventors-manuscripts-and-drawings-are-reconstructed-in-an-online-archive-180988922/",
       "sourceName": "Smart News | smithsonianmag.com",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.eater.com",
       "ageHours": 11.2,
       "summary": "This excerpt was originally published in Pre Shift, our newsletter for the hospitality industry.\u00a0Subscribe\u00a0for more first-person accounts, advice, and interviews. Now Open is a yearlong series celebrating some of 2026\u2019s most exciting new restaurants. Throughout the year, we\u2019ll check in with teams in Chicago, New York City, and Washington, D.C. to hear what it\u2019s really [\u2026]",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "As ranks of uninsured grow, charity care can be hard to come by at many hospitals",
-      "articleUrl": "https://www.npr.org/2026/05/11/nx-s1-5813781/charity-care-hospitals-medical-bills-uninsured",
-      "sourceName": "NPR Topics: News",
-      "sourceHomeUrl": "https://www.npr.org",
-      "ageHours": 12.7,
-      "summary": "An investigation of hospital data and charity care programs shows most Minnesota hospitals provide little financial aid to patients and often make assistance difficult to get.",
       "charge": 0
     }
   ]
