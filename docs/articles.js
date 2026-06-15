@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-14T12:16:43.431537+00:00",
+  "generatedAt": "2026-06-15T16:05:43.232226+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,36 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "Beneath our feet lies a fungal superhighway stretching 68 quadrillion miles",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260614011845.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 11.1,
+        "summary": "Beneath our feet lies a vast hidden fungal superhighway that helps sustain much of life on Earth\u2014and scientists have now mapped it for the first time. Researchers estimate that these underground networks stretch an astonishing 110 quadrillion kilometers, move about 4 billion tons of carbon dioxide into soils each year, and play a major role in supporting plants and regulating the climate.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "Pumice Rafts Encroach on Admiralty Islands",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/pumice-rafts-encroach-on-admiralty-islands/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 12.1,
+        "summary": "Buoyant volcanic rock fragments from an underwater eruption drifted across the Bismarck Sea and choked island coasts.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
+        "title": "Oxford physicists just made Schr\u00f6dinger\u2019s cat even stranger",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260614011848.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 8.6,
+        "summary": "Oxford physicists have created an entirely new type of Schr\u00f6dinger\u2019s cat-like quantum state using components that are themselves highly quantum in nature. The advance could open new possibilities for more resilient quantum computers and deeper insights into the strange rules that govern the quantum universe.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Ancient Denisovan DNA still shapes human immunity today",
         "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260613034210.htm",
         "sourceName": "All Top News -- ScienceDaily",
@@ -178,36 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 9.5,
         "summary": "An astronaut\u2019s photo, taken en route to the Moon, reveals our planet and its place in space in a novel way.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Typhoon Jangmi",
-        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/typhoon-jangmi/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 11.1,
-        "summary": "The sprawling storm promised to deliver torrential rain across a wide swath of southern Japan.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Brain scans reveal two distinct types of autism",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260602021634.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 10.3,
-        "summary": "Scientists have uncovered evidence that autism may include at least two biologically distinct subtypes, each marked by a different pattern of brain communication. By combining brain scans from nearly 1,000 people with autism with insights from 20 genetically engineered mouse models, researchers identified a \u201chyperconnectivity\u201d subtype, where brain regions communicate more than usual, and a \u201chypoconnectivity\u201d subtype, where communication is reduced.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Scientists confirm a deep earthquake that shouldn't exist",
-        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260602021636.htm",
-        "sourceName": "All Top News -- ScienceDaily",
-        "sourceHomeUrl": "https://www.sciencedaily.com",
-        "ageHours": 9.6,
-        "summary": "Scientists have confirmed that a mysterious Utah earthquake first detected in 1979 really did occur nearly 90 kilometers underground\u2014far deeper than anyone thought earthquakes could happen beneath a continent. By reanalyzing decades of seismic data, researchers identified a rare class of \"continental mantle earthquakes\" occurring deep in Earth\u2019s upper mantle, where rock is expected to slowly flow rather than suddenly break.",
         "charge": 0
       }
     ],
@@ -315,6 +315,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "OnlyFans 'agents' control and threaten creators while taking half their earnings, BBC finds",
+      "articleUrl": "https://www.bbc.com/news/articles/c932gpk2l1do?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.1,
+      "summary": "Dozens of women on OnlyFans describe being exploited by managers who promised to help maximise profits.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Gene Shalit, longtime 'Today' show movie critic, dies at 100",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.quantamagazine.org",
       "ageHours": 11.0,
       "summary": "A graduate student recently harnessed the complexity of mathematical proofs to create a powerful new tool in cryptography.             The post  How Unknowable Math Can Help Hide Secrets  first appeared on  Quanta Magazine",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "New York\u2019s Buzziest New Restaurant Is a Pub",
-      "articleUrl": "https://www.eater.com/pre-shift/961028/deans-pub-new-york-pre-shift",
-      "sourceName": "Eater",
-      "sourceHomeUrl": "https://www.eater.com",
-      "ageHours": 11.2,
-      "summary": "This excerpt was originally published in Pre Shift, our newsletter for the hospitality industry.\u00a0Subscribe\u00a0for more first-person accounts, advice, and interviews. Now Open is a yearlong series celebrating some of 2026\u2019s most exciting new restaurants. Throughout the year, we\u2019ll check in with teams in Chicago, New York City, and Washington, D.C. to hear what it\u2019s really [\u2026]",
       "charge": 0
     }
   ]
