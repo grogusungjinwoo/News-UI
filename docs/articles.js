@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-15T16:05:43.232226+00:00",
+  "generatedAt": "2026-06-16T15:23:24.063369+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Mana: Dexterous Manipulation of Articulated Tools",
-        "articleUrl": "https://arxiv.org/abs/2606.13677v1",
+        "title": "Exact Posterior Score Estimation for Solving Linear Inverse Problems",
+        "articleUrl": "https://arxiv.org/abs/2606.17048v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.7,
-        "summary": "Articulated tool manipulation remains a major challenge in dexterous robotics due to the need to coordinate internal degrees of freedom and contact-rich interactions. While prior work has largely focused on rigid objects, articulated tool use remains underexplored because of its physical complexity and the difficulty of learning functional grasping and manipulation policies. We present Mana (Manipulation Animator), a general sim-to-real framework that reinterprets dexterous manipulation as an animation problem. Inspired by computer animation, Mana employs a coarse-to-fine pipeline that transforms procedurally-generated grasp keyframes into manipulation trajectories through motion planning and reinforcement learning. The data generation process is largely automatic, requiring only a few mouse clicks to specify functional affordances (<1 minute per tool). Across four articulated tools spanning different scales and joint types, Mana achieves zero-shot sim-to-real transfer for both grasping and in-hand manipulation, demonstrating a scalable approach to dexterous articulated tool use.",
+        "ageHours": 21.4,
+        "summary": "Diffusion and flow-based models learn powerful data priors by training a denoiser to reverse Gaussian corruption. To use this prior to solve a linear inverse problem, one needs to sample from the posterior, but the score that the prior provides is the unconditional score, not the posterior score. Existing methods either steer a fixed pretrained denoiser with approximate measurement-matching corrections, or train a conditional restoration model that abandons the denoising structure of the prior. We derive the exact posterior score in closed form for linear Gaussian inverse problems under general Gaussian interpolants, and show that posterior sampling reduces to a denoising problem at an operator-dependent shifted pivot under an anisotropic noise covariance. We turn this identity into Exact Posterior Score (EPS), a denoising training objective that preserves the input/output structure of standard pretraining and can therefore be trained from scratch or fine-tuned from a pretrained denoiser. At inference, EPS uses the same sampler as the underlying backbone, with no likelihood gradients or projections. We evaluate EPS on five linear inverse problems across FFHQ and ImageNet, where it outperforms training-free and training-based baselines on fidelity, perceptual, and distributional metrics, while using roughly an order of magnitude fewer denoiser evaluations than gradient-based posterior samplers.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Understanding Truncated Positional Encodings for Graph Neural Networks",
-        "articleUrl": "https://arxiv.org/abs/2606.13671v1",
+        "title": "The Importance of Phase in Neural Representations: An Internal Oppenheim-Lim Test of Image Classifiers",
+        "articleUrl": "https://arxiv.org/abs/2606.17037v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "Positional encodings (PEs) enhance the power of graph neural networks (GNNs), both theoretically and empirically. Two of the most popular families of PEs - spectral (e.g., Laplacian eigenspaces, effective resistance) and walk-based (polynomials of the adjacency matrix) - are theoretically equivalent in expressive power, with expressivity between the 1-WL and 3-WL tests. However, this equivalence assumes the GNN uses the \"complete\" version of these PEs, which requires $O(n^3)$ time and space complexity. Instead, practitioners commonly use truncated variants of these encodings, such as the first $k$ eigenspaces or powers of the adjacency matrix. However, the theoretical properties of these truncated PEs are unknown. In this work, we initiate the study of these truncated PEs. Theoretically, we show that, under truncation, several families of PEs are fundamentally different in expressive power. As a corollary, we show that truncated spectral PEs are no longer stronger than the 1-WL test. We also study a family of spectral PEs, the $k$-harmonic distances, to highlight the differences in expressive power of even closely related truncated PEs. Finally, we experimentally show that a mix of truncated PEs is preferable to any single family on real-world datasets.",
+        "ageHours": 21.5,
+        "summary": "Oppenheim and Lim (1981) showed that natural images stay recognizable when reconstructed from their Fourier phase alone, while the magnitude carries little of their identity. We ask whether trained image classifiers reproduce this asymmetry inside their hidden layers, and we test it causally: given two images, we transplant the phase of one onto the magnitude of the other at a chosen layer and record which image the prediction follows. In PRISM2D, GFNet, and ViT-B/16 the prediction follows the phase or sign donor, and deleting all image-specific magnitude barely moves accuracy, so identity rides on phase while image-specific magnitude is largely dispensable to the readout. ResNet-50 at first seems to break the pattern, because transplanting sign after its ReLUs does nothing; a fair intervention before the ReLU reveals a strong latent sign code in the late blocks, and a DC-only control shows the readout consumes a channel-wise spatial average. Controls rule out the trivial case in which magnitude simply stops depending on the image. The architectures therefore share a phase/sign identity code but expose it in different bases, set by rectification and readout geometry, which gives a mechanistic account of the texture--shape gap between CNNs and attention models.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Semi-Device-Independent Certification for Nonlocality without Entanglement",
-        "articleUrl": "https://arxiv.org/abs/2606.13667v1",
+        "title": "Grid-state deformation in a no-jump non-Hermitian bosonic dimer",
+        "articleUrl": "https://arxiv.org/abs/2606.17036v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "In this work, we investigate maximum-confidence discrimination, which encompasses minimum-error and unambiguous discrimination, for ensembles of separable states by considering global and separable measurements. We demonstrate that global measurements outperform separable ones, thereby establishing nonlocality without entanglement (NLWE) in terms of confidence in a detection event, a fine-grained state-identification strategy that maximizes the probability of a correct guess given a measurement outcome. Conversely, verifying achievable confidence in measurement outcomes can certify global measurements, namely, semi-device-independent certification of NLWE. Our results make it feasible to experimentally demonstrate NLWE using present-day quantum measurement devices, even with non-unit detection efficiencies, since maximum-confidence measurements rely only on detected measurement outcomes.",
+        "ageHours": 21.5,
+        "summary": "We study the no-jump evolution of ideal grid states in a lossy bosonic dimer with differential decay. The effective non-Hermitian quadratic dynamics induces a complex symplectic flow in phase space that deforms both the primitive lattice vectors and the origin seed. The average decay rate controls common attenuation, while coherent hopping and differential decay control the reduced dimer deformation. The reduced sector contains elliptic, parabolic, and hyperbolic regimes with imaginary spectra, an exceptional point, and real spectra, producing oscillatory, linear, and exponential lattice deformations. Although projected lattice areas can change, the deformation comes from a determinant-one complex symplectic flow on the full four-dimensional phase space. For a Gaussian regularization of the origin seed, we derive the associated complex width matrix and identify the positivity conditions that preserve Gaussian form. For an initial two-mode qunaught product state, the lossless limit recovers the standard beam-splitter generation of a square GKP$+$ Bell pair, while the no-jump dynamics produces its non-Hermitian deformation with a postselection cost set by the no-jump probability.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
-        "articleUrl": "https://arxiv.org/abs/2606.13662v1",
+        "title": "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing",
+        "articleUrl": "https://arxiv.org/abs/2606.17034v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.8,
-        "summary": "LLM-based agents have shown increasing potential in automating scientific discovery. Given an optimizable metric and an execution environment, they can propose, validate, and iterate scientific solutions, and have produced results that outperform human-designed approaches. As model capabilities continue to improve, we argue that the bottleneck for autonomous scientific discovery is shifting from prescribing agent workflows to designing agent environments: the resources, constraints, and interfaces that shape agent behavior. We frame this as environment engineering: building environments that amplify productive behaviors, such as open-ended exploration, systematic artifact management, and inter-agent collaboration, while suppressing harmful behaviors, such as reward hacking and high-friction human oversight. We present EurekAgent, an environment-engineered agent system for metric-driven autonomous scientific discovery. EurekAgent engineers the environment along four dimensions: permissions engineering for bounded agent execution and isolated evaluation; artifact engineering for filesystem and Git-based collaboration; budget engineering for budget-aware exploration; and human-in-the-loop engineering for easy human supervision and intervention. EurekAgent sets new state-of-the-art results on multiple mathematics, kernel engineering, and machine learning tasks, including new state-of-the-art 26-circle packing results discovered with less than $11 in total API cost. We open-source our code and results, and call for environment engineering as a core research direction for developing reliable autonomous research agents.",
+        "ageHours": 21.5,
+        "summary": "Post-hoc context erasing over the KV cache is challenging because a local edit has a global consequence: once a span has been processed, its influence propagates into the cached states of all subsequent tokens. This issue arises naturally in long-context LLM applications, where stale retrieved facts, incorrect tool observations, retracted user preferences, or harmful prompt injections may be identified only after prefill. Exact erasing must then recompute all tokens after the deleted span, making its computational cost depend on suffix length rather than erased-span length. We introduce KVEraser, a learned KV-cache editing method for efficient localized context erasing. Given a processed context and a span to remove, KVEraser replaces only the KV states of the erased interval with learned steering states while reusing the remaining cache unchanged. To learn a transferable erasing mechanism, we build a two-stage training pipeline: generic span-neighbor pre-training teaches the eraser to suppress the influence of the erased span, while task-specific fine-tuning adapts this capability to downstream scenarios. Experiments show that KVEraser nearly matches full recomputation in post-erasure performance on in-domain tasks across 1K--32K context lengths, while its latency increases by only 24% compared with a 17.6x increase for full recomputation. KVEraser also generalizes to unseen long-document QA tasks with harmful factual distractors, achieving the best performance among approximate baselines with a 3--4x speedup over full recomputation.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Engineering electrically-switchable quantum anomalous Hall states by spin-orbit coupling",
-        "articleUrl": "https://arxiv.org/abs/2606.13651v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Nonvolatile gate-driven switching of quantum anomalous Hall (QAH) states in graphene moir\u00e9 systems provides a promising route toward topological electronics based on chiral edge states. However, deliberate use of this switching mechanism requires control over both the magnetic properties and metastability of QAH states. While previous demonstrations mostly relied on the intrinsic magnetic energy landscape of moir\u00e9 devices, here we show that this landscape can be engineered through proximity coupling to WSe2. We find that proximitizing twisted monolayer-bilayer graphene by WSe2 reshapes the magnetization reversals responsible for nonvolatile electrical switching of QAH states. We attribute this effect to the proximity-induced spin-orbit coupling (SOC), which can lock spin and valley and modify the magnetization of the competing states involved in switching compared with non-proximitized graphene systems. Our findings establish proximity-induced SOC as a new way to engineer magnetic properties and switchable magnetic states in graphene-based systems. We further demonstrate that strong magnetic metastability in tMBG allows the magnetic states to be gate-tuned between QAH and metallic regimes, and between QAH states with Chern numbers |C| = 2 and 1 without resetting the magnetic state. This functionality points toward new device architectures based on QAH chiral edge states.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "To Cool, or Not to Cool? Displacement Sensing with Hot Quantum States",
-        "articleUrl": "https://arxiv.org/abs/2606.13650v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Quantum-enhanced displacement sensing with bosonic systems is typically formulated assuming that the oscillator is cooled close to its ground state before nonclassical probe preparation. We investigate whether such near-ground-state initialization is necessary, or whether sensitive probes can instead be generated directly from thermal states. We analyze hot quantum probes produced by squeezing, number-raising, and Schr\u00f6dinger-cat-state generation applied to thermal inputs. We identify two distinct mechanisms by which thermal mixedness can remain compatible with enhanced displacement sensitivity. First, projecting a mixed probe onto a definite parity sector removes the usual thermal suppression of the displacement quantum Fisher information, which can then increase with initial thermal occupation. Second, coherent superpositions of opposite displacements can retain sensitivity through coherence between their displaced components, even when the underlying state is mixed. We use these two mechanisms to classify hot-state protocols according to whether their sensitivity comes from parity selection, coherence between displaced components, or both. Finally, we formulate an experimentally relevant optimization problem comparing initial cooling with direct hot-state preparation under realistic decoherence and show that complete cooling is not universally optimal. Our results establish hot-state engineering as a route to quantum-enhanced bosonic displacement sensing without mandatory ground-state initialization.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Operadic consistency: a label-free signal for compositional reasoning failures in LLMs",
-        "articleUrl": "https://arxiv.org/abs/2606.13649v1",
+        "title": "Learning the Geometry of Data: A Mathematical Review of Shape Space Analysis",
+        "articleUrl": "https://arxiv.org/abs/2606.17022v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "Detecting LLM reasoning failures at inference time without ground-truth labels has motivated a wide range of confidence baselines, including self-consistency, semantic entropy, and P(True), built on within-question sampling and self-evaluation. Operad theory, the formalism for systems built by iterated substitution, suggests a complementary diagnostic: a model's direct answer to a compositional query should agree with the answer it produces by composing a stated decomposition of the same query. We instantiate this idea as operadic consistency (OC), a per-question signal. Across twelve instruction-tuned LLMs (4B to 671B parameters, open-weights and closed-source) on four multi-hop QA datasets, OC is strongly correlated with accuracy on every dataset (Pearson $r \\in [0.86, 0.94]$, all $p \\leq 0.0004$), and is the only signal we evaluate with $r \\geq 0.85$ uniformly across all four datasets. Chain-of-thought self-consistency (CoT-SC; Wang et al., 2023) matches OC on HotpotQA and DROP ($r = 0.93, 0.87$) but drops to $r \\approx 0.45$ on MuSiQue and StrategyQA. At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines ($p \\leq 10^{-13}$). The same signal yields selective-prediction improvements (accuracy at fixed coverage) over a tuned CoT-SC baseline at the equal-cost $K = 3$ budget (AUARC lifts of +0.086 to +0.096 and AUROC lifts of +0.092 to +0.164; 95% CIs exclude zero on every cell). On five frontier thinking models, where the decomposition is extracted from the model's own chain of thought, the same equal-cost comparison gives positive selective-prediction point-estimate lift on all 16 (dataset, budget, metric) cells tested, with 95% CIs excluding zero on 12 of the 16.",
+        "ageHours": 21.6,
+        "summary": "A central objective of machine learning is to identify structure and patterns in data. Advances in data acquisition have increasingly produced datasets whose observations possess rich geometric form, giving rise to shape spaces that encode variability in object geometry. Such datasets arise across a wide range of disciplines, including biology, medicine, anthropology, and computer vision, where subtle geometric differences often carry important scientific information. Traditional machine learning methods, however, are frequently ill-equipped to account for the nonlinear geometric structure underlying these data.\n  This survey synthesizes a rapidly growing body of work on shape space analysis, which provides a mathematical and computational framework for the study of geometric data. Drawing on ideas from differential geometry, statistics, and machine learning, we organize the literature around a common analytical pipeline: shape representation and parameterization, the rigorous construction of robust geodesic metrics, statistical analysis on shape spaces, and geometry-aware learning methods. We discuss how these tools enable the characterization of shape variability, the comparison of geometric objects, and the analysis of structural trajectories across populations and time.\n  To illustrate the breadth of the field, we highlight applications spanning multiple scales of biological organization, including studies of subcellular morphology and primate tooth evolution. Across these and many other domains, researchers face common challenges arising from complex, nonlinear, and often unaligned geometric variation. The review concludes by identifying key theoretical and computational challenges, as well as emerging opportunities driven by increasingly large and diverse geometric datasets.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation",
-        "articleUrl": "https://arxiv.org/abs/2606.13647v1",
+        "title": "A scaling non-compact QCD axion",
+        "articleUrl": "https://arxiv.org/abs/2606.17019v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 21.6,
+        "summary": "We present a dynamical mechanism for the erasure of inflationary isocurvature perturbations of the non-compact QCD axion. The key ingredient is an early-time runaway exponential potential, which drives the axion onto the well-known scaling cosmological attractor after inflation. Once on the attractor, the axion tracks the dominant component of the Universe, radiation, and isocurvature modes are erased even if the field is effectively massless during inflation. When the QCD potential turns on, the axion carries nonzero velocity, and kinetic misalignment can become operative. The exponential potential induces residual CP violation, potentially accessible to future electric dipole moment searches. This mechanism requires that the axion be effectively non-compact over the field range relevant for its post-inflationary evolution.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Filtered Conformal Ellipsoids for Graph-Native Time Series",
+        "articleUrl": "https://arxiv.org/abs/2606.17014v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "We introduce SkMTEB, the first comprehensive MTEB-style text embedding benchmark for Slovak, a low-resource West Slavic language, comprising 31 datasets across 7 task types -- nearly 4$\\times$ the depth of existing multilingual benchmark coverage for Slovak. Our evaluation of 31 embedding models reveals that large instruction-tuned multilingual models achieve the strongest performance, while existing Slovak-specific models trained for NLU tasks transfer poorly to embedding tasks. To address the need for efficient, locally-deployable Slovak embeddings, we develop \\texttt{e5-sk-small} (45M parameters) and \\texttt{e5-sk-large} (365M) by applying vocabulary trimming and fine-tuning to Multilingual E5 models. Despite size reductions of up to 62\\%, our open-source models achieve competitive performance with proprietary APIs while remaining locally deployable for semantic search and retrieval-augmented generation (RAG). We release the benchmark, models, datasets, and code openly, hoping our approach offers a replicable path for other under-resourced languages.",
+        "ageHours": 21.6,
+        "summary": "Joint prediction sets for multivariate time series should control a single event while adapting to cross-coordinate dependence. We study filtered conformal ellipsoids: a frozen state-space filter emits a one-step predictive mean and covariance, and split-conformal calibration is applied to the resulting Mahalanobis scores. The filter is used to choose the ellipsoid shape; conformal calibration chooses the scalar radius, so the construction benefits from a learned predictive covariance without relying on Gaussian tail probabilities for coverage. The main difficulty is that filtered scores are dependent and learned recurrent filters need not contract in their raw hidden state; we therefore analyse contraction in an observable predictive-law quotient that identifies hidden states producing the same future sequence of emitted Gaussian laws. Under a stable Bayes Gaussian-projection filter, covariance bounds, and a finite-horizon observability Fisher condition, small excess Gaussian negative log-likelihood implies contraction of the learned emitted laws. Combined with a threshold-autocovariance envelope this yields a Chebyshev-type approximate coverage bound for filtered split-conformal prediction under dependence; a sharper Bernstein-type bound requires an additional geometric-mixing concentration assumption. Under Gaussian oracle realisability we also obtain a near-oracle log-volume comparison within the class of conditionally valid Gaussian ellipsoid rules. We instantiate the framework with a GCN-GRU filter with diagonal-plus-low-rank covariance. On moderate-size graph-native traffic benchmarks (METRLA-$20$ and PEMSBAY-$50$), the learned filter gives sharper at-target ellipsoids than static-covariance and non-filter baselines; at full-graph scale and on non-graph-native datasets, factor and copula baselines can be stronger.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Driven dynamics of an attractive Bose polaron",
-        "articleUrl": "https://arxiv.org/abs/2606.13645v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "title": "Exploding and vanishing gradients in deep neural networks: the effect of residual connections",
+        "articleUrl": "https://arxiv.org/abs/2606.17013v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "We study the out-of-equilibrium dynamics of an impurity driven by a constant external force through a system of homogeneous weakly-interacting bosons in one spatial dimension. The impurity-boson interaction is assumed to be attractive. We show that the impurity exhibits drifted Bloch oscillations in a wide range of forces in the absence of a lattice. We characterize the dynamical response of the host bosons and explain the mechanism underlying the Bloch oscillations. We analyse the behavior of the drift velocity, the Bloch amplitude and the time period of oscillations in a wide range of forces and other system parameters. In contrast to the case of repulsive impurity-boson interaction, the drift velocity exhibits a sub-linear dependence on a weak applied force, $V_d\\sim {F}^\u03b1$ with a positive exponent $\u03b1$ smaller than unity. The drift velocity monotonically increases with force, though the scaling behavior varies considerably across different regimes of $F$. Moreover, the amplitude of the velocity oscillations displays rich behavior: it first undergoes a decay with force, reaches a minimum, and then presents a revival, increasing with force.",
+        "ageHours": 21.6,
+        "summary": "The well known phenomenon of exploding and vanishing gradients in deep neural networks is analyzed using multiplicative ergodic theory. The effect of adding a residual connection is explained in this context. Specifically, a characterization of Liapunov exponents due to Furstenberg and Kifer is exploited in order to make a precise statement about the Liapunov spectrum and the effect of residual connections on it.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Search for High-Frequency Gravitational Waves via Geomagnetic Conversion with Radio Telescopes",
-        "articleUrl": "https://arxiv.org/abs/2606.13642v1",
+        "title": "TuneJury: An Open Metric for Improving Music Generation Preference Alignment",
+        "articleUrl": "https://arxiv.org/abs/2606.17006v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 21.7,
+        "summary": "We introduce TuneJury, an open, instance-level pairwise reward model for text-to-music that predicts a music preference score from a text prompt and an audio clip. The released checkpoint is trained on publicly available human-preference labels covering arena-style (A vs. B) votes, metric-alignment preference pairs, crowdsourced pairwise comparisons, and expert aesthetic ratings. The predicted score margin between two clips is well calibrated on our held-out test split, supporting data filtering via a simple score threshold. TuneJury generalizes to both held-out test pairs and out-of-distribution benchmarks, remaining competitive with prior baselines on the latter. For generators released after training, we introduce anchor calibration, a post-hoc, per-system Bradley-Terry calibration that recovers agreement at substantially better data efficiency than from-scratch retraining. The same frozen reward drives consistent reward-axis gains across three downstream applications: inference-time best-of-N selection, DITTO-style latent optimization, and expert-iteration post-training. TuneJury is available at https://github.com/yonghyunk1m/TuneJury.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Hadronic tensor in lattice gauge theories by quantum computing",
+        "articleUrl": "https://arxiv.org/abs/2606.17003v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.9,
-        "summary": "The detection of high-frequency gravitational waves (HFGWs) above 10 kHz provides a crucial probe of exotic astrophysical phenomena and new physics. We report the first search for HFGWs via their conversion to electromagnetic radiation through the inverse Gertsenshtein effect in Earth's magnetic field, utilizing radio telescopes including the Very Large Array (VLA) and the Atacama Large Millimeter/submillimeter Array (ALMA). Since no statistically significant signal is observed, we obtain new upper limits on the characteristic strain across the 1 GHz -- 1 THz band, with the most stringent constraint reaching $h_c \\lesssim 10^{-18}$, improving upon existing bounds by up to three orders of magnitude. These results significantly advance the exploration of uncharted parameter space for exotic gravitational-wave sources, paving the way for future discoveries with next-generation facilities such as the Square Kilometre Array (SKA).",
+        "ageHours": 21.8,
+        "summary": "The hadronic tensor encodes crucial information regarding the internal structure of hadrons, reflecting the non-perturbative features of quantum chromodynamics (QCD). In this work, we directly compute the hadronic tensor within (1+1)-dimensional $\\rm U(1)$ and $\\rm SU(2)$ gauge theories by evaluating real-time current-current correlation functions. Utilizing quantum algorithms executed on classical hardware, we demonstrate that the hadron form factors for both meson and baryon states can be reliably extracted from the hadronic tensor. Our methodology is validated by strong agreement with both direct calculation and exact diagonalization of the form factors.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "Nebraska\u2019s Wide, Rolling Domain",
+        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/nebraskas-wide-rolling-domain/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 11.4,
+        "summary": "The Nebraska Sandhills\u2014the largest system of sand dunes in the Western Hemisphere\u2014stretch across about one-quarter of the state.",
+        "charge": 0
+      },
       {
         "bucket": "science",
         "title": "Beneath our feet lies a fungal superhighway stretching 68 quadrillion miles",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 10.5,
         "summary": "Once below a shallow sea, Jabal al F\u0101yah now stands above the desert in the United Arab Emirates as a reminder of a watery past and early human survival.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "A Moonlit Earth as Seen From Artemis II",
-        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/a-moonlit-earth-as-seen-from-artemis-ii/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 9.5,
-        "summary": "An astronaut\u2019s photo, taken en route to the Moon, reveals our planet and its place in space in a novel way.",
         "charge": 0
       }
     ],
@@ -315,6 +315,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Woman left traumatised by swinging says website 'facilitated abuse'",
+      "articleUrl": "https://www.bbc.com/news/articles/c87q7g48y4po?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.4,
+      "summary": "She wants to warn others after her husband pressured her into sex she did not want, she says.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "OnlyFans 'agents' control and threaten creators while taking half their earnings, BBC finds",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.npr.org",
       "ageHours": 10.8,
       "summary": "Bulgaria was not among the favorites to win. But performer Dara's catchy, banging anthem bested 24 other nations at the 70th edition of the international singing extravaganza.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "How Unknowable Math Can Help Hide Secrets",
-      "articleUrl": "https://www.quantamagazine.org/how-unknowable-math-can-help-hide-secrets-20260511/",
-      "sourceName": "Quanta Magazine",
-      "sourceHomeUrl": "https://www.quantamagazine.org",
-      "ageHours": 11.0,
-      "summary": "A graduate student recently harnessed the complexity of mathematical proofs to create a powerful new tool in cryptography.             The post  How Unknowable Math Can Help Hide Secrets  first appeared on  Quanta Magazine",
       "charge": 0
     }
   ]
