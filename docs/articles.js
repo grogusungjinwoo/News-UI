@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-16T15:23:24.063369+00:00",
+  "generatedAt": "2026-06-17T14:03:32.884917+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Exact Posterior Score Estimation for Solving Linear Inverse Problems",
-        "articleUrl": "https://arxiv.org/abs/2606.17048v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.4,
-        "summary": "Diffusion and flow-based models learn powerful data priors by training a denoiser to reverse Gaussian corruption. To use this prior to solve a linear inverse problem, one needs to sample from the posterior, but the score that the prior provides is the unconditional score, not the posterior score. Existing methods either steer a fixed pretrained denoiser with approximate measurement-matching corrections, or train a conditional restoration model that abandons the denoising structure of the prior. We derive the exact posterior score in closed form for linear Gaussian inverse problems under general Gaussian interpolants, and show that posterior sampling reduces to a denoising problem at an operator-dependent shifted pivot under an anisotropic noise covariance. We turn this identity into Exact Posterior Score (EPS), a denoising training objective that preserves the input/output structure of standard pretraining and can therefore be trained from scratch or fine-tuned from a pretrained denoiser. At inference, EPS uses the same sampler as the underlying backbone, with no likelihood gradients or projections. We evaluate EPS on five linear inverse problems across FFHQ and ImageNet, where it outperforms training-free and training-based baselines on fidelity, perceptual, and distributional metrics, while using roughly an order of magnitude fewer denoiser evaluations than gradient-based posterior samplers.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "The Importance of Phase in Neural Representations: An Internal Oppenheim-Lim Test of Image Classifiers",
-        "articleUrl": "https://arxiv.org/abs/2606.17037v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.5,
-        "summary": "Oppenheim and Lim (1981) showed that natural images stay recognizable when reconstructed from their Fourier phase alone, while the magnitude carries little of their identity. We ask whether trained image classifiers reproduce this asymmetry inside their hidden layers, and we test it causally: given two images, we transplant the phase of one onto the magnitude of the other at a chosen layer and record which image the prediction follows. In PRISM2D, GFNet, and ViT-B/16 the prediction follows the phase or sign donor, and deleting all image-specific magnitude barely moves accuracy, so identity rides on phase while image-specific magnitude is largely dispensable to the readout. ResNet-50 at first seems to break the pattern, because transplanting sign after its ReLUs does nothing; a fair intervention before the ReLU reveals a strong latent sign code in the late blocks, and a DC-only control shows the readout consumes a channel-wise spatial average. Controls rule out the trivial case in which magnitude simply stops depending on the image. The architectures therefore share a phase/sign identity code but expose it in different bases, set by rectification and readout geometry, which gives a mechanistic account of the texture--shape gap between CNNs and attention models.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Grid-state deformation in a no-jump non-Hermitian bosonic dimer",
-        "articleUrl": "https://arxiv.org/abs/2606.17036v1",
+        "title": "A Joint Optimal Search for Gravitational Waves from Resolved and Unresolved Supermassive Binary Black Holes with Pulsar Timing Arrays",
+        "articleUrl": "https://arxiv.org/abs/2606.18241v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.5,
-        "summary": "We study the no-jump evolution of ideal grid states in a lossy bosonic dimer with differential decay. The effective non-Hermitian quadratic dynamics induces a complex symplectic flow in phase space that deforms both the primitive lattice vectors and the origin seed. The average decay rate controls common attenuation, while coherent hopping and differential decay control the reduced dimer deformation. The reduced sector contains elliptic, parabolic, and hyperbolic regimes with imaginary spectra, an exceptional point, and real spectra, producing oscillatory, linear, and exponential lattice deformations. Although projected lattice areas can change, the deformation comes from a determinant-one complex symplectic flow on the full four-dimensional phase space. For a Gaussian regularization of the origin seed, we derive the associated complex width matrix and identify the positivity conditions that preserve Gaussian form. For an initial two-mode qunaught product state, the lossless limit recovers the standard beam-splitter generation of a square GKP$+$ Bell pair, while the no-jump dynamics produces its non-Hermitian deformation with a postselection cost set by the no-jump probability.",
+        "ageHours": 20.1,
+        "summary": "We introduce, from first principles, a joint model of the gravitational wave background (GWB) and brightest supermassive black hole binary (SMBHB) sources that may be individually resolvable in Pulsar Timing Array (PTA) searches for gravitational waves. We propose the characteristic number of SMBHB sources, $N_{\\rm c}$, as a detection statistic for the astrophysical origin of the GWB. We then demonstrate how the brightest SMBHBs assist in resolving $N_{\\rm c}$. Applying our method to the simulated NANOGrav 15-year data, which replicates all aspects of real data's known noise, observations, and the inferred GWB power spectrum, we demonstrate direct astrophysical limits on the strain amplitude of individually resolvable SMBHBs. We find that 21 of 114 SMBHB candidates from active galactic nuclei observations are in tension with the NANOGrav's observations. In contrast, only one candidate is in tension with the NANOGrav data based on the upper limits reported in the original analysis. Constraining the Poisson-specific characteristic number of SMBHBs, $N_{\\rm c}$, at ${\\rm yr}^{-1}$, we outline implications for the population properties of SMBHBs. Based on our new model applied to the simulated NANOGrav data, we calculate the probability of detecting GWs from isolated SMBHB in the 15-year data to be 2\\% at the ${\\rm SNR}=5$ level. Our projection towards the expected NANOGrav 20-year data suggests an increase to 5\\%. With this, we estimate the probability of finding an outlier with an SNR of 2 in the NANOGrav 20-year data to be $40\\%$.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing",
-        "articleUrl": "https://arxiv.org/abs/2606.17034v1",
+        "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
+        "articleUrl": "https://arxiv.org/abs/2606.18237v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.5,
-        "summary": "Post-hoc context erasing over the KV cache is challenging because a local edit has a global consequence: once a span has been processed, its influence propagates into the cached states of all subsequent tokens. This issue arises naturally in long-context LLM applications, where stale retrieved facts, incorrect tool observations, retracted user preferences, or harmful prompt injections may be identified only after prefill. Exact erasing must then recompute all tokens after the deleted span, making its computational cost depend on suffix length rather than erased-span length. We introduce KVEraser, a learned KV-cache editing method for efficient localized context erasing. Given a processed context and a span to remove, KVEraser replaces only the KV states of the erased interval with learned steering states while reusing the remaining cache unchanged. To learn a transferable erasing mechanism, we build a two-stage training pipeline: generic span-neighbor pre-training teaches the eraser to suppress the influence of the erased span, while task-specific fine-tuning adapts this capability to downstream scenarios. Experiments show that KVEraser nearly matches full recomputation in post-erasure performance on in-domain tasks across 1K--32K context lengths, while its latency increases by only 24% compared with a 17.6x increase for full recomputation. KVEraser also generalizes to unseen long-document QA tasks with harmful factual distractors, achieving the best performance among approximate baselines with a 3--4x speedup over full recomputation.",
+        "ageHours": 20.1,
+        "summary": "Reproducing research results from papers and released code is central to scientific progress. Existing works have introduced benchmarks to evaluate whether LLM agents can assist with reproducibility, but they are difficult to scale due to their reliance on substantial manual effort for data curation and evaluation. We introduce ReproRepo, a scalable framework for reproducibility evaluation that leverages human-raised GitHub issues as naturally occurring supervision on realistic reproduction blockers. We instantiate ReproRepo on 1,149 recent machine learning papers from major conferences and evaluate four frontier model-agent configurations. Our results show that LLM agents, even without executing code, can identify many real-world reproducibility problems from paper-repository pairs: the best agent in our study, namely Codex with GPT-5.5, surfaces at least one semantically related human-reported blocker for ~90% of papers in the study. Further analysis shows that agents are particularly effective for surfacing visible failures and identifying the right semantic region, but may still be insufficient in exact localization. ReproRepo can serve as a reusable, scalable framework for future evaluations of LLM agents on real-world reproducibility auditing. Our code is released at https://github.com/LithiumDA/ReproRepo.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Learning the Geometry of Data: A Mathematical Review of Shape Space Analysis",
-        "articleUrl": "https://arxiv.org/abs/2606.17022v1",
+        "title": "Sign-Rank, Index, and List Replicability: Connections and Separations",
+        "articleUrl": "https://arxiv.org/abs/2606.18236v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.6,
-        "summary": "A central objective of machine learning is to identify structure and patterns in data. Advances in data acquisition have increasingly produced datasets whose observations possess rich geometric form, giving rise to shape spaces that encode variability in object geometry. Such datasets arise across a wide range of disciplines, including biology, medicine, anthropology, and computer vision, where subtle geometric differences often carry important scientific information. Traditional machine learning methods, however, are frequently ill-equipped to account for the nonlinear geometric structure underlying these data.\n  This survey synthesizes a rapidly growing body of work on shape space analysis, which provides a mathematical and computational framework for the study of geometric data. Drawing on ideas from differential geometry, statistics, and machine learning, we organize the literature around a common analytical pipeline: shape representation and parameterization, the rigorous construction of robust geodesic metrics, statistical analysis on shape spaces, and geometry-aware learning methods. We discuss how these tools enable the characterization of shape variability, the comparison of geometric objects, and the analysis of structural trajectories across populations and time.\n  To illustrate the breadth of the field, we highlight applications spanning multiple scales of biological organization, including studies of subcellular morphology and primate tooth evolution. Across these and many other domains, researchers face common challenges arising from complex, nonlinear, and often unaligned geometric variation. The review concludes by identifying key theoretical and computational challenges, as well as emerging opportunities driven by increasingly large and diverse geometric datasets.",
+        "ageHours": 20.1,
+        "summary": "In learning theory, the sign rank of a binary concept class captures the smallest dimension in which it can be represented by points and halfspaces. Despite tremendous interest, lower bounds on sign rank are notoriously difficult to come by. Two recent approaches to the problem establish lower bounds on sign rank by measures that are easier to analyze: the $\\mathbb{Z}_2$-index and the list replicability number.\n  We order these measures, showing that the $\\mathbb{Z}_2$-index is upper-bounded by a linear function of the list replicability number. As a main consequence, we obtain a strong separation between sign rank and $\\mathbb{Z}_2$-index, thereby resolving a question of Frick, Hosseini, and Vasileuski.\n  This motivates a thorough study of list replicability, the stronger of the two lower-bounding measures. We establish upper bounds on the list replicability number by two combinatorial measures: height and minimum star number. We also prove a fundamental composition result, showing that the product of two concept classes has list replicability number bounded by the sum of the list replicability numbers of the two classes.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "A scaling non-compact QCD axion",
-        "articleUrl": "https://arxiv.org/abs/2606.17019v1",
+        "title": "Adaptive Volumetric Mechanical Property Fields Invariant to Resolution",
+        "articleUrl": "https://arxiv.org/abs/2606.18231v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.1,
+        "summary": "Accurate mechanical properties (or materials) Young's modulus ($E$), Poisson's ratio ($\u03bd$) and density ($\u03c1$) are essential for reliable physics simulation of digital worlds, but most 3D assets lack this information. We propose AdaVoMP, a method for predicting accurate dense spatially-varying ($E$, $\u03bd$, $\u03c1$) for input 3D objects across representations, improving the resolution, accuracy, and memory efficiency over the state-of-the-art. The foundation of our technique is a sparse and adaptive voxel structure SAV that efficiently represents both the input 3D shape and the material field output. We replace the fixed-voxel model of the most accurate prior method, VoMP, with a novel sparse transformer encoder-decoder model that learns to generate a unique SAV autoregressively for every input shape to represent its materials, achieving a resolution $16^3\\times$ higher than prior art. Experiments show that AdaVoMP estimates more accurate volumetric properties, even with lesser test-time compute than all prior art. This allows us to convert high-resolution complex 3D objects into simulation-ready assets, resulting in realistic deformable simulations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Coherent effects in quantum transport models and their classical counterparts",
+        "articleUrl": "https://arxiv.org/abs/2606.18224v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.6,
-        "summary": "We present a dynamical mechanism for the erasure of inflationary isocurvature perturbations of the non-compact QCD axion. The key ingredient is an early-time runaway exponential potential, which drives the axion onto the well-known scaling cosmological attractor after inflation. Once on the attractor, the axion tracks the dominant component of the Universe, radiation, and isocurvature modes are erased even if the field is effectively massless during inflation. When the QCD potential turns on, the axion carries nonzero velocity, and kinetic misalignment can become operative. The exponential potential induces residual CP violation, potentially accessible to future electric dipole moment searches. This mechanism requires that the axion be effectively non-compact over the field range relevant for its post-inflationary evolution.",
+        "ageHours": 20.2,
+        "summary": "We analyze the transport properties of quasiparticles locally excited at an initial time moment in several exactly solvable quantum models. It is revealed that, in the investigated quantum systems, the time-dependent probability distribution function (PDF) exhibits behavior similar to that of classical continuous-time random walk (CTRW) models, such as L\u00e9vy walks or diffusing diffusivity.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Filtered Conformal Ellipsoids for Graph-Native Time Series",
-        "articleUrl": "https://arxiv.org/abs/2606.17014v1",
+        "title": "Darshana Graph: A Parallel Commentary Corpus for Comparative Indian Philosophy, with Stylometric and Exploratory Graph Analyses",
+        "articleUrl": "https://arxiv.org/abs/2606.18222v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.6,
-        "summary": "Joint prediction sets for multivariate time series should control a single event while adapting to cross-coordinate dependence. We study filtered conformal ellipsoids: a frozen state-space filter emits a one-step predictive mean and covariance, and split-conformal calibration is applied to the resulting Mahalanobis scores. The filter is used to choose the ellipsoid shape; conformal calibration chooses the scalar radius, so the construction benefits from a learned predictive covariance without relying on Gaussian tail probabilities for coverage. The main difficulty is that filtered scores are dependent and learned recurrent filters need not contract in their raw hidden state; we therefore analyse contraction in an observable predictive-law quotient that identifies hidden states producing the same future sequence of emitted Gaussian laws. Under a stable Bayes Gaussian-projection filter, covariance bounds, and a finite-horizon observability Fisher condition, small excess Gaussian negative log-likelihood implies contraction of the learned emitted laws. Combined with a threshold-autocovariance envelope this yields a Chebyshev-type approximate coverage bound for filtered split-conformal prediction under dependence; a sharper Bernstein-type bound requires an additional geometric-mixing concentration assumption. Under Gaussian oracle realisability we also obtain a near-oracle log-volume comparison within the class of conditionally valid Gaussian ellipsoid rules. We instantiate the framework with a GCN-GRU filter with diagonal-plus-low-rank covariance. On moderate-size graph-native traffic benchmarks (METRLA-$20$ and PEMSBAY-$50$), the learned filter gives sharper at-target ellipsoids than static-covariance and non-filter baselines; at full-graph scale and on non-graph-native datasets, factor and copula baselines can be stronger.",
+        "ageHours": 20.2,
+        "summary": "We introduce Darshana Graph, a corpus of over 125,000 text records spanning classical Hindu, Buddhist, and Jain philosophical traditions, drawn from public-domain and openly licensed translations of sources including the Bhagavad Gita, Brahma Sutras, principal Upanishads, the Pali Canon, and core Jain texts. Its distinctive contribution lies in a structurally unique subset of roughly 8,500 Hindu and Jain records in which the same root verse or sutra is aligned across eighteen historical commentators representing five schools of Vedanta and other darshanas, enabling direct comparison of how independent interpretive traditions read identical source material. To our knowledge, no publicly available resource provides comparable cross-commentator alignment at this scale. We present two analyses built on this corpus. First, a transparent stylometric comparison requiring no machine learning measures argumentative style through scriptural citation density, explicit refutation rate, and sentence complexity. It finds a moderate negative correlation between citation density and refutation rate, a marked increase in refutation rate across three commentators in a related doctrinal lineage, and measurable genre-level differences within the Pali Canon itself. Second, we describe a constrained large language model pipeline that extracts typed philosophical relationships between concepts using a predefined relation vocabulary and deterministic post-hoc validation. The resulting graph surfaces cross-school disagreement patterns while also revealing important extraction limitations, including cases where an independent embedding-based analysis disagrees with the graph-derived findings. We release the full corpus, extracted relationship graph, and all source code.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Exploding and vanishing gradients in deep neural networks: the effect of residual connections",
-        "articleUrl": "https://arxiv.org/abs/2606.17013v1",
+        "title": "Finite-Time Queue Peak Laws in Stochastic Networks: Logarithmic Scaling After Geometric Thresholds",
+        "articleUrl": "https://arxiv.org/abs/2606.18218v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.6,
-        "summary": "The well known phenomenon of exploding and vanishing gradients in deep neural networks is analyzed using multiplicative ergodic theory. The effect of adding a residual connection is explained in this context. Specifically, a characterization of Liapunov exponents due to Furstenberg and Kifer is exploited in order to make a precise statement about the Liapunov spectrum and the effect of residual connections on it.",
+        "ageHours": 20.3,
+        "summary": "We study finite-horizon queue peaks in generalized switches, a standard stochastic-network model in which many queues share constrained service resources. Arrivals may be dependent, time-varying, and adapted to the past; the standing load condition is uniform interior slack, meaning the conditional mean arrival vector stays in a fixed contraction of the capacity region. We show that this slack reshapes the finite-time peak law for drift-minimizing scheduling policies such as MaxWeight. The square-root envelope that is sharp without slack persists only up to a geometry-dependent threshold; beyond that threshold, the running maximum grows only logarithmically with the horizon, both with high probability and in expectation.\n  The mechanism is self-normalization: in the current queue direction, the projected fluctuation scale is normalized by the stabilizing drift scale. This removes capacity geometry from the logarithmic coefficient, while geometry remains in the threshold. Matching lower bounds show that both the logarithmic term and a geometric threshold are unavoidable. When finite-time state-space collapse is available, the threshold can be sharpened using local bottleneck geometry. For generalized input-queued switches, we obtain finite-time peak bounds with tight logarithmic coefficients. Simulations illustrate the two-phase envelope, local geometric refinements, and variance-sensitive improvements predicted by the theory.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "TuneJury: An Open Metric for Improving Music Generation Preference Alignment",
-        "articleUrl": "https://arxiv.org/abs/2606.17006v1",
+        "title": "Rethinking Dataset Distillation for Classification: Do Distilled Sets Outperform Coresets?",
+        "articleUrl": "https://arxiv.org/abs/2606.18209v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.7,
-        "summary": "We introduce TuneJury, an open, instance-level pairwise reward model for text-to-music that predicts a music preference score from a text prompt and an audio clip. The released checkpoint is trained on publicly available human-preference labels covering arena-style (A vs. B) votes, metric-alignment preference pairs, crowdsourced pairwise comparisons, and expert aesthetic ratings. The predicted score margin between two clips is well calibrated on our held-out test split, supporting data filtering via a simple score threshold. TuneJury generalizes to both held-out test pairs and out-of-distribution benchmarks, remaining competitive with prior baselines on the latter. For generators released after training, we introduce anchor calibration, a post-hoc, per-system Bradley-Terry calibration that recovers agreement at substantially better data efficiency than from-scratch retraining. The same frozen reward drives consistent reward-axis gains across three downstream applications: inference-time best-of-N selection, DITTO-style latent optimization, and expert-iteration post-training. TuneJury is available at https://github.com/yonghyunk1m/TuneJury.",
+        "ageHours": 20.4,
+        "summary": "Dataset distillation (DD) has emerged as a prominent approach in data centric machine learning, aiming to synthesize compact training sets for efficient training by compressing the information in large datasets into a small number of synthetic samples. However, DD methods are often evaluated under inconsistent evaluation protocols, ranging from standard ERM to single/multi-teacher supervision, making it difficult to isolate the effectiveness of distilled data from evaluation. Moreover, many prior methods claim that DD outperforms data pruning approaches such as coreset selection (CS), based on the assumption that restricting condensed datasets to subsets of real samples fundamentally limits their expressiveness. In this work, we critically evaluate DD methods through large-scale experiments using standardized datasets and evaluation protocols to assess their intrinsic effectiveness. We benchmark seven state-of-the-art (SOTA) DD methods on ImageNet-1K, ImageNet100, and ImageNette, using three widely adopted training protocols against three CS strategies. Our results show that while some DD methods fail to outperform even simple random subsets, the SOTA DD approaches are comparable to or worse than coresets on large-scale datasets and incur a substantially higher cost for construction. Beyond accuracy, we also evaluate the representativeness, diversity, and quality of condensed sets, and find that coresets consistently achieve better coverage of the original data distribution. These findings highlight the limited practical advantages of current DD methods and show that coresets remain competitive and are often a more computationally efficient alternative for data-centric learning.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Hadronic tensor in lattice gauge theories by quantum computing",
-        "articleUrl": "https://arxiv.org/abs/2606.17003v1",
+        "title": "Looped World Models",
+        "articleUrl": "https://arxiv.org/abs/2606.18208v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.4,
+        "summary": "Current world models face a fundamental tension: faithful long-horizon simulation demands deep computation, but deeper models are expensive to deploy and prone to compounding errors. We resolve this by introducing Looped World Models (LoopWM), which are the first looped architectures for world modelling. Our method iteratively refines latent environment states through a parameter-shared transformer block. This yield up to 100x parameter efficiency over conventional approaches with adaptive computation that automatically scales depth to match the complexity of each prediction step. Orthogonal to scaling model size and training data, LoopWM establishes iterative latent depth as a new scaling axis for world simulation, which might significantly push the community forward.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "On the Complexity of the Circuit Width Problem",
+        "articleUrl": "https://arxiv.org/abs/2606.18201v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 21.8,
-        "summary": "The hadronic tensor encodes crucial information regarding the internal structure of hadrons, reflecting the non-perturbative features of quantum chromodynamics (QCD). In this work, we directly compute the hadronic tensor within (1+1)-dimensional $\\rm U(1)$ and $\\rm SU(2)$ gauge theories by evaluating real-time current-current correlation functions. Utilizing quantum algorithms executed on classical hardware, we demonstrate that the hadron form factors for both meson and baryon states can be reliably extracted from the hadronic tensor. Our methodology is validated by strong agreement with both direct calculation and exact diagonalization of the form factors.",
+        "ageHours": 20.5,
+        "summary": "Montanaro's polynomial representation expresses amplitudes of quantum circuits over the gates $H$, $Z$, $CZ$, and $CCZ$ as normalized gaps of degree-three polynomials over $\\mathbb{F}_2$. The normalization is governed by the circuit width $w(f)$, the minimum number of qubits in any circuit realizing a polynomial $f$. Thus, efficient width minimization would give an approximate-counting route toward a combinatorial characterization of $BQP$. We study the computational complexity of this parameter. For degree-three polynomials with no constant term, deciding whether $w(f)\\le k$ is $NP$-complete, resolving Montanaro's open question. We also prove $NP$-hardness of approximation within any factor $49/48-\u03b5$, and show via a twin-copy construction that the exact and approximation hardness results also hold for degree-two polynomials. Under the Exponential Time Hypothesis, the exact problem admits no $2^{o(n)}$-time algorithm when $k=\u0398(n)$. Complementing these hardness results, we give a nondeterministic polynomial-time search algorithm using $2\\log_2\\binom{n}{k}=O(k\\log(en/k))$ witness bits, and a constructive fixed-parameter algorithm parameterized by $k$ with running time $k^{6k+o(k)}n+O(m)$.",
         "charge": 0
       }
     ],
@@ -214,6 +214,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "ai": [
       {
         "bucket": "ai",
+        "title": "Could AI tell you where you left your keys?",
+        "articleUrl": "https://news.mit.edu/2026/could-ai-tell-you-where-you-left-your-keys-0617",
+        "sourceName": "MIT News",
+        "sourceHomeUrl": "https://news.mit.edu",
+        "ageHours": 10.1,
+        "summary": "A new spatial memory system for robots efficiently captures details about the objects they see while exploring their environment.",
+        "interest": 4
+      },
+      {
+        "bucket": "ai",
         "title": "Would you return a favor? Scientists say it depends on the relationship",
         "articleUrl": "https://news.mit.edu/2026/would-you-return-favor-scientists-say-it-depends-0611",
         "sourceName": "MIT News",
@@ -301,16 +311,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "ageHours": 10.6,
         "summary": "MIT senior Olivia Honeycutt investigates how the ways we communicate can shape our views of the world.",
         "interest": 3
-      },
-      {
-        "bucket": "ai",
-        "title": "Several states considering ban on legal personhood for AI",
-        "articleUrl": "https://www.npr.org/2026/05/11/nx-s1-5798754/several-states-considering-ban-on-legal-personhood-for-ai",
-        "sourceName": "NPR",
-        "sourceHomeUrl": "https://www.npr.org",
-        "ageHours": 11.4,
-        "summary": "Is it time to consider prosecuting AI models for breaking the law? Some say it's time. Others say that would be an insult to humanity. Some states are considering laws blocking AI personhood.",
-        "interest": 1
       }
     ]
   },
