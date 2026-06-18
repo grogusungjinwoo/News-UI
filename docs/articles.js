@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-17T14:03:32.884917+00:00",
+  "generatedAt": "2026-06-18T13:43:39.843537+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "A Joint Optimal Search for Gravitational Waves from Resolved and Unresolved Supermassive Binary Black Holes with Pulsar Timing Arrays",
-        "articleUrl": "https://arxiv.org/abs/2606.18241v1",
+        "title": "Quantum solitons and their quantum walks in transmon arrays",
+        "articleUrl": "https://arxiv.org/abs/2606.19339v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.1,
-        "summary": "We introduce, from first principles, a joint model of the gravitational wave background (GWB) and brightest supermassive black hole binary (SMBHB) sources that may be individually resolvable in Pulsar Timing Array (PTA) searches for gravitational waves. We propose the characteristic number of SMBHB sources, $N_{\\rm c}$, as a detection statistic for the astrophysical origin of the GWB. We then demonstrate how the brightest SMBHBs assist in resolving $N_{\\rm c}$. Applying our method to the simulated NANOGrav 15-year data, which replicates all aspects of real data's known noise, observations, and the inferred GWB power spectrum, we demonstrate direct astrophysical limits on the strain amplitude of individually resolvable SMBHBs. We find that 21 of 114 SMBHB candidates from active galactic nuclei observations are in tension with the NANOGrav's observations. In contrast, only one candidate is in tension with the NANOGrav data based on the upper limits reported in the original analysis. Constraining the Poisson-specific characteristic number of SMBHBs, $N_{\\rm c}$, at ${\\rm yr}^{-1}$, we outline implications for the population properties of SMBHBs. Based on our new model applied to the simulated NANOGrav data, we calculate the probability of detecting GWs from isolated SMBHB in the 15-year data to be 2\\% at the ${\\rm SNR}=5$ level. Our projection towards the expected NANOGrav 20-year data suggests an increase to 5\\%. With this, we estimate the probability of finding an outlier with an SNR of 2 in the NANOGrav 20-year data to be $40\\%$.",
+        "ageHours": 19.7,
+        "summary": "Superconducting qubits are artificial atoms whose spectra and interactions can be engineered through appropriate circuit design, a versatility that can be exploited for quantum simulation. We theoretically investigate a linear array of capacitively coupled transmons, effectively described by a Bose-Hubbard Hamiltonian with attractive interaction. We revisit the discrete-soliton nature of the lowest-energy band of the spectrum, and identify spatially localized quantum solitons. The solitonic character of these states is revealed through their time evolution, which displays a quantum interference pattern, or quantum walk, highlighting their composite nature. We discuss protocols for preparing spatially localized quantum solitons that are compatible with current state-of-the-art tunable-transmon circuits. Our results demonstrate that superconducting circuits provide a promising and experimentally accessible platform for the investigation of quantum soliton physics.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
-        "articleUrl": "https://arxiv.org/abs/2606.18237v1",
+        "title": "Floquet framework for driven polar quantum systems",
+        "articleUrl": "https://arxiv.org/abs/2606.19330v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.8,
+        "summary": "We present an analytical and numerical Floquet treatment of a driven polar two-level quantum system characterized by both longitudinal and transverse coupling to a periodic field. Analytically, we derive a dressed-frame effective Hamiltonian up to first order in the inverse driving frequency, incorporating the longitudinal coupling nonperturbatively. This yields closed expressions for the effective transverse coupling strength and the effective detuning, both of which are modified by the presence of the longitudinal interaction. In the nonpolar limit, these expressions recover the usual near-resonant Rabi coupling and the Bloch-Siegert shift. As a second main result, we develop a numerical flow-equation framework that yields a time-independent effective Hamiltonian across a broad range of transverse and longitudinal coupling strengths. This dual framework is relevant for a variety of platforms, including driven polar quantum systems, optical lattices, superconducting circuits, and solids subject to surface acoustic waves.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "The Chandra-Gaia Catalog of Counterparts: Resolving ambiguous Gaia matches to X-ray sources in the Chandra Source Catalog using Machine Learning",
+        "articleUrl": "https://arxiv.org/abs/2606.19329v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.8,
+        "summary": "We present a framework to cross-match sources from the Chandra Source Catalog (CSC v2.1) with optical sources from Gaia Data Release 3. Unlike purely spatial approaches, we use source properties such as magnitudes, colors, and distances to identify true counterparts, detect chance coincidences, and resolve ambiguities when multiple plausible candidates exist. We define a training set of high-confidence matches using NWAY, a Bayesian cross-matching framework that accounts for positional errors and source densities. We train a gradient-boosted classifier (LightGBM) on a variety of features from both catalogs. Of the ~$254$k unique X-ray sources, we find counterparts for ~$113$k sources, of which plausible multiple counterparts are found for ~$7$k. We find no counterparts for ~$20$k sources for which separation-based cross-matching does find a match, and attribute half of these to chance coincidences. We validate the pipeline on the Chandra Orion Ultradeep Project (COUP), where the machine-learning matches reproduce 95% of NWAY cross-matches without using any positional information. We release a catalog of the ~$113$k Chandra-Gaia counterparts, together with ~$7$k alternative matches and ~$20$k ambiguous NWAY associations, supporting future population studies of sources detectable by both Chandra and Gaia. We discuss limitations and provide a generalization of the framework that is applicable in other cross-matching scenarios.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "UBP2: Uncertainty-Balanced Preference Planning for Efficient Preference-based Reinforcement Learning",
+        "articleUrl": "https://arxiv.org/abs/2606.19328v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.8,
+        "summary": "Preference-based RL provides an approach to learning reward models from pairwise comparisons of behaviors, bypassing the need for explicit reward design. However, existing methods typically rely on passive data collection and suffer from poor sample efficiency, especially during the early stages of learning. We introduce a model-based approach that actively directs exploration by jointly reasoning over uncertainties in the reward, dynamics, and value functions. Our method, Uncertainty-Balanced Preference Planning (UBP2), uses ensembles of reward, dynamics, and value function models to evaluate candidate trajectories according to a unified score that combines expected reward, terminal value, and epistemic uncertainty. Planning under this objective yields an explicit tradeoff between exploitation and information acquisition without requiring ad hoc exploration heuristics. Under standard regularity assumptions, we establish sublinear regret guarantees for both finite-horizon and infinite-horizon settings. Empirically, experiments on the Meta-World benchmark show UBP2 achieves substantially higher sample efficiency than model-free preference-based methods and non-optimistic model-based baselines.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Spectral Functions of Lorentzian Quantum Gravity",
+        "articleUrl": "https://arxiv.org/abs/2606.19321v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 19.9,
+        "summary": "We compute spectral functions of graviton modes in Lorentzian quantum gravity, interpolating between classical general relativity and an asymptotically safe ultraviolet fixed point. Using functional renormalisation adapted for theories in Lorentzian signature, and enhanced by new symmetry conditions to account for underlying Ward identities, we derive and solve flow equations directly for the K\u00e4ll\u00e9n-Lehmann representation of propagators. Consistent results are found for several sets of renormalisation conditions yielding normalisable spectral functions for the graviton and the scalar graviton mode, in agreement with effective theory in the infrared. We further calculate the full quantum effective action to quadratic order in curvature, extract graviton-induced form factors, and discuss implications for unitarity of quantum gravity.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Explaining Attention with Program Synthesis",
+        "articleUrl": "https://arxiv.org/abs/2606.19317v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 20.0,
+        "summary": "A longstanding goal of research on interpretable deep learning is to replace opaque neural computations with human-meaningful symbolic descriptions. In this paper, we propose an approach for approximating the behavior of components of deep networks with executable programs. We focus on attention heads in transformer language models. For a given head, we first compute its associated attention matrices on a collection of randomly selected training examples. Next, we prompt a pre-trained language model with a summary of these matrices, and instruct it to generate a set of Python programs that can reproduce the associated attention patterns given only text from the input sentence. Finally, we re-rank programs according to how well our final set of programs predict behavior on held-out inputs. We demonstrate that a set of fewer than 1,000 such generated programs can reproduce the attention patterns of heads in GPT-2, TinyLlama-1.1B, and Llama-3B, achieving an average Intersection-over-Union similarity above 75% on TinyStories. Moreover, the best-fit programs can replace neural attention heads without substantially affecting model behavior: replacing 25% of attention heads with programmatic surrogates across the three models incurs only a 16% average perplexity increase, while maintaining performance on a variety of downstream question answering benchmarks. This work contributes a scalable pipeline for reverse-engineering attention heads in transformer models using human-readable, executable code, advancing a path toward symbolic transparency in neural models.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Diffusion-Proof: Recipe for Formal Theorem Proving Beyond Auto-Regressive Generation",
+        "articleUrl": "https://arxiv.org/abs/2606.19315v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.1,
-        "summary": "Reproducing research results from papers and released code is central to scientific progress. Existing works have introduced benchmarks to evaluate whether LLM agents can assist with reproducibility, but they are difficult to scale due to their reliance on substantial manual effort for data curation and evaluation. We introduce ReproRepo, a scalable framework for reproducibility evaluation that leverages human-raised GitHub issues as naturally occurring supervision on realistic reproduction blockers. We instantiate ReproRepo on 1,149 recent machine learning papers from major conferences and evaluate four frontier model-agent configurations. Our results show that LLM agents, even without executing code, can identify many real-world reproducibility problems from paper-repository pairs: the best agent in our study, namely Codex with GPT-5.5, surfaces at least one semantically related human-reported blocker for ~90% of papers in the study. Further analysis shows that agents are particularly effective for surfacing visible failures and identifying the right semantic region, but may still be insufficient in exact localization. ReproRepo can serve as a reusable, scalable framework for future evaluations of LLM agents on real-world reproducibility auditing. Our code is released at https://github.com/LithiumDA/ReproRepo.",
+        "summary": "Enhancing the formal math reasoning capabilities of Large Language Models (LLMs) has become a key focus in both mathematical and computer science communities in recent years. While significant progress has been made in using state-of-the-art Auto-Regressive (AR) LLMs for formal theorem proving, these models suffer from inherent limitations. Their next-token prediction generation methods may yield suboptimal performance due to the challenges of long-range coherence and the compounding of errors over long sequences. Recent advancements in diffusion LLMs (dLLMs), which generate text through iterative denoising of a multi-token block, offer a promising alternative. However, the application of dLLMs to formal mathematics, where maintaining long-range coherence is critical, remains largely understudied. To address the challenges above, we propose **Diffusion-Proof**, to the best of our knowledge, the first framework to train and apply dLLMs for formal theorem proving. Our frameworks contain training and inference methods for two models. The first one is *dLLM-Prover-7B*, which performs whole-proof writing with long-range coherent tactic usage. The second one is *dLLM-Corrector-7B*, which is a novel large block diffusion-based correction model. It leverages the in-filling capabilities of dLLMs to perform local proof correction using bi-directional information. Extensive experiments demonstrate that **Diffusion-Proof** relatively significantly outperforms the AR LLM baseline trained under the same dataset. **Diffusion-Proof** achieves an absolute improvement of **1.61%** on ProofNet-Test and **6.14%** on MiniF2F-Test benchmarks compare to the baseline. Notably, **Diffusion-Proof** successfully resolves one IMO problem that more advanced thinking model DeepSeek-Prover-V2-7B could not solve, showcasing the unique advantage of dLLMs in formal theorem proving.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Sign-Rank, Index, and List Replicability: Connections and Separations",
-        "articleUrl": "https://arxiv.org/abs/2606.18236v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.1,
-        "summary": "In learning theory, the sign rank of a binary concept class captures the smallest dimension in which it can be represented by points and halfspaces. Despite tremendous interest, lower bounds on sign rank are notoriously difficult to come by. Two recent approaches to the problem establish lower bounds on sign rank by measures that are easier to analyze: the $\\mathbb{Z}_2$-index and the list replicability number.\n  We order these measures, showing that the $\\mathbb{Z}_2$-index is upper-bounded by a linear function of the list replicability number. As a main consequence, we obtain a strong separation between sign rank and $\\mathbb{Z}_2$-index, thereby resolving a question of Frick, Hosseini, and Vasileuski.\n  This motivates a thorough study of list replicability, the stronger of the two lower-bounding measures. We establish upper bounds on the list replicability number by two combinatorial measures: height and minimum star number. We also prove a fundamental composition result, showing that the product of two concept classes has list replicability number bounded by the sum of the list replicability numbers of the two classes.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Adaptive Volumetric Mechanical Property Fields Invariant to Resolution",
-        "articleUrl": "https://arxiv.org/abs/2606.18231v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.1,
-        "summary": "Accurate mechanical properties (or materials) Young's modulus ($E$), Poisson's ratio ($\u03bd$) and density ($\u03c1$) are essential for reliable physics simulation of digital worlds, but most 3D assets lack this information. We propose AdaVoMP, a method for predicting accurate dense spatially-varying ($E$, $\u03bd$, $\u03c1$) for input 3D objects across representations, improving the resolution, accuracy, and memory efficiency over the state-of-the-art. The foundation of our technique is a sparse and adaptive voxel structure SAV that efficiently represents both the input 3D shape and the material field output. We replace the fixed-voxel model of the most accurate prior method, VoMP, with a novel sparse transformer encoder-decoder model that learns to generate a unique SAV autoregressively for every input shape to represent its materials, achieving a resolution $16^3\\times$ higher than prior art. Experiments show that AdaVoMP estimates more accurate volumetric properties, even with lesser test-time compute than all prior art. This allows us to convert high-resolution complex 3D objects into simulation-ready assets, resulting in realistic deformable simulations.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Coherent effects in quantum transport models and their classical counterparts",
-        "articleUrl": "https://arxiv.org/abs/2606.18224v1",
+        "title": "Exclusion Statistics as a Thermodynamic Resource in Quantum Heat Engines",
+        "articleUrl": "https://arxiv.org/abs/2606.19310v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.2,
-        "summary": "We analyze the transport properties of quasiparticles locally excited at an initial time moment in several exactly solvable quantum models. It is revealed that, in the investigated quantum systems, the time-dependent probability distribution function (PDF) exhibits behavior similar to that of classical continuous-time random walk (CTRW) models, such as L\u00e9vy walks or diffusing diffusivity.",
+        "summary": "The maximum power extractable from a quantum thermoelectric heat engine operating with free fermion carriers is bounded by the universal Whitney limit, $P_{\\text{fermion}}^{\\max} \\simeq 0.0321\u03c0^2 k_B^2(T_L-T_R)^2/h$. We demonstrate that this bound is not fundamental to quantum heat engines but is instead an artifact of fermionic statistics. Within the nonlinear Landauer-B\u00fcttiker framework, a bosonic working medium yields a strictly enhanced universal maximum power, $P_{\\text{boson}}^{\\max} = (\\ln 2)^2\\, k_B^2(T_L-T_R)^2/h$, exceeding the fermionic limit by a factor of $(\\ln 2)^2/(0.0321\u03c0^2) \\approx 1.52$. We propose magnon transport through a ferromagnetic spin chain as an experimentally viable bosonic realization. Incorporating Haldane fractional exclusion statistics with parameter $g$ provides a continuous interpolation between the bosonic ($g = 0$) and fermionic ($g = 1$) limits, revealing a monotonic enhancement of maximum power for $g < 1$ at reduced bias cost. These results establish quantum statistical exclusion as a previously unrecognized and independently tunable thermodynamic resource, opening performance regimes inaccessible to conventional carrier-engineering approaches.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Darshana Graph: A Parallel Commentary Corpus for Comparative Indian Philosophy, with Stylometric and Exploratory Graph Analyses",
-        "articleUrl": "https://arxiv.org/abs/2606.18222v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.2,
-        "summary": "We introduce Darshana Graph, a corpus of over 125,000 text records spanning classical Hindu, Buddhist, and Jain philosophical traditions, drawn from public-domain and openly licensed translations of sources including the Bhagavad Gita, Brahma Sutras, principal Upanishads, the Pali Canon, and core Jain texts. Its distinctive contribution lies in a structurally unique subset of roughly 8,500 Hindu and Jain records in which the same root verse or sutra is aligned across eighteen historical commentators representing five schools of Vedanta and other darshanas, enabling direct comparison of how independent interpretive traditions read identical source material. To our knowledge, no publicly available resource provides comparable cross-commentator alignment at this scale. We present two analyses built on this corpus. First, a transparent stylometric comparison requiring no machine learning measures argumentative style through scriptural citation density, explicit refutation rate, and sentence complexity. It finds a moderate negative correlation between citation density and refutation rate, a marked increase in refutation rate across three commentators in a related doctrinal lineage, and measurable genre-level differences within the Pali Canon itself. Second, we describe a constrained large language model pipeline that extracts typed philosophical relationships between concepts using a predefined relation vocabulary and deterministic post-hoc validation. The resulting graph surfaces cross-school disagreement patterns while also revealing important extraction limitations, including cases where an independent embedding-based analysis disagrees with the graph-derived findings. We release the full corpus, extracted relationship graph, and all source code.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Finite-Time Queue Peak Laws in Stochastic Networks: Logarithmic Scaling After Geometric Thresholds",
-        "articleUrl": "https://arxiv.org/abs/2606.18218v1",
+        "title": "P-K-GCN: Physics-augmented Koopman-enhanced Graph Convolutional Network for Deep Spatiotemporal Super-resolution",
+        "articleUrl": "https://arxiv.org/abs/2606.19303v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 20.3,
-        "summary": "We study finite-horizon queue peaks in generalized switches, a standard stochastic-network model in which many queues share constrained service resources. Arrivals may be dependent, time-varying, and adapted to the past; the standing load condition is uniform interior slack, meaning the conditional mean arrival vector stays in a fixed contraction of the capacity region. We show that this slack reshapes the finite-time peak law for drift-minimizing scheduling policies such as MaxWeight. The square-root envelope that is sharp without slack persists only up to a geometry-dependent threshold; beyond that threshold, the running maximum grows only logarithmically with the horizon, both with high probability and in expectation.\n  The mechanism is self-normalization: in the current queue direction, the projected fluctuation scale is normalized by the stabilizing drift scale. This removes capacity geometry from the logarithmic coefficient, while geometry remains in the threshold. Matching lower bounds show that both the logarithmic term and a geometric threshold are unavoidable. When finite-time state-space collapse is available, the threshold can be sharpened using local bottleneck geometry. For generalized input-queued switches, we obtain finite-time peak bounds with tight logarithmic coefficients. Simulations illustrate the two-phase envelope, local geometric refinements, and variance-sensitive improvements predicted by the theory.",
+        "summary": "High-fidelity simulation of spatiotemporal dynamics is computationally prohibitive, necessitating efficient super-resolution techniques to reconstruct high-resolution data from coarse-grained inputs. Traditional data-driven methods often lack physical constraints, and simple physics-informed learning struggles with irregular spatial geometries and intricately evolving temporal dynamics. To tackle these challenges, we propose a Physics-augmented Koopman-enhanced Graph Convolutional Network (P-K-GCN) for spatiotemporal super-resolution on irregular geometries. Specifically, a continuous spline-based GCN is first designed to extract spatial dependencies directly from coarse graph, and Koopman operator theory is incorporated to project the nonlinear dynamics into a compact latent space where temporal progression is linearized. Second, we augment the optimization objective with a physics-based loss to force the data-driven reconstructions to adhere to physical laws for improving predictive fidelity and robustness. Finally, we provide a rigorous theoretical analysis, establishing that the physics augmentation and Koopman regularization mathematically guarantees a reduction in super-resolution error by diminishing Rademacher complexity and tightening generalization bounds. We evaluate our framework on reconstructing spatially high-resolution cardiac electrodynamics across a 3D heart geometry from sparse low-resolution measurements. Numerical experiments demonstrate that our method achieves superior accuracy compared to baseline models.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Rethinking Dataset Distillation for Classification: Do Distilled Sets Outperform Coresets?",
-        "articleUrl": "https://arxiv.org/abs/2606.18209v1",
+        "title": "Optimal scenario design for climate emulation",
+        "articleUrl": "https://arxiv.org/abs/2606.19302v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.4,
-        "summary": "Dataset distillation (DD) has emerged as a prominent approach in data centric machine learning, aiming to synthesize compact training sets for efficient training by compressing the information in large datasets into a small number of synthetic samples. However, DD methods are often evaluated under inconsistent evaluation protocols, ranging from standard ERM to single/multi-teacher supervision, making it difficult to isolate the effectiveness of distilled data from evaluation. Moreover, many prior methods claim that DD outperforms data pruning approaches such as coreset selection (CS), based on the assumption that restricting condensed datasets to subsets of real samples fundamentally limits their expressiveness. In this work, we critically evaluate DD methods through large-scale experiments using standardized datasets and evaluation protocols to assess their intrinsic effectiveness. We benchmark seven state-of-the-art (SOTA) DD methods on ImageNet-1K, ImageNet100, and ImageNette, using three widely adopted training protocols against three CS strategies. Our results show that while some DD methods fail to outperform even simple random subsets, the SOTA DD approaches are comparable to or worse than coresets on large-scale datasets and incur a substantially higher cost for construction. Beyond accuracy, we also evaluate the representativeness, diversity, and quality of condensed sets, and find that coresets consistently achieve better coverage of the original data distribution. These findings highlight the limited practical advantages of current DD methods and show that coresets remain competitive and are often a more computationally efficient alternative for data-centric learning.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Looped World Models",
-        "articleUrl": "https://arxiv.org/abs/2606.18208v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.4,
-        "summary": "Current world models face a fundamental tension: faithful long-horizon simulation demands deep computation, but deeper models are expensive to deploy and prone to compounding errors. We resolve this by introducing Looped World Models (LoopWM), which are the first looped architectures for world modelling. Our method iteratively refines latent environment states through a parameter-shared transformer block. This yield up to 100x parameter efficiency over conventional approaches with adaptive computation that automatically scales depth to match the complexity of each prediction step. Orthogonal to scaling model size and training data, LoopWM establishes iterative latent depth as a new scaling axis for world simulation, which might significantly push the community forward.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "On the Complexity of the Circuit Width Problem",
-        "articleUrl": "https://arxiv.org/abs/2606.18201v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 20.5,
-        "summary": "Montanaro's polynomial representation expresses amplitudes of quantum circuits over the gates $H$, $Z$, $CZ$, and $CCZ$ as normalized gaps of degree-three polynomials over $\\mathbb{F}_2$. The normalization is governed by the circuit width $w(f)$, the minimum number of qubits in any circuit realizing a polynomial $f$. Thus, efficient width minimization would give an approximate-counting route toward a combinatorial characterization of $BQP$. We study the computational complexity of this parameter. For degree-three polynomials with no constant term, deciding whether $w(f)\\le k$ is $NP$-complete, resolving Montanaro's open question. We also prove $NP$-hardness of approximation within any factor $49/48-\u03b5$, and show via a twin-copy construction that the exact and approximation hardness results also hold for degree-two polynomials. Under the Exponential Time Hypothesis, the exact problem admits no $2^{o(n)}$-time algorithm when $k=\u0398(n)$. Complementing these hardness results, we give a nondeterministic polynomial-time search algorithm using $2\\log_2\\binom{n}{k}=O(k\\log(en/k))$ witness bits, and a constructive fixed-parameter algorithm parameterized by $k$ with running time $k^{6k+o(k)}n+O(m)$.",
+        "ageHours": 20.3,
+        "summary": "As deep learning for physical systems continues to grow in popularity, efforts to improve generalizability have primarily focused on designing architectures that embed physical constraints. However, for machine-learning surrogate climate models (emulators), we show that the low structural diversity in existing scenarios commonly used to generate training data places a ceiling on predictive skill. Here, we examine whether training datasets themselves can be optimized to improve generalization. We introduce a method to create datasets that produce emulators capable of generalizing to new, structurally different scenarios absent from the training data. We use a differentiable Simple Climate Model (SCM) to calculate the sensitivity of emulator loss to perturbations in the training data, iteratively updating the training data to maximize emulator skill. For an SCM, training on one scenario optimized in this fashion outperforms an emulator trained on six standard ScenarioMIP pathways. We achieve this higher predictive skill despite training on a smaller dataset, finding that our emulator successfully isolates distinct physical behaviors of different climate forcing agents (e.g., greenhouse gases vs. aerosols) without single-forcing runs. We then demonstrate that scenarios optimized using an SCM, when used to drive an intermediate-complexity climate model, produce a training dataset that yields a more skillful emulator than training on ScenarioMIP outputs. Our results suggest that, in the compute-constrained environment of running full-scale climate models, generating a small number of dynamically rich scenarios provides greater marginal value for emulation and characterizing system responses than expanding the suite of traditional emissions pathways.",
         "charge": 0
       }
     ],
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Midjourney goes from generating cat images to full-body ultrasound scans",
+      "articleUrl": "https://www.theverge.com/ai-artificial-intelligence/952011/midjourney-medical-ai-ultrasound-scan",
+      "sourceName": "The Verge",
+      "sourceHomeUrl": "https://www.theverge.com",
+      "ageHours": 10.5,
+      "summary": "Midjourney CEO David Holz just showed off the company's first hardware product and plans to build a San Francisco spa, which he admitted is a bit different from the \"cat pictures\" produced by its AI image generator. Dubbed The Midjourney Scanner, it's an ultrasound-based full-body scanner that uses a ring of sensors to capture vertical [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Woman left traumatised by swinging says website 'facilitated abuse'",
       "articleUrl": "https://www.bbc.com/news/articles/c87q7g48y4po?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 10.9,
       "summary": "England's Aaron Rai winning the US PGA Championship seals a fascinating journey to the summit of the golfing world.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Bulgarian banger 'Bangaranga' bags country its 1st Eurovision win",
-      "articleUrl": "https://www.npr.org/2026/05/16/nx-s1-5824393/eurovision-winner-dara-bangaranga-bulgaria-vienna-austria",
-      "sourceName": "NPR Topics: News",
-      "sourceHomeUrl": "https://www.npr.org",
-      "ageHours": 10.8,
-      "summary": "Bulgaria was not among the favorites to win. But performer Dara's catchy, banging anthem bested 24 other nations at the 70th edition of the international singing extravaganza.",
       "charge": 0
     }
   ]
