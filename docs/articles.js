@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-19T13:51:06.205364+00:00",
+  "generatedAt": "2026-06-20T12:11:03.421358+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "New video game console aims to get kids moving",
+      "articleUrl": "https://www.bbc.com/news/articles/czx50rrz7zro?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.0,
+      "summary": "The cube-shaped console will cost \u00a3269 (\u20ac319) when it is released on 22 June in the UK and Ireland.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Midjourney goes from generating cat images to full-body ultrasound scans",
       "articleUrl": "https://www.theverge.com/ai-artificial-intelligence/952011/midjourney-medical-ai-ultrasound-scan",
       "sourceName": "The Verge",
@@ -498,16 +508,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
     {
       "bucket": "random",
       "title": "Why Rai winning his first major in Rocky's backyard feels fitting",
-      "articleUrl": "https://www.bbc.com/sport/golf/articles/c5yxlznl9xwo?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 10.9,
-      "summary": "England's Aaron Rai winning the US PGA Championship seals a fascinating journey to the summit of the golfing world.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Aaron Rai's journey from talented child golfer to history-making PGA champion",
       "articleUrl": "https://www.bbc.com/sport/golf/articles/c5yxlznl9xwo?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
       "sourceHomeUrl": "https://www.bbc.com",
