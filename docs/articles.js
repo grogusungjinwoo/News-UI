@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-20T12:11:03.421358+00:00",
+  "generatedAt": "2026-06-21T12:21:47.074722+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "Backstage at Gorillaz' epic, one-off stadium show: 'The vibe is ridiculous'",
+      "articleUrl": "https://www.bbc.com/news/articles/cm203gndx0lo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.1,
+      "summary": "Damon Albarn, De La Soul and Moonchild Sannelly talk backstage as Gorillaz play their biggest show.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "New video game console aims to get kids moving",
       "articleUrl": "https://www.bbc.com/news/articles/czx50rrz7zro?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 11.1,
       "summary": "The warmest weather of the year is forecast for later this week after early rain.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Why Rai winning his first major in Rocky's backyard feels fitting",
-      "articleUrl": "https://www.bbc.com/sport/golf/articles/c5yxlznl9xwo?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 10.9,
-      "summary": "England's Aaron Rai winning the US PGA Championship seals a fascinating journey to the summit of the golfing world.",
       "charge": 0
     }
   ]
