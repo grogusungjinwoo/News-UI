@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-21T12:21:47.074722+00:00",
+  "generatedAt": "2026-06-22T15:33:05.384058+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -112,6 +112,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "science": [
       {
         "bucket": "science",
+        "title": "T. rex took 40 years to reach full size, scientists find",
+        "articleUrl": "https://www.sciencedaily.com/releases/2026/06/260621110957.htm",
+        "sourceName": "All Top News -- ScienceDaily",
+        "sourceHomeUrl": "https://www.sciencedaily.com",
+        "ageHours": 11.0,
+        "summary": "Tyrannosaurus rex may have been a much slower grower than scientists realized. A new study of 17 tyrannosaur fossils found that the giant predator likely took about 40 years to reach its full size of roughly eight tons, extending previous estimates by 15 years.",
+        "charge": 0
+      },
+      {
+        "bucket": "science",
         "title": "Nebraska\u2019s Wide, Rolling Domain",
         "articleUrl": "https://science.nasa.gov/earth/earth-observatory/nebraskas-wide-rolling-domain/",
         "sourceName": "NASA",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 9.3,
         "summary": "Urban development, green spaces, and maritime activity converge in this Northern California city.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "Digging Back in Time in the UAE",
-        "articleUrl": "https://science.nasa.gov/earth/earth-observatory/digging-back-in-time-in-the-uae/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 10.5,
-        "summary": "Once below a shallow sea, Jabal al F\u0101yah now stands above the desert in the United Arab Emirates as a reminder of a watery past and early human survival.",
         "charge": 0
       }
     ],
@@ -315,6 +315,36 @@ window.MORNING_NEWS_DATA = Object.freeze({
     ]
   },
   "randomPool": [
+    {
+      "bucket": "random",
+      "title": "Salah's World Cup pain ends as he fires Egypt to historic win",
+      "articleUrl": "https://www.bbc.com/sport/football/articles/c17yn5y977yo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 11.2,
+      "summary": "Mohamed Salah fires Egypt to their first ever World Cup win - 92 years on from their tournament debut.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Kids were made to eat dog biscuits off the floor - pupils speak out after school abuse payouts",
+      "articleUrl": "https://www.bbc.com/news/articles/c5yz2r0197do?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.6,
+      "summary": "Former pupils describe staff pelting them with footballs and pouring pints of blackcurrant over them.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Do esports students do more than play games?",
+      "articleUrl": "https://www.bbc.com/news/articles/cpv3kml48g2o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.com",
+      "ageHours": 10.2,
+      "summary": "Marketing, nutrition and video editing, there is apparently more to esports than being good at games.",
+      "charge": 0
+    },
     {
       "bucket": "random",
       "title": "Backstage at Gorillaz' epic, one-off stadium show: 'The vibe is ridiculous'",
@@ -483,36 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 10.3,
       "summary": "The finals day of the World Surf League's New Zealand Pro event was paused after a photographer was attacked.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Spurred on by the painful death of her dad, Natalie Cassidy trains as a carer",
-      "articleUrl": "https://www.bbc.com/news/articles/c70v1yy9nn1o?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 10.8,
-      "summary": "The actress's experience caring for her father inspired her to return to education in a new BBC show.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "'We are resilient': As San Diego's Muslim community reels from mosque shooting, it refuses to be intimidated",
-      "articleUrl": "https://www.bbc.com/news/articles/clypx2pr52qo?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 10.8,
-      "summary": "Thousands attend funeral prayers for the three victims of Monday's deadly shooting at the Islamic Centre of San Diego.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Is a bank holiday heatwave on the way?",
-      "articleUrl": "https://www.bbc.com/weather/articles/c4g5zgzre5ro?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 11.1,
-      "summary": "The warmest weather of the year is forecast for later this week after early rain.",
       "charge": 0
     }
   ]
