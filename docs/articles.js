@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-24T12:29:51.545664+00:00",
+  "generatedAt": "2026-06-25T12:33:26.169145+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,106 +10,116 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "AutoDex: An Automated Real-World System for Dexterous Grasping Data Collection",
-        "articleUrl": "https://arxiv.org/abs/2606.23689v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "title": "Higher Berry curvature, second Chern numbers and magnetoelectric coupling in crystalline insulators",
+        "articleUrl": "https://arxiv.org/abs/2606.26096v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Learning robust dexterous grasping requires real-world data that records the physical outcomes of grasp attempts. Such data is hard to obtain at scale: teleoperation yields valid physical outcomes but is slow and operator-biased, while simulation-based generation is cheap and scalable but cannot certify contact validity. A natural solution is to generate candidate grasps and verify them on real hardware, but this scales only if the entire collection loop (perception, execution, labeling, and reset) runs without human intervention. We present AutoDex, an automated real-world data-collection system that closes this loop: for each candidate from a replaceable generator, it localizes the object under severe hand-object occlusion with dense 20-camera perception, executes collision-monitored robot motions, labels lift-and-hold success or failure, and actively resets the object between trials to expose additional candidates across stable poses. The result is a reusable database of physically labeled grasp trials that downstream systems can query by retrieval and feasibility filtering. Using AutoDex, we collect 3,593 grasp trials across Allegro and Inspire hands on 100 diverse objects, with synchronized multi-view observations and robot-state logs. For a matched 500-trajectory collection, AutoDex requires 10.3 h versus 49.4 h for teleoperation, yielding a 4.8x throughput improvement, and grasps retrieved from the AutoDex-validated database succeed 76% versus 34% for simulation-only validation. Code and data will be publicly released.",
+        "ageHours": 18.6,
+        "summary": "We rewrite a lattice model of the four-dimensional Chern insulator as a family of translationally-invariant infinite chains over the three-dimensional Brillouin zone and compute its higher three-form Berry curvature using infinite matrix product states (iMPS). We calculate the topological phase diagram of the associated Dixmier--Douady--Kapustin--Spodyneiko (DDKS) number as a function of the model's mass term, and show that it is exactly congruent to the phase diagram in terms of the second Chern number, the analytic expression of which is known for this particular model. This agreement demonstrates that higher Berry curvature can be used to compute second Chern numbers in a manifestly quantized manner. Motivated by the connection between the second Chern form and the Chern--Simons axion coupling, we study magnetoelectric coupling in three dimensions and its relation to higher Berry phases.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Emergent Andreev Reflection from a Lattice Duality Defect",
-        "articleUrl": "https://arxiv.org/abs/2606.23684v1",
+        "title": "Fast mixing of all-to-all quantum systems at high temperatures",
+        "articleUrl": "https://arxiv.org/abs/2606.26090v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "It is shown that arbitrary quantum $k$-local Hamiltonians with bounded strength interactions admit a quantum Gibbs sampler [CKG23] with a system-size independent spectral gap, at sufficiently high temperatures. This generalizes the existing quantum fast-mixing results beyond the geometrically-local setting. As a consequence, such systems admit fully-polynomial time quantum approximation algorithms for partition functions and global expectation values.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Analytic Approach to Quantum Control Using Quantum Signal Processing",
+        "articleUrl": "https://arxiv.org/abs/2606.26085v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "Realizing coherent quantum computation requires precise and robust manipulation of quantum systems through quantum control protocols. Most quantum control techniques rely on heuristic methods for designing the driving pulses that steer the system towards a target state. Such methods are often based on brute-force optimization and offer limited understanding of the solution landscape. In contrast, quantum algorithms offer a rich body of analytical methods with rigorous error guarantees for implementing unitary and non-unitary transformations, which suggests a promising direction for developing new approaches to quantum control. Among various such algorithms, quantum signal processing (QSP) has emerged as a powerful framework for quantum algorithm design, implementation, and optimization. However, its potential for quantum control remains largely unexplored. In this work, we establish QSP-Control, an analytical framework for quantum control of qubit-oscillator dynamics. We focus on dispersively coupled qubit-oscillator systems and employ the QSP formalism to mitigate unwanted nonlinear effects arising from cross-Kerr interactions. In addition, we develop constructions for precise manipulation of Fock states by designing Fock-state-selective operators, based on structural parallels between the Jaynes-Cummings interaction and QSP. These findings demonstrate how several practically relevant problems in quantum control can be mapped to forms amenable to QSP, offering both a systematic design framework and an interpretable perspective on quantum control.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Operational detection of Wigner negativity in arbitrary quantum states from few copies",
+        "articleUrl": "https://arxiv.org/abs/2606.26084v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "States with negative Wigner functions form a fundamental class of nonclassical resource underlying quantum advantage. Here we develop a unified framework to detect Wigner negativity of arbitrary states using experimentally accessible moments of the Wigner function that can be estimated from a modest number of state copies. Exploiting constraints satisfied by positive phase-space distributions, we derive complementary hierarchies of negativity criteria based on $\\mathcal{L}_p$-norm inequalities, log-convexity relations, and Hankel-matrix positivity, yielding increasingly powerful witnesses of Wigner negativity without full phase-space tomography. The framework further enables quantitative characterization of Wigner negativity from a small number of experimentally accessible observables. Next, we establish an exact multicopy representation of all Wigner moments as expectation values of parity-based observables, providing a practical and scalable route to their experimental estimation. We demonstrate the performance of our scheme through numerical simulations of randomized-measurement and classical-shadow protocols. Finally, we show that the framework extends naturally to identifying nonclassical resources such as bipartite and multipartite entanglement. These results establish Wigner moments as a versatile tool for the scalable detection and quantification of nonclassical resources in continuous-variable quantum systems.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Folds of one curve: the superradiant phase diagram of Dicke modes with interacting matter",
+        "articleUrl": "https://arxiv.org/abs/2606.26081v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "We give a thermodynamic-limit account of Dicke models with one cavity mode coupled collectively to interacting matter. Integrating out the cavity yields an exact self-consistent functional of the magnetisation $m$, $\\tilde e(m) = \u03bbm^2/2 + e_{\\rm mat}(\u03bbm)$: a classical penalty on the bare-matter energy $e_{\\rm mat}$ in the self-consistent field $h = \u03bbm$, with $\u03bb= g^2/(2\u03c9_c)$ the collective coupling. Supplying only that scalar field, the photon creates no phase the matter does not already possess. States holding a minimum form one connected curve, $\u03bb(m) = \u03bc_{\\rm mat}^{-1}(m)/m$, so superradiant first-order transitions are folds of one equation of state not crossings of disjoint sheets, and a fold can straighten into a continuous line. The remaining rules are local, each with a spectral counterpart: onset by the leading singularity of $e_{\\rm mat}$ (a softening polariton), order by one bare response -- the Landau quartic, or a divergent susceptibility forcing a Larkin-Pikin (LP) fold. For the Dicke-Ising model the Landau coefficients are exact, giving in closed form the second-order boundary and both zero-quartic fields, one tricritical; a $1/d$ expansion maps all four phases, with the AS-PS transition first order for $d\\le d_{uc}=3=4-z$ (LP) and tricritical points in the $(d,\u03b5)$ plane above. At the degenerate quadruple point the matter is a Rydberg-blockade chain, solved by strict-blockade iDMRG: the antiferromagnetic superradiant (AS) phase persists as a finite 1D wedge, first order into the corner. Other magnets: the triangular antiferromagnet keeps a continuous superradiant-superradiant line (3D-XY, no fold forced); the compass chain a BKT-functional onset; the Heisenberg and XX chains, via a conserved operator, a spectrally silent first-order onset; and the Dicke-Heisenberg diagram an exact tricritical point at the saturation corner.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
+        "articleUrl": "https://arxiv.org/abs/2606.26079v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.7,
+        "summary": "Standard benchmarks for multimodal large language models (MLLMs) score each item on one canonical ordering and miss whether order-irrelevant shuffling changes the answer, a baseline reliability property called for by emerging AI evaluation guidelines. We introduce Facet-Probe, a five-facet audit (option, evidence-chunk, document-rank, image-set, and mixed-modality ordering) of 18 frontier and open-weight MLLMs. A Bayesian item-response model separates ordering noise from per-facet bias, and a same-ordering control estimates the decoder-stochastic floor for observed flips. We find that none of the 18 MLLMs we audit are order-invariant: screened per-facet panel-mean flip rates span 24-50%. A Gemini same-ordering control at temperature 0 estimates a substantial ordering excess over a same-input decoder-noise floor in verified cells. Capability predicts but does not eliminate flips; the best model still flips on 13.4% of trials. In our Gemini mitigation tests, training-free prompt changes are modality-conditional and do not transfer from text to visual reasoning. These results suggest that prompt-level mitigation alone is unlikely to provide general order robustness, motivating future work on training-time and architectural approaches. We propose cross-ordering flip rate as a standard reporting axis for MLLMs.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Many-Body Second Order Green's Function Theory for Ab Initio Molecular Quantum Electrodynamics",
+        "articleUrl": "https://arxiv.org/abs/2606.26076v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.7,
+        "summary": "In this work, we develop two many-body quantum electrodynamic methods to calculate the ground-state energies of strongly coupled light-matter molecular systems. Specifically, we extend the second-order many-body Green's function theory (GF2) for electronic systems to incorporate electron-boson couplings. We employ two ans\u00e4tze to treat the bosonic part of the system, namely the coherent-state (CS) and Lang-Firsov (LF) transformed vacuum state. These are combined with the GF2 method to construct two new approaches, which we refer to as CS-GF2 and LF-GF2. We benchmark CS- and LF-GF2 by studying various molecular systems inside an optical cavity. We investigate $\\mathrm{H}_2$ and $\\mathrm{LiH}$ potential energy surfaces, keto-eneol tautomerization energy barrier, van-der Waals interactions between two $\\mathrm{H_2}$ molecules and the torsional potential energy surface of the ethylene molecule, $\\mathrm{C_2H_4}$. Both methods provide highly accurate energies, with only modest additional improvement observed in LF-GF2.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Model Forensics: Investigating Whether Concerning Behavior Reflects Misalignment",
+        "articleUrl": "https://arxiv.org/abs/2606.26071v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.8,
+        "summary": "A central goal of safety research is determining whether a model is misaligned. Prior work has largely focused on detecting concerning behavior. But behavior alone does not establish misalignment: a concerning action can arise from benign causes such as confusion. This motivates model forensics: investigating whether the action was driven by malign intent. In this paper, we propose a baseline protocol for model forensics consisting of two steps, iterated as needed. First, we read the chain of thought (CoT) to generate hypotheses about what drives model behavior. Second, we make edits to the prompt or environment to test these hypotheses. While the CoT is not always faithful, it is a rich source of unsupervised insight that can guide the collection of more rigorous evidence. To evaluate our protocol, we create a suite of six agentic environments where models exhibit concerning behavior, and apply it to each. We establish that Kimi K2 Thinking takes shortcuts due to a genuine disposition towards low-effort actions, by showing this hypothesis successfully predicts its behavior. Through counterfactual experiments, we show DeepSeek R1 deceives out of a desire to be consistent with a previous instance of itself. Our methods nonetheless leave significant room for refinement. For example, when we test whether Kimi K2 Thinking believes it is violating user intent, we find no evidence of such a belief, but without positive controls we cannot confirm our tests would detect it. Overall, we find our simple protocol provides a strong baseline that we hope future work will improve upon. More broadly, our work is a concrete step in developing the growing field of model forensics.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "All-electrical dephasing-protected spin qubits in altermagnets",
+        "articleUrl": "https://arxiv.org/abs/2606.26066v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.8,
-        "summary": "Andreev reflection converts an incoming fermion into an outgoing hole and is usually tied to a superconducting interface. We show that an analogous charge-conjugating boundary condition emerges from a purely lattice duality defect. Starting from a Majorana representation of the transverse-field Ising chain, we construct a folded lattice model in which a boundary Majorana impurity implements a one-site translation of a staggered Majorana chain. In the continuum, this translation becomes a chiral fermion-parity defect: it flips the sign of the only left-moving Majorana mode while leaving the right-moving mode unchanged. When the two Majorana modes are recombined into a complex fermion in the folded geometry, this sign flip becomes the Andreev-like boundary condition. Our lattice formulation gives a microscopic interpretation of the Emery--Kivelson boundary of the two-channel Kondo problem and of Maldacena--Ludwig monopole scattering, while identifying the boundary as the interface between a Kitaev-chain SPT phase and a gapless chain. The same Majorana translation defect also provides a lattice realization of an axial $U(1)_A$-symmetric charge-flip boundary.",
+        "summary": "We introduce altermagnetic semiconductors as a materials platform for scalable, all-electrical controllable spin qubits that operate without magnetic fields in gate-defined quantum dots. The altermagnet intrinsic finite-momentum spin polarization provides a field-free qubit splitting that is fully and continuously tunable through the dot ellipticity with electrostatic gates, delivering individually addressable qubit frequencies. Furthermore, the altermagnetic spin splitting is first-order insensitive to electric field fluctuations by construction and quantization-axis fluctuations produce only transverse coupling, yielding relaxation without pure dephasing, a distinct dephasing-protection yielding an advantage over conventional spin qubits. The net-zero magnetization eliminates stray-fields and renders the platform compatible with superconducting resonators thus enabling high-fidelity, non-demolition circuit-QED readout by dispersive coupling of the qubit spin-dependent electric dipole couples to a resonator. Starting from an effective quantum-dot description, supported by a microscopic lattice-model, we derive the qubit Hamiltonian and establish that it naturally supports a complete gate set: electric-dipole spin resonance controls single qubits, while tunable exchange combined with per-qubit frequency addressing directly implements the fermionic simulation (fSim) family of two-qubit gates. Crucially, within the same platform it is possible to implement a singlet-triplet qubit with fully electrical control over both exchange and splitting differences, removing the need for micromagnets or nuclear polarization gradients, while enabling baseband operation. Our results establish altermagnetic quantum dots as a novel, all-electrical route to spin qubits with enhanced protection.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Semantic Browsing: Controllable Diversity for Image Generation",
-        "articleUrl": "https://arxiv.org/abs/2606.23679v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Modern text-to-image models excel in visual fidelity and prompt adherence. However, this strict adherence comes at the cost of diversity: generated samples tend to collapse into a single visual interpretation. Existing methods to improve diversity produce outputs driven by incidental variations rather than meaningful design choices. This motivates a new variant of the diversity task where structure is enforced on the generated samples. We introduce a method for controlled diversity that enables Semantic Browsing, where users can navigate structured image galleries and experience creative exploration through a systematic traversal of meaningful, interpretable axes of variation. Achieving this level of semantic control requires a deep understanding of the scene. We exploit the fact that recent text-to-image models are trained on elaborated captions, effectively decoupling semantic decision-making from pixel generation. This enables a paradigm shift: instead of relying on stochastic variation within the text-to-image model, we induce diversity directly at the text level. By leveraging rich textual representations, we allow a Vision Language Model (VLM) to operate on the full scene context. To overcome the generic outputs typical of standard VLMs, we employ an agentic workflow that explicitly enforces structured variation attuned to the original prompt. We demonstrate that our method produces diverse and navigable design spaces where every variation corresponds to a specific, user-understandable semantic decision.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "PsyBridge: A Hybrid Intelligent Framework for Multi-Dimensional Mental Health Assessment and Decision Support",
-        "articleUrl": "https://arxiv.org/abs/2606.23673v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "Mental health assessment commonly relies on isolated screening instruments or data-driven models that often lack interpretability and multi-dimensional integration. Existing approaches frequently focus on individual indicators such as depression or anxiety while providing limited support for comprehensive and explainable decision-making. To address this limitation, this study proposes PsyBridge, a hybrid intelligent decision-support framework designed for multi-dimensional mental health assessment through the integration of clinically validated screening tools, cognitive evaluation, and personality profiling within a unified architecture. The proposed framework incorporates PHQ-9 and GAD-7 assessments alongside cognitive and behavioural indicators using a modular design and a weighted aggregation mechanism to generate interpretable mental health risk classifications and recommendations. To evaluate the framework, a semi-synthetic dataset consisting of 500 patient profiles representing varying severity levels was constructed based on clinically grounded score distributions. Experimental results demonstrate that PsyBridge achieves an overall accuracy of 0.84, outperforming standalone PHQ-9 and GAD-7 assessments while improving precision, recall, and F1-score. Sensitivity analysis and ablation studies further indicate that integrating cognitive and personality components contributes to more stable classification performance and reduces inconsistencies in moderate-risk prediction. The findings suggest that PsyBridge provides a scalable and interpretable approach for AI-assisted mental health decision support, particularly within digital healthcare and telehealth environments.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Tapered Language Models",
-        "articleUrl": "https://arxiv.org/abs/2606.23670v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "title": "Quantum Back-Action Expands the Excitonic Hilbert Space in a Soft Polar Semiconductor",
+        "articleUrl": "https://arxiv.org/abs/2606.26063v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
         "ageHours": 18.9,
-        "summary": "Modern language models, including transformer, recurrent, and memory-based variants, share a common chassis: a stack of identical layers in which parameters are allocated uniformly across depth. This is a default inherited from the original transformer and largely unchanged since, yet a growing body of evidence suggests that layers contribute non-uniformly to the final output, with later layers refining the residual stream rather than transforming it. We ask whether parameter capacity should reflect this asymmetry. Our controlled experiment shows that, under a fixed budget, allocating more capacity to earlier layers and less to later layers improves perplexity over a uniform-width baseline, while the reverse allocation hurts. Building on this result, we introduce Tapered Language Models (TLMs), an architectural principle in which a parameter-bearing component is monotonically tapered across depth under a fixed total budget. MLPs are the natural site for this instantiation: they dominate parameter count across all modern LM families and expose width as a single, clean axis of variation. Across three model scales and four architectures (Transformer, Gated Attention, Hope-attention, and Titans), tapering MLP width via a smooth cosine schedule consistently improves perplexity and downstream benchmark performance over uniform baselines, at no additional parameter or compute cost. These findings establish depth-aware capacity allocation as a simple, architecture-agnostic axis of language model design, a free lever hidden in plain sight.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
-        "articleUrl": "https://arxiv.org/abs/2606.23664v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.0,
-        "summary": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and accessible optimization surface: they specify agents' roles and behaviors, enabling system-level improvements without model finetuning. Although prompt optimization has shown substantial potential for single LLMs, extending it to MAS poses distinct challenges, notably an exponentially growing search space. It remains unclear whether, when, and by how much prompt optimization improves MAS performance, and how sensitive such gains are to system configuration. In this work, we systematically study system-prompt optimization across a broad range of MAS setups varying in task, workflow, communication protocol, and team size, benchmarking two prompt optimizers that naturally extend state-of-the-art single-agent methods. The results reveal its potential to unlock significant gains while exposing open challenges, characterizing when and how much prompt optimization helps across diverse MAS settings.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Resolving support-mismatch by local basis rotation in variational Monte Carlo",
-        "articleUrl": "https://arxiv.org/abs/2606.23657v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.1,
-        "summary": "Real-time dynamics after a local quench by a charged operator encodes the response functions measured in spectroscopic experiments, yet they have long posed a challenge for variational Monte Carlo calculations. The obstacle is a support mismatch: the projective action by a charged local operator forces an exponentially large number of configurations to vanish, but these configurations may still contribute to the dynamics, biasing the estimators and freezing the evolution at the very first step. This difficulty is an artifact of the chosen sampling basis, and the support mismatch generated by a charged local operator is itself local. We demonstrate that the missing support can be restored by a local rotation of the sampling basis, without changing the underlying variational dynamics. We propose a local basis-rotation sampling scheme that resolves the support-mismatch problem and can be readily incorporated into existing variational Monte Carlo algorithms. Benchmarks show that rotation sampling accurately captures long-time quantum dynamics, enabling variational Monte Carlo calculations of dynamical structure factors in one dimension and unbiased local-operator quench dynamics in two dimensions. We also show that this resolution of the support-mismatch problem extends beyond real-time dynamics, and may also be helpful for ground state variational Monte Carlo calculations.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Dynamic estimation of slowly varying sequences",
-        "articleUrl": "https://arxiv.org/abs/2606.23655v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.1,
-        "summary": "We consider the problem of sequentially approximating functions of each element in a slowly-varying sequence, i.e. one where the magnitude $\u03b1_i$ of the difference between the elements at positions $i$ and $i-1$ is small. Recent work on implicit trace estimation shows that when $\u03b1_t$ is small, reusing queries to past sequence elements can reduce the overall cost [Dharangutte \\& Musco, NeurIPS~2021; Woodruff et al., NeurIPS~2022]. We introduce a framework generalizing this to a variety of linear and nonlinear functions on diverse vector spaces, obtaining novel sequential estimation results for matrix powers, spectral densities, Monte Carlo integration, and a boundary value problem from partial differential equations~(PDEs). Furthermore, we develop a novel algorithm for use with this framework that locally scales the estimation budget with $\u03b1_t$, obtaining sharper path-length-style variation bounds of form $\\mathcal O(\\sum_{i=1}^m\u03b1_i)$ on the cost of estimating a sequence of length $m$. This improves upon the previous implicit trace estimation bound of $\\mathcal O(m\\cdot\\max_i\u03b1_i)$ [Dharangutte \\& Musco, NeurIPS~2021], which is achieved by fixing the query budget using the worst-case $\u03b1_i$ and is thus inefficient for stable sequences with rare bursts. Lastly, while all past work assumes a known bound on $\u03b1_i$, we show in certain cases how the changes can be estimated on-the-fly with (nearly) no added cost. In summary, our framework makes the sequential approximation toolkit general-purpose and adaptive while improving upon state-of-the-art-guarantees for dynamic trace estimation.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Robust Structure Learning of $k$-local Lindbladians",
-        "articleUrl": "https://arxiv.org/abs/2606.23652v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.2,
-        "summary": "We present an efficient protocol for learning an unknown $k$-local Lindblad generator on $n$ qubits using only product-state preparations, short-time evolution, and single-qubit Pauli measurements, without prior knowledge of the interaction structure. For fixed $k$ and bounded weighted interaction strength, the protocol estimates all Hamiltonian and dissipative Pauli--GKSL coefficients to entrywise accuracy $\\varepsilon$ with probability at least $1-\u03b4$ using $\\widetilde{\\mathcal O}_k(\\varepsilon^{-2}n^{2k}\\log(1/\u03b4))$ samples and polylogarithmically many evolution times. A semidefinite projection converts these estimates into a valid $k$-local Lindblad generator with diamond-norm error at most $\\varepsilon$ using $\\widetilde{\\mathcal O}_k(\\varepsilon^{-2}n^{4k}\\log(1/\u03b4))$ samples and polynomial-time classical postprocessing. If a suitable set of influential coefficients is supplied and satisfies a stable sparsity condition, the dependence on $n$ can improve from polynomial to logarithmic; in particular, exact supports of bounded intersection degree require only $\\widetilde{\\mathcal O}_k(\\varepsilon^{-2}\\log(n/\u03b4))$ samples, with analogous reductions in system-size dependence for sufficiently decaying long-range interactions. We also provide a robust structure-learning procedure, extend the guarantees to model misspecification, and prove complementary sample-complexity lower bounds. To our knowledge, these are the first efficient learning guarantees for general $k$-local dissipative quantum dynamics under such limited experimental control.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Application of Machine Learning for the Identification of 2D Colloidal Assemblies: A Case Study on Particles of Distinct Shapes",
-        "articleUrl": "https://arxiv.org/abs/2606.23639v1",
-        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 19.3,
-        "summary": "This work addresses the problem of identifying colloidal monolayer assemblies using particles of various shapes (two-dimensional coatings): spheres, ellipsoids, cuboids, and rods. The following classification of assemblies is considered: isolated particles, dimers, chains, clusters, and loops. The YOLO model was chosen as the identification method. Synthetic datasets were prepared for each of the four particle shapes to train the models. The paper discusses the application of models trained on synthetic data to experimental images. An analysis was carried out on the feasibility of using such models for recognizing configurations in real images. While recognition on artificial images is nearly perfect, tests on experimental images showed a significant deviation. The average error across all particle types was 43.1%, but a considerable spread in values is observed: from 20% for spheres to 58.5% for cuboids, indicating the algorithm's selective sensitivity to object geometry. The created datasets and trained models are freely available for use. The corresponding modules have been integrated into the previously developed information system (https://isanm.space/). To further improve prediction results, it is necessary to prepare datasets based on experimental images.",
+        "summary": "Electronic excitations in solids are commonly described within a hierarchy in which the excitonic Hamiltonian is defined first and the lattice acts later through renormalization, relaxation, and dephasing. This picture assumes that the optically accessible excitonic manifold is already present at the moment of photoexcitation. Here we show that this assumption fails in a soft polar semiconductor. Using femtosecond coherent multidimensional spectroscopy on lead-halide perovskite nanocrystals, we observe quantum back-action between an electronic excitation and a collective lattice-polarization field that expands the excitonic Hilbert space in real time. The optical pulse first prepares an excitonic polarization, X1. A second configuration, X2, emerges only after the polaron field develops, while coherent X1-X2 coupling appears at later times. State formation and coherence formation are therefore resolved as distinct stages of quasiparticle formation. In contrast, CdSe quantum dots exhibit the conventional limit in which excitonic states and couplings are present at time zero and are only weakly perturbed by phonons. The observed diagonal and anti-diagonal splittings increase with nanocrystal size and correlate with radiative oscillator strength, opposite to expectations from simple quantum confinement. A dynamical polaron-field model describes the lattice polarization as an order parameter that expands the optically accessible manifold and generates time-dependent coherent coupling. These results show that strong system-bath coupling can actively create excitonic states and the coherent manifold in which they evolve.",
         "charge": 0
       }
     ],
     "science": [
+      {
+        "bucket": "science",
+        "title": "NASA\u2019s TESS Mission Reveals the \u201cPuffiest\u201d Planets Ever Found",
+        "articleUrl": "https://science.nasa.gov/missions/tess/nasas-tess-mission-reveals-the-puffiest-planets-ever-found/",
+        "sourceName": "NASA",
+        "sourceHomeUrl": "https://science.nasa.gov",
+        "ageHours": 11.5,
+        "summary": "NASA has revealed two new \u201csuper-puff\u201d planets, giant worlds so light that their density is comparable to cotton candy. Scientists calculate that these Jupiter-sized planets are the \u201cpuffiest\u201d worlds ever found.",
+        "charge": 1
+      },
       {
         "bucket": "science",
         "title": "T. rex took 40 years to reach full size, scientists find",
@@ -198,16 +208,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "sourceHomeUrl": "https://science.nasa.gov",
         "ageHours": 9.8,
         "summary": "Ice splintered off the southern Patagonia glacier and drifted across a growing glacial lake.",
-        "charge": 0
-      },
-      {
-        "bucket": "science",
-        "title": "San Francisco\u2019s Metropolitan Mosaic",
-        "articleUrl": "https://science.nasa.gov/missions/station/san-franciscos-metropolitan-mosaic/",
-        "sourceName": "NASA",
-        "sourceHomeUrl": "https://science.nasa.gov",
-        "ageHours": 9.3,
-        "summary": "Urban development, green spaces, and maritime activity converge in this Northern California city.",
         "charge": 0
       }
     ],
