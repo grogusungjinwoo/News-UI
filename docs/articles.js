@@ -1,5 +1,5 @@
 window.MORNING_NEWS_DATA = Object.freeze({
-  "generatedAt": "2026-06-25T12:33:26.169145+00:00",
+  "generatedAt": "2026-06-26T12:27:00.467746+00:00",
   "buckets": [
     "scholar",
     "random",
@@ -10,102 +10,102 @@ window.MORNING_NEWS_DATA = Object.freeze({
     "scholar": [
       {
         "bucket": "scholar",
-        "title": "Higher Berry curvature, second Chern numbers and magnetoelectric coupling in crystalline insulators",
-        "articleUrl": "https://arxiv.org/abs/2606.26096v1",
+        "title": "Hidden-ordered Dirac fermions",
+        "articleUrl": "https://arxiv.org/abs/2606.27368v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "We rewrite a lattice model of the four-dimensional Chern insulator as a family of translationally-invariant infinite chains over the three-dimensional Brillouin zone and compute its higher three-form Berry curvature using infinite matrix product states (iMPS). We calculate the topological phase diagram of the associated Dixmier--Douady--Kapustin--Spodyneiko (DDKS) number as a function of the model's mass term, and show that it is exactly congruent to the phase diagram in terms of the second Chern number, the analytic expression of which is known for this particular model. This agreement demonstrates that higher Berry curvature can be used to compute second Chern numbers in a manifestly quantized manner. Motivated by the connection between the second Chern form and the Chern--Simons axion coupling, we study magnetoelectric coupling in three dimensions and its relation to higher Berry phases.",
+        "ageHours": 18.5,
+        "summary": "I propose a Hermitian extension of the Lorentz-symmetric Dirac theory by complementing the associated Hamiltonian with another \\emph{masslike} anticommuting Dirac operator. The resulting theory manifests the iconic linear energy-momentum relationship in any dimension ($d$) and hence the emergent nodal quasiparticle excitations are named \\emph{hidden-ordered Dirac fermions}, which are symmetry protected and their responses are analogous to those in original Dirac systems, however, in terms of a renormalized (due to the hidden ordering) Fermi velocity. Typically, such a hidden ordering pushes any quantum phase transition into an insulation toward even stronger coupling in any $d>1$. However, depending on the internal algebra between the candidate insulating order parameter and masslike Dirac operator, the hidden-ordering may survive or disappear near the corresponding itinerant quantum critical point. I construct lattice models for such hidden-ordered massless Dirac fermions and outline promising platforms (numerical and experimental) to test these predictions.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Fast mixing of all-to-all quantum systems at high temperatures",
-        "articleUrl": "https://arxiv.org/abs/2606.26090v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "It is shown that arbitrary quantum $k$-local Hamiltonians with bounded strength interactions admit a quantum Gibbs sampler [CKG23] with a system-size independent spectral gap, at sufficiently high temperatures. This generalizes the existing quantum fast-mixing results beyond the geometrically-local setting. As a consequence, such systems admit fully-polynomial time quantum approximation algorithms for partition functions and global expectation values.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Analytic Approach to Quantum Control Using Quantum Signal Processing",
-        "articleUrl": "https://arxiv.org/abs/2606.26085v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "Realizing coherent quantum computation requires precise and robust manipulation of quantum systems through quantum control protocols. Most quantum control techniques rely on heuristic methods for designing the driving pulses that steer the system towards a target state. Such methods are often based on brute-force optimization and offer limited understanding of the solution landscape. In contrast, quantum algorithms offer a rich body of analytical methods with rigorous error guarantees for implementing unitary and non-unitary transformations, which suggests a promising direction for developing new approaches to quantum control. Among various such algorithms, quantum signal processing (QSP) has emerged as a powerful framework for quantum algorithm design, implementation, and optimization. However, its potential for quantum control remains largely unexplored. In this work, we establish QSP-Control, an analytical framework for quantum control of qubit-oscillator dynamics. We focus on dispersively coupled qubit-oscillator systems and employ the QSP formalism to mitigate unwanted nonlinear effects arising from cross-Kerr interactions. In addition, we develop constructions for precise manipulation of Fock states by designing Fock-state-selective operators, based on structural parallels between the Jaynes-Cummings interaction and QSP. These findings demonstrate how several practically relevant problems in quantum control can be mapped to forms amenable to QSP, offering both a systematic design framework and an interpretable perspective on quantum control.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Operational detection of Wigner negativity in arbitrary quantum states from few copies",
-        "articleUrl": "https://arxiv.org/abs/2606.26084v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "States with negative Wigner functions form a fundamental class of nonclassical resource underlying quantum advantage. Here we develop a unified framework to detect Wigner negativity of arbitrary states using experimentally accessible moments of the Wigner function that can be estimated from a modest number of state copies. Exploiting constraints satisfied by positive phase-space distributions, we derive complementary hierarchies of negativity criteria based on $\\mathcal{L}_p$-norm inequalities, log-convexity relations, and Hankel-matrix positivity, yielding increasingly powerful witnesses of Wigner negativity without full phase-space tomography. The framework further enables quantitative characterization of Wigner negativity from a small number of experimentally accessible observables. Next, we establish an exact multicopy representation of all Wigner moments as expectation values of parity-based observables, providing a practical and scalable route to their experimental estimation. We demonstrate the performance of our scheme through numerical simulations of randomized-measurement and classical-shadow protocols. Finally, we show that the framework extends naturally to identifying nonclassical resources such as bipartite and multipartite entanglement. These results establish Wigner moments as a versatile tool for the scalable detection and quantification of nonclassical resources in continuous-variable quantum systems.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Folds of one curve: the superradiant phase diagram of Dicke modes with interacting matter",
-        "articleUrl": "https://arxiv.org/abs/2606.26081v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.6,
-        "summary": "We give a thermodynamic-limit account of Dicke models with one cavity mode coupled collectively to interacting matter. Integrating out the cavity yields an exact self-consistent functional of the magnetisation $m$, $\\tilde e(m) = \u03bbm^2/2 + e_{\\rm mat}(\u03bbm)$: a classical penalty on the bare-matter energy $e_{\\rm mat}$ in the self-consistent field $h = \u03bbm$, with $\u03bb= g^2/(2\u03c9_c)$ the collective coupling. Supplying only that scalar field, the photon creates no phase the matter does not already possess. States holding a minimum form one connected curve, $\u03bb(m) = \u03bc_{\\rm mat}^{-1}(m)/m$, so superradiant first-order transitions are folds of one equation of state not crossings of disjoint sheets, and a fold can straighten into a continuous line. The remaining rules are local, each with a spectral counterpart: onset by the leading singularity of $e_{\\rm mat}$ (a softening polariton), order by one bare response -- the Landau quartic, or a divergent susceptibility forcing a Larkin-Pikin (LP) fold. For the Dicke-Ising model the Landau coefficients are exact, giving in closed form the second-order boundary and both zero-quartic fields, one tricritical; a $1/d$ expansion maps all four phases, with the AS-PS transition first order for $d\\le d_{uc}=3=4-z$ (LP) and tricritical points in the $(d,\u03b5)$ plane above. At the degenerate quadruple point the matter is a Rydberg-blockade chain, solved by strict-blockade iDMRG: the antiferromagnetic superradiant (AS) phase persists as a finite 1D wedge, first order into the corner. Other magnets: the triangular antiferromagnet keeps a continuous superradiant-superradiant line (3D-XY, no fold forced); the compass chain a BKT-functional onset; the Heisenberg and XX chains, via a conserved operator, a spectrally silent first-order onset; and the Dicke-Heisenberg diagram an exact tricritical point at the saturation corner.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
-        "articleUrl": "https://arxiv.org/abs/2606.26079v1",
+        "title": "Autoregressive Boltzmann Generators",
+        "articleUrl": "https://arxiv.org/abs/2606.27361v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.7,
-        "summary": "Standard benchmarks for multimodal large language models (MLLMs) score each item on one canonical ordering and miss whether order-irrelevant shuffling changes the answer, a baseline reliability property called for by emerging AI evaluation guidelines. We introduce Facet-Probe, a five-facet audit (option, evidence-chunk, document-rank, image-set, and mixed-modality ordering) of 18 frontier and open-weight MLLMs. A Bayesian item-response model separates ordering noise from per-facet bias, and a same-ordering control estimates the decoder-stochastic floor for observed flips. We find that none of the 18 MLLMs we audit are order-invariant: screened per-facet panel-mean flip rates span 24-50%. A Gemini same-ordering control at temperature 0 estimates a substantial ordering excess over a same-input decoder-noise floor in verified cells. Capability predicts but does not eliminate flips; the best model still flips on 13.4% of trials. In our Gemini mitigation tests, training-free prompt changes are modality-conditional and do not transfer from text to visual reasoning. These results suggest that prompt-level mitigation alone is unlikely to provide general order robustness, motivating future work on training-time and architectural approaches. We propose cross-ordering flip rate as a standard reporting axis for MLLMs.",
+        "ageHours": 18.5,
+        "summary": "Efficient sampling of molecular systems at thermodynamic equilibrium is a hallmark challenge in statistical physics. This challenge has driven the development of Boltzmann Generators (BGs), which allow rapid generation of uncorrelated equilibrium samples by combining a generative model with exact likelihoods and an importance sampling correction. However, modern BGs predominantly rely on normalizing flows (NFs), which either suffer from limited expressivity due to strict invertibility constraints (discrete time) or computationally expensive likelihoods (continuous time). In this paper, we propose Autoregressive Boltzmann Generators (ArBG) -- a novel autoregressive modelling framework -- that overcomes these limitations by departing from the flow-based BG paradigm. ArBG circumvents the topological constraints of flows and enables sequential inference-time interventions, while offering enhanced scalability by leveraging architectures effective in Large Language Models. We empirically demonstrate that ArBG leads to significant improvements over flow-based models across all benchmarks, but particularly in larger peptide systems such as the 10-residue Chignolin. Furthermore, we introduce Robin, a 132 million parameter transferable model trained with the ArBG framework which improves over the previous state-of-the-art, reducing the zero-shot energy error, E-W$_2$, on 8-residue systems by over 60$\\%$. The code can be found at the following link: https://github.com/danyalrehman/autobg.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Many-Body Second Order Green's Function Theory for Ab Initio Molecular Quantum Electrodynamics",
-        "articleUrl": "https://arxiv.org/abs/2606.26076v1",
-        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
-        "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.7,
-        "summary": "In this work, we develop two many-body quantum electrodynamic methods to calculate the ground-state energies of strongly coupled light-matter molecular systems. Specifically, we extend the second-order many-body Green's function theory (GF2) for electronic systems to incorporate electron-boson couplings. We employ two ans\u00e4tze to treat the bosonic part of the system, namely the coherent-state (CS) and Lang-Firsov (LF) transformed vacuum state. These are combined with the GF2 method to construct two new approaches, which we refer to as CS-GF2 and LF-GF2. We benchmark CS- and LF-GF2 by studying various molecular systems inside an optical cavity. We investigate $\\mathrm{H}_2$ and $\\mathrm{LiH}$ potential energy surfaces, keto-eneol tautomerization energy barrier, van-der Waals interactions between two $\\mathrm{H_2}$ molecules and the torsional potential energy surface of the ethylene molecule, $\\mathrm{C_2H_4}$. Both methods provide highly accurate energies, with only modest additional improvement observed in LF-GF2.",
-        "charge": 0
-      },
-      {
-        "bucket": "scholar",
-        "title": "Model Forensics: Investigating Whether Concerning Behavior Reflects Misalignment",
-        "articleUrl": "https://arxiv.org/abs/2606.26071v1",
+        "title": "When are likely answers right? On Sequence Probability and Correctness in LLMs",
+        "articleUrl": "https://arxiv.org/abs/2606.27359v1",
         "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "A central goal of safety research is determining whether a model is misaligned. Prior work has largely focused on detecting concerning behavior. But behavior alone does not establish misalignment: a concerning action can arise from benign causes such as confusion. This motivates model forensics: investigating whether the action was driven by malign intent. In this paper, we propose a baseline protocol for model forensics consisting of two steps, iterated as needed. First, we read the chain of thought (CoT) to generate hypotheses about what drives model behavior. Second, we make edits to the prompt or environment to test these hypotheses. While the CoT is not always faithful, it is a rich source of unsupervised insight that can guide the collection of more rigorous evidence. To evaluate our protocol, we create a suite of six agentic environments where models exhibit concerning behavior, and apply it to each. We establish that Kimi K2 Thinking takes shortcuts due to a genuine disposition towards low-effort actions, by showing this hypothesis successfully predicts its behavior. Through counterfactual experiments, we show DeepSeek R1 deceives out of a desire to be consistent with a previous instance of itself. Our methods nonetheless leave significant room for refinement. For example, when we test whether Kimi K2 Thinking believes it is violating user intent, we find no evidence of such a belief, but without positive controls we cannot confirm our tests would detect it. Overall, we find our simple protocol provides a strong baseline that we hope future work will improve upon. More broadly, our work is a concrete step in developing the growing field of model forensics.",
+        "ageHours": 18.5,
+        "summary": "Many decoding methods for large language models can be understood as shifting probability mass toward outputs that are more likely under the model, either locally at the token level or globally at the sequence level. Therefore, their success depends on a fundamental question: when does sequence probability, that is, the conditional probability of a continuation given a prompt, actually align with correctness? In this paper, we set out to quantify this relationship across decoding methods, models, and benchmarks at four levels: across decoding methods, across hyperparameters within a method, across prompt-answer pairs within a dataset, and across repeated responses to the same prompt. We find that higher sequence probability is often predictive of correctness across prompt-answer pairs within a fixed dataset. However, this relationship does not generally transfer to decoding decisions: increasing sequence probability by changing hyperparameters or methods does not reliably improve accuracy. Further, sequence probability is not a good indicator of correctness for responses to the same prompt. These findings clarify when decoding can and cannot be expected to improve correctness, and provide practical guidance for decoding, self-consistency, and verifier-free self-improvement.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "All-electrical dephasing-protected spin qubits in altermagnets",
-        "articleUrl": "https://arxiv.org/abs/2606.26066v1",
+        "title": "Cultivating logical catalysts for fault-tolerant dyadic phase rotations",
+        "articleUrl": "https://arxiv.org/abs/2606.27358v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.8,
-        "summary": "We introduce altermagnetic semiconductors as a materials platform for scalable, all-electrical controllable spin qubits that operate without magnetic fields in gate-defined quantum dots. The altermagnet intrinsic finite-momentum spin polarization provides a field-free qubit splitting that is fully and continuously tunable through the dot ellipticity with electrostatic gates, delivering individually addressable qubit frequencies. Furthermore, the altermagnetic spin splitting is first-order insensitive to electric field fluctuations by construction and quantization-axis fluctuations produce only transverse coupling, yielding relaxation without pure dephasing, a distinct dephasing-protection yielding an advantage over conventional spin qubits. The net-zero magnetization eliminates stray-fields and renders the platform compatible with superconducting resonators thus enabling high-fidelity, non-demolition circuit-QED readout by dispersive coupling of the qubit spin-dependent electric dipole couples to a resonator. Starting from an effective quantum-dot description, supported by a microscopic lattice-model, we derive the qubit Hamiltonian and establish that it naturally supports a complete gate set: electric-dipole spin resonance controls single qubits, while tunable exchange combined with per-qubit frequency addressing directly implements the fermionic simulation (fSim) family of two-qubit gates. Crucially, within the same platform it is possible to implement a singlet-triplet qubit with fully electrical control over both exchange and splitting differences, removing the need for micromagnets or nuclear polarization gradients, while enabling baseband operation. Our results establish altermagnetic quantum dots as a novel, all-electrical route to spin qubits with enhanced protection.",
+        "ageHours": 18.5,
+        "summary": "We introduce a surface-code cultivation protocol for reusable logical catalyst states that implement exact fine dyadic phase gates $Z^{2^{-b}}$ by phase kickback. The catalyst is an eigenstate of a high-period Clifford circuit $U$, with a direct construction supported on $O(2^b)$ logical qubits. Once cultivated, each invocation implements the target phase through a controlled-$U$ gadget, removing Clifford+$T$ synthesis approximation error from the online gate and making the online non-Clifford depth independent of the target logical accuracy. As a concrete demonstration, we construct a catalyst for $\\sqrt{T}=Z^{1/8}$, where $U$ is a nine-qubit brickwork Clifford circuit and controlled-$U$ consists of eight controlled-CNOTs. Starting from nine distance-three rotated-surface-code blocks, we cultivate the catalyst through logical-$U$ checks, syndrome extraction and postselection, code growth, and complementary-gap decoding. Due to the intrinsic fault tolerance of the phase read-out, a \\emph{single} verification round already reaches the leading error-corrected scaling, in contrast to the repeated logical checks required when cultivating single-qubit magic states. A hybrid tensor-network and stabilizer simulation shows that, at physical error rate $p=10^{-3}$, the postselected catalyst can be grown to distance-seven rotated-surface-code blocks with logical leakage rate $\\sim 10^{-6}$ using around seven expected attempts, and can be suppressed further with stronger postselection. Compared with existing protocols, our approach trades offline, phase-specific catalyst cultivation for exactness, reusability, and constant-depth online implementation of fixed fine dyadic phases in codes with restricted transversal gate sets.",
         "charge": 0
       },
       {
         "bucket": "scholar",
-        "title": "Quantum Back-Action Expands the Excitonic Hilbert Space in a Soft Polar Semiconductor",
-        "articleUrl": "https://arxiv.org/abs/2606.26063v1",
+        "title": "Beyond the equation of state: a second-order diagnostic for dynamical dark energy",
+        "articleUrl": "https://arxiv.org/abs/2606.27356v1",
         "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
         "sourceHomeUrl": "https://arxiv.org",
-        "ageHours": 18.9,
-        "summary": "Electronic excitations in solids are commonly described within a hierarchy in which the excitonic Hamiltonian is defined first and the lattice acts later through renormalization, relaxation, and dephasing. This picture assumes that the optically accessible excitonic manifold is already present at the moment of photoexcitation. Here we show that this assumption fails in a soft polar semiconductor. Using femtosecond coherent multidimensional spectroscopy on lead-halide perovskite nanocrystals, we observe quantum back-action between an electronic excitation and a collective lattice-polarization field that expands the excitonic Hilbert space in real time. The optical pulse first prepares an excitonic polarization, X1. A second configuration, X2, emerges only after the polaron field develops, while coherent X1-X2 coupling appears at later times. State formation and coherence formation are therefore resolved as distinct stages of quasiparticle formation. In contrast, CdSe quantum dots exhibit the conventional limit in which excitonic states and couplings are present at time zero and are only weakly perturbed by phonons. The observed diagonal and anti-diagonal splittings increase with nanocrystal size and correlate with radiative oscillator strength, opposite to expectations from simple quantum confinement. A dynamical polaron-field model describes the lattice polarization as an order parameter that expands the optically accessible manifold and generates time-dependent coherent coupling. These results show that strong system-bath coupling can actively create excitonic states and the coherent manifold in which they evolve.",
+        "ageHours": 18.5,
+        "summary": "The first-order continuity equations determine the evolution of the energy densities but depend only on the instantaneous value of the dark-energy equation-of-state parameter. Differentiating these equations with respect to e-fold time introduces the term $\u03c9'_{\\rm DE}$ explicitly, providing a second-order probe of dark-energy dynamics. Consequently, while information about the evolution of the equation of state is encoded in the full dynamical solution, it is not explicit in the first-order continuity equations evaluated at a given epoch. The second-order formulation, therefore, provides a complementary description in which the local evolution of the equation of state appears directly through the curvature of the density trajectory.\n  For a two-fluid interacting dark-sector model with linear coupling $Q_{AB}=\u03b1\u03c1_AH$, the resulting second-order equation defines a curvature diagnostic, $\\mathcal{C}=\u03c1_{DE}''/\u03c1_{DE}$, whose leading contribution, in the cosmological-constant limit, is $\u03b1^2$, while departures from $\u03c9_{DE}=-1$ generate corrections through both $\u03b4\u03c9=1+\u03c9_{DE}$ and the distinctive term $-3\u03c9_{DE}'$. Unlike first-order analyses, this contribution is independent of the interaction strength and directly identifies dynamical dark energy. Applying the diagnostic to a CPL model with parameters consistent with DESI constraints, we recover $\u03c9_{DE}'$ across the full redshift range for both weak and strong interactions. Noise propagation shows that the diagnostic is detectable with signal-to-noise ratio exceeding three for $\u03c3_H/H\\lesssim1.5\\%$, while the degeneracy between $\u03b1$ and $\u03c9_{DE}'$ remains negligible for $\u03b1\\lesssim0.1$. In the non-interacting limit, the formalism naturally recovers the Caldwell--Linder thawing/freezing classification and extends it to interacting dark-energy models.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "All you need is log",
+        "articleUrl": "https://arxiv.org/abs/2606.27349v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.5,
+        "summary": "Comparing two probability distributions is a basic building block of statistics and machine learning, and the right family is well understood: the R\u00e9nyi divergences of order $\u03b1\\in[0,\\infty]$ are the unique family monotone under data processing and additive on independent products. Many problems instead compare more than two distributions at once -- multi-population fairness, multi-prior PAC-Bayes bounds, multi-hypothesis testing -- and the right multi-distribution generalization of the R\u00e9nyi family has been an open question.\n  We characterize it. Every functional of $W$-tuples of distributions that is monotone under data processing and additive on independent products is a positive integral of multi-way coincidence divergences $C_\u03b1(\u03c0_1,\\dots,\u03c0_W) := -\\log\\int \u03c0_1^{\u03b1_1}\\cdots\u03c0_W^{\u03b1_W}$ (with $\\sum_k \u03b1_k = 1$) over a parameter space with four strata: the simplex interior; mixed-sign exponent cones (the analogue of R\u00e9nyi orders $>1$); a tropical boundary at infinity carrying max-divergences; and pairwise Kullback-Leibler edges at the simplex vertices. Each stratum is necessary -- the destination of an explicit data-processing-monotone, product-additive divergence the others cannot reproduce -- and each is a clean limit of simplex-interior atoms.\n  The same family arises from five independent routes -- the structural axioms, Kolmogorov-Nagumo means with R\u00e9nyi's entropy axiomatics, classical entropy characterizations, multi-hypothesis testing error exponents, and a multi-lottery betting interpretation -- structural evidence that this is the canonical multi-distribution R\u00e9nyi calculus rather than an artefact of any one axiomatic input. The two-prior case recovers the standard R\u00e9nyi result; a worked $W=3$ instance, numerical verification, and a conditional extension round out the treatment.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Coquasi-bialgebroids and cocycle twisting",
+        "articleUrl": "https://arxiv.org/abs/2606.27343v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "We introduce coquasi-bialgebroids over a noncommutative base algebra. Using Takeuchi's \\(\\times_B\\)-coalgebra formalism, we require the coproduct to remain an algebra map into the Takeuchi product, while the product is associative only up to an invertible normalized \\(3\\)-cocycle. This gives a bialgebroid analogue of coquasi-bialgebras and provides a natural framework for cocycle-twisted bialgebroid constructions.\n  We develop the basic theory and prove a twisting theorem by convolution-invertible \\(2\\)-cochains. As a main class of examples, we construct coquasi Connes--Moscovici-type bialgebroids on \\(B\\otimes H\\otimes B\\), where \\(H\\) is a coquasi-bialgebra measuring an algebra \\(B\\), with twisting data \\(\u03b3:H\\otimes H\\to B\\). We also give finite-group examples arising from a subgroup \\(G\\subseteq X\\) and a choice of transversal. Finally, under finite projectivity assumptions, we describe the dual quasi-bialgebroid construction and its relation to Drinfeld-type twisting.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Understanding Domain-Aware Distribution Alignment in Budgeted Entity Matching",
+        "articleUrl": "https://arxiv.org/abs/2606.27342v1",
+        "sourceName": "arXiv Query: search_query=all:\"machine learning\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "Entity Matching (EM) is a core operation in the data integration pipeline, where records from different sources are compared to determine whether they refer to the same real-world entity. Recent work has incorporated domain information and low-resource learning techniques to better adapt EM systems to realistic settings. While these approaches have demonstrated strong performance, it remains unclear how they behave under varying data constraints and levels of supervision in practice. In this paper, we investigate a state-of-the-art method for low-resource, domain-aware EM--BEACON--and study how its performance is affected by different algorithmic choices and data availability conditions. We conduct a series of targeted experiments to evaluate these variations, providing deeper insight into the role of distribution alignment and the behavior of the BEACON framework.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "On the deformation theory of chiral quantizations",
+        "articleUrl": "https://arxiv.org/abs/2606.27341v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.6,
+        "summary": "We give an operadic approach to deformation quantization of vertex Poisson algebras, a chiral analogue of the traditional problem of deformation quantization of Poisson algebras. Our main result is an order-by-order deformation-obstruction theory for such quantizations, controlled by the chiral analogue of Poisson cohomology. In the special case of chiral quantizations of affine symplectic varieties, quantizations of the vertex Poisson algebras of functions on their arc spaces, we prove that this deformation-obstruction theory is controlled by their de Rham cohomology. As another application, we prove that the boundary Virasoro minimal models are rigid under deformations.",
+        "charge": 0
+      },
+      {
+        "bucket": "scholar",
+        "title": "Exact subsystem dynamics in the deterministic Floquet-PXP model",
+        "articleUrl": "https://arxiv.org/abs/2606.27337v1",
+        "sourceName": "arXiv Query: search_query=all:\"quantum\"&id_list=&start=0&max_results=30",
+        "sourceHomeUrl": "https://arxiv.org",
+        "ageHours": 18.7,
+        "summary": "The dynamics of local subsystems in a thermodynamically large quantum many-body system can be understood as effectively open as the system produces its own effective bath. The action of this bath can be characterised in terms of the so-called influence matrices. In generic situations, the complexity of these objects grows unfavourably with time, however, there exist solvable cases where influence matrices can be characterised exactly even in the presence of non-trivial interactions. Here we show that Rule 201, a deterministic version of the Floquet-PXP model, is one of these solvable instances. Indeed, it admits influence matrices given by a finite-dimensional matrix-product operator (MPO) that solves a finite set of algebraic conditions. We provide the solution, and characterise multi-time autocorrelation functions.",
         "charge": 0
       }
     ],
@@ -317,6 +317,16 @@ window.MORNING_NEWS_DATA = Object.freeze({
   "randomPool": [
     {
       "bucket": "random",
+      "title": "How male infertility is still not getting enough attention",
+      "articleUrl": "https://www.bbc.co.uk/news/articles/cx2w4kz7z1ko?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHomeUrl": "https://www.bbc.co.uk",
+      "ageHours": 11.4,
+      "summary": "How could the system better support men who have been told they might have a fertility issue?",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
       "title": "Salah's World Cup pain ends as he fires Egypt to historic win",
       "articleUrl": "https://www.bbc.com/sport/football/articles/c17yn5y977yo?at_medium=RSS&at_campaign=rss",
       "sourceName": "BBC News",
@@ -503,16 +513,6 @@ window.MORNING_NEWS_DATA = Object.freeze({
       "sourceHomeUrl": "https://www.bbc.com",
       "ageHours": 11.0,
       "summary": "A team of experts who helped free a teen football team from a Thai cave in 2018 are among the rescuers.",
-      "charge": 0
-    },
-    {
-      "bucket": "random",
-      "title": "Surf photographer attacked in water by 'shark or sea lion'",
-      "articleUrl": "https://www.bbc.com/sport/surfing/articles/cx213zv3dv3o?at_medium=RSS&at_campaign=rss",
-      "sourceName": "BBC News",
-      "sourceHomeUrl": "https://www.bbc.com",
-      "ageHours": 10.3,
-      "summary": "The finals day of the World Surf League's New Zealand Pro event was paused after a photographer was attacked.",
       "charge": 0
     }
   ]
