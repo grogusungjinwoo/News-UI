@@ -536,6 +536,10 @@ class MorningNewsTests(unittest.TestCase):
         self.assertEqual({bucket: len(records) for bucket, records in payload["sections"].items()}, {"scholar": 10, "random": 10, "science": 10, "ai": 10})
         self.assertEqual(len(payload["randomPool"]), 60)
         self.assertEqual(len(payload["randomSources"]), 10)
+        self.assertIn("articleUrl", payload["randomPool"][0])
+        self.assertIn("sourceHomeUrl", payload["randomPool"][0])
+        self.assertNotIn("href", payload["randomPool"][0])
+        self.assertNotIn("sourceHref", payload["randomPool"][0])
 
     def test_random_source_selection_backfills_to_ten_successful_sources(self):
         feeds = [(f"Source {index}", f"https://example.com/feed-{index}.xml") for index in range(12)]
@@ -699,10 +703,13 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
             "refreshRandomArticles",
             "randomPoolSignature",
             "usedArticleUrls",
+            "priorUsedUrls",
+            "unusedPool",
             "RANDOM_STORAGE_KEY",
             "routes.length = 0",
         ):
             self.assertIn(expected, app_js)
+        self.assertNotIn(".style.", app_js)
         self.assertIn("aspect-ratio: 1 / 1", css)
         self.assertIn("grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));", css)
         self.assertIn("--paper", css)
@@ -717,11 +724,27 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
     def test_static_article_links_are_direct_article_targets(self):
         app_js = self.read_docs_file("app.js")
         articles_js = self.read_docs_file("articles.js")
-        urls = re.findall(r'"articleUrl": "([^"]+)"', articles_js)
-        source_urls = re.findall(r'"sourceHomeUrl": "([^"]*)"', articles_js)
+        payload = morning.parse_articles_js_payload(articles_js)
+        displayed_records = [
+            record
+            for records in payload["sections"].values()
+            for record in records
+        ]
+        pool_records = payload.get("randomPool", [])
+        displayed_urls = [record["articleUrl"] for record in displayed_records]
+        pool_urls = [record["articleUrl"] for record in pool_records]
+        urls = displayed_urls + pool_urls
+        source_urls = [
+            record.get("sourceHomeUrl", "")
+            for record in displayed_records + pool_records
+            if record.get("sourceHomeUrl")
+        ]
 
-        self.assertEqual(len(urls), 40)
-        self.assertEqual(len(urls), len(source_urls))
+        self.assertEqual(len(displayed_records), 40)
+        self.assertGreaterEqual(len(pool_records), 20)
+        self.assertEqual(len(displayed_urls), len(set(displayed_urls)))
+        self.assertEqual(len(pool_urls), len(set(pool_urls)))
+        self.assertGreaterEqual(len(set(pool_urls) - set(displayed_urls)), 10)
         forbidden_patterns = (
             r"news\.google\.com/(?:rss/)?articles",
             r"scholar\.google\.com/scholar",
@@ -766,8 +789,12 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertIn("--validate-links", text)
         self.assertIn("--previous-output docs/articles.js", text)
         self.assertIn("--require-new-links", text)
+        self.assertIn("--random-source-count 10", text)
+        self.assertIn("--random-pool-size 60", text)
+        self.assertIn('--audit-existing "$RUNNER_TEMP/articles.js"', text)
+        self.assertIn("--update-integrity-index docs/index.html", text)
         self.assertIn("--strict", text)
-        self.assertIn("docs/articles.js", text)
+        self.assertIn("git add docs/articles.js docs/index.html", text)
 
     def test_readme_contains_github_pages_instructions(self):
         readme = (self.root / "README.md")

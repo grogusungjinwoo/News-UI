@@ -30,24 +30,28 @@ jobs:
             --output "$RUNNER_TEMP/articles.js" \
             --previous-output docs/articles.js \
             --limit-per-bucket 10 \
+            --random-source-count 10 \
+            --random-pool-size 60 \
             --fallback-max-age-hours 36 \
             --validate-links \
             --require-new-links \
             --timeout 15 \
             --strict
+          python -B morning.py --audit-existing "$RUNNER_TEMP/articles.js" --timeout 8
           mv "$RUNNER_TEMP/articles.js" docs/articles.js
+          python -B morning.py --update-integrity-index docs/index.html
 
       - name: Run tests after refresh
         run: python -B -m unittest test_morning.py
 
       - name: Commit refreshed data
         run: |
-          if git diff --quiet -- docs/articles.js; then
+          if git diff --quiet -- docs/articles.js docs/index.html; then
             echo "No article data changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/articles.js
+          git add docs/articles.js docs/index.html
           git commit -m "Refresh article data"
           git push

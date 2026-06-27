@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.google.com data:; connect-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'">
   <title>Morning News</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css" integrity="sha256-oruzvN+fnQ4jr/eV42X+KsL1rFC5riosNTjwJTufDkk=">
+  <link rel="stylesheet" href="./styles.css" integrity="sha256-j21yXkU7vQRcT7ZdUGS7ZizIC64Z9qYuNH9cnxCMMts=">
 </head>
 <body>
   <header class="topbar">
@@ -28,17 +28,23 @@
         </svg>
       </button>
       <button class="icon-button refresh-button" id="refreshRandomButton" type="button" title="Refresh random articles">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 12a9 9 0 0 1-15.3 6.3"></path>
+          <path d="M3 12A9 9 0 0 1 18.3 5.7"></path>
+          <path d="M18 2v5h-5"></path>
+          <path d="M6 22v-5h5"></path>
+        </svg>
         <span>Refresh Random</span>
       </button>
     </nav>
   </header>
 
-  <main class="shell">
+  <main class="shell bulletin">
     <nav class="bucket-nav" id="bucketNav" aria-label="Article buckets"></nav>
     <div id="sections"></div>
   </main>
 
-  <script src="./articles.js" defer integrity="sha256-407v1lnxrL1YutVH7bmsRlVVV/1RckXWjeteI2x3W08="></script>
-  <script src="./app.js" defer integrity="sha256-fNN7vFYxqZ/Oh4qd446IBMYZ0K9xi4Dwg4OvXHphx+k="></script>
+  <script src="./articles.js" defer integrity="sha256-hIbSn0k9k/qKP2K5osCckO7WaVmXoKexoVc6KRpjvfY="></script>
+  <script src="./app.js" defer integrity="sha256-u2gnFrNsRNWzXlLl4Kk9NhSQs9qQzDvFKlSHl6ckrzg="></script>
 </body>
 </html>

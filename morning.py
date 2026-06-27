@@ -1300,9 +1300,9 @@ def articles_static_payload(
         {
             "bucket": article.bucket,
             "title": article.title,
-            "href": article.url,
+            "articleUrl": article.url,
             "sourceName": source_display_name(article),
-            "sourceHref": article.source_url,
+            "sourceHomeUrl": article.source_url,
             "ageHours": round(article.age_hours(now), 1),
             "summary": article.summary,
             "charge": political_charge_score(article),

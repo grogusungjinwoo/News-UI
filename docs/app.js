@@ -48,6 +48,9 @@ function sourceDisplayName(article) {
   if (isPdfPublication(article) || sourceIsMissing(article.sourceName)) {
     return "N/A";
   }
+  if (/^arxiv query:/i.test(article.sourceName || "")) {
+    return "arXiv";
+  }
   return article.sourceName;
 }
 
@@ -131,11 +134,14 @@ function randomPoolArticle(record) {
 }
 
 function randomPoolSignature() {
-  return (DATA.randomPool || []).map((article) => article.href || article.articleUrl || article.title).join("|");
+  return (DATA.randomPool || []).map((article) => article.articleUrl || article.href || article.title).join("|");
 }
 
 function usedArticleUrls() {
-  return new Set(fixedSectionArticles("random").map((article) => article.articleUrl).filter(Boolean));
+  const visibleRandom = activeArticles.length
+    ? activeArticles.filter((article) => article.bucket === "random")
+    : fixedSectionArticles("random");
+  return new Set(visibleRandom.map((article) => article.articleUrl).filter(Boolean));
 }
 
 function shuffleArticles(articles) {
@@ -156,6 +162,14 @@ function storedRandomState() {
   }
 }
 
+function writeRandomState(state) {
+  try {
+    localStorage.setItem(RANDOM_STORAGE_KEY, JSON.stringify(state));
+  } catch (error) {
+    localStorage.removeItem(RANDOM_STORAGE_KEY);
+  }
+}
+
 function chooseRandomArticles(force = false) {
   const pool = (Array.isArray(DATA.randomPool) ? DATA.randomPool : [])
     .map(randomPoolArticle)
@@ -164,34 +178,44 @@ function chooseRandomArticles(force = false) {
     return fixedSectionArticles("random").slice(0, 10);
   }
 
-  const nowMs = Date.now();
   const signature = randomPoolSignature();
+  const stored = storedRandomState();
+  const stateMatches = stored.generatedAt === DATA.generatedAt && stored.poolSignature === signature;
   if (!force) {
-    const stored = storedRandomState();
-    if (stored.generatedAt === DATA.generatedAt && stored.poolSignature === signature && Array.isArray(stored.articleUrls)) {
+    if (stateMatches && Array.isArray(stored.articleUrls)) {
       const byUrl = new Map(pool.map((article) => [article.articleUrl, article]));
       const selected = stored.articleUrls.map((url) => byUrl.get(url)).filter(Boolean);
       if (selected.length === Math.min(10, pool.length)) {
         return selected;
       }
     }
+    return fixedSectionArticles("random").slice(0, 10);
   }
 
-  const sectionUrls = usedArticleUrls();
-  const selected = shuffleArticles(pool.filter((article) => !sectionUrls.has(article.articleUrl))).slice(0, 10);
-  try {
-    localStorage.setItem(
-      RANDOM_STORAGE_KEY,
-      JSON.stringify({
-        generatedAt: DATA.generatedAt,
-        poolSignature: signature,
-        refreshedAt: nowMs,
-        articleUrls: selected.map((article) => article.articleUrl),
-      }),
-    );
-  } catch (error) {
-    localStorage.removeItem(RANDOM_STORAGE_KEY);
+  const currentUrls = usedArticleUrls();
+  let priorUsedUrls = new Set(stateMatches && Array.isArray(stored.usedUrls) ? stored.usedUrls : []);
+  let unusedPool = pool.filter((article) => !currentUrls.has(article.articleUrl) && !priorUsedUrls.has(article.articleUrl));
+
+  if (unusedPool.length < Math.min(10, pool.length)) {
+    priorUsedUrls = new Set(currentUrls);
+    unusedPool = pool.filter((article) => !currentUrls.has(article.articleUrl));
   }
+
+  const selected = shuffleArticles(unusedPool).slice(0, Math.min(10, unusedPool.length));
+  if (selected.length < Math.min(10, pool.length)) {
+    const selectedUrls = new Set(selected.map((article) => article.articleUrl));
+    const backfill = shuffleArticles(pool.filter((article) => !selectedUrls.has(article.articleUrl))).slice(0, 10 - selected.length);
+    selected.push(...backfill);
+  }
+
+  selected.forEach((article) => priorUsedUrls.add(article.articleUrl));
+  writeRandomState({
+    generatedAt: DATA.generatedAt,
+    poolSignature: signature,
+    refreshedAt: Date.now(),
+    articleUrls: selected.map((article) => article.articleUrl),
+    usedUrls: [...priorUsedUrls],
+  });
   return selected.length ? selected : fixedSectionArticles("random").slice(0, 10);
 }
 
@@ -219,6 +243,9 @@ function createSourceLogo(article) {
   image.alt = `Source logo for ${sourceDisplayName(article)}`;
   image.loading = "lazy";
   image.referrerPolicy = "no-referrer";
+  image.addEventListener("error", () => {
+    image.replaceWith(createElement("span", "source-logo-na", "N/A"));
+  });
   return image;
 }
 
@@ -332,11 +359,6 @@ function renderSections() {
   sections.replaceChildren(fragment);
 }
 
-function pxValue(value) {
-  const parsed = Number.parseFloat(value);
-  return Number.isFinite(parsed) ? parsed : 0;
-}
-
 function fitCardText(card) {
   const title = card.querySelector("h3");
   const summary = card.querySelector("p");
@@ -344,27 +366,12 @@ function fitCardText(card) {
     return;
   }
 
-  title.style.fontSize = "";
-  summary.style.fontSize = "";
-  summary.style.lineHeight = "";
-
-  let titleSize = pxValue(window.getComputedStyle(title).fontSize);
-  let summarySize = pxValue(window.getComputedStyle(summary).fontSize);
-  let summaryLine = pxValue(window.getComputedStyle(summary).lineHeight);
-
-  for (let step = 0; step < 22 && (card.scrollHeight > card.clientHeight || card.scrollWidth > card.clientWidth); step += 1) {
-    if (titleSize > 11) {
-      titleSize -= 1;
-      title.style.fontSize = `${titleSize}px`;
-    }
-    if (summarySize > 10 && step % 2 === 0) {
-      summarySize -= 1;
-      summary.style.fontSize = `${summarySize}px`;
-    }
-    if (summaryLine > summarySize * 1.15) {
-      summaryLine -= 1;
-      summary.style.lineHeight = `${summaryLine}px`;
-    }
+  card.classList.remove("fit-overflow", "fit-overflow-hard");
+  if (card.scrollHeight > card.clientHeight || card.scrollWidth > card.clientWidth) {
+    card.classList.add("fit-overflow");
+  }
+  if (card.scrollHeight > card.clientHeight || card.scrollWidth > card.clientWidth) {
+    card.classList.add("fit-overflow-hard");
   }
 }
 
