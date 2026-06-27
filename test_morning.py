@@ -1,5 +1,7 @@
 import re
 import unittest
+import base64
+import hashlib
 from datetime import datetime, timedelta, timezone
 from tempfile import TemporaryDirectory
 from pathlib import Path
@@ -505,7 +507,8 @@ class MorningNewsTests(unittest.TestCase):
     def test_articles_js_export_uses_article_and_source_home_fields(self):
         articles = []
         for bucket in ("scholar", "random", "science", "ai"):
-            for index in range(12):
+            total = 72 if bucket == "random" else 12
+            for index in range(total):
                 articles.append(
                     self.article(
                         f"{bucket} generated {index}",
@@ -515,17 +518,70 @@ class MorningNewsTests(unittest.TestCase):
                     )
                 )
 
-        js = morning.format_articles_js(articles, self.now, random_pool_size=12)
+        random_sources = [
+            {"name": f"Source {index}", "feedUrl": f"https://example.com/feed-{index}.xml", "homeUrl": "https://example.com", "articleCount": 6}
+            for index in range(10)
+        ]
+        js = morning.format_articles_js(articles, self.now, random_pool_size=60, random_sources=random_sources)
         payload = morning.parse_articles_js_payload(js)
 
         self.assertIn("window.MORNING_NEWS_DATA", js)
         self.assertIn('"generatedAt": "2026-05-10T08:00:00+00:00"', js)
-        self.assertNotIn('"randomPool"', js)
+        self.assertIn('"randomPool"', js)
+        self.assertIn('"randomSources"', js)
         self.assertIn('"articleUrl"', js)
         self.assertIn('"sourceHomeUrl"', js)
         self.assertNotIn('"url"', js)
         self.assertEqual(set(payload["sections"]), {"scholar", "random", "science", "ai"})
         self.assertEqual({bucket: len(records) for bucket, records in payload["sections"].items()}, {"scholar": 10, "random": 10, "science": 10, "ai": 10})
+        self.assertEqual(len(payload["randomPool"]), 60)
+        self.assertEqual(len(payload["randomSources"]), 10)
+
+    def test_random_source_selection_backfills_to_ten_successful_sources(self):
+        feeds = [(f"Source {index}", f"https://example.com/feed-{index}.xml") for index in range(12)]
+
+        def fetcher(selected_feeds, bucket, timeout):
+            articles = []
+            warnings = []
+            for label, url in selected_feeds:
+                index = int(label.split()[-1])
+                if index in {0, 3}:
+                    warnings.append(f"{label}: failed")
+                    continue
+                articles.append(self.article(f"{label} article", bucket=bucket, source=label, source_url=f"https://source-{index}.example.com"))
+            return articles, warnings
+
+        articles, warnings, sources = morning.fetch_random_articles_from_sources(
+            feeds,
+            source_count=10,
+            timeout=5,
+            fetcher=fetcher,
+        )
+
+        self.assertEqual(len(sources), 10)
+        self.assertEqual(len(articles), 10)
+        self.assertTrue(any("Source 0" in warning for warning in warnings))
+        self.assertNotIn("Source 0", [source["name"] for source in sources])
+        self.assertNotIn("Source 3", [source["name"] for source in sources])
+
+    def test_audit_static_payload_links_reports_broken_article_and_source(self):
+        article = self.article("working article", bucket="science", source_url="https://example.com")
+        broken = self.article("broken article", bucket="science", source_url="https://example.com")
+        broken = morning.replace(broken, url="https://example.com/dead")
+        payload = morning.articles_static_payload([article, broken], self.now)
+
+        def checker(url, timeout=10):
+            if url == "https://example.com/dead":
+                return morning.LinkCheck(False, url, 404, "not found")
+            if url == "https://example.com":
+                return morning.LinkCheck(False, url, 503, "service unavailable")
+            return morning.LinkCheck(True, url, 200, "")
+
+        ok, warnings = morning.audit_static_payload_links(payload, checker=checker)
+
+        self.assertFalse(ok)
+        self.assertTrue(any("broken article" in warning and "article URL" in warning for warning in warnings))
+        self.assertTrue(any("working article" in warning and "source homepage" in warning for warning in warnings))
 
     def test_articles_js_payload_can_fill_short_live_refresh_from_previous_static_data(self):
         live = [
@@ -583,22 +639,38 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertNotIn('src="/articles.js"', html)
         self.assertNotIn('src="/app.js"', html)
         self.assertIn("Morning News", html)
+        self.assertIn('id="refreshRandomButton"', html)
         self.assertIn('id="bucketNav"', html)
         self.assertIn('id="sections"', html)
+
+    def test_index_contains_csp_and_matching_asset_integrity_hashes(self):
+        html = self.read_docs_file("index.html")
+        self.assertIn('http-equiv="Content-Security-Policy"', html)
+        self.assertIn("default-src 'self'", html)
+        self.assertIn("script-src 'self'", html)
+        self.assertIn("connect-src 'none'", html)
+        self.assertIn("object-src 'none'", html)
+        self.assertIn("form-action 'none'", html)
+
+        for asset in ("styles.css", "articles.js", "app.js"):
+            digest = base64.b64encode(hashlib.sha256((self.docs / asset).read_bytes()).digest()).decode("ascii")
+            expected = f'integrity="sha256-{digest}"'
+            self.assertIn(expected, html)
 
     def test_static_frontend_preserves_buckets_navigation_and_no_server_fetch(self):
         app_js = self.read_docs_file("app.js")
         articles_js = self.read_docs_file("articles.js")
+        payload = morning.parse_articles_js_payload(articles_js)
 
         self.assertIn('"scholar"', app_js)
         self.assertIn('"random"', app_js)
         self.assertIn('"science"', app_js)
         self.assertIn('"ai"', app_js)
-        self.assertEqual(len(re.findall(r'"bucket": "scholar"', articles_js)), 10)
-        self.assertEqual(len(re.findall(r'"bucket": "random"', articles_js)), 10)
-        self.assertEqual(len(re.findall(r'"bucket": "science"', articles_js)), 10)
-        self.assertEqual(len(re.findall(r'"bucket": "ai"', articles_js)), 10)
-        self.assertNotIn('"randomPool"', articles_js)
+        self.assertEqual({bucket: len(records) for bucket, records in payload["sections"].items()}, {"scholar": 10, "random": 10, "science": 10, "ai": 10})
+        self.assertIn('"randomPool"', articles_js)
+        self.assertIn('"randomSources"', articles_js)
+        self.assertGreaterEqual(len(payload.get("randomPool", [])), 20)
+        self.assertEqual(len(payload.get("randomSources", [])), 10)
         self.assertNotIn("fetch(", app_js)
         self.assertNotIn("fetch(", articles_js)
         self.assertNotIn("XMLHttpRequest", app_js)
@@ -624,15 +696,20 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
             "scrollIntoView",
             "fitCardText",
             "sourceLogoUrl",
+            "refreshRandomArticles",
+            "randomPoolSignature",
+            "usedArticleUrls",
+            "RANDOM_STORAGE_KEY",
             "routes.length = 0",
         ):
             self.assertIn(expected, app_js)
-        self.assertNotIn("refreshRandomArticles", app_js)
-        self.assertNotIn("RANDOM_REFRESH_INTERVAL_MS", app_js)
-        self.assertNotIn("localStorage", app_js)
         self.assertIn("aspect-ratio: 1 / 1", css)
-        self.assertIn("grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));", css)
-        self.assertIn("--bg: #05070d", css)
+        self.assertIn("grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));", css)
+        self.assertIn("--paper", css)
+        self.assertIn("--verdigris", css)
+        self.assertIn("--lapis", css)
+        self.assertIn("--oxblood", css)
+        self.assertIn("bulletin", css)
         self.assertIn("source-logo-na", css)
         self.assertIn("--title-size", css)
         self.assertNotIn("-webkit-line-clamp", css)

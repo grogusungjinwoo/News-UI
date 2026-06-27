@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.google.com data:; connect-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'">
   <title>Morning News</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css" integrity="sha256-oruzvN+fnQ4jr/eV42X+KsL1rFC5riosNTjwJTufDkk=">
 </head>
 <body>
   <header class="topbar">
@@ -26,6 +27,9 @@
           <path d="M9 6l6 6-6 6"></path>
         </svg>
       </button>
+      <button class="icon-button refresh-button" id="refreshRandomButton" type="button" title="Refresh random articles">
+        <span>Refresh Random</span>
+      </button>
     </nav>
   </header>
 
@@ -34,7 +38,7 @@
     <div id="sections"></div>
   </main>
 
-  <script src="./articles.js" defer></script>
-  <script src="./app.js" defer></script>
+  <script src="./articles.js" defer integrity="sha256-407v1lnxrL1YutVH7bmsRlVVV/1RckXWjeteI2x3W08="></script>
+  <script src="./app.js" defer integrity="sha256-fNN7vFYxqZ/Oh4qd446IBMYZ0K9xi4Dwg4OvXHphx+k="></script>
 </body>
 </html>

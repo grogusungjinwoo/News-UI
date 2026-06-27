@@ -1,13 +1,17 @@
 const BUCKETS = Object.freeze(["scholar", "random", "science", "ai"]);
+const RANDOM_STORAGE_KEY = "morning-news-random-selection";
 const DATA = window.MORNING_NEWS_DATA || {
   generatedAt: "",
   buckets: BUCKETS,
   sections: {},
+  randomPool: [],
+  randomSources: [],
 };
 
 const generatedLine = document.getElementById("generatedLine");
 const bucketNav = document.getElementById("bucketNav");
 const sections = document.getElementById("sections");
+const refreshRandomButton = document.getElementById("refreshRandomButton");
 const routes = [];
 let currentIndex = 0;
 let activeArticles = [];
@@ -113,8 +117,91 @@ function fixedSectionArticles(bucket) {
   return Array.isArray(DATA.sections && DATA.sections[bucket]) ? DATA.sections[bucket] : [];
 }
 
-function buildActiveArticles() {
-  activeArticles = BUCKETS.flatMap((bucket) => fixedSectionArticles(bucket).slice(0, 10));
+function randomPoolArticle(record) {
+  return {
+    bucket: record.bucket || "random",
+    title: record.title || "Untitled article",
+    articleUrl: record.articleUrl || record.href || "",
+    sourceName: record.sourceName || "",
+    sourceHomeUrl: record.sourceHomeUrl || record.sourceHref || "",
+    ageHours: Number(record.ageHours) || 0,
+    summary: record.summary || "",
+    charge: Number(record.charge) || 0,
+  };
+}
+
+function randomPoolSignature() {
+  return (DATA.randomPool || []).map((article) => article.href || article.articleUrl || article.title).join("|");
+}
+
+function usedArticleUrls() {
+  return new Set(fixedSectionArticles("random").map((article) => article.articleUrl).filter(Boolean));
+}
+
+function shuffleArticles(articles) {
+  const shuffled = [...articles];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function storedRandomState() {
+  try {
+    return JSON.parse(localStorage.getItem(RANDOM_STORAGE_KEY) || "{}");
+  } catch (error) {
+    localStorage.removeItem(RANDOM_STORAGE_KEY);
+    return {};
+  }
+}
+
+function chooseRandomArticles(force = false) {
+  const pool = (Array.isArray(DATA.randomPool) ? DATA.randomPool : [])
+    .map(randomPoolArticle)
+    .filter((article) => article.articleUrl);
+  if (!pool.length) {
+    return fixedSectionArticles("random").slice(0, 10);
+  }
+
+  const nowMs = Date.now();
+  const signature = randomPoolSignature();
+  if (!force) {
+    const stored = storedRandomState();
+    if (stored.generatedAt === DATA.generatedAt && stored.poolSignature === signature && Array.isArray(stored.articleUrls)) {
+      const byUrl = new Map(pool.map((article) => [article.articleUrl, article]));
+      const selected = stored.articleUrls.map((url) => byUrl.get(url)).filter(Boolean);
+      if (selected.length === Math.min(10, pool.length)) {
+        return selected;
+      }
+    }
+  }
+
+  const sectionUrls = usedArticleUrls();
+  const selected = shuffleArticles(pool.filter((article) => !sectionUrls.has(article.articleUrl))).slice(0, 10);
+  try {
+    localStorage.setItem(
+      RANDOM_STORAGE_KEY,
+      JSON.stringify({
+        generatedAt: DATA.generatedAt,
+        poolSignature: signature,
+        refreshedAt: nowMs,
+        articleUrls: selected.map((article) => article.articleUrl),
+      }),
+    );
+  } catch (error) {
+    localStorage.removeItem(RANDOM_STORAGE_KEY);
+  }
+  return selected.length ? selected : fixedSectionArticles("random").slice(0, 10);
+}
+
+function buildActiveArticles(forceRandom = false) {
+  activeArticles = [
+    ...fixedSectionArticles("scholar").slice(0, 10),
+    ...chooseRandomArticles(forceRandom),
+    ...fixedSectionArticles("science").slice(0, 10),
+    ...fixedSectionArticles("ai").slice(0, 10),
+  ];
 }
 
 function countByBucket(bucket) {
@@ -355,8 +442,8 @@ function goForward() {
   }, 80);
 }
 
-function renderApp() {
-  buildActiveArticles();
+function renderApp(forceRandom = false) {
+  buildActiveArticles(forceRandom);
   renderNav();
   renderSections();
   fitAllCards();
@@ -366,9 +453,20 @@ function renderApp() {
   }
 }
 
+function refreshRandomArticles(force = true) {
+  const previousRoute = routeFromHash();
+  renderApp(force);
+  if (previousRoute && routes.includes(previousRoute)) {
+    setRoute(previousRoute, false, true);
+  }
+}
+
 function wireKeyboardNavigation() {
   document.getElementById("backButton").addEventListener("click", goBack);
   document.getElementById("forwardButton").addEventListener("click", goForward);
+  if (refreshRandomButton) {
+    refreshRandomButton.addEventListener("click", () => refreshRandomArticles(true));
+  }
 
   window.addEventListener("popstate", () => setRoute(routeFromHash(), false, true));
   document.addEventListener("keydown", (event) => {

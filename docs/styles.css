@@ -1,6 +1,10 @@
 :root {
   color-scheme: dark;
   --bg: #05070d;
+  --paper: #f4ead7;
+  --verdigris: #5eead4;
+  --lapis: #315a9d;
+  --oxblood: #5f1d2a;
   --panel: #0c111d;
   --panel-2: #111827;
   --ink: #f8fafc;
@@ -176,7 +180,7 @@ a {
 
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
   width: 100%;
 }
@@ -205,6 +209,10 @@ a {
   cursor: pointer;
   scroll-margin-top: 168px;
   transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.bulletin {
+  border-color: color-mix(in srgb, var(--verdigris) 40%, var(--line));
 }
 
 .article-card.fit-medium {

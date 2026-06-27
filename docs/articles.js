@@ -415,5 +415,269 @@ window.MORNING_NEWS_DATA = Object.freeze({
         "interest": 3
       }
     ]
-  }
+  },
+  "randomPool": [
+    {
+      "bucket": "random",
+      "title": "How Unknowable Math Can Help Hide Secrets",
+      "href": "https://www.quantamagazine.org/how-unknowable-math-can-help-hide-secrets-20260511/",
+      "sourceName": "Quanta Magazine",
+      "sourceHref": "https://www.quantamagazine.org",
+      "ageHours": 11.0,
+      "summary": "A graduate student recently harnessed the complexity of mathematical proofs to create a powerful new tool in cryptography.             The post  How Unknowable Math Can Help Hide Secrets  first appeared on  Quanta Magazine",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "New York\u2019s Buzziest New Restaurant Is a Pub",
+      "href": "https://www.eater.com/pre-shift/961028/deans-pub-new-york-pre-shift",
+      "sourceName": "Eater",
+      "sourceHref": "https://www.eater.com",
+      "ageHours": 11.2,
+      "summary": "This excerpt was originally published in Pre Shift, our newsletter for the hospitality industry.\u00a0Subscribe\u00a0for more first-person accounts, advice, and interviews. Now Open is a yearlong series celebrating some of 2026\u2019s most exciting new restaurants. Throughout the year, we\u2019ll check in with teams in Chicago, New York City, and Washington, D.C. to hear what it\u2019s really [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "As ranks of uninsured grow, charity care can be hard to come by at many hospitals",
+      "href": "https://www.npr.org/2026/05/11/nx-s1-5813781/charity-care-hospitals-medical-bills-uninsured",
+      "sourceName": "NPR Topics: News",
+      "sourceHref": "https://www.npr.org",
+      "ageHours": 12.7,
+      "summary": "An investigation of hospital data and charity care programs shows most Minnesota hospitals provide little financial aid to patients and often make assistance difficult to get.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Watch: Soldier on parachuting to remote island to bring Hantavirus aid",
+      "href": "https://www.bbc.com/news/videos/cgqp3xq7959o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 9.1,
+      "summary": "A specialist team helped supply critical medical support to Tristan da Cunha in the South Atlantic.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "See 15 Stunning Images That Won the German Society for Nature Photography's Annual Contest",
+      "href": "https://www.smithsonianmag.com/smart-news/see-15-stunning-images-that-won-the-german-society-for-nature-photographys-annual-contest-180988711/",
+      "sourceName": "Smart News | smithsonianmag.com",
+      "sourceHref": "https://www.smithsonianmag.com",
+      "ageHours": 7.1,
+      "summary": "From a lunging frog to the majestic movements of penguins, the honored photographs capture the wonder of wildlife and beauty of natural landscapes",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Wordle to become TV quiz show with Savannah Guthrie as host",
+      "href": "https://www.bbc.com/news/articles/czd2vpdr9g6o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 6.6,
+      "summary": "The online word game from the New York Times will hit the small screen in the UK and US from next year.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "'Atlanta Journal-Constitution' chief steps down as bold goals yield to tough realities",
+      "href": "https://www.npr.org/2026/05/11/nx-s1-5818208/ajc-andrew-morse-leaving",
+      "sourceName": "NPR Topics: News",
+      "sourceHref": "https://www.npr.org",
+      "ageHours": 6.5,
+      "summary": "The owners of the Atlanta  Journal-Constitution  invested $150 million to reinvent the paper. The changes have been significant. Three years in, the payoff has been modest.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "The decisions and problems facing England before first Test squad of summer",
+      "href": "https://www.bbc.com/sport/cricket/articles/c2k21jkqp81o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 6.4,
+      "summary": "Who will make the cut when England name their first Test squad of the summer?",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "7 of our favorite deals from Amazon\u2019s Pet Days sale",
+      "href": "https://www.theverge.com/gadgets/927788/amazon-pet-days-tech-gadgets-cat-dog-deal-sale",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 6.0,
+      "summary": "A big part of my job here at The Verge is to find deals on tech that readers will like. But in my personal life, I\u2019m not spending anywhere near as much money on tech as I am on food, litter, and other supplies for our two cats. Sad, but true. If your life is [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "What does future hold for Barcelona striker Rashford?",
+      "href": "https://www.bbc.com/sport/football/articles/clypn3d2jd8o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 5.8,
+      "summary": "Marcus Rashford has an uncertain future despite the on-loan Manchester United forward scoring a brilliant free-kick for Barcelona in El Clasico.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "A million baby monitors and security cameras were easily viewable by hackers",
+      "href": "https://www.theverge.com/tech/926487/meari-technology-hack-baby-monitor-security-camera",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 5.8,
+      "summary": "A baby's eyes peer directly into the camera lens. A kid with a striped shirt looks up, then away. A boy in a policeman's costume, a gold star on his chest. A messy bedroom that reminds me of my own daughters, with an unmade bunk bed, a little girl's hat and headband, and Hello Kitty [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Google stopped a zero-day hack that it says was developed with AI",
+      "href": "https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 5.6,
+      "summary": "For the first time, Google says it has spotted and stopped a zero-day exploit developed with AI. According to a report from Google Threat Intelligence Group (GTIG), \"prominent cyber crime threat actors\" were planning to use the vulnerability for a \"mass exploitation event\" that would have allowed them to bypass two-factor authentication on an unnamed [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Pupils hopeless and crying after 'poorly worded' Higher Maths exam",
+      "href": "https://www.bbc.com/news/articles/cx21j20l9wlo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 5.5,
+      "summary": "More than 11,000 people have signed a petition calling for a review of the exam saying it was \"totally unrecognisable\" from what they had prepared for.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Texas sues Netflix for advertising \u2018bait and switch\u2019 and spying",
+      "href": "https://www.theverge.com/streaming/928071/texas-netflix-lawsuit-privacy",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 4.7,
+      "summary": "Texas Attorney General Ken Paxton has filed a lawsuit against Netflix, accusing the company of turning its back on its promise to remain ad-free and safe for kids. The lawsuit, filed on Monday, claims Netflix has \"opened Texans' data for inspection by the same Big Ad Tech community it once criticized for exploiting users in [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "'Britain at the heart of Europe': How Starmer's plans are going down in the EU",
+      "href": "https://www.bbc.com/news/articles/cwy2k7re9jdo?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 4.5,
+      "summary": "Sir Keir Starmer pledged to rebuild the UK's relationship with Europe in a defiant speech on Monday.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "UK alcohol deaths fall for first time since Covid pandemic",
+      "href": "https://www.bbc.com/news/articles/c3v2dxg79w2o?at_medium=RSS&at_campaign=rss",
+      "sourceName": "BBC News",
+      "sourceHref": "https://www.bbc.com",
+      "ageHours": 3.9,
+      "summary": "Experts say the \u201cmodest reduction\u201d is \u201cnot cause for complacency\u201d, with calls to redouble efforts to slash deaths further.",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Apple brings encrypted RCS chats to iPhone",
+      "href": "https://www.theverge.com/tech/928141/apple-ios-26-5-rcs-messages-iphone-google-android",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 3.8,
+      "summary": "Apple now lets you have encrypted RCS conversations with Android users through the Messages app on iOS. As part of iOS 26.5, which was released on Monday, Apple added support for end-to-end encrypted RCS messaging in beta, meaning that Apple and Google can't see your messages while they're sent. With iOS 26.5, you'll see a [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Palantir\u2019s true believers are wearing this jacket",
+      "href": "https://www.theverge.com/report/928026/palantir-chore-coat",
+      "sourceName": "The Verge",
+      "sourceHref": "https://www.theverge.com",
+      "ageHours": 3.3,
+      "summary": "In late April, Palantir - the software company that, in recent years, has perhaps become best known for its defense industry contracts and work with Immigration and Customs Enforcement - announced that it would be adding new products to its merch store. The latest offering was a cotton chore coat. At $239 and in bright [\u2026]",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "In 1969, the Beatles Played One Final Show. Their Makeshift Rooftop Stage in London Will Soon Become a Museum",
+      "href": "https://www.smithsonianmag.com/smart-news/in-1969-the-beatles-played-one-final-show-their-makeshift-rooftop-stage-in-london-will-soon-become-a-museum-180988714/",
+      "sourceName": "Smart News | smithsonianmag.com",
+      "sourceHref": "https://www.smithsonianmag.com",
+      "ageHours": 3.1,
+      "summary": "Visitors to 3 Savile Row will be able to see a re-creation of the basement recording studio where the Beatles worked on their final album \"Let It Be\" and stand on the roof where the band thrilled Londoners with a surprise concert",
+      "charge": 0
+    },
+    {
+      "bucket": "random",
+      "title": "Can Chinese AI solve inequality? + How dementia comes for your bank account",
+      "href": "https://www.npr.org/2026/05/11/g-s1-121351/can-chinese-ai-solve-inequality-how-dementia-comes-for-your-bank-account",
+      "sourceName": "NPR Topics: News",
+      "sourceHref": "https://www.npr.org",
+      "ageHours": 3.1,
+      "summary": "",
+      "charge": 0
+    }
+  ],
+  "randomSources": [
+    {
+      "name": "BBC News",
+      "feedUrl": "https://feeds.bbci.co.uk/news/rss.xml",
+      "homeUrl": "https://feeds.bbci.co.uk",
+      "articleCount": 0
+    },
+    {
+      "name": "NPR News",
+      "feedUrl": "https://feeds.npr.org/1001/rss.xml",
+      "homeUrl": "https://feeds.npr.org",
+      "articleCount": 0
+    },
+    {
+      "name": "NPR World",
+      "feedUrl": "https://feeds.npr.org/1004/rss.xml",
+      "homeUrl": "https://feeds.npr.org",
+      "articleCount": 0
+    },
+    {
+      "name": "NPR Business",
+      "feedUrl": "https://feeds.npr.org/1006/rss.xml",
+      "homeUrl": "https://feeds.npr.org",
+      "articleCount": 0
+    },
+    {
+      "name": "The Verge",
+      "feedUrl": "https://www.theverge.com/rss/index.xml",
+      "homeUrl": "https://www.theverge.com",
+      "articleCount": 0
+    },
+    {
+      "name": "Smithsonian Smart News",
+      "feedUrl": "https://www.smithsonianmag.com/rss/smart-news/",
+      "homeUrl": "https://www.smithsonianmag.com",
+      "articleCount": 0
+    },
+    {
+      "name": "Quanta Magazine",
+      "feedUrl": "https://www.quantamagazine.org/feed/",
+      "homeUrl": "https://www.quantamagazine.org",
+      "articleCount": 0
+    },
+    {
+      "name": "Eater",
+      "feedUrl": "https://www.eater.com/rss/index.xml",
+      "homeUrl": "https://www.eater.com",
+      "articleCount": 0
+    },
+    {
+      "name": "Ars Technica",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/index",
+      "homeUrl": "https://feeds.arstechnica.com",
+      "articleCount": 0
+    },
+    {
+      "name": "Wired",
+      "feedUrl": "https://www.wired.com/feed/rss",
+      "homeUrl": "https://www.wired.com",
+      "articleCount": 0
+    }
+  ]
 });
