@@ -224,10 +224,7 @@ class MorningNewsTests(unittest.TestCase):
         self.assertEqual(morning.normalize_article_url("https://example.com/news"), "")
         self.assertEqual(morning.normalize_article_url("https://example.com/search?q=robotics"), "")
         self.assertEqual(morning.normalize_article_url("https://news.google.com/rss/search?q=robotics"), "")
-        self.assertEqual(
-            morning.normalize_article_url("https://news.google.com/rss/articles/CBMi-example"),
-            "https://news.google.com/rss/articles/CBMi-example",
-        )
+        self.assertEqual(morning.normalize_article_url("https://news.google.com/rss/articles/CBMi-example"), "")
 
     def test_normalize_source_home_url_rejects_google_and_broad_targets(self):
         self.assertEqual(morning.normalize_source_home_url("https://www.nature.com"), "https://www.nature.com")
@@ -254,6 +251,46 @@ class MorningNewsTests(unittest.TestCase):
 
         self.assertEqual(kept, [])
         self.assertTrue(any("Google hosted article link" in warning for warning in warnings))
+
+    def test_resolve_article_url_returns_publisher_for_google_news_redirect(self):
+        article = morning.Article(
+            title="Resolved publisher article",
+            url="https://news.google.com/rss/articles/CBMi-example",
+            source="Google News",
+            source_url="https://news.google.com/publications/example",
+            published=self.now - timedelta(hours=11),
+            bucket="science",
+            summary="A short summary.",
+        )
+
+        def checker(url, timeout=10):
+            if url == "https://news.google.com/rss/articles/CBMi-example":
+                return morning.LinkCheck(
+                    True,
+                    "https://publisher.example.com/science/resolved-article",
+                    200,
+                    "",
+                )
+            return morning.LinkCheck(True, url, 200, "")
+
+        resolved = morning.resolve_article_url(article, checker=checker)
+
+        self.assertEqual(resolved, "https://publisher.example.com/science/resolved-article")
+
+    def test_google_news_decoder_parses_params_and_batch_response(self):
+        html = '<c-wiz><div jscontroller="x" data-n-a-ts="1779743497" data-n-a-sg="AaLI4RR"></div></c-wiz>'
+        response = """)]}'""" + "\n\n" + (
+            '[["wrb.fr","Fbv4je","[\\"garturlres\\",\\"https://publisher.example.com/story\\",1]"],null,null]'
+        )
+
+        self.assertEqual(
+            morning.extract_google_news_decoding_params(html),
+            ("AaLI4RR", "1779743497"),
+        )
+        self.assertEqual(
+            morning.parse_google_news_batchexecute_response(response),
+            "https://publisher.example.com/story",
+        )
 
     def test_verified_articles_derives_source_home_from_resolved_publisher_article(self):
         article = morning.Article(
@@ -305,7 +342,7 @@ class MorningNewsTests(unittest.TestCase):
         self.assertEqual(len(kept), 1)
         self.assertEqual(kept[0].source_url, "https://publisher.example.com")
 
-    def test_verified_articles_excludes_dead_links_and_unverified_source_links(self):
+    def test_verified_articles_keeps_valid_article_without_unverified_source_link(self):
         alive = morning.Article(
             title="Researchers map useful signal",
             url="https://example.com/news/researchers-map-useful-signal",
@@ -343,15 +380,132 @@ class MorningNewsTests(unittest.TestCase):
 
         kept, warnings = morning.verified_articles([alive, dead, broad], checker=checker)
 
-        self.assertEqual(kept, [])
-        self.assertTrue(any("Researchers map useful signal" in warning for warning in warnings))
+        self.assertEqual(len(kept), 1)
+        self.assertEqual(kept[0].title, "Researchers map useful signal")
+        self.assertEqual(kept[0].source_url, "")
         self.assertTrue(any("Dead link" in warning for warning in warnings))
         self.assertTrue(any("Broad news page" in warning for warning in warnings))
 
+    def test_select_verified_articles_validates_past_failed_candidates(self):
+        articles = []
+        for bucket in ("scholar", "random", "science", "ai"):
+            for index in range(12):
+                url = f"https://example.com/{bucket}/candidate-{index:02d}"
+                if bucket == "science" and index < 2:
+                    url = f"https://example.com/{bucket}/dead-{index:02d}"
+                articles.append(
+                    morning.Article(
+                        title=f"{bucket} candidate {index:02d}",
+                        url=url,
+                        source="Example",
+                        source_url="https://example.com",
+                        published=self.now - timedelta(hours=11),
+                        bucket=bucket,
+                        summary="A measured summary with concrete details.",
+                    )
+                )
+
+        def checker(url, timeout=10):
+            if "/dead-" in url:
+                return morning.LinkCheck(False, url, 404, "not found")
+            return morning.LinkCheck(True, url, 200, "")
+
+        selected, warnings = morning.select_verified_articles_by_bucket(
+            articles,
+            now=self.now,
+            limit_per_bucket=10,
+            checker=checker,
+        )
+
+        self.assertEqual(len(selected), 40)
+        self.assertEqual(
+            {bucket: sum(1 for article in selected if article.bucket == bucket) for bucket in ("scholar", "random", "science", "ai")},
+            {"scholar": 10, "random": 10, "science": 10, "ai": 10},
+        )
+        self.assertNotIn("science candidate 00", [article.title for article in selected])
+        self.assertNotIn("science candidate 01", [article.title for article in selected])
+        self.assertTrue(any("science candidate 00" in warning for warning in warnings))
+
+    def test_select_verified_articles_prefers_direct_candidates_before_wrappers(self):
+        articles = [
+            morning.Article(
+                title="aa wrapper",
+                url="https://news.google.com/rss/articles/CBMi-example",
+                source="Google News",
+                source_url="https://news.google.com/publications/example",
+                published=self.now - timedelta(hours=11),
+                bucket="science",
+                summary="A measured summary with concrete details.",
+            )
+        ]
+        for bucket in ("scholar", "random", "science", "ai"):
+            for index in range(10):
+                articles.append(
+                    morning.Article(
+                        title=f"{bucket} direct candidate {index:02d}",
+                        url=f"https://example.com/{bucket}/direct-candidate-{index:02d}",
+                        source="Example",
+                        source_url="https://example.com",
+                        published=self.now - timedelta(hours=11),
+                        bucket=bucket,
+                        summary="A measured summary with concrete details.",
+                    )
+                )
+
+        def checker(url, timeout=10):
+            if "news.google.com" in url:
+                raise AssertionError("Google wrapper should not be checked when direct links fill the bucket")
+            return morning.LinkCheck(True, url, 200, "")
+
+        selected, warnings = morning.select_verified_articles_by_bucket(
+            articles,
+            now=self.now,
+            limit_per_bucket=10,
+            checker=checker,
+        )
+
+        self.assertEqual(len(selected), 40)
+        self.assertEqual(warnings, [])
+        self.assertNotIn("aa wrapper", [article.title for article in selected])
+
+    def test_previous_article_urls_are_loaded_and_skipped_when_required(self):
+        previous_article = self.article("science aa", bucket="science")
+        articles = [previous_article]
+        for index in range(10):
+            articles.append(self.article(f"science new {index}", bucket="science"))
+        for bucket in ("scholar", "random", "ai"):
+            for index in range(10):
+                articles.append(self.article(f"{bucket} new {index}", bucket=bucket))
+
+        def checker(url, timeout=10):
+            return morning.LinkCheck(True, url, 200, "")
+
+        with TemporaryDirectory() as tmpdir:
+            output_path = Path(tmpdir) / "articles.js"
+            output_path.write_text(
+                morning.format_articles_js([previous_article], self.now),
+                encoding="utf-8",
+            )
+
+            previous_urls = morning.previous_article_urls_from_output(str(output_path))
+            selected, warnings = morning.select_verified_articles_by_bucket(
+                articles,
+                now=self.now,
+                limit_per_bucket=10,
+                checker=checker,
+                previous_article_urls=previous_urls,
+                require_new_links=True,
+            )
+
+        self.assertIn(previous_article.url, previous_urls)
+        self.assertNotIn(previous_article.url, [article.url for article in selected])
+        self.assertEqual(sum(1 for article in selected if article.bucket == "science"), 10)
+        self.assertTrue(any("science aa" in warning for warning in warnings))
+
     def test_articles_js_export_uses_article_and_source_home_fields(self):
         articles = []
-        for bucket in ("scholar", "science", "ai"):
-            for index in range(10):
+        for bucket in ("scholar", "random", "science", "ai"):
+            for index in range(12):
                 articles.append(
                     self.article(
                         f"{bucket} generated {index}",
@@ -360,25 +514,18 @@ class MorningNewsTests(unittest.TestCase):
                         source_url="https://example.com",
                     )
                 )
-        for index in range(12):
-            articles.append(
-                self.article(
-                    f"random generated {index}",
-                    bucket="random",
-                    source="Example",
-                    source_url="https://example.com",
-                )
-            )
 
         js = morning.format_articles_js(articles, self.now, random_pool_size=12)
+        payload = morning.parse_articles_js_payload(js)
 
         self.assertIn("window.MORNING_NEWS_DATA", js)
         self.assertIn('"generatedAt": "2026-05-10T08:00:00+00:00"', js)
-        self.assertIn('"randomPool"', js)
+        self.assertNotIn('"randomPool"', js)
         self.assertIn('"articleUrl"', js)
         self.assertIn('"sourceHomeUrl"', js)
         self.assertNotIn('"url"', js)
-        self.assertEqual(js.count('"bucket": "random"'), 12)
+        self.assertEqual(set(payload["sections"]), {"scholar", "random", "science", "ai"})
+        self.assertEqual({bucket: len(records) for bucket, records in payload["sections"].items()}, {"scholar": 10, "random": 10, "science": 10, "ai": 10})
 
     def test_articles_js_payload_can_fill_short_live_refresh_from_previous_static_data(self):
         live = [
@@ -436,7 +583,6 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertNotIn('src="/articles.js"', html)
         self.assertNotIn('src="/app.js"', html)
         self.assertIn("Morning News", html)
-        self.assertIn('id="refreshRandomButton"', html)
         self.assertIn('id="bucketNav"', html)
         self.assertIn('id="sections"', html)
 
@@ -449,9 +595,10 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertIn('"science"', app_js)
         self.assertIn('"ai"', app_js)
         self.assertEqual(len(re.findall(r'"bucket": "scholar"', articles_js)), 10)
-        self.assertGreaterEqual(len(re.findall(r'"bucket": "random"', articles_js)), 20)
+        self.assertEqual(len(re.findall(r'"bucket": "random"', articles_js)), 10)
         self.assertEqual(len(re.findall(r'"bucket": "science"', articles_js)), 10)
         self.assertEqual(len(re.findall(r'"bucket": "ai"', articles_js)), 10)
+        self.assertNotIn('"randomPool"', articles_js)
         self.assertNotIn("fetch(", app_js)
         self.assertNotIn("fetch(", articles_js)
         self.assertNotIn("XMLHttpRequest", app_js)
@@ -477,13 +624,12 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
             "scrollIntoView",
             "fitCardText",
             "sourceLogoUrl",
-            "refreshRandomArticles",
-            "RANDOM_REFRESH_INTERVAL_MS",
-            "randomRefreshDelay",
-            "localStorage",
             "routes.length = 0",
         ):
             self.assertIn(expected, app_js)
+        self.assertNotIn("refreshRandomArticles", app_js)
+        self.assertNotIn("RANDOM_REFRESH_INTERVAL_MS", app_js)
+        self.assertNotIn("localStorage", app_js)
         self.assertIn("aspect-ratio: 1 / 1", css)
         self.assertIn("grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));", css)
         self.assertIn("--bg: #05070d", css)
@@ -497,7 +643,7 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         urls = re.findall(r'"articleUrl": "([^"]+)"', articles_js)
         source_urls = re.findall(r'"sourceHomeUrl": "([^"]*)"', articles_js)
 
-        self.assertGreaterEqual(len(urls), 42)
+        self.assertEqual(len(urls), 40)
         self.assertEqual(len(urls), len(source_urls))
         forbidden_patterns = (
             r"news\.google\.com/(?:rss/)?articles",
@@ -541,6 +687,8 @@ class GitHubPagesStaticSiteTests(unittest.TestCase):
         self.assertIn("python -B -m unittest test_morning.py", text)
         self.assertIn("--format articles-js", text)
         self.assertIn("--validate-links", text)
+        self.assertIn("--previous-output docs/articles.js", text)
+        self.assertIn("--require-new-links", text)
         self.assertIn("--strict", text)
         self.assertIn("docs/articles.js", text)
 

@@ -1,21 +1,16 @@
 const BUCKETS = Object.freeze(["scholar", "random", "science", "ai"]);
-const RANDOM_REFRESH_INTERVAL_MS = 24 * 60 * 60 * 1000;
-const RANDOM_STORAGE_KEY = "morning-news-random-selection";
 const DATA = window.MORNING_NEWS_DATA || {
   generatedAt: "",
   buckets: BUCKETS,
   sections: {},
-  randomPool: [],
 };
 
 const generatedLine = document.getElementById("generatedLine");
 const bucketNav = document.getElementById("bucketNav");
 const sections = document.getElementById("sections");
-const refreshRandomButton = document.getElementById("refreshRandomButton");
 const routes = [];
 let currentIndex = 0;
 let activeArticles = [];
-let randomRefreshTimer = 0;
 
 function bucketLabel(bucket) {
   return bucket === "ai" ? "AI" : bucket.charAt(0).toUpperCase() + bucket.slice(1);
@@ -118,87 +113,8 @@ function fixedSectionArticles(bucket) {
   return Array.isArray(DATA.sections && DATA.sections[bucket]) ? DATA.sections[bucket] : [];
 }
 
-function randomPoolSignature() {
-  return (DATA.randomPool || []).map((article) => article.articleUrl).join("|");
-}
-
-function shuffleArticles(articles) {
-  const shuffled = [...articles];
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
-  }
-  return shuffled;
-}
-
-function storedRandomSelection(nowMs) {
-  const stored = storedRandomState();
-  if (
-    stored.generatedAt === DATA.generatedAt &&
-    stored.poolSignature === randomPoolSignature() &&
-    Array.isArray(stored.articleUrls) &&
-    nowMs - Number(stored.refreshedAt) < RANDOM_REFRESH_INTERVAL_MS
-  ) {
-    const byUrl = new Map((DATA.randomPool || []).map((article) => [article.articleUrl, article]));
-    const selected = stored.articleUrls.map((url) => byUrl.get(url)).filter(Boolean);
-    if (selected.length === Math.min(10, (DATA.randomPool || []).length)) {
-      return selected;
-    }
-  }
-  return [];
-}
-
-function storedRandomState() {
-  try {
-    return JSON.parse(localStorage.getItem(RANDOM_STORAGE_KEY) || "{}");
-  } catch (error) {
-    localStorage.removeItem(RANDOM_STORAGE_KEY);
-    return {};
-  }
-}
-
-function randomRefreshDelay(nowMs = Date.now()) {
-  const refreshedAt = Number(storedRandomState().refreshedAt);
-  if (!Number.isFinite(refreshedAt)) {
-    return RANDOM_REFRESH_INTERVAL_MS;
-  }
-  return Math.max(0, Math.min(RANDOM_REFRESH_INTERVAL_MS, refreshedAt + RANDOM_REFRESH_INTERVAL_MS - nowMs));
-}
-
-function chooseRandomArticles(force = false) {
-  const pool = Array.isArray(DATA.randomPool) ? DATA.randomPool : [];
-  const nowMs = Date.now();
-  if (!force) {
-    const stored = storedRandomSelection(nowMs);
-    if (stored.length) {
-      return stored;
-    }
-  }
-
-  const selected = shuffleArticles(pool).slice(0, 10);
-  try {
-    localStorage.setItem(
-      RANDOM_STORAGE_KEY,
-      JSON.stringify({
-        generatedAt: DATA.generatedAt,
-        poolSignature: randomPoolSignature(),
-        refreshedAt: nowMs,
-        articleUrls: selected.map((article) => article.articleUrl),
-      }),
-    );
-  } catch (error) {
-    localStorage.removeItem(RANDOM_STORAGE_KEY);
-  }
-  return selected;
-}
-
-function buildActiveArticles(forceRandom = false) {
-  activeArticles = [
-    ...fixedSectionArticles("scholar").slice(0, 10),
-    ...chooseRandomArticles(forceRandom),
-    ...fixedSectionArticles("science").slice(0, 10),
-    ...fixedSectionArticles("ai").slice(0, 10),
-  ];
+function buildActiveArticles() {
+  activeArticles = BUCKETS.flatMap((bucket) => fixedSectionArticles(bucket).slice(0, 10));
 }
 
 function countByBucket(bucket) {
@@ -439,8 +355,8 @@ function goForward() {
   }, 80);
 }
 
-function renderApp(forceRandom = false) {
-  buildActiveArticles(forceRandom);
+function renderApp() {
+  buildActiveArticles();
   renderNav();
   renderSections();
   fitAllCards();
@@ -450,32 +366,9 @@ function renderApp(forceRandom = false) {
   }
 }
 
-function refreshRandomArticles(force = true) {
-  const previousHash = window.location.hash;
-  renderApp(force);
-  if (previousHash && routes.includes(previousHash.replace(/^#/, ""))) {
-    setRoute(previousHash.replace(/^#/, ""), false, true);
-  }
-}
-
-function scheduleRandomRefresh() {
-  window.clearTimeout(randomRefreshTimer);
-  randomRefreshTimer = window.setTimeout(() => {
-    refreshRandomArticles(true);
-    scheduleRandomRefresh();
-  }, randomRefreshDelay());
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible" && !storedRandomSelection(Date.now()).length) {
-      refreshRandomArticles(true);
-    }
-  });
-}
-
 function wireKeyboardNavigation() {
   document.getElementById("backButton").addEventListener("click", goBack);
   document.getElementById("forwardButton").addEventListener("click", goForward);
-  refreshRandomButton.addEventListener("click", () => refreshRandomArticles(true));
 
   window.addEventListener("popstate", () => setRoute(routeFromHash(), false, true));
   document.addEventListener("keydown", (event) => {
@@ -499,9 +392,8 @@ function init() {
   const generatedAt = DATA.generatedAt ? new Date(DATA.generatedAt) : null;
   const generatedLabel = generatedAt && !Number.isNaN(generatedAt.valueOf()) ? generatedAt.toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "static build";
   generatedLine.textContent = `40 verified articles generated ${generatedLabel}`;
-  renderApp(false);
+  renderApp();
   wireKeyboardNavigation();
-  scheduleRandomRefresh();
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(fitAllCards);
   }

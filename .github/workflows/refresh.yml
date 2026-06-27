@@ -24,16 +24,18 @@ jobs:
         run: python -B -m unittest test_morning.py
 
       - name: Regenerate verified article data
-        run: >
-          python -B morning.py
-          --format articles-js
-          --output docs/articles.js
-          --limit-per-bucket 10
-          --random-pool-size 20
-          --fallback-max-age-hours 36
-          --validate-links
-          --timeout 15
-          --strict
+        run: |
+          python -B morning.py \
+            --format articles-js \
+            --output "$RUNNER_TEMP/articles.js" \
+            --previous-output docs/articles.js \
+            --limit-per-bucket 10 \
+            --fallback-max-age-hours 36 \
+            --validate-links \
+            --require-new-links \
+            --timeout 15 \
+            --strict
+          mv "$RUNNER_TEMP/articles.js" docs/articles.js
 
       - name: Run tests after refresh
         run: python -B -m unittest test_morning.py

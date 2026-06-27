@@ -397,7 +397,7 @@ def is_broad_article_url(url: str) -> bool:
     if host == "scholar.google.com":
         return True
     if host == "news.google.com":
-        return not re.search(r"/(?:rss/)?articles(?:/|$)", path)
+        return True
     if path in {"", "/"}:
         return True
     if re.search(r"(^|&)q=", query):
@@ -429,6 +429,146 @@ def is_redirect_article_url(url: str) -> bool:
     host = parsed.netloc.lower().removeprefix("www.")
     path = parsed.path.rstrip("/").lower()
     return host == "news.google.com" and bool(re.search(r"/(?:rss/)?articles(?:/|$)", path))
+
+
+def google_news_article_id(raw_url: str) -> str:
+    parsed = urlparse(raw_url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    parts = [part for part in parsed.path.split("/") if part]
+    if host != "news.google.com" or len(parts) < 2:
+        return ""
+    if parts[-2] not in {"articles", "read"}:
+        return ""
+    return parts[-1]
+
+
+def extract_google_news_decoding_params(html: str) -> Tuple[str, str]:
+    signature = re.search(r'data-n-a-sg="([^"]+)"', html or "")
+    timestamp = re.search(r'data-n-a-ts="([^"]+)"', html or "")
+    if not signature or not timestamp:
+        return "", ""
+    return signature.group(1), timestamp.group(1)
+
+
+def fetch_google_news_decoding_params(article_id: str, timeout: int = 10) -> Tuple[str, str]:
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; MorningNewsLinkCheck/1.0)"}
+    for url in (
+        f"https://news.google.com/articles/{article_id}",
+        f"https://news.google.com/rss/articles/{article_id}",
+    ):
+        request = Request(url, headers=headers)
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                html = response.read().decode("utf-8", "replace")
+        except (HTTPError, TimeoutError, URLError, OSError):
+            continue
+        signature, timestamp = extract_google_news_decoding_params(html)
+        if signature and timestamp:
+            return signature, timestamp
+    return "", ""
+
+
+def parse_google_news_batchexecute_response(text: str) -> str:
+    for line in (text or "").splitlines():
+        line = line.strip()
+        if not line.startswith("["):
+            continue
+        try:
+            payload = json.loads(line)
+            decoded_payload = json.loads(payload[0][2])
+        except (json.JSONDecodeError, IndexError, TypeError):
+            continue
+        if len(decoded_payload) > 1:
+            return decoded_payload[1]
+    return ""
+
+
+def decode_google_news_url(raw_url: str, timeout: int = 10) -> str:
+    article_id = google_news_article_id(raw_url)
+    if not article_id:
+        return ""
+
+    signature, timestamp = fetch_google_news_decoding_params(article_id, timeout=timeout)
+    if not signature or not timestamp:
+        return ""
+
+    try:
+        timestamp_value = int(timestamp)
+    except ValueError:
+        return ""
+
+    rpc_args = [
+        "garturlreq",
+        [
+            ["X", "X", ["X", "X"], None, None, 1, 1, "US:en", None, 1, None, None, None, None, None, 0, 1],
+            "X",
+            "X",
+            1,
+            [1, 1, 1],
+            1,
+            1,
+            None,
+            0,
+            0,
+            None,
+            0,
+        ],
+        article_id,
+        timestamp_value,
+        signature,
+    ]
+    rpc = [["Fbv4je", json.dumps(rpc_args, separators=(",", ":")), None, "generic"]]
+    data = urlencode({"f.req": json.dumps([rpc], separators=(",", ":"))}).encode("utf-8")
+    request = Request(
+        "https://news.google.com/_/DotsSplashUi/data/batchexecute",
+        data=data,
+        headers={
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+            "User-Agent": "Mozilla/5.0 (compatible; MorningNewsLinkCheck/1.0)",
+        },
+    )
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            text = response.read().decode("utf-8", "replace")
+    except (HTTPError, TimeoutError, URLError, OSError):
+        return ""
+    return normalize_article_url(parse_google_news_batchexecute_response(text))
+
+
+def resolve_article_url(
+    article: Article,
+    timeout: int = 10,
+    checker=None,
+) -> str:
+    checker = checker or check_url
+    raw_url = _clean_https_url(article.url)
+    if not raw_url:
+        return ""
+
+    if is_redirect_article_url(raw_url):
+        if checker is check_url:
+            decoded_url = decode_google_news_url(raw_url, timeout=min(timeout, 8))
+            if decoded_url:
+                article_check = checker(decoded_url, timeout=timeout)
+                final_url = normalize_article_url(article_check.url)
+                if article_check.ok and final_url and not is_redirect_article_url(final_url):
+                    return final_url
+
+        article_check = checker(raw_url, timeout=timeout)
+        final_url = normalize_article_url(article_check.url)
+        if article_check.ok and final_url and not is_redirect_article_url(final_url):
+            return final_url
+        return ""
+
+    article_url = normalize_article_url(raw_url)
+    if not article_url:
+        return ""
+
+    article_check = checker(article_url, timeout=timeout)
+    final_url = normalize_article_url(article_check.url)
+    if not article_check.ok or not final_url or is_redirect_article_url(final_url):
+        return ""
+    return final_url
 
 
 def normalize_source_home_url(raw_url: str) -> str:
@@ -477,29 +617,23 @@ def verified_source_home_url(
 
 
 def check_url(url: str, timeout: int = 10) -> LinkCheck:
-    for method in ("HEAD", "GET"):
-        request = Request(
-            url,
-            method=method,
-            headers={
-                "User-Agent": "Mozilla/5.0 (compatible; MorningNewsLinkCheck/1.0)",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            },
-        )
-        try:
-            with urlopen(request, timeout=timeout) as response:
-                status = getattr(response, "status", response.getcode())
-                final_url = response.geturl() or url
-                return LinkCheck(200 <= status < 400, final_url, status, "")
-        except HTTPError as exc:
-            if method == "HEAD" and exc.code in {403, 405, 429}:
-                continue
-            return LinkCheck(False, getattr(exc, "url", url) or url, exc.code, str(exc.reason))
-        except (TimeoutError, URLError, OSError) as exc:
-            if method == "HEAD":
-                continue
-            return LinkCheck(False, url, None, str(exc))
-    return LinkCheck(False, url, None, "unreachable")
+    request = Request(
+        url,
+        method="GET",
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; MorningNewsLinkCheck/1.0)",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        },
+    )
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            status = getattr(response, "status", response.getcode())
+            final_url = response.geturl() or url
+            return LinkCheck(200 <= status < 400, final_url, status, "")
+    except HTTPError as exc:
+        return LinkCheck(False, getattr(exc, "url", url) or url, exc.code, str(exc.reason))
+    except (TimeoutError, URLError, OSError) as exc:
+        return LinkCheck(False, url, None, str(exc))
 
 
 def verified_articles(
@@ -511,33 +645,125 @@ def verified_articles(
     warnings: List[str] = []
 
     for article in articles:
-        article_url = normalize_article_url(article.url)
-        if not article_url:
-            warnings.append(f"{article.title}: skipped broad or invalid article URL")
-            continue
-
-        article_check = checker(article_url, timeout=timeout)
-        final_article_url = normalize_article_url(article_check.url)
-        if is_redirect_article_url(final_article_url):
-            final_article_url = ""
-        if not article_check.ok or not final_article_url:
-            status = article_check.status if article_check.status is not None else article_check.error
-            warnings.append(f"{article.title}: skipped dead article URL ({status})")
+        final_article_url = resolve_article_url(article, timeout=timeout, checker=checker)
+        if not final_article_url:
+            warnings.append(f"{article.title}: skipped dead, broad, or unresolved article URL")
             continue
 
         source_url = verified_source_home_url(
             article.source_url,
             final_article_url,
-            timeout=timeout,
+            timeout=min(timeout, 4),
             checker=checker,
         )
-        if not source_url:
-            warnings.append(f"{article.title}: skipped missing or dead source homepage")
-            continue
 
         kept.append(replace(article, url=final_article_url, source_url=source_url))
 
     return kept, warnings
+
+
+def previous_article_urls_from_output(output_path: Optional[str]) -> set:
+    if not output_path:
+        return set()
+    path = Path(output_path)
+    if not path.exists():
+        return set()
+
+    payload = parse_articles_js_payload(path.read_text(encoding="utf-8"))
+    urls = set()
+    records = []
+    for bucket_records in (payload.get("sections") or {}).values():
+        if isinstance(bucket_records, list):
+            records.extend(bucket_records)
+    random_pool = payload.get("randomPool")
+    if isinstance(random_pool, list):
+        records.extend(random_pool)
+
+    for record in records:
+        url = normalize_article_url(record.get("articleUrl", ""))
+        if url:
+            urls.add(url)
+    return urls
+
+
+def select_verified_articles_by_bucket(
+    articles: Sequence[Article],
+    now: Optional[datetime] = None,
+    limit_per_bucket: int = DEFAULT_LIMIT_PER_BUCKET,
+    min_age_hours: float = 10,
+    max_age_hours: float = 12,
+    max_political_score: int = 4,
+    similarity_threshold: float = 0.78,
+    seed: Optional[int] = None,
+    fill_shortfalls: bool = False,
+    fallback_max_age_hours: float = 36,
+    timeout: int = 10,
+    checker=check_url,
+    previous_article_urls: Optional[Iterable[str]] = None,
+    require_new_links: bool = False,
+) -> Tuple[List[Article], List[str]]:
+    now = normalize_datetime(now or utc_now())
+    source_articles = list(articles)
+    candidate_limit = max(limit_per_bucket, len(source_articles))
+    candidates = curate_articles(
+        source_articles,
+        now=now,
+        limit_per_bucket=candidate_limit,
+        min_age_hours=min_age_hours,
+        max_age_hours=max_age_hours,
+        max_political_score=max_political_score,
+        similarity_threshold=similarity_threshold,
+        seed=seed,
+        fill_shortfalls=fill_shortfalls,
+        fallback_max_age_hours=fallback_max_age_hours,
+    )
+    candidates = sorted(
+        candidates,
+        key=lambda article: is_redirect_article_url(_clean_https_url(article.url)),
+    )
+    previous_urls = {
+        url
+        for url in (normalize_article_url(value) for value in (previous_article_urls or ()))
+        if url
+    }
+    selected_by_bucket = {bucket: [] for bucket in BUCKETS}
+    seen_urls = set()
+    warnings: List[str] = []
+
+    for candidate in candidates:
+        bucket = candidate.bucket
+        if bucket not in selected_by_bucket or len(selected_by_bucket[bucket]) >= limit_per_bucket:
+            continue
+
+        final_article_url = resolve_article_url(candidate, timeout=timeout, checker=checker)
+        if not final_article_url:
+            warnings.append(f"{candidate.title}: skipped dead, broad, or unresolved article URL")
+            continue
+        if require_new_links and final_article_url in previous_urls:
+            warnings.append(f"{candidate.title}: skipped because it was already published")
+            continue
+        if final_article_url in seen_urls:
+            warnings.append(f"{candidate.title}: skipped duplicate article URL")
+            continue
+
+        source_url = verified_source_home_url(
+            candidate.source_url,
+            final_article_url,
+            timeout=min(timeout, 4),
+            checker=checker,
+        )
+        selected_by_bucket[bucket].append(
+            replace(candidate, url=final_article_url, source_url=source_url)
+        )
+        seen_urls.add(final_article_url)
+
+    for bucket, selected in selected_by_bucket.items():
+        if len(selected) < limit_per_bucket:
+            warnings.append(
+                f"{bucket_label(bucket)} only has {len(selected)} of {limit_per_bucket} verified source article links."
+            )
+
+    return [article for bucket in BUCKETS for article in selected_by_bucket[bucket]], warnings
 
 
 def first_text(element: ElementTree.Element, paths: Sequence[str]) -> str:
@@ -660,7 +886,7 @@ def scholar_feeds_from_env() -> List[Tuple[str, str]]:
 
 
 def default_scholar_fallback_feeds() -> List[Tuple[str, str]]:
-    queries = [
+    arxiv_queries = [
         'all:"machine learning"',
         'all:"public health"',
         'all:"climate model"',
@@ -668,7 +894,7 @@ def default_scholar_fallback_feeds() -> List[Tuple[str, str]]:
         'all:"quantum"',
     ]
     feeds = []
-    for query in queries:
+    for query in arxiv_queries:
         params = urlencode(
             {
                 "search_query": query,
@@ -679,6 +905,15 @@ def default_scholar_fallback_feeds() -> List[Tuple[str, str]]:
             }
         )
         feeds.append((f"arXiv scholarly fallback: {query}", f"https://export.arxiv.org/api/query?{params}"))
+
+    news_queries = [
+        "researchers publish study when:24h",
+        "new research paper science when:24h",
+        "university researchers study when:24h",
+        "medical research study when:24h",
+        "machine learning research paper when:24h",
+    ]
+    feeds.extend((f"Google News scholarly fallback: {query}", google_news_search_url(query)) for query in news_queries)
     return feeds
 
 
@@ -759,7 +994,7 @@ def gather_live_articles(
     scholar_feeds = scholar_feeds_from_config(scholar_rss_urls, env_file=env_file)
     if not scholar_feeds:
         warnings.append(
-            "Google Scholar RSS is not configured. Add GOOGLE_SCHOLAR_RSS_URLS to .env, set it in the shell, or pass --scholar-rss-url. Using arXiv scholarly fallback feeds for the scholar bucket."
+            "Google Scholar RSS is not configured. Add GOOGLE_SCHOLAR_RSS_URLS to .env, set it in the shell, or pass --scholar-rss-url. Using scholarly fallback feeds for the scholar bucket."
         )
         scholar_feeds = default_scholar_fallback_feeds()
 
@@ -899,19 +1134,12 @@ def articles_static_payload(
             if article.bucket == bucket
         ][:limit_per_bucket]
         for bucket in BUCKETS
-        if bucket != "random"
     }
-    random_pool = [
-        article_static_record(article, now)
-        for article in articles
-        if article.bucket == "random"
-    ][:max(limit_per_bucket, random_pool_size)]
 
     return {
         "generatedAt": now.isoformat(),
         "buckets": list(BUCKETS),
         "sections": sections,
-        "randomPool": random_pool,
     }
 
 
@@ -2510,6 +2738,15 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Validate article and source links before writing generated static data.",
     )
+    parser.add_argument(
+        "--previous-output",
+        help="Existing articles.js file whose article URLs should be treated as already published.",
+    )
+    parser.add_argument(
+        "--require-new-links",
+        action="store_true",
+        help="Skip URLs from --previous-output so each generated section contains newly published links.",
+    )
     return parser
 
 
@@ -2530,9 +2767,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
 
     selection_limit = args.limit_per_bucket
-    if args.format == "articles-js":
-        selection_limit = max(args.limit_per_bucket, args.random_pool_size)
-
     strict_curated = curate_articles(
         candidates,
         now=now,
@@ -2559,28 +2793,30 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             fallback_max_age_hours=args.fallback_max_age_hours,
         )
 
-    if args.format == "articles-js":
-        target_by_bucket = {
-            bucket: args.random_pool_size if bucket == "random" else args.limit_per_bucket
-            for bucket in BUCKETS
-        }
-    else:
-        target_by_bucket = {bucket: args.limit_per_bucket for bucket in BUCKETS}
+    target_by_bucket = {bucket: args.limit_per_bucket for bucket in BUCKETS}
 
     if args.validate_links:
-        curated, link_warnings = verified_articles(curated, timeout=args.timeout)
+        previous_urls = previous_article_urls_from_output(args.previous_output)
+        if args.require_new_links and not args.previous_output:
+            warnings.append("--require-new-links was set without --previous-output; no previous URLs were excluded.")
+        curated, link_warnings = select_verified_articles_by_bucket(
+            candidates,
+            now=now,
+            limit_per_bucket=args.limit_per_bucket,
+            min_age_hours=args.min_age_hours,
+            max_age_hours=args.max_age_hours,
+            max_political_score=args.max_political_score,
+            similarity_threshold=args.similarity_threshold,
+            seed=args.seed,
+            fill_shortfalls=not args.strict_age,
+            fallback_max_age_hours=args.fallback_max_age_hours,
+            timeout=args.timeout,
+            previous_article_urls=previous_urls,
+            require_new_links=args.require_new_links,
+        )
         warnings.extend(link_warnings)
-        if args.format == "articles-js":
-            curated = fill_articles_from_fallback(
-                curated,
-                fallback_articles_from_output(args.output, now),
-                target_by_bucket,
-            )
 
-    if args.format == "articles-js":
-        target_count = args.limit_per_bucket * (len(BUCKETS) - 1) + args.random_pool_size
-    else:
-        target_count = args.limit_per_bucket * len(BUCKETS)
+    target_count = args.limit_per_bucket * len(BUCKETS)
     strict_counts = {bucket: sum(1 for article in strict_curated if article.bucket == bucket) for bucket in BUCKETS}
     counts = {bucket: sum(1 for article in curated if article.bucket == bucket) for bucket in BUCKETS}
     if not args.strict_age:
